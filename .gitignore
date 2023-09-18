@@ -18,3 +18,4 @@ sections/*.pdf
 *.synctex.gz\(busy\)
 *.sla
 *.eps
+.vscode/
