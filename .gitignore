@@ -15,5 +15,6 @@ sections/*.pdf
 *.fdb_latexmk
 *.fls
 *.synctex.gz
+*.synctex.gz\(busy\)
 *.sla
 *.eps

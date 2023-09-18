@@ -13,23 +13,29 @@
 \chapter{Related Work}
 \label{ch:FirstContent}
 
-The goal of this thesis is to create an automated system that tests a web application using only a set of natural language test cases.
-This means that system has to follow natural language test descriptions, which is a natural language task that was previously explored in \cite{GPT3Testing}.
-This work shall be a continuation of this effort to test the approach on a more complex data set.
-Additionally, this work will also try to use LLMs to act as a test oracle using the same approach.
+Das Ziel dieser Arbeit ist es, ein automatisiertes System zu entwickeln, das eine Webanwendung nur mit einer Reihe von natürlichsprachlichen Testfällen testet.
+Das bedeutet, dass das System natürlichsprachlichen Testbeschreibungen folgen muss, einer Aufgabe im Feld der Linguistischen Sprachverarbeitung (Englisch: natural language processing, NLP).
+Dies wurde zuvor in \cite{GPT3Testing} untersucht.
+Diese Arbeit stellt eine Fortsetzung jener Arbeit dar, um den Ansatz in einem komplexeren Umfeld zu testen.
+Darüber hinaus wird in dieser Arbeit auch versucht, LLMs als Testorakel zu verwenden, wobei derselbe Ansatz verwendet wird.
 
-To the best of our knowledge, no more similar works exist yet.
-Recent literature reviews do list natural language processing as a tool used in software testing, but do not mention either task as an example of its use. \cite{implementation_verma_2023, machine_fontes_2021}
-Eskonen et al. use image-based Deep Reinforcement Learning to mimic how humans explore the AUT. \cite{deep_reinforcement_exploring}
-Similarly, Saber et al. use Computer Vision to extract application states and interactive elements from screenshots and then use Deep Q-Learning to cover all efficiently cover application states. While these approaches eliminate the need for human interaction and are applicable to any GUI-based application, they do not enable the automatic following of natural language designer test cases. \cite{saber_testing}
-Khaliq et al. use a similar setup as the one proposed in this work: They feed short textual descriptions of the GUI to an LLM that generates a sequence of user actions to pursue from that state. \cite{transformers_exploratory}
-Now, LLMs with increased maximal prompt sizes allow us to use the complete representation of the GUI as well as a natural language test description as the input.
-Tsung et al. present a workflow based on specifying test scripts in a structured, human-readable language that incorporates pictures. \cite{tsung}
-These scripts require very little technical knowledge and do not need to be changed as long as the visuals of the UI elements remain the same.
-While not using natural language and changes in the UI can still require the script, they mitigate some of the disadvantages of regular test scripts.
-Harris et al. propose DRIFT, a framework to navigate through an AUT while triggering previously specified software functionalities.\cite{harries2020drift}
-DRIFT operates on a symbolic representation of the GUI and employs Q-Learning with Graph Neural Networks. However, this process relies on observing function calls of the AUT, and defining tests requires technical knowledge of the AUT's internals.
-This work follows Zimmermann’s and Koziolek’s approach \cite{GPT3Testing} of using a structured representation of the AUT’s GUI together with a natural language test description as a prompt to an LLM model. They evaluate their approach on a simplistic application consisting of a view of toggleable buttons and a variety of test descriptions. This work aims  to develop and validate an automated pipeline that uses the same approach on general GUI-based web applications using HTML.
+Unseres Wissens nach gibt es bisher keine weiteren ähnlichen Arbeiten.
+In neueren Literaturübersichten wird zwar Linguistische Sprachverarbeitung als Werkzeug für das Testen von Software aufgeführt, aber keine der beiden Anwendungen wird als Beispiel für ihren Einsatz genannt. \cite{implementation_verma_2023, machine_fontes_2021}
+Eskonen et al. verwenden bildbasiertes Deep Reinforcement Learning, um zu imitieren, wie Menschen die zu testende Anwendung erkunden. \cite{deep_reinforcement_exploring}
+Auf ähnliche Weise nutzen Saber et al. Computer Vision, um Anwendungszustände und Interaktionselemente aus Screenshots zu extrahieren, und verwenden dann Deep Q-Learning, um alle Anwendungszustände effizient zu erforschen. 
+Diese Ansätze machen zwar menschliche Interaktion überflüssig und sind auf jede GUI-basierte Anwendung anwendbar, ermöglichen aber nicht die automatische Abarbeitung von natürlichsprachlichen Designer-Testfällen. \cite{saber_testing}
+Khaliq et al. verwenden ein ähnliches System wie das in dieser Arbeit vorgeschlagene: Sie übergeben kurze textuelle Beschreibungen der Benutzeroberfläche an ein LLM, das eine Sequenz von Benutzeraktionen generiert, die von diesem Zustand aus zu verfolgen sind. \cite{transformers_exploratory}
+Neuere LLMs mit erhöhter maximaler Prompt-Größe erlauben es uns jetzt aber, die vollständige Repräsentation der GUI sowie eine natürlichsprachliche Testbeschreibung als Eingabe zu verwenden.
+Tsung et al. stellen einen Arbeitsablauf vor, der auf der Spezifikation von Testskripten in einer strukturierten, für den Menschen lesbaren Sprache basiert, die auch Bilder enthält. \cite{tsung}
+Diese Skripte sind mit sehr wenig technischem Wissen verständlich und müssen nicht geändert werden, solange die visuellen Elemente der Benutzeroberfläche gleich bleiben.
+Auch wenn keine natürliche Sprache verwendet wird und Änderungen an der Benutzeroberfläche immer noch Änderungen am Skript erforderlich machen können, werden einige Nachteile regulärer Testskripte beseitigt.
+Harris et al. schlagen DRIFT vor, ein Framework zur Navigation durch eine zu testende Anwendung bei der zuvor spezifizierte Softwarefunktionen ausgelöst werden sollen. \cite{harries2020drift}
+DRIFT arbeitet mit einer symbolischen Darstellung der Benutzeroberfläche und verwendet Q-Learning mit Graph Neural Networks.
+Dieser Prozess setzt jedoch die Beobachtung von Funktionsaufrufen der zu testenden Anwendung voraus, und die Definition von Tests erfordert technische Kenntnisse über die Interna der Anwendung.
+
+Diese Arbeit folgt dem Ansatz von Zimmermann und Koziolek \cite{GPT3Testing}, eine strukturierte Darstellung der Benutzeroberfläche der zu testenden Anwendung zusammen mit einer natürlichsprachlichen Testbeschreibung als Prompt für ein LLM-Modell zu verwenden.
+Sie evaluieren ihren Ansatz anhand einer sehr einfachen Anwendung, die aus einer Ansicht mit Knöpfen besteht und einer Vielzahl von Testbeschreibungen.
+Diese Arbeit zielt darauf ab, eine automatisierte Pipeline zu entwickeln und zu validieren, die den gleichen Ansatz für allgemeine GUI-basierte Webanwendungen mit HTML verwendet.
 
 \chapter{Foundations}
 \label{ch:SecondContent}
