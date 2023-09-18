@@ -79,25 +79,33 @@ The same setup will be evaluated with different test descriptions and language m
 As part of this thesis, a custom demo application will serve as the application under test.
 This demo application will mimic a real-world web shop application, where users can interact with various elements such as product listings, shopping carts, checkout processes, and user profiles.
 This will allow testing the approach under realistic circumstances with diverse GUI elements, transactional workflows, and data validation.
-In order to save time, the demo application will be implemented using an open-source web shop template, which will be modified to include additional features and functionality for validation.
-Multiple open-source web shop templates have been screened for their suitability for this purpose as described in table \ref{tab:webshop_templates}.
+To save time, the demo application will be implemented using an open-source webshop template, which will be modified to include additional features and functionality for validation.
+Multiple open-source web shop projects have been screened for their suitability for this purpose as described in table \ref{tab:webshop_projects}.
+Of these templates, EverShop has been chosen as the basis for the demo application, as it is the most actively maintained, is intended to be used commercially, and is licensed under the GNU General Public License, version 3.
 
 \begin{figure}[h]
-    \begin{center}
+    \centering
+    {
+        \scriptsize
         \begin{tabular}{ | l | l | l | l | l |}
             \hline
             \textbf{Template} & \textbf{Last Commit} & \textbf{License} & \textbf{Technology} & \textbf{Remark} \\ \hline
             \href{https://github.com/shashirajraja/shopping-cart}{Online Shopping Cart} & May 23 & Apache 2 & Java, Servlets, JSP, SQL & Demonstrational \\ \hline
             \href{https://github.com/sajalagrawal/LifestyleStore}{LifestyleStore} & Aug 20 & - & PHP, SQL & learning purpose \\ \hline
-            \href{https://github.com/petazeta/youronlineshop}{Your Online Shop} & Dec 22 & custom & nodejs, mongodb & - \\ \hline
-            \href{https://github.com/winston-dsouza/ecommerce-website}{Ecommerce-Website} & Feb 20 & MIT & PHP, SQL & no checkout, registration \\ \hline
+            \href{https://github.com/petazeta/youronlineshop}{Your Online Shop} & Dec 22 & custom & Node.js, MongoDB & - \\ \hline
+            \href{https://github.com/winston-dsouza/ecommerce-website}{Ecommerce-Website} & Feb 20 & MIT & PHP, SQL & no checkout / registration \\ \hline
             \href{https://github.com/amberkakkar01/Book-Hub}{Book-Hub} & Aug 21 & - & HTML & static pages \\ \hline
-            \href{https://github.com/dinushchathurya/online-shopping-site}{online-shopping-site} & May 19 & GPL3 & JavaScript & no server state \\ \hline
+            \href{https://github.com/dinushchathurya/online-shopping-site}{online-shopping-site} & May 19 & GPLv3 & JavaScript & no server state \\ \hline
             \href{https://github.com/RazaRizvii/Online-Fashion-Store}{Online-Fashion-Store} & Dec 22 & - & JavaScript & no server state \\ \hline
+            \href{https://github.com/nsk1512/online-shopping-website}{online-shopping-website} & Dec 19 & - & Node.js, MongoDB & - \\ \hline
+            \href{https://github.com/Prajwal100/ketra-mart-free}{Ketra-Mart} & Jun 23 & MIT & ? & source code against payment \\ \hline
+            \href{https://github.com/shuup/shuup}{Shuup} & Aug 21 & OSL & Python, SQL & Commercial, Multi-Vendor \\ \hline
+            \href{https://github.com/evershopcommerce/evershop}{EverShop} & Sep 23 & GPLv3 & Node.js, SQL & - \\ \hline
+            \href{https://github.com/hasan-py/MERN_Stack_Project_Ecommerce_Hayroo}{Hayroo} & May 23 & - & Node.js, MongoDB & - \\ \hline
         \end{tabular}
-    \end{center}
-    \caption{Open-source web shop templates that were screened for suitability for this thesis}
-    \label{tab:webshop_templates}
+    }
+    \caption{Open-source web shop projects that were screened for suitability for this thesis}
+    \label{tab:webshop_projects}
 \end{figure}
 
 \section{Validation}
