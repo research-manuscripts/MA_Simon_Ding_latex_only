@@ -1,0 +1,180 @@
+%% LaTeX2e class for student theses
+%% sections/content.tex
+%% 
+%% Karlsruhe Institute of Technology
+%% Institute for Program Structures and Data Organization
+%% Chair for Software Design and Quality (SDQ)
+%%
+%% Dr.-Ing. Erik Burger
+%% burger@kit.edu
+%%
+%% Version 1.3.6, 2022-09-28
+
+\chapter{Related Work}
+\label{ch:FirstContent}
+
+The goal of this thesis is to create an automated system that tests a web application using only a set of natural language test cases.
+This means that system has to follow natural language test descriptions, which is a natural language task that was previously explored in \cite{GPT3Testing}.
+This work shall be a continuation of this effort to test the approach on a more complex data set.
+Additionally, this work will also try to use LLMs to act as a test oracle using the same approach.
+
+To the best of our knowledge, no more similar works exist yet.
+Recent literature reviews do list natural language processing as a tool used in software testing, but do not mention either task as an example of its use. \cite{implementation_verma_2023, machine_fontes_2021}
+Eskonen et al. use image-based Deep Reinforcement Learning to mimic how humans explore the AUT. \cite{deep_reinforcement_exploring}
+Similarly, Saber et al. use Computer Vision to extract application states and interactive elements from screenshots and then use Deep Q-Learning to cover all efficiently cover application states. While these approaches eliminate the need for human interaction and are applicable to any GUI-based application, they do not enable the automatic following of natural language designer test cases. \cite{saber_testing}
+Khaliq et al. use a similar setup as the one proposed in this work: They feed short textual descriptions of the GUI to an LLM that generates a sequence of user actions to pursue from that state. \cite{transformers_exploratory}
+Now, LLMs with increased maximal prompt sizes allow us to use the complete representation of the GUI as well as a natural language test description as the input.
+Tsung et al. present a workflow based on specifying test scripts in a structured, human-readable language that incorporates pictures. \cite{tsung}
+These scripts require very little technical knowledge and do not need to be changed as long as the visuals of the UI elements remain the same.
+While not using natural language and changes in the UI can still require the script, they mitigate some of the disadvantages of regular test scripts.
+Harris et al. propose DRIFT, a framework to navigate through an AUT while triggering previously specified software functionalities.\cite{harries2020drift}
+DRIFT operates on a symbolic representation of the GUI and employs Q-Learning with Graph Neural Networks. However, this process relies on observing function calls of the AUT, and defining tests requires technical knowledge of the AUT's internals.
+This work follows Zimmermann’s and Koziolek’s approach \cite{GPT3Testing} of using a structured representation of the AUT’s GUI together with a natural language test description as a prompt to an LLM model. They evaluate their approach on a simplistic application consisting of a view of toggleable buttons and a variety of test descriptions. This work aims  to develop and validate an automated pipeline that uses the same approach on general GUI-based web applications using HTML.
+
+\chapter{Foundations}
+\label{ch:SecondContent}
+
+\section{GUI Testing}
+\label{sec:SecondContent:FirstSection}
+Software testing is a critical process in the development of software. It involves evaluating a software application or system to detect any defects or errors that may affect its functionality, reliability, or performance. The goal of software testing is to ensure that the software meets the specified requirements and performs as expected. There are various types of software testing techniques, including unit testing, integration testing, system testing, and acceptance testing. Testing a system while only accessing it's graphical user interface (GUI) is called GUI-based testing. It is often executed by software testers or quality assurance professionals, who use a combination of manual and automated testing methods to identify defects and ensure that the software meets the desired quality standards. Manual testing is a common approach used in GUI-based system testing, where testers manually execute test cases, simulate user actions, and record observations and feedback. Automated testing tools, such as Selenium and Appium, can also be used to automate GUI-based system testing, which can help increase the efficiency and accuracy of the testing process.
+GUI testing can be broadly split into exploratory testing and testing based on designer test cases. In exploratory testing, the goal is usually to find paths in the AUT that can lead to crashes. A basic technique for exploratory testing that can easily be automatized is monkey testing, where random user actions are chosen. In contrast, designer-specified tests are often a lot more costly. In order to automate them, programmers must derive a test script from the specification, which must be maintained as the GUI changes. This is a problem as the GUI is often the most rapidly changing part of a system.
+
+\subsection{Transformer Models}
+\label{subsec:SecondContent:SecondSection}
+Transformers are a class of deep learning models that have been shown to be highly effective for a wide range of natural language processing tasks, such as machine translation, text generation, and language modeling. They are based on a novel architecture that is distinct from traditional recurrent neural networks (RNNs) and convolutional neural networks (CNNs).
+The basic building block of a transformer model is the self-attention mechanism, which allows the model to focus on different parts of the input sequence during the encoding phase. This mechanism is designed to capture long-range dependencies in the input, which is particularly important for language understanding tasks.
+In a transformer model, the input sequence is first passed through a series of encoding layers, each of which consists of a self-attention module and a feedforward neural network. The self-attention module computes a set of attention weights for each position in the input sequence, which are used to compute a weighted sum of the input representations. This allows the model to attend to different parts of the input sequence based on their relevance to the current task.
+After the encoding layers, the output sequence is generated by a series of decoding layers, each of which also consists of a self-attention module and a feedforward neural network. The decoding layers allow the model to generate output sequences that are conditioned on the input sequence and any previously generated output tokens.
+One of the key advantages of transformer models is their ability to handle variable-length inputs and outputs, making them well-suited for natural language processing tasks. Additionally, they are highly parallelizable, which makes them efficient to train on modern hardware. 	
+Transformers have become the state-of-the-art approach for a wide range of natural language processing tasks, and they continue to be an active area of research. Some recent advances include techniques for training large-scale transformer models on large amounts of natural language data, where the output is the continuation of the output. These models are often referred to as Large Language Models (LLM).
+
+\subsection{Adequacy of Large Language Models}
+\label{subsec:SecondContent:ThirdSection}
+
+Large language models like GPT-3 can be used task-agnostically because they are trained on vast amounts of text data in an unsupervised manner. During training, the model learns to understand the underlying patterns and relationships in language, allowing it to generate coherent and contextually appropriate responses to a wide range of tasks without the need for task-specific training data.
+One key advantage of these models is their massive size, with GPT-3 containing 175 billion parameters.
+This allows them to capture a vast amount of linguistic knowledge and context.
+Because these models have been trained on such a large and diverse corpus of text, they are able to learn and generalize from patterns and relationships that are common across many different types of language use. This allows them to perform well on a wide variety of natural language processing tasks, such as language translation, sentiment analysis, and question answering, among others.
+The sheer number of parameters used in these models allows them to capture a wide range of linguistic features, from simple grammatical structures to more complex semantic relationships. By leveraging this large amount of training data and parameter space, these models are able to learn to represent language in a highly nuanced and contextually appropriate way, allowing them to perform well on a wide range of tasks without the need for additional training.
+Furthermore, GPT-3 has shown impressive capabilities in generating source code for computer programs, including JavaScript, Python, and SQL. As a language model trained on a massive amount of code and natural language data, ChatGPT can also generate source code with a high degree of accuracy and efficiency, making it a valuable tool for software development and automation tasks.
+As such LLMs appear to be adequate to process both the structured representation of an application’s GUI, as well as natural language test cases, and provide a description of what action to follow next.
+
+
+\chapter{Concept}
+
+The idea of this thesis is to implement an automated system for GUI-based software testing that uses language models to systematically test systems following predefined natural-language test descriptions.
+The natural language model will be prompted with a symbolic representation of the GUI’s state as well as the test description and asked to generate a user input to execute the test.
+It will then simulate the user input in the AUT and repeat.
+It will also be asked whether errors have occurred during the test execution.
+The same setup will be evaluated with different test descriptions and language models.
+
+\section{Demo Application}
+
+As part of this thesis, a custom demo application will serve as the application under test.
+This demo application will mimic a real-world web shop application, where users can interact with various elements such as product listings, shopping carts, checkout processes, and user profiles.
+This will allow testing the approach under realistic circumstances with diverse GUI elements, transactional workflows, and data validation.
+In order to save time, the demo application will be implemented using an open-source web shop template, which will be modified to include additional features and functionality for validation.
+Multiple open-source web shop templates have been screened for their suitability for this purpose as described in table \ref{tab:webshop_templates}.
+
+\begin{figure}[h]
+    \begin{center}
+        \begin{tabular}{ | l | l | l | l | l |}
+            \hline
+            \textbf{Template} & \textbf{Last Commit} & \textbf{License} & \textbf{Technology} & \textbf{Remark} \\ \hline
+            \href{https://github.com/shashirajraja/shopping-cart}{Online Shopping Cart} & May 23 & Apache 2 & Java, Servlets, JSP, SQL & Demonstrational \\ \hline
+            \href{https://github.com/sajalagrawal/LifestyleStore}{LifestyleStore} & Aug 20 & - & PHP, SQL & learning purpose \\ \hline
+            \href{https://github.com/petazeta/youronlineshop}{Your Online Shop} & Dec 22 & custom & nodejs, mongodb & - \\ \hline
+            \href{https://github.com/winston-dsouza/ecommerce-website}{Ecommerce-Website} & Feb 20 & MIT & PHP, SQL & no checkout, registration \\ \hline
+            \href{https://github.com/amberkakkar01/Book-Hub}{Book-Hub} & Aug 21 & - & HTML & static pages \\ \hline
+            \href{https://github.com/dinushchathurya/online-shopping-site}{online-shopping-site} & May 19 & GPL3 & JavaScript & no server state \\ \hline
+            \href{https://github.com/RazaRizvii/Online-Fashion-Store}{Online-Fashion-Store} & Dec 22 & - & JavaScript & no server state \\ \hline
+        \end{tabular}
+    \end{center}
+    \caption{Open-source web shop templates that were screened for suitability for this thesis}
+    \label{tab:webshop_templates}
+\end{figure}
+
+\section{Validation}
+
+As we know of no other approaches to doing scripted testing using only natural language test descriptions, comparing it to other works is hard.
+As such validation of this part of the work will center around its feasibility.
+The new system's ability to navigate the AUT will be compared to monkey testing.
+The test oracle part of the system will be validated using mutation testing and its results will be captured in a confusion matrix.
+
+\subsection{Comparison to monkey testing}
+
+Monkey testing is the approach of taking random user actions to find failing application states.
+We will measure if the system can successfully navigate the software into the state that shall be tested for each test case and count the number of user interactions it simulates.
+That amount of user interaction will be compared to the number of user interactions performed by a monkey tester to navigate to the same state.
+The system must at least use fewer user interactions as a monkey tester.
+
+\subsection{Mutation Testing}
+
+For each test instance, first, an error-free version of the demo application will be tested using the new system.
+In this case, it is expected to classify all test runs as 'pass' and a classification as 'failure' is a false negative.
+Then a different version of the demo application will be tested.
+This version will include an error that manifests if the test description is correctly followed.
+Testing that version the new system is expected to classify the test run as a 'failure' and a classification as 'pass' is a false positive.
+
+The artifact of this verification step is a confusion matrix, a contingency table that is common in the field of statistical classification.
+
+\section{Constraints}
+
+\begin{enumerate}
+    \item The AUTs are limited to web applications that render to HTML.
+    \item In the prompts to the LLM, the GUI of the AUT is represented as either HTML or JSON.
+    \item Optional: There will be no evaluation of prompt engineering  
+\end{enumerate}
+
+\section{Research Questions}
+
+\begin{enumerate}
+    \item Can LLMs understand HTML?
+    \item Feasibility of the approach
+    \item Do you need the whole document? / Advantage of “stripped tree”
+    \item Flakiness > Repeats necessary / how many?
+    \item Optional: Possibility and Accuracy of validation
+    \item Optional: Impact of prompt engineering?
+\end{enumerate}
+
+\chapter{Execution}
+
+\section{Riscs}
+
+\section{Schedule}
+
+\ganttset{%
+    calendar week text={%
+        \currentweek
+    }%
+}
+\begin{ganttchart}[hgrid,
+time slot format=isodate,
+    x unit=2pt,]{2023-06-12}{2023-12-11}
+    \gantttitlecalendar{year, month, week}\\
+    %\gantttitle{2023-06-12}{2024-01-1} \\
+    %\gantttitlelist{1,...,12}{1} \\
+    \ganttbar{Lit. Research}{2023-06-12}{2023-06-26} \\%2
+    \ganttgroup{Implementation}{2023-06-26}{2023-08-21} \\
+    \ganttbar{AUT}{2023-06-26}{2023-07-24} \\%4
+    \ganttbar{Implementation}{2023-07-24}{2023-08-21} \\%4
+    \ganttgroup{Validation}{2023-08-21}{2023-10-02} \\
+    \ganttbar{Design Tests}{2023-08-21}{2023-09-04} \\%2
+    \ganttbar{GPT3}{2023-09-04}{2023-09-11} \\%1
+    \ganttbar{GPT4}{2023-09-11}{2023-09-18} \\%1
+    \ganttbar{Monkey Testing}{2023-09-18}{2023-10-02} \\%2
+    %\ganttbar{open source GPT}{2023-10-09}{2023-10-23} \\
+    %\ganttbar{Monkey Testing}{2023-10-09}{2023-10-23} \\
+    \ganttgroup{Documentation}{2023-10-02}{2023-11-27} \\%4
+    \ganttbar{Writing}{2023-10-02}{2023-11-13} \\%6
+    \ganttbar{Finalize}{2023-11-13}{2023-11-27} \\%2
+    \ganttbar{Buffer}{2023-11-27}{2023-12-11}%2
+    %\ganttbar{Final Task}{8}{12}
+    %\ganttlink{elem2}{elem3}
+    %\ganttlink{elem3}{elem4}
+\end{ganttchart}
+
+
+%% ---------------------
+%% | / Example content |
+%% ---------------------
