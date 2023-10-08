@@ -1,0 +1,26 @@
+.Navbar {
+  position: sticky;
+  top: 0;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: rgb(231, 226, 221);
+  z-index: 1;
+}
+.Navbar-center {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+}
+.Navbar-icon {
+  font-size: 1.5rem;
+}
+.Navbar-cart-btn {
+  position: relative;
+  cursor: pointer;
+}

@@ -15,44 +15,44 @@
 
 Das Ziel dieser Arbeit ist es, ein automatisiertes System zu entwickeln, das eine Webanwendung nur mit einer Reihe von natürlichsprachlichen Testfällen testet.
 Das bedeutet, dass das System natürlichsprachlichen Testbeschreibungen folgen muss, einer Aufgabe im Feld der Linguistischen Sprachverarbeitung (Englisch: natural language processing, NLP).
-Dies wurde zuvor in \cite{GPT3Testing} untersucht.
+Dies wurde zuvor von \Citeauthor{GPT3Testing} untersucht \cite{GPT3Testing}.
 Diese Arbeit stellt eine Fortsetzung jener Arbeit dar, um den Ansatz in einem komplexeren Umfeld zu testen.
 Darüber hinaus wird in dieser Arbeit auch versucht, LLMs als Testorakel zu verwenden, wobei derselbe Ansatz verwendet wird.
 
 Unseres Wissens nach gibt es bisher keine weiteren ähnlichen Arbeiten.
-In neueren Literaturübersichten wird zwar Linguistische Sprachverarbeitung als Werkzeug für das Testen von Software aufgeführt, aber keine der beiden Anwendungen wird als Beispiel für ihren Einsatz genannt. \cite{implementation_verma_2023, machine_fontes_2021}
-Eskonen et al. verwenden bildbasiertes Deep Reinforcement Learning, um zu imitieren, wie Menschen die zu testende Anwendung erkunden. \cite{deep_reinforcement_exploring}
+In neueren Literaturübersichten wird zwar Linguistische Sprachverarbeitung als Werkzeug für das Testen von Software aufgeführt, aber keine der beiden Anwendungen wird als Beispiel für ihren Einsatz genannt \cite{implementation_verma_2023, machine_fontes_2021}.
+Eskonen et al. verwenden bildbasiertes Deep Reinforcement Learning, um zu imitieren, wie Menschen die zu testende Anwendung erkunden \cite{deep_reinforcement_exploring}.
 Auf ähnliche Weise nutzen Saber et al. Computer Vision, um Anwendungszustände und Interaktionselemente aus Screenshots zu extrahieren, und verwenden dann Deep Q-Learning, um alle Anwendungszustände effizient zu erforschen. 
-Diese Ansätze machen zwar menschliche Interaktion überflüssig und sind auf jede GUI-basierte Anwendung anwendbar, ermöglichen aber nicht die automatische Abarbeitung von natürlichsprachlichen Designer-Testfällen. \cite{saber_testing}
-Khaliq et al. verwenden ein ähnliches System wie das in dieser Arbeit vorgeschlagene: Sie übergeben kurze textuelle Beschreibungen der Benutzeroberfläche an ein LLM, das eine Sequenz von Benutzeraktionen generiert, die von diesem Zustand aus zu verfolgen sind. \cite{transformers_exploratory}
-Neuere LLMs mit erhöhter maximaler Prompt-Größe erlauben es uns jetzt aber, die vollständige Repräsentation der GUI sowie eine natürlichsprachliche Testbeschreibung als Eingabe zu verwenden.
-Tsung et al. stellen einen Arbeitsablauf vor, der auf der Spezifikation von Testskripten in einer strukturierten, für den Menschen lesbaren Sprache basiert, die auch Bilder enthält. \cite{tsung}
+Diese Ansätze machen zwar menschliche Interaktion überflüssig und sind auf jede GUI-basierte Anwendung anwendbar, ermöglichen aber nicht die automatische Abarbeitung von natürlichsprachlichen Designer-Testfällen \cite{saber_testing}.
+Khaliq et al. verwenden ein ähnliches System wie das in dieser Arbeit vorgeschlagene: Sie übergeben kurze textuelle Beschreibungen der Benutzeroberfläche an ein LLM, das eine Sequenz von Benutzeraktionen generiert, die von diesem Zustand aus zu verfolgen sind \cite{transformers_exploratory}.
+Neuere LLMs mit erhöhter maximaler Prompt-Größe erlauben es uns jetzt aber, die vollständige Repräsentation der grafischen Benutzeroberfläche (Englisch: graphical user interface, GUI) sowie eine natürlichsprachliche Testbeschreibung als Eingabe zu verwenden.
+Tsung et al. stellen einen Arbeitsablauf vor, der auf der Spezifikation von Testskripten in einer strukturierten, für den Menschen lesbaren Sprache basiert, die auch Bilder enthält \cite{tsung}.
 Diese Skripte sind mit sehr wenig technischem Wissen verständlich und müssen nicht geändert werden, solange die visuellen Elemente der Benutzeroberfläche gleich bleiben.
 Auch wenn keine natürliche Sprache verwendet wird und Änderungen an der Benutzeroberfläche immer noch Änderungen am Skript erforderlich machen können, werden einige Nachteile regulärer Testskripte beseitigt.
-Harris et al. schlagen DRIFT vor, ein Framework zur Navigation durch eine zu testende Anwendung bei der zuvor spezifizierte Softwarefunktionen ausgelöst werden sollen. \cite{harries2020drift}
+Harris et al. schlagen DRIFT vor, ein Framework zur Navigation durch eine zu testende Anwendung bei der zuvor spezifizierte Softwarefunktionen ausgelöst werden sollen \cite{harries2020drift}.
 DRIFT arbeitet mit einer symbolischen Darstellung der Benutzeroberfläche und verwendet Q-Learning mit Graph Neural Networks.
 Dieser Prozess setzt jedoch die Beobachtung von Funktionsaufrufen der zu testenden Anwendung voraus, und die Definition von Tests erfordert technische Kenntnisse über die Interna der Anwendung.
 
-Diese Arbeit folgt dem Ansatz von Zimmermann und Koziolek \cite{GPT3Testing}, eine strukturierte Darstellung der Benutzeroberfläche der zu testenden Anwendung zusammen mit einer natürlichsprachlichen Testbeschreibung als Prompt für ein LLM-Modell zu verwenden.
+Diese Arbeit folgt dem Ansatz von \Citeauthor{GPT3Testing}, eine strukturierte Darstellung der Benutzeroberfläche der zu testenden Anwendung zusammen mit einer natürlichsprachlichen Testbeschreibung als Prompt für ein LLM-Modell zu verwenden \cite{GPT3Testing}.
 Sie evaluieren ihren Ansatz anhand einer sehr einfachen Anwendung, die aus einer Ansicht mit Knöpfen besteht und einer Vielzahl von Testbeschreibungen.
 Diese Arbeit zielt darauf ab, eine automatisierte Pipeline zu entwickeln und zu validieren, die den gleichen Ansatz für allgemeine GUI-basierte Webanwendungen mit HTML verwendet.
 
 \chapter{Foundations}
 \label{ch:SecondContent}
 
-\section{GUI-basiertes Testen}
+\section{GUI-basierte Systemtests}
 \label{sec:SecondContent:FirstSection}
 Softwaretests sind ein wesentlicher Bestandteil der Softwareentwicklung.
 Er umfasst die Bewertung einer Softwareanwendung oder eines Systems, um etwaige Mängel oder Fehler zu erkennen, die die Funktionalität, Zuverlässigkeit oder Leistung beeinträchtigen könnten.
 Das Ziel von Softwaretests ist es, sicherzustellen, dass die Software wie erwartet funktioniert und die festgelegten Anforderungen erfüllt.
 Es gibt verschiedene Arten von Softwaretests, darunter Unit-Tests, Integrations-Tests, Systemtests und Akzeptanztests.
-Das Testen eines Systems, bei dem nur auf die grafische Benutzeroberfläche (GUI) zugegriffen wird, nennt man GUI-basiertes Testen.
+Das Testen eines GUI-basierten Systems, bei dem nur auf die GUI zugegriffen wird, nennen wir einen GUI-basierten Systemtest oder GUI-Test.
 Es wird oft von Software-Testern oder Qualitätssicherungsexperten durchgeführt, die eine Kombination aus manuellen und automatisierten Testmethoden benutzen, um Fehler zu erkennen und sicherzustellen, dass die Software die gewünschten Qualitätsstandards erfüllt.
 Manuelle Tests sind ein gängiger Ansatz für GUI-basierte Systemtests, bei denen Tester Testfälle manuell ausführen, Benutzeraktionen simulieren und Beobachtungen und Feedback aufzeichnen.
-Es können auch automatisierte Testtools wie Selenium und Appium verwendet werden, um GUI-basierte Systemtests zu automatisieren, wodurch die Effizienz und Genauigkeit des Testprozesses erhöht werden kann.
+Es können auch automatisierte Testtools wie Selenium und Appium verwendet werden, um GUI-Tests zu automatisieren, wodurch die Effizienz und Genauigkeit des Testprozesses erhöht werden kann.
 
-GUI-basiertes Testen kann grob in exploratives Testen und Testen auf der Grundlage von Designer-Testfällen unterteilt werden.
-Beim explorativen Testen besteht das Ziel in der Regel darin, Pfade in der AUT zu finden, die zu Abstürzen führen.
+GUI-Tests können grob in exploratives Testen und Testen auf der Grundlage von Designer-Testfällen unterteilt werden.
+Beim explorativen Testen besteht das Ziel in der Regel darin, Pfade in der zu testenden Anwendung (Englisch: application under test, AUT) zu finden, die zu Abstürzen führen.
 Eine grundlegende Technik für exploratives Testen, die leicht automatisiert werden kann, ist das Monkey-Testing, bei dem zufällige Benutzeraktionen simuliert werden.
 Im Gegensatz dazu sind Tests, die von Designern spezifiziert werden, oft sehr viel kostspieliger.
 Um diese zu automatisieren, müssen die Programmierer aus der Spezifikation ein Testskripte ableiten, die parallel zu Änderungen an der grafischen Benutzeroberfläche gewartet werden müssen.
@@ -105,28 +105,30 @@ Multiple open-source web shop projects have been screened for their suitability 
 Of these templates, EverShop has been chosen as the basis for the demo application, as it is the most actively maintained, is intended to be used commercially, and is licensed under the GNU General Public License, version 3.
 
 \begin{figure}[h]
-    \centering
-    {
-        \scriptsize
-        \begin{tabular}{ | l | l | l | l | l |}
-            \hline
-            \textbf{Template} & \textbf{Last Commit} & \textbf{License} & \textbf{Technology} & \textbf{Remark} \\ \hline
-            \href{https://github.com/shashirajraja/shopping-cart}{Online Shopping Cart} & May 23 & Apache 2 & Java, Servlets, JSP, SQL & Demonstrational \\ \hline
-            \href{https://github.com/sajalagrawal/LifestyleStore}{LifestyleStore} & Aug 20 & - & PHP, SQL & learning purpose \\ \hline
-            \href{https://github.com/petazeta/youronlineshop}{Your Online Shop} & Dec 22 & custom & Node.js, MongoDB & - \\ \hline
-            \href{https://github.com/winston-dsouza/ecommerce-website}{Ecommerce-Website} & Feb 20 & MIT & PHP, SQL & no checkout / registration \\ \hline
-            \href{https://github.com/amberkakkar01/Book-Hub}{Book-Hub} & Aug 21 & - & HTML & static pages \\ \hline
-            \href{https://github.com/dinushchathurya/online-shopping-site}{online-shopping-site} & May 19 & GPLv3 & JavaScript & no server state \\ \hline
-            \href{https://github.com/RazaRizvii/Online-Fashion-Store}{Online-Fashion-Store} & Dec 22 & - & JavaScript & no server state \\ \hline
-            \href{https://github.com/nsk1512/online-shopping-website}{online-shopping-website} & Dec 19 & - & Node.js, MongoDB & - \\ \hline
-            \href{https://github.com/Prajwal100/ketra-mart-free}{Ketra-Mart} & Jun 23 & MIT & ? & source code against payment \\ \hline
-            \href{https://github.com/shuup/shuup}{Shuup} & Aug 21 & OSL & Python, SQL & Commercial, Multi-Vendor \\ \hline
-            \href{https://github.com/evershopcommerce/evershop}{EverShop} & Sep 23 & GPLv3 & Node.js, SQL & - \\ \hline
-            \href{https://github.com/hasan-py/MERN_Stack_Project_Ecommerce_Hayroo}{Hayroo} & May 23 & - & Node.js, MongoDB & - \\ \hline
-        \end{tabular}
-    }
-    \caption{Open-source web shop projects that were screened for suitability for this thesis}
     \label{tab:webshop_projects}
+    \begin{minipage}[c]{\textwidth}
+        \centering
+        {
+            \scriptsize
+            \begin{tabular}{ | l | l | l | l | l |}
+                \hline
+                \textbf{Template} & \textbf{Last Commit} & \textbf{License} & \textbf{Technology} & \textbf{Remark} \\ \hline
+                Online Shopping Cart\footnote{\url{https://github.com/shashirajraja/shopping-cart}} & May 23 & Apache 2 & Java, Servlets, JSP, SQL & Demonstrational \\ \hline
+                LifestyleStore\footnote{\url{https://github.com/sajalagrawal/LifestyleStore}} & Aug 20 & - & PHP, SQL & learning purpose \\ \hline
+                Your Online Shop\footnote{\url{https://github.com/petazeta/youronlineshop}} & Dec 22 & custom & Node.js, MongoDB & - \\ \hline
+                Ecommerce-Website\footnote{\url{https://github.com/winston-dsouza/ecommerce-website}} & Feb 20 & MIT & PHP, SQL & no checkout / registration \\ \hline
+                Book-Hub\footnote{\url{https://github.com/amberkakkar01/Book-Hub}} & Aug 21 & - & HTML & static pages \\ \hline
+                online-shopping-site\footnote{\url{https://github.com/dinushchathurya/online-shopping-site}} & May 19 & GPLv3 & JavaScript & no server state \\ \hline
+                Online-Fashion-Store\footnote{\url{https://github.com/RazaRizvii/Online-Fashion-Store}} & Dec 22 & - & JavaScript & no server state \\ \hline
+                online-shopping-website\footnote{\url{https://github.com/nsk1512/online-shopping-website}} & Dec 19 & - & Node.js, MongoDB & - \\ \hline
+                Ketra-Mart\footnote{\url{https://github.com/Prajwal100/ketra-mart-free}} & Jun 23 & MIT & ? & source code against payment \\ \hline
+                Shuup\footnote{\url{https://github.com/shuup/shuup}} & Aug 21 & OSL & Python, SQL & Commercial, Multi-Vendor \\ \hline
+                EverShop\footnote{\url{https://github.com/evershopcommerce/evershop}} & Sep 23 & GPLv3 & Node.js, SQL & - \\ \hline
+                Hayroo\footnote{\url{https://github.com/hasan-py/MERN_Stack_Project_Ecommerce_Hayroo}} & May 23 & - & Node.js, MongoDB & - \\ \hline
+            \end{tabular}
+        }
+    \end{minipage}
+    \caption{Open-source web shop projects that were screened for suitability for this thesis}
 \end{figure}
 
 \section{Validation}
