@@ -3,8 +3,8 @@ import React from "react";
 export interface Product {
     sys: { "id": string },
     fields: {
-        title: "Galaxy S10 5G",
-        price: 910.99,
+        title: string,
+        price: number,
         image: { fields: { file: { url: string } } }
     }
 }
