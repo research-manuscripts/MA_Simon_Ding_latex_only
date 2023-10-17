@@ -3,19 +3,30 @@ import "../App.css";
 import "./Products.css";
 import { ProductContext } from "../ProductProvider";
 import { CartContext } from "../CartProvider";
+import { optional } from "../Optional";
+import Optional from "optional-js";
 
-function Products() {
+function Products({ category }: { category?: string }) {
     const catalog = React.useContext(ProductContext);
     const cart = React.useContext(CartContext);
 
     return (
         <section className="Products">
             <div className="Products-section-title">
-                <h2>Our Products</h2>
+                <h2>
+                    {
+                        (!catalog.loading
+                        && Optional.ofNullable(category)
+                            .flatMap(category => Optional.ofNullable(catalog.categories.find(x => x.sys.id === category)))
+                            .map(x => <>{x.fields.title} {x.fields.description && <small>{'- ' + x.fields.description}</small>}</>)
+                            .orElse(undefined as any))
+                        || 'Our Products'
+                    }
+                </h2>
             </div>
             <div className="Products-center">
                 {
-                    catalog.loading ? <h1>Loading...</h1> : catalog.products.map(product => {
+                    catalog.loading ? <h1>Loading...</h1> : catalog.products.filter(product => !category || product.fields.categories.includes(category)).map(product => {
                         return (
                             <article className="Products-product" key={product.sys.id}>
                                 <div className="Products-img-container">

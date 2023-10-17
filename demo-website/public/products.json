@@ -4,6 +4,10 @@
       "sys": { "id": "1" },
       "fields": {
         "title": "Galaxy S10 5G",
+        "categories": [
+          "galaxy",
+          "s10"
+        ],
         "price": 910.99,
         "image": { "fields": { "file": { "url": "./images/product-1.jpeg" } } }
       }
@@ -12,6 +16,10 @@
       "sys": { "id": "2" },
       "fields": {
         "title": "Galaxy S10+",
+        "categories": [
+          "galaxy",
+          "s10"
+        ],
         "price": 812.99,
         "image": { "fields": { "file": { "url": "./images/product-2.jpeg" } } }
       }
@@ -20,6 +28,10 @@
       "sys": { "id": "3" },
       "fields": {
         "title": "Galaxy S10",
+        "categories": [
+          "galaxy",
+          "s10"
+        ],
         "price": 712.99,
         "image": { "fields": { "file": { "url": "./images/product-3.jpeg" } } }
       }
@@ -28,6 +40,10 @@
       "sys": { "id": "4" },
       "fields": {
         "title": "Galaxy S10e",
+        "categories": [
+          "galaxy",
+          "s10"
+        ],
         "price": 622.99,
         "image": { "fields": { "file": { "url": "./images/product-4.jpeg" } } }
       }
@@ -36,6 +52,10 @@
       "sys": { "id": "5" },
       "fields": {
         "title": "Galaxy A2 Core",
+        "categories": [
+          "galaxy",
+          "a_series"
+        ],
         "price": 688.99,
         "image": { "fields": { "file": { "url": "./images/product-5.jpeg" } } }
       }
@@ -44,6 +64,10 @@
       "sys": { "id": "6" },
       "fields": {
         "title": "Galaxy M30",
+        "categories": [
+          "galaxy",
+          "m_series"
+        ],
         "price": 532.99,
         "image": { "fields": { "file": { "url": "./images/product-6.jpeg" } } }
       }
@@ -52,6 +76,10 @@
       "sys": { "id": "7" },
       "fields": {
         "title": "Galaxy M20",
+        "categories": [
+          "galaxy",
+          "m_series"
+        ],
         "price": 545.99,
         "image": { "fields": { "file": { "url": "./images/product-7.jpeg" } } }
       }
@@ -60,6 +88,10 @@
       "sys": { "id": "8" },
       "fields": {
         "title": "Galaxy M10",
+        "categories": [
+          "galaxy",
+          "m_series"
+        ],
         "price": 440.99,
         "image": { "fields": { "file": { "url": "./images/product-8.jpeg" } } }
       }
@@ -70,6 +102,10 @@
       },
       "fields": {
         "title": "Galaxy A80",
+        "categories": [
+          "galaxy",
+          "a_series"
+        ],
         "price": 386.99,
         "image": {
           "fields": {
@@ -86,6 +122,10 @@
       },
       "fields": {
         "title": "Galaxy A70",
+        "categories": [
+          "galaxy",
+          "a_series"
+        ],
         "price": 378.99,
         "image": {
           "fields": {
@@ -102,6 +142,10 @@
       },
       "fields": {
         "title": "Galaxy A60",
+        "categories": [
+          "galaxy",
+          "a_series"
+        ],
         "price": 289.99,
         "image": {
           "fields": {
@@ -118,6 +162,10 @@
       },
       "fields": {
         "title": "Galaxy A30",
+        "categories": [
+          "galaxy",
+          "a_series"
+        ],
         "price": 248.99,
         "image": {
           "fields": {
@@ -126,6 +174,45 @@
             }
           }
         }
+      }
+    }
+  ],
+  "categories": [
+    {
+      "sys": {
+        "id": "galaxy"
+      },
+      "fields": {
+        "title": "Galaxy"
+      }
+    },
+    {
+      "sys": {
+        "id": "s10"
+      },
+      "fields": {
+        "title": "S10",
+        "description": "The fastest phones with the best cameras."
+      }
+    },
+    {
+      "sys": {
+        "id": "m_series"
+      },
+      "fields": {
+        "description": "Affordable phones with great battery life.",
+        "title": "M Series",
+        "slug": "m_series"
+      }
+    },
+    {
+      "sys": {
+        "id": "a_series"
+      },
+      "fields": {
+        "title": "A Series",
+        "description": "Phones for everyone.",
+        "slug": "a_series"
       }
     }
   ]

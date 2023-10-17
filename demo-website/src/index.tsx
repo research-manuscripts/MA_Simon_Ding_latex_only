@@ -3,13 +3,30 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { HashRouter as Router, Route, Routes, useParams } from 'react-router-dom';
+import Hero from './components/Hero';
+import Products from './components/Products';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
+function ProductWrapper() {
+  const category = useParams().category as string;
+  return <Products category={category} />;
+}
+
 root.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Routes>
+        <Route path='/' element={<App />}>
+          <Route path="" element={<><Hero /><Products category='s10' /></>} />
+          <Route path="c/:category" element={<ProductWrapper />} />
+          <Route path="checkout" element={<>Checkout Page</>} />
+        </Route>
+      </Routes>
+    </Router>
   </React.StrictMode>
 );
 
