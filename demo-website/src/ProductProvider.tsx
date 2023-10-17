@@ -21,7 +21,6 @@ export interface Category {
     fields: {
         title: string,
         description?: string,
-        image: { fields: { file: { url: string } } }
     }
 }
 
