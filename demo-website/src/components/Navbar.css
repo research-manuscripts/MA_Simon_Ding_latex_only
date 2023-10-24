@@ -1,26 +1,57 @@
 .Navbar {
+  width: 100%;
   position: sticky;
   top: 0;
-  min-height: 60px;
+  background: rgb(231, 226, 221);
+  z-index: 1;
+  transition: var(--mainTransition);
+  overflow-y: hidden;
+  height: 60px;
+}
+
+.Navbar.visible {
+  transition: var(--mainTransition);
+  height: 120px;
+}
+
+.Top-row {
+  height: 60px;
   width: 100%;
   display: flex;
   align-items: center;
-  background: rgb(231, 226, 221);
-  z-index: 1;
   flex-wrap: wrap;
 }
 
 .Navbar>menu {
-  display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   width: 100%;
+  padding: 0;
+  display: flex;
+}
+
+.Navbar>menu.visible {
+  display: flex;
 }
 
 .Navbar>menu>li {
   display: inline-block;
-  margin-left: 10px;
   width: 100%;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  padding: 0 0.5rem 1rem 0.5rem;
+}
+
+.Navbar>menu>li>a {
+  text-decoration: none;
+  color: var(--mainBlack);
+  line-height: 105%;
+}
+
+.Navbar>menu>li>a.active {
+  font-weight: bolder;
+  cursor: auto;
 }
 
 .Navbar-center {
@@ -35,6 +66,7 @@
 
 .Navbar-icon {
   font-size: 1.5rem;
+  cursor: pointer;
 }
 
 .Navbar-cart-btn {

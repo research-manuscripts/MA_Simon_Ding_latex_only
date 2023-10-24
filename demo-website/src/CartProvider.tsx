@@ -10,6 +10,7 @@ export interface LoadedCartContext {
     removeAllFromCart: (product: Product) => void;
     isItemInCart: (product: Product) => boolean;
     clearCart: () => void;
+    total: number;
     show(): void;
     hide(): void;
 }
@@ -66,8 +67,12 @@ export const CartProvider: React.FC<React.PropsWithChildren<{}>> = ({ children }
 
     const hide = () => setShowCart(false);
 
+    const total = React.useMemo(() => {
+        return Object.values(cart).reduce((total, item) => total + item.quantity * item.product.fields.price, 0);
+    }, [cart]);
+
     return (
-        <CartContext.Provider value={{ cart, showCart, addToCart, removeFromCart, isItemInCart, removeAllFromCart, clearCart, show, hide, loading: false }}>
+        <CartContext.Provider value={{ total, cart, showCart, addToCart, removeFromCart, isItemInCart, removeAllFromCart, clearCart, show, hide, loading: false }}>
             {children}
         </CartContext.Provider>
     );

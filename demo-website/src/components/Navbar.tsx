@@ -1,4 +1,4 @@
-import React, { useContext, useMemo } from 'react';
+import React, { useContext, useMemo, useState } from 'react';
 import './Navbar.css';
 import './Cart.css'
 import { CartContext } from '../CartProvider';
@@ -6,9 +6,10 @@ import { ProductContext } from '../ProductProvider';
 import { NavLink } from 'react-router-dom';
 import { NavLinkProps } from 'react-router-dom';
 
-const dynLink: React.FC<React.PropsWithChildren<{to: NavLinkProps['to']}>> = ({children, to}) => <NavLink to={to} children={children} />
+const dynLink: React.FC<React.PropsWithChildren<{to: NavLinkProps['to']}>> = ({children, to}) => <NavLink to={to} children={children} className={({ isActive }) => isActive ? 'active' : ''} />
 
 function Navbar() {
+  const [menuVisible, setMenuVisible] = useState(false);
   const cart = useContext(CartContext);
   const cartTotal = useMemo(() => {
     if (cart.loading) {
@@ -27,9 +28,10 @@ function Navbar() {
   }, [products]);
 
   return (
-    <nav className="Navbar">
+    <nav className={"Navbar" + (menuVisible ? ' visible' : '')}>
+      <div className="Top-row">
         <div className="Navbar-center">
-           <span className="Navbar-icon">
+           <span className="Navbar-icon" onClick={() => setMenuVisible(!menuVisible)}>
                <i className="fas fa-bars"></i>
            </span> 
            
@@ -40,10 +42,13 @@ function Navbar() {
           <div className="cart-items">{ cartTotal }</div>
             </div>
         </div>
-        <menu>
-          <li><NavLink to="/">Home</NavLink></li>
-          { categories.map(x => <li><NavLink to={`c/${x.sys.id}`}>{x.fields.title}</NavLink></li>)}
-        </menu>
+      </div>
+      
+      { <menu className={menuVisible ? 'visible' : ''}>
+        <li><NavLink to="/">Home</NavLink></li>
+        { categories.map(x => <li><NavLink to={`c/${x.sys.id}`}>{x.fields.title}</NavLink></li>)}
+      </menu> }
+      
     </nav>
   );
 }

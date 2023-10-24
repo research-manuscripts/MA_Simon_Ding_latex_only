@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { HashRouter as Router, Route, Routes, useParams } from 'react-router-dom';
 import Hero from './components/Hero';
 import Products from './components/Products';
+import { Checkout } from './components/Checkout';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -23,7 +24,7 @@ root.render(
         <Route path='/' element={<App />}>
           <Route path="" element={<><Hero /><Products category='s10' /></>} />
           <Route path="c/:category" element={<ProductWrapper />} />
-          <Route path="checkout" element={<>Checkout Page</>} />
+          <Route path="checkout" element={<Checkout />} />
         </Route>
       </Routes>
     </Router>
