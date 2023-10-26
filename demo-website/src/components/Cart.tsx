@@ -3,6 +3,8 @@ import "./Cart.css";
 import "./BannerButton.css";
 import { CartContext } from "../CartProvider";
 import { CartItemComponent } from "./CartItem";
+import { Link } from "react-router-dom";
+import { currencyFormat } from "../I18n";
 
 /*
 <div class="cart-overlay">
@@ -26,8 +28,6 @@ import { CartItemComponent } from "./CartItem";
 </div>
 */
 
-const usdFormat = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
-
 function Cart() {
     const cart = React.useContext(CartContext);
 
@@ -37,8 +37,8 @@ function Cart() {
         console.log(cart, visible);
     }, [cart, visible]);
 
-    return <>{ !cart.loading && <div className={ 'cart-overlay' + (visible ? ' transparentBcg' : '') }>
-        <div className={ 'cart' + (visible ? ' showCart' : '')}>
+    return <>{ !cart.loading && <div className={ 'cart-overlay' + (visible ? ' transparentBcg' : '') } onClick={() => cart.hide()}>
+        <div className={ 'cart' + (visible ? ' showCart' : '')} onClick={e => e.stopPropagation() /* prevents cart from closing */}>
             <span className="close-cart" onClick={() => cart.hide()}>
                 <i className="fas fa-window-close"></i>
             </span>
@@ -47,11 +47,12 @@ function Cart() {
                 {Object.values(cart.cart).map(item => <CartItemComponent item={item} />)}
             </div>
             <div className="cart-footer">
-                <h3>your total: <span className="cart-total">{ usdFormat.format(cart.total) }</span></h3>
+                <h3>your total: <span className="cart-total">{ currencyFormat().format(cart.total) }</span></h3>
                 <button className="clear-cart banner-btn" onClick={() => {
                     cart.clearCart();
                     cart.hide();
                 }}>clear cart</button>
+                <Link to="/checkout" style={{textDecoration: 'none'}}><div className="banner-btn clear-cart" onClick={() => cart.hide()}>Checkout</div></Link>
             </div>
         </div>
     </div>}

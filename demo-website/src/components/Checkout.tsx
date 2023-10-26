@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useId } from "react";
 import { CartContext } from "../CartProvider";
 import { CartItemComponent } from "./CartItem";
+import { currencyFormat } from "../I18n";
+import './Checkout.css';
 
 enum PaymentMethod { Invoice, CreditCard, PayPal };
 
@@ -86,6 +88,13 @@ const composeValidators = (...validators: ((value: string, label: string) => Val
     }
 }
 
+const validateContains = (searchText: string) => (value: string, label: string) => {
+    if (!value.includes(searchText)) {
+        return { message: `${label} must contain "${searchText}"`, pedantic: false };
+    }
+}
+const validateEmail = composeValidators(validateContains('@'), validateContains('.'));
+
 class ValidationContextImpl implements ValidationContext {
     validators: Record<string, {
         validator: ValidationFunction;
@@ -120,6 +129,7 @@ export function Checkout() {
     const [city, setCity] = React.useState("");
     const [state, setState] = React.useState("");
     const [zipCode, setZipCode] = React.useState("");
+    const [email, setEmail] = React.useState("");
     const [paymentMethod, setPaymentMethod] = React.useState(PaymentMethod.Invoice);
 
     const triedSubmitRef = React.useRef(triedSubmit);
@@ -133,13 +143,14 @@ export function Checkout() {
         <div className="checkout__cart">
             <h2>Cart</h2>
             {!cart.loading && Object.values(cart.cart).map(item => <CartItemComponent item={item} />)}
-            <h3>Total: {cart.loading ? "Loading..." : cart.total}</h3>
+            <h3>Total: {cart.loading ? "Loading..." : currencyFormat().format(cart.total)}</h3>
         </div>
         <form className="checkout__form">
             <div className="checkout__form__customer">
                 <h2>Customer</h2>
                 <TextInput label="First Name" value={firstName} onChange={setFirstName} validationContext={validationContext} validator={validateRequired} />
                 <TextInput label="Last Name" value={lastName} onChange={setLastName} validationContext={validationContext} validator={validateRequired} />
+                <TextInput label="E-Mail" value={email} onChange={setEmail} validationContext={validationContext} validator={composeValidators(validateRequired, validateEmail)} />
             </div>
             <div className="checkout__form__address">
                 <h2>Address</h2>
@@ -159,6 +170,7 @@ export function Checkout() {
                 {paymentMethod === PaymentMethod.CreditCard && <CreditCardForm />}
             </div>
             <button type="submit" onClick={e => {
+                e.preventDefault();
                 setTriedSubmit(true);
                 const errors = validationContext.collectErrors();
                 if (errors.length !== 0) {
@@ -166,7 +178,7 @@ export function Checkout() {
                 }
             }}>Submit</button>
             {triedSubmit && validationContext.collectErrors().length !== 0 && <div className="checkout__form__errors">
-                {validationContext.collectErrors().map(error => <div>{error.message}</div>)}
+                {validationContext.collectErrors().map((error, i) => <div key={i}>{error.message}</div>)}
             </div>
             }
         </form>

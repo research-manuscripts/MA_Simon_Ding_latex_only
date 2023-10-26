@@ -1,7 +1,6 @@
 import React from "react";
 import { CartContext, CartItem } from "../CartProvider";
-
-const usdFormat = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
+import { currencyFormat } from "../I18n";
 
 export function CartItemComponent({ item }: { item: CartItem }) {
     const cart = React.useContext(CartContext);
@@ -10,7 +9,7 @@ export function CartItemComponent({ item }: { item: CartItem }) {
         <img src={item.product.fields.image.fields.file.url} alt={item.product.fields.title} />
         <div>
             <h4>{item.product.fields.title}</h4>
-            <h5>{usdFormat.format(item.product.fields.price)}</h5>
+            <h5>{currencyFormat().format(item.product.fields.price)}</h5>
             <span className="remove-item" onClick={() => cart.loading || cart.removeAllFromCart(item.product)}>remove</span>
         </div>
         <div>
