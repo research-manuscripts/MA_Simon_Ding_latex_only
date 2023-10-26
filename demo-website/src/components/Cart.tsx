@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useId } from "react";
 import "./Cart.css";
 import "./BannerButton.css";
 import { CartContext } from "../CartProvider";
@@ -33,6 +33,9 @@ function Cart() {
 
     const visible = !cart.loading && cart.showCart;
 
+    const buttonId = useId();
+    const clearLinkId = useId();
+
     useEffect(() => {
         console.log(cart, visible);
     }, [cart, visible]);
@@ -48,11 +51,11 @@ function Cart() {
             </div>
             <div className="cart-footer">
                 <h3>your total: <span className="cart-total">{ currencyFormat().format(cart.total) }</span></h3>
-                <button className="clear-cart banner-btn" onClick={() => {
+                <button id={buttonId} className="clear-cart banner-btn" onClick={() => {
                     cart.clearCart();
                     cart.hide();
                 }}>clear cart</button>
-                <Link to="/checkout" style={{textDecoration: 'none'}}><div className="banner-btn clear-cart" onClick={() => cart.hide()}>Checkout</div></Link>
+                <Link id={clearLinkId} to="/checkout" style={{textDecoration: 'none'}}><div className="banner-btn clear-cart" onClick={() => cart.hide()}>Checkout</div></Link>
             </div>
         </div>
     </div>}

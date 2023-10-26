@@ -1,4 +1,4 @@
-import React, { useContext, useMemo, useState } from 'react';
+import React, { useContext, useId, useMemo, useState } from 'react';
 import './Navbar.css';
 import './Cart.css'
 import { CartContext } from '../CartProvider';
@@ -24,6 +24,8 @@ function Navbar() {
     }
   }, [products]);
 
+  const linkId = useId();
+
   return (
     <nav className={"Navbar" + (menuVisible ? ' visible' : '')}>
       <div className="Top-row">
@@ -42,8 +44,8 @@ function Navbar() {
       </div>
       
       { <menu className={menuVisible ? 'visible' : ''}>
-        <li><NavLink to="/">Home</NavLink></li>
-        { categories.map((x, i) => <li><NavLink to={`c/${x.sys.id}`} key={i}>{x.fields.title}</NavLink></li>)}
+        <li><NavLink id={linkId + '-home'} to="/">Home</NavLink></li>
+        { categories.map((x, i) => <li><NavLink id={linkId + '-' + x.sys.id} to={`c/${x.sys.id}`} key={i}>{x.fields.title}</NavLink></li>)}
       </menu> }
       
     </nav>

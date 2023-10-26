@@ -139,6 +139,8 @@ export function Checkout() {
 
     const validationContext: ValidationContext = React.useMemo(() => new ValidationContextImpl(() => triedSubmitRef.current), []);
 
+    const submitButtonId = useId();
+
     return <div className="checkout">
         <div className="checkout__cart">
             <h2>Cart</h2>
@@ -169,7 +171,7 @@ export function Checkout() {
                 </select>
                 {paymentMethod === PaymentMethod.CreditCard && <CreditCardForm />}
             </div>
-            <button type="submit" onClick={e => {
+            <button id={submitButtonId} type="submit" onClick={e => {
                 e.preventDefault();
                 setTriedSubmit(true);
                 const errors = validationContext.collectErrors();

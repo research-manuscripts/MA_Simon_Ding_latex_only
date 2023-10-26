@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useId } from "react";
 import "../App.css";
 import "./Products.css";
 import { ProductContext } from "../ProductProvider";
@@ -9,6 +9,7 @@ import Optional from "optional-js";
 function Products({ category }: { category?: string }) {
     const catalog = React.useContext(ProductContext);
     const cart = React.useContext(CartContext);
+    const productIdSuffix = useId();
 
     return (
         <section className="Products">
@@ -31,7 +32,7 @@ function Products({ category }: { category?: string }) {
                             <article className="Products-product" key={product.sys.id}>
                                 <div className="Products-img-container">
                                     <img src={product.fields.image.fields.file.url} alt={product.fields.title} className="product-img" />
-                                    {!cart.loading && <button className="bag-btn" data-id={product.sys.id} onClick={() => {
+                                    {!cart.loading && <button id={product.sys.id + productIdSuffix} className="bag-btn" data-id={product.sys.id} onClick={() => {
                                         if (!cart.isItemInCart(product)) {
                                             cart.addToCart(product);
                                         }
