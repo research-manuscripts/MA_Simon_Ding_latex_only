@@ -9,6 +9,7 @@ function Products({ category }: { category?: string }) {
     const catalog = React.useContext(ProductContext);
     const cart = React.useContext(CartContext);
     const productIdSuffix = useId();
+    const productImgSuffix = useId();
 
     return (
         <section className="Products">
@@ -30,8 +31,8 @@ function Products({ category }: { category?: string }) {
                         return (
                             <article className="Products-product" key={product.sys.id}>
                                 <div className="Products-img-container">
-                                    <img src={product.fields.image.fields.file.url} alt={product.fields.title} className="product-img" />
-                                    {!cart.loading && <button id={product.sys.id + productIdSuffix} className="bag-btn" data-id={product.sys.id} onClick={() => {
+                                    <img id={product.sys.id + productImgSuffix} src={product.fields.image.fields.file.url} alt={product.fields.title} className="product-img mouse-over" />
+                                    {!cart.loading && <button id={product.sys.id + productIdSuffix} className="bag-btn" onClick={() => {
                                         if (!cart.isItemInCart(product)) {
                                             cart.addToCart(product);
                                         }
