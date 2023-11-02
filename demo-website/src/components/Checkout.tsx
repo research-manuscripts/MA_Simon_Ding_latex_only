@@ -3,19 +3,20 @@ import { CartContext } from "../CartProvider";
 import { CartItemComponent } from "./CartItem";
 import { currencyFormat } from "../I18n";
 import './Checkout.css';
+import { Navigate } from "react-router-dom";
 
 enum PaymentMethod { Invoice, CreditCard, PayPal };
 
-function CreditCardForm() {
+function CreditCardForm({ validationContext}: { validationContext: ValidationContext }) {
     // State for credit card information
     const [cardNumber, setCardNumber] = React.useState("");
     const [expirationDate, setExpirationDate] = React.useState("");
     const [securityCode, setSecurityCode] = React.useState("");
 
     return <div>
-        <input type="text" value={cardNumber} onChange={e => setCardNumber(e.target.value)} />
-        <input type="text" value={expirationDate} onChange={e => setExpirationDate(e.target.value)} />
-        <input type="text" value={securityCode} onChange={e => setSecurityCode(e.target.value)} />
+        <TextInput validationContext={validationContext} label="Credit Card Number" value={cardNumber} onChange={setCardNumber} validator={validateRequired} />
+        <TextInput validationContext={validationContext} label="Expiration Date" value={expirationDate} onChange={setExpirationDate} validator={validateRequired} />
+        <TextInput validationContext={validationContext} label="Security Code" value={securityCode} onChange={setSecurityCode} validator={validateRequired} />
     </div>;
 }
 
@@ -131,6 +132,7 @@ export function Checkout() {
     const [zipCode, setZipCode] = React.useState("");
     const [email, setEmail] = React.useState("");
     const [paymentMethod, setPaymentMethod] = React.useState(PaymentMethod.Invoice);
+    const [processed, setProcessed] = React.useState(false);
 
     const triedSubmitRef = React.useRef(triedSubmit);
     useEffect(() => {
@@ -141,7 +143,13 @@ export function Checkout() {
 
     const submitButtonId = useId();
 
-    return <div className="checkout">
+    useEffect(() => {
+        if (processed && !cart.loading) {
+            cart.clearCart();
+        }
+    }, [processed]);
+
+    return processed ? <Navigate to='/processed' /> : <div className="checkout">
         <div className="checkout__cart">
             <h2>Cart</h2>
             {!cart.loading && Object.values(cart.cart).map(item => <CartItemComponent item={item} />)}
@@ -169,7 +177,7 @@ export function Checkout() {
                     <option value={PaymentMethod.CreditCard}>Credit Card</option>
                     <option value={PaymentMethod.PayPal}>PayPal</option>
                 </select>
-                {paymentMethod === PaymentMethod.CreditCard && <CreditCardForm />}
+                {paymentMethod === PaymentMethod.CreditCard && <CreditCardForm validationContext={validationContext} />}
             </div>
             <button id={submitButtonId} type="submit" onClick={e => {
                 e.preventDefault();
@@ -177,6 +185,8 @@ export function Checkout() {
                 const errors = validationContext.collectErrors();
                 if (errors.length !== 0) {
                     e.preventDefault();
+                } else {
+                    setProcessed(true);
                 }
             }}>Submit</button>
             {triedSubmit && validationContext.collectErrors().length !== 0 && <div className="checkout__form__errors">

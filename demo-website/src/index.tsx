@@ -25,6 +25,7 @@ root.render(
           <Route path="" element={<><Hero /><Products category='s10' /></>} />
           <Route path="c/:category" element={<ProductWrapper />} />
           <Route path="checkout" element={<Checkout />} />
+          <Route path='processed' element={<h2>Thank you for your purchase!</h2>} />
         </Route>
       </Routes>
     </Router>
