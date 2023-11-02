@@ -25,16 +25,18 @@ function Navbar() {
   }, [products]);
 
   const linkId = useId();
+  const menuButtonId = useId();
+  const cartButtonId = useId();
 
   return (
     <nav className={"Navbar" + (menuVisible ? ' visible' : '')}>
       <div className="Top-row">
         <div className="Navbar-center">
-           <span className="Navbar-icon" onClick={() => setMenuVisible(!menuVisible)}>
+           <span id={menuButtonId} className="Navbar-icon on-click" onClick={() => setMenuVisible(!menuVisible)}>
                <i className="fas fa-bars"></i>
            </span> 
            
-            <div className="Navbar-cart-btn" onClick={() => !cart.loading && cart.show()}>
+            <div id={cartButtonId} className="Navbar-cart-btn on-click" onClick={() => !cart.loading && cart.show()}>
                <span className="Navbar-icon">
                    <i className="fas fa-cart-plus"></i>
                </span> 
