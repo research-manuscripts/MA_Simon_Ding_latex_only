@@ -3,7 +3,6 @@ import "../App.css";
 import "./Products.css";
 import { ProductContext } from "../ProductProvider";
 import { CartContext } from "../CartProvider";
-import { optional } from "../Optional";
 import Optional from "optional-js";
 
 function Products({ category }: { category?: string }) {
