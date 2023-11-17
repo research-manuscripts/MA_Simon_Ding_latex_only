@@ -10,8 +10,12 @@
 %%
 %% Version 1.3.6, 2022-09-28
 
-\chapter{Related Work}
-\label{ch:FirstContent}
+\chapter{Einleitung}
+\label{ch:Introduction}
+
+
+\chapter{Stand der Technik}
+\label{ch:RelatedWork}
 
 Das Ziel dieser Arbeit ist es, ein automatisiertes System zu entwickeln, das eine Webanwendung nur mit einer Reihe von natürlichsprachlichen Testfällen testet.
 Das bedeutet, dass das System natürlichsprachlichen Testbeschreibungen folgen muss, einer Aufgabe im Feld der Linguistischen Sprachverarbeitung (Englisch: natural language processing, NLP).
@@ -37,11 +41,11 @@ Diese Arbeit folgt dem Ansatz von \Citeauthor{GPT3Testing}, eine strukturierte D
 Sie evaluieren ihren Ansatz anhand einer sehr einfachen Anwendung, die aus einer Ansicht mit Knöpfen besteht und einer Vielzahl von Testbeschreibungen.
 Diese Arbeit zielt darauf ab, eine automatisierte Pipeline zu entwickeln und zu validieren, die den gleichen Ansatz für allgemeine GUI-basierte Webanwendungen mit HTML verwendet.
 
-\chapter{Foundations}
-\label{ch:SecondContent}
+\chapter{Grundlagen}
+\label{ch:Foundations}
 
-\section{GUI-basierte Systemtests}
-\label{sec:SecondContent:FirstSection}
+\section{Systemtests auf Grundlage von grafischen Benutzeroberflächen}
+\label{sec:Foundations:GUIBasedSystemTests}
 Softwaretests sind ein wesentlicher Bestandteil der Softwareentwicklung.
 Er umfasst die Bewertung einer Softwareanwendung oder eines Systems, um etwaige Mängel oder Fehler zu erkennen, die die Funktionalität, Zuverlässigkeit oder Leistung beeinträchtigen könnten.
 Das Ziel von Softwaretests ist es, sicherzustellen, dass die Software wie erwartet funktioniert und die festgelegten Anforderungen erfüllt.
@@ -58,8 +62,8 @@ Im Gegensatz dazu sind Tests, die von Designern spezifiziert werden, oft sehr vi
 Um diese zu automatisieren, müssen die Programmierer aus der Spezifikation ein Testskripte ableiten, die parallel zu Änderungen an der grafischen Benutzeroberfläche gewartet werden müssen.
 Dies ist ein Problem, da die grafische Benutzeroberfläche oft der sich am häufigsten ändernde Teil eines Systems ist.
 
-\subsection{Transformer Modelle}
-\label{subsec:SecondContent:SecondSection}
+\section{Transformer und Sprachmodelle: Ein Überblick}
+\label{subsec:Foundations:Transformer}
 Transformer sind eine Klasse von Deep-Learning-Modellen, die sich bei einer Vielzahl von Aufgaben der Linguistischen Datenverarbeitung wie maschineller Übersetzung, Texterzeugung und Sprachmodellierung als äußerst effektiv erwiesen hat.
 Sie basieren auf einer Architektur, die sich von herkömmlichen rekurrenten neuronalen Netzen (RNNs) und Convolutional Neural Networks (CNNs) unterscheidet.
 Ein grundlegender Baustein eines Transformator-Modells ist der Self-Attention-Mechanismus, der es dem Modell ermöglicht, sich während der Kodierungs- und Dekodierungsphasen auf bestimmte Teile der Eingabesequenz zu konzentrieren.
@@ -75,8 +79,8 @@ Transformatoren haben sich für eine Vielzahl von Aufgaben der Linguistischen Da
 Zu den jüngsten Fortschritten gehören Techniken für das Training großer Transformermodelle auf riesigen Datensätzen natürlicher Sprache, wobei die Ausgabe die Fortsetzung der Eingabe ist.
 Diese Modelle werden oft als Large Language Models (LLM) bezeichnet.
 
-\subsection{Adequacy of Large Language Models}
-\label{subsec:SecondContent:ThirdSection}
+\section{Große Sprachmodelle und ihre Anwendungen in der Softwareentwicklung}
+\label{subsec:Foundations:LLM}
 
 Large language models like GPT-3 can be used task-agnostically because they are trained on vast amounts of text data in an unsupervised manner. During training, the model learns to understand the underlying patterns and relationships in language, allowing it to generate coherent and contextually appropriate responses to a wide range of tasks without the need for task-specific training data.
 One key advantage of these models is their massive size, with GPT-3 containing 175 billion parameters.
@@ -87,7 +91,7 @@ Furthermore, GPT-3 has shown impressive capabilities in generating source code f
 As such LLMs appear to be adequate to process both the structured representation of an application’s GUI, as well as natural language test cases, and provide a description of what action to follow next.
 
 
-\chapter{Concept}
+\chapter{Versuchsaufbau}
 
 The idea of this thesis is to implement an automated system for GUI-based software testing that uses language models to systematically test systems following predefined natural-language test descriptions.
 The natural language model will be prompted with a symbolic representation of the GUI’s state as well as the test description and asked to generate a user input to execute the test.
@@ -95,7 +99,18 @@ It will then simulate the user input in the AUT and repeat.
 It will also be asked whether errors have occurred during the test execution.
 The same setup will be evaluated with different test descriptions and language models.
 
-\section{Demo Application}
+\section{Forschungsfragen}
+
+\begin{enumerate}
+    \item Can LLMs understand HTML?
+    \item Feasibility of the approach
+    \item Do you need the whole document? / Advantage of “stripped tree”
+    \item Flakiness > Repeats necessary / how many?
+    \item Optional: Possibility and Accuracy of validation
+    \item Optional: Impact of prompt engineering?
+\end{enumerate}
+
+\section{Getestete Anwendung}
 
 As part of this thesis, a custom demo application will serve as the application under test.
 This demo application will mimic a real-world web shop application, where users can interact with various elements such as product listings, shopping carts, checkout processes, and user profiles.
@@ -131,21 +146,21 @@ Of these templates, EverShop has been chosen as the basis for the demo applicati
     \caption{Open-source web shop projects that were screened for suitability for this thesis}
 \end{figure}
 
-\section{Validation}
+\section{Validierung}
 
 As we know of no other approaches to doing scripted testing using only natural language test descriptions, comparing it to other works is hard.
 As such validation of this part of the work will center around its feasibility.
 The new system's ability to navigate the AUT will be compared to monkey testing.
 The test oracle part of the system will be validated using mutation testing and its results will be captured in a confusion matrix.
 
-\subsection{Comparison to monkey testing}
+\subsection{Vergleich mit Monkey Testing}
 
 Monkey testing is the approach of taking random user actions to find failing application states.
 We will measure if the system can successfully navigate the software into the state that shall be tested for each test case and count the number of user interactions it simulates.
 That amount of user interaction will be compared to the number of user interactions performed by a monkey tester to navigate to the same state.
 The system must at least use fewer user interactions as a monkey tester.
 
-\subsection{Mutation Testing}
+\subsection{Mutations Testen}
 
 For each test instance, first, an error-free version of the demo application will be tested using the new system.
 In this case, it is expected to classify all test runs as 'pass' and a classification as 'failure' is a false negative.
@@ -155,25 +170,7 @@ Testing that version the new system is expected to classify the test run as a 'f
 
 The artifact of this verification step is a confusion matrix, a contingency table that is common in the field of statistical classification.
 
-\section{Constraints}
-
-\begin{enumerate}
-    \item The AUTs are limited to web applications that render to HTML.
-    \item In the prompts to the LLM, the GUI of the AUT is represented as either HTML or JSON.
-    \item Optional: There will be no evaluation of prompt engineering  
-\end{enumerate}
-
-\section{Research Questions}
-
-\begin{enumerate}
-    \item Can LLMs understand HTML?
-    \item Feasibility of the approach
-    \item Do you need the whole document? / Advantage of “stripped tree”
-    \item Flakiness > Repeats necessary / how many?
-    \item Optional: Possibility and Accuracy of validation
-    \item Optional: Impact of prompt engineering?
-\end{enumerate}
-
+\iffalse
 \chapter{Execution}
 
 \section{Riscs}
@@ -210,7 +207,7 @@ time slot format=isodate,
     %\ganttlink{elem2}{elem3}
     %\ganttlink{elem3}{elem4}
 \end{ganttchart}
-
+\fi
 
 %% ---------------------
 %% | / Example content |
