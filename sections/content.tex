@@ -13,6 +13,49 @@
 \chapter{Einleitung}
 \label{ch:Introduction}
 
+\textit{Dieses Exposé besteht aus minimal angepassten Ausschnitten einer unfertigen Masterarbeit unter gleichem Titel.}
+
+\par
+
+% testen ist wichtig
+
+Das Testen von Software ist ein wichtiger Bestandteil der Softwareentwicklung, der sicherstellt, dass die Software wie erwartet funktioniert und die festgelegten Anforderungen erfüllt.
+Es gibt verschiedene Arten von Softwaretests, darunter Unit-Tests, Systemtests und Akzeptanztests.
+\cite{Sommerville10}
+Im Folgenden wird der Fokus auf funktionale Systemtests von Webanwendungen gelegt, die die gesamte Anwendung testen und dabei als Blackbox betrachten. \cite{Beizer1990}
+Diese werden in Kapitel \ref{sec:Foundations:GUIBasedSystemTests} näher beschrieben.
+
+% testen speziell von GUIs ist wichtig
+
+Zumindest einzelne Komponenten einer Webanwendung werden gewöhnlich in dem Webbrowser des Benutzers ausgeführt, in dem die Anwendung auch dargestellt wird.
+Dadurch ergeben sich besondere Herausforderungen für das Testen von Webanwendungen.
+Einerseits verschärfen die Ausführung von Anwendungscode und Darstellung im Browser das Problem der Flakiness, bei der Tests kein konsistentes Ergebnis liefern, auch wenn die Anwendung nicht geändert wurde.
+Gleichzeitig bedeuten Änderungen an der grafischen Benutzeroberfläche (Englisch: graphical user interface, GUI) oft, dass auch die Tests geändert werden müssen.
+\cite{ChallengesSelenium}
+Lösungsansätze für diese Probleme sind Gegenstand aktiver Forschung und eine Auswahl wird in Kapitel \ref{ch:RelatedWork} vorgestellt.
+
+% es wäre schön, wenn Tests ohne hartkodierte Fehlerbedingungen Fehler erkennen könnten
+
+Diese Arbeit schließt an die Arbeit von \Citeauthor{GPT3Testing} an.
+Ihr Ansatz ermöglicht das automatische Testen über GUIs, was an einer einfachen Webanwendung evaluieren.
+Sie verwenden ein großes Sprachmodell (Englisch: large language model, LLM), um Benutzerinteraktionen zu generieren, mit denen die Anwendung getestet wird.
+Dabei handelt es sich um eine Anwendung aus dem Bereich des maschinellen Lernens, die in der Lage ist, kontextuell angemessene Antworten auf eine Vielzahl von Aufgaben zu generieren. \cite{FewShotLearners}
+Das LLM bekommt eine strukturierte Repräsentation der grafischen Benutzeroberfläche, vorherige Benutzerinteraktionen und eine natürlichsprachliche Testbeschreibung als Eingabe.
+Es wird aufgefordert, eine Benutzerinteraktion zu generieren, die anschließend automatisch in der Anwendung ausgeführt wird.
+\cite{GPT3Testing}
+
+In den Kapiteln \ref{ch:ExperimentalSetup} und \ref{ch:Results} liefert diese Arbeit zwei Beiträge:
+Erstens wird der Ansatz an einer komplexeren Webanwendung mit verschiedenen Möglichkeiten zur Interaktion getestet.
+Zweitens wird gezeigt, dass das LLM gleichzeitig als Testorakel verwendet werden kann, das heißt, dass das LLM auch in der Lage ist, Fehlerzustände zu erkennen.
+
+Kapitel \ref{ch:Conclusion} schließt, dass sich damit sowohl das Problem der Flakiness eingrenzen, als auch die Wartung der Tests vereinfachen lassen.
+Zudem wird die Frage aufgeworfen, inwieweit dieses Ergebnis auf die Praxis übertragbar ist und wann der Ansatz wirtschaftlich ist.
+
+Zuletzt befindet sich in Anlage \ref{ch:PracticalNotes} eine Sammlung von Erkenntnissen, die sich im Verlauf dieser Arbeit gezeigt haben und die für den praktischen Einsatz hilfreich sein könnten.
+
+
+% LLMs sind vielversprechend \cite{GPT3Testing}, 
+
 
 \chapter{Stand der Technik}
 \label{ch:RelatedWork}
@@ -92,6 +135,7 @@ As such LLMs appear to be adequate to process both the structured representation
 
 
 \chapter{Versuchsaufbau}
+\label{ch:ExperimentalSetup}
 
 The idea of this thesis is to implement an automated system for GUI-based software testing that uses language models to systematically test systems following predefined natural-language test descriptions.
 The natural language model will be prompted with a symbolic representation of the GUI’s state as well as the test description and asked to generate a user input to execute the test.
@@ -152,23 +196,6 @@ As we know of no other approaches to doing scripted testing using only natural l
 As such validation of this part of the work will center around its feasibility.
 The new system's ability to navigate the AUT will be compared to monkey testing.
 The test oracle part of the system will be validated using mutation testing and its results will be captured in a confusion matrix.
-
-\subsection{Vergleich mit Monkey Testing}
-
-Monkey testing is the approach of taking random user actions to find failing application states.
-We will measure if the system can successfully navigate the software into the state that shall be tested for each test case and count the number of user interactions it simulates.
-That amount of user interaction will be compared to the number of user interactions performed by a monkey tester to navigate to the same state.
-The system must at least use fewer user interactions as a monkey tester.
-
-\subsection{Mutations Testen}
-
-For each test instance, first, an error-free version of the demo application will be tested using the new system.
-In this case, it is expected to classify all test runs as 'pass' and a classification as 'failure' is a false negative.
-Then a different version of the demo application will be tested.
-This version will include an error that manifests if the test description is correctly followed.
-Testing that version the new system is expected to classify the test run as a 'failure' and a classification as 'pass' is a false positive.
-
-The artifact of this verification step is a confusion matrix, a contingency table that is common in the field of statistical classification.
 
 \iffalse
 \chapter{Execution}
