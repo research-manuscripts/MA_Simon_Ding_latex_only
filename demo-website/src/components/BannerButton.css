@@ -8,7 +8,14 @@
   border: 1px solid var(--primaryColor);
   transition: var(--mainTransition);
   cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
 }
+
+.banner-btn:visited {
+  text-decoration: none;
+}
+
 .banner-btn:hover {
   background: transparent;
   color: var(--primaryColor);

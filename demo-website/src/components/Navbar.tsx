@@ -1,12 +1,9 @@
-import React, { useContext, useMemo, useState } from 'react';
+import React, { useContext, useId, useMemo, useState } from 'react';
 import './Navbar.css';
 import './Cart.css'
 import { CartContext } from '../CartProvider';
 import { ProductContext } from '../ProductProvider';
 import { NavLink } from 'react-router-dom';
-import { NavLinkProps } from 'react-router-dom';
-
-const dynLink: React.FC<React.PropsWithChildren<{to: NavLinkProps['to']}>> = ({children, to}) => <NavLink to={to} children={children} className={({ isActive }) => isActive ? 'active' : ''} />
 
 function Navbar() {
   const [menuVisible, setMenuVisible] = useState(false);
@@ -27,15 +24,19 @@ function Navbar() {
     }
   }, [products]);
 
+  const linkId = useId();
+  const menuButtonId = useId();
+  const cartButtonId = useId();
+
   return (
     <nav className={"Navbar" + (menuVisible ? ' visible' : '')}>
       <div className="Top-row">
         <div className="Navbar-center">
-           <span className="Navbar-icon" onClick={() => setMenuVisible(!menuVisible)}>
+           <span id={menuButtonId} className="Navbar-icon on-click" onClick={() => setMenuVisible(!menuVisible)}>
                <i className="fas fa-bars"></i>
            </span> 
            
-            <div className="Navbar-cart-btn" onClick={() => !cart.loading && cart.show()}>
+            <div id={cartButtonId} className="Navbar-cart-btn on-click" onClick={() => !cart.loading && cart.show()}>
                <span className="Navbar-icon">
                    <i className="fas fa-cart-plus"></i>
                </span> 
@@ -45,8 +46,8 @@ function Navbar() {
       </div>
       
       { <menu className={menuVisible ? 'visible' : ''}>
-        <li><NavLink to="/">Home</NavLink></li>
-        { categories.map(x => <li><NavLink to={`c/${x.sys.id}`}>{x.fields.title}</NavLink></li>)}
+        <li><NavLink id={linkId + '-home'} to="/">Home</NavLink></li>
+        { categories.map((x, i) => <li><NavLink id={linkId + '-' + x.sys.id} to={`c/${x.sys.id}`} key={i}>{x.fields.title}</NavLink></li>)}
       </menu> }
       
     </nav>

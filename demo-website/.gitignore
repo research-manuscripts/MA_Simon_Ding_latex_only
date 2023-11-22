@@ -10,6 +10,7 @@
 
 # production
 /build
+/build_not_instrumented
 
 # misc
 .DS_Store
