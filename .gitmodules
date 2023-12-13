@@ -1,3 +1,4 @@
 [submodule "WebtestingWithLLMs"]
 	path = WebtestingWithLLMs
-	url = https://github.com/SimDing/WebtestingWithLLMs
+	url = https://github.com/SoftwareTestingLLMs/WebtestingWithLLMs
+	branch = instrumentedIstanbul
