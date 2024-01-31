@@ -33,7 +33,7 @@
   letter-spacing: var(--mainSpacing);
   font-weight: bold;
   transition: var(--mainTransition);
-  transform: translateX(101%);
+  /* transform: translateX(101%); */
   cursor: pointer;
 }
 .bag-btn:hover {
