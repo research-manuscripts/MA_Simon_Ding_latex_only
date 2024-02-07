@@ -109,22 +109,26 @@ Im Gegensatz dazu sind Tests, die von Designern spezifiziert werden, oft sehr vi
 Um diese zu automatisieren, müssen die Programmierer aus der Spezifikation ein Testskripte ableiten, die parallel zu Änderungen an der grafischen Benutzeroberfläche gewartet werden müssen.
 Dies ist ein Problem, da die grafische Benutzeroberfläche oft der sich am häufigsten ändernde Teil eines Systems ist.
 
-\section{Transformer und Sprachmodelle: Ein Überblick}
+\section{Transformer: Ein Überblick}
 \label{subsec:Foundations:Transformer}
-Transformer sind eine Klasse von Deep-Learning-Modellen, die sich bei einer Vielzahl von Aufgaben der Linguistischen Datenverarbeitung wie maschineller Übersetzung, Texterzeugung und Sprachmodellierung als äußerst effektiv erwiesen hat.
+Transformer \cite{transformers} sind eine Klasse von Deep-Learning-Modellen, die sich bei einer Vielzahl von Aufgaben der Linguistischen Datenverarbeitung wie maschineller Übersetzung, Texterzeugung und Sprachmodellierung als äußerst effektiv erwiesen hat \cite{transformers,bert,FewShotLearners,gpt4}.
 Sie basieren auf einer Architektur, die sich von herkömmlichen rekurrenten neuronalen Netzen (RNNs) und Convolutional Neural Networks (CNNs) unterscheidet.
-Ein grundlegender Baustein eines Transformator-Modells ist der Self-Attention-Mechanismus, der es dem Modell ermöglicht, sich während der Kodierungs- und Dekodierungsphasen auf bestimmte Teile der Eingabesequenz zu konzentrieren.
-Dieser Mechanismus wurde entwickelt, um Abhängigkeiten zwischen weit voneinander entfernten Teilen der Eingabe zu erfassen, was besonders wichtig für Aufgaben des Sprachverständnisses ist.
+In jedem Schritt der Verarbeitung wird die Eingabesequenz zu jeweils einem Ausgabetoken verarbeitet.
+Durch wiederholte Anwendung kann so eine Sequenz von Ausgabetoken erzeugt werden.
+Ein grundlegender Baustein eines Transformator-Modells ist der Self-Attention-Mechanismus, der es dem Modell ermöglicht, sich während der Kodierungs- und Dekodierungsphasen auf bestimmte Teile der Ein- und Ausgabesequenzen zu „konzentrieren“.
+Er ist notwendig um Abhängigkeiten zwischen weit voneinander entfernten Teilen der Eingabe zu erfassen, was besonders wichtig für Aufgaben des Sprachverständnisses ist.
 In einem Transformer-Modell wird die Eingabesequenz zunächst von einer Reihe von Kodierungsschichten verarbeitet, die jeweils aus einem Self-Attention-Modul und einem neuronalen Feedforward-Netzwerk bestehen.
-Das Self-Attention-Modul berechnet eine Gewichtung der Aufmerksamkeit über die Positionen in der Eingangssequenz, die verwendet wird, um eine gewichtete Summe der Eingangsrepräsentationen zu berechnen.
-Dadurch kann sich das Modell auf verschiedene Teile der Eingabesequenz konzentrieren, je nach ihrer Relevanz für die aktuelle Aufgabe.
+Das Self-Attention-Modul berechnet eine Gewichtung der Aufmerksamkeit auf die Positionen in der Eingangssequenz, die verwendet wird, um den Einfluss dieser Eingabeteile auf das jeweils nächste Ausgabetoken zu vergrößern.
 Nach den Kodierungsschichten wird die Ausgabesequenz durch eine Reihe von Dekodierungsschichten erzeugt, die im Gegensatz zu den Kodierungsschichten sowohl auf die Eingabesequenz als auch auf die zuvor erzeugten Ausgabesequenzen zugreifen.
-Die Dekodierungsschichten ermöglichen es dem Modell, Ausgabesequenzen zu erzeugen, die von der Eingabesequenz und allen zuvor erzeugten Ausgabemarken abhängen.
-Einer der Hauptvorteile von Transformermodellen ist ihre Fähigkeit, Eingaben und Ausgaben variabler Länge zu verarbeiten, wodurch sie sich gut für Aufgaben der Linguistischen Datenverarbeitung eignen.
-Außerdem sind sie hochgradig parallelisierbar, wodurch sie effizient auf moderner Hardware trainiert werden können.
-Transformatoren haben sich für eine Vielzahl von Aufgaben der Linguistischen Datenverarbeitung zum State-of-the-Art-Ansatz entwickelt und sind nach wie vor ein aktives Forschungsgebiet.
-Zu den jüngsten Fortschritten gehören Techniken für das Training großer Transformermodelle auf riesigen Datensätzen natürlicher Sprache, wobei die Ausgabe die Fortsetzung der Eingabe ist.
-Diese Modelle werden oft als Large Language Models (LLM) bezeichnet.
+Die Dekodierungsschichten ermöglichen es dem Modell, Ausgabesequenzen zu erzeugen, die von der Eingabesequenz und zuvor erzeugten Ausgabetokens abhängen.
+Einer der Hauptunterschiede von Transformermodellen gegenüber den älteren RNNs ist, dass zwischen den einzelnen Berechnungsschritten kein Zustand mitgeführt wird.
+Das hat zwei Vorteile: Dieser Zustand nicht „vergessen“ werden und da keine Abhängigkeiten zwischen den Trainingsschritten existieren kann das Modell besser parallel trainiert werden.
+
+Insgesamt können Transformermodelle Eingaben und Ausgaben variabler Länge verarbeiten und lassen sich mit großen Datensätzen trainieren, wodurch sie sich gut für Aufgaben der Linguistischen Datenverarbeitung eignen.
+Transformer haben sich für eine Vielzahl von Aufgaben der Linguistischen Datenverarbeitung zum State-of-the-Art-Ansatz entwickelt und sind nach wie vor ein aktives Forschungsgebiet.
+Zu den jüngeren Fortschritten gehören Techniken für das Training immer größerer Transformermodelle auf riesigen Datensätzen:
+Zu den bekanntesten Transformermodellen gehören BERT \cite{bert}, GPT-3 \cite{FewShotLearners} und GPT-4 \cite{gpt4}, die sich vor allem durch ihre Größe, aber nicht grundlegend durch unterschiedliche Architekturen unterscheiden \footnote{Im Fall von GPT-4, werden auch Bilder als Teil der Eingabe akzeptiert. Die genaue Architektur ist nicht öffentlich bekannt.}.
+Als Bezeichnung für diese Modelle hat sich der Begriff Large Language Model (LLM) etabliert.
 
 \section{Große Sprachmodelle und ihre Anwendungen in der Softwareentwicklung}
 \label{subsec:Foundations:LLM}
