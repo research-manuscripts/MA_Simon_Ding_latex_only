@@ -16,9 +16,8 @@
 % testen ist wichtig
 
 Das Testen von Software ist ein wichtiger Bestandteil der Softwareentwicklung, der sicherstellt, dass die Software wie erwartet funktioniert und die festgelegten Anforderungen erfüllt.
-Es gibt verschiedene Arten von Softwaretests, darunter Unit-Tests, Systemtests und Akzeptanztests.
-\cite{Sommerville10}
-Im Folgenden wird der Fokus auf funktionale Systemtests von Webanwendungen gelegt, die die gesamte Anwendung testen und dabei als Blackbox betrachten. \cite{Beizer1990}
+Es gibt verschiedene Arten von Softwaretests, darunter Unit-Tests, Systemtests und Akzeptanztests \cite{Sommerville10}.
+Im Folgenden wird der Fokus auf funktionale Systemtests von Webanwendungen gelegt, die die gesamte Anwendung testen und dabei als Blackbox betrachten \cite{Beizer1990}.
 Diese werden in Kapitel \ref{sec:Foundations:GUIBasedSystemTests} näher beschrieben.
 
 % testen speziell von GUIs ist wichtig
@@ -26,8 +25,7 @@ Diese werden in Kapitel \ref{sec:Foundations:GUIBasedSystemTests} näher beschri
 Zumindest einzelne Komponenten einer Webanwendung werden gewöhnlich in dem Webbrowser des Benutzers ausgeführt, in dem die Anwendung auch dargestellt wird.
 Dadurch ergeben sich besondere Herausforderungen für das Testen von Webanwendungen.
 Einerseits verschärfen die Ausführung von Anwendungscode und Darstellung im Browser das Problem der Flakiness, bei der Tests kein konsistentes Ergebnis liefern, auch wenn die Anwendung nicht geändert wurde.
-Gleichzeitig bedeuten Änderungen an der grafischen Benutzeroberfläche (Englisch: graphical user interface, GUI) oft, dass auch die Tests geändert werden müssen.
-\cite{ChallengesSelenium}
+Gleichzeitig bedeuten Änderungen an der grafischen Benutzeroberfläche (Englisch: graphical user interface, GUI) oft, dass auch die Tests geändert werden müssen \cite{ChallengesSelenium}.
 Lösungsansätze für diese Probleme sind Gegenstand aktiver Forschung und eine Auswahl wird in Kapitel \ref{ch:RelatedWork} vorgestellt.
 
 % es wäre schön, wenn Tests ohne hartkodierte Fehlerbedingungen Fehler erkennen könnten
@@ -35,10 +33,9 @@ Lösungsansätze für diese Probleme sind Gegenstand aktiver Forschung und eine 
 Diese Arbeit schließt an die Arbeit von \Citeauthor{GPT3Testing} an.
 Ihr Ansatz ermöglicht das automatische Testen über GUIs, was an einer einfachen Webanwendung evaluieren.
 Sie verwenden ein großes Sprachmodell (Englisch: large language model, LLM), um Benutzerinteraktionen zu generieren, mit denen die Anwendung getestet wird.
-Dabei handelt es sich um eine Anwendung aus dem Bereich des maschinellen Lernens, die in der Lage ist, kontextuell angemessene Antworten auf eine Vielzahl von Aufgaben zu generieren. \cite{FewShotLearners}
+Dabei handelt es sich um eine Anwendung aus dem Bereich des maschinellen Lernens, die in der Lage ist, kontextuell angemessene Antworten auf eine Vielzahl von Aufgaben zu generieren \cite{FewShotLearners}.
 Das LLM bekommt eine strukturierte Repräsentation der grafischen Benutzeroberfläche, vorherige Benutzerinteraktionen und eine natürlichsprachliche Testbeschreibung als Eingabe.
-Es wird aufgefordert, eine Benutzerinteraktion zu generieren, die anschließend automatisch in der Anwendung ausgeführt wird.
-\cite{GPT3Testing}
+Es wird aufgefordert, eine Benutzerinteraktion zu generieren, die anschließend automatisch in der Anwendung ausgeführt wird \cite{GPT3Testing}.
 
 In den Kapiteln \ref{ch:ExperimentalSetup} und \ref{ch:Results} liefert diese Arbeit zwei Beiträge:
 Erstens wird der Ansatz an einer komplexeren Webanwendung mit verschiedenen Möglichkeiten zur Interaktion getestet.
