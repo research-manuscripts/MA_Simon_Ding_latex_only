@@ -145,11 +145,76 @@ Auch wenn keine natürliche Sprache verwendet wird und Änderungen an der Benutz
 \chapter{Versuchsaufbau}
 \label{ch:ExperimentalSetup}
 
-The idea of this thesis is to implement an automated system for GUI-based software testing that uses language models to systematically test systems following predefined natural-language test descriptions.
-The natural language model will be prompted with a symbolic representation of the GUI’s state as well as the test description and asked to generate a user input to execute the test.
-It will then simulate the user input in the AUT and repeat.
-It will also be asked whether errors have occurred during the test execution.
-The same setup will be evaluated with different test descriptions and language models.
+Nach der Kritik an der Arbeit von \Citeauthor{GPT3Testing}, dass die getestete Anwendung zu einfach sei, stellt sich die Frage, welche Art von Anwendung für die Evaluation des Ansatzes geeignet ist.
+Unserer Meinung nach sollte die Anwendung wenigstens folgende Eigenschaften haben:
+
+\begin{enumerate}
+    \item
+        Die Anwendung sollte eine Vielzahl unterschiedlicher Interaktionselemente enthalten, die getestet werden können. 
+        Sie sollte zumindest Hyperlinks, Knöpfe und Textfelder enthalten.
+    \item
+        Die Anwendung sollte transaktionale Workflows enthalten.
+        Das bedeutet, dass der Benutzer eine Reihe von Interaktionen ausführen muss, um eine bestimmte Aktion auszuführen.
+    \item
+        Die Anwendung sollte Validierungslogik enthalten. Dadurch ist der Tester gezwungen, auf Feedback der Anwendung zu reagieren, um eine bestimmte Interaktion auszuführen.
+        Ein Beispiel wäre das Ausfüllen eines Formulars, das nicht abgeschickt werden kann, bis alle Felder korrekt ausgefüllt sind.
+    \item
+        Die Zustandsraum der Anwendung sollte einen hohen Branching-Faktor haben.
+        Ein hoher Branching-Faktor bedeutet, dass es Anwendungszustände gibt, die viele verschiedene Interaktionen ermöglichen und so wiederum viele verschiedene Anwendungszustände erreichbar machen.
+        Ein Algorithmus, der rein zufällige Interaktionen ausführt, kann einen solchen Zustandsraum nur sehr ineffizient erkunden.
+    \item
+        Die Anwendung sollte praxisrelevant sein, idealerweise sollte sie sich nicht grundlegend von einer realen Anwendung unterscheiden.
+    \item 
+        Die Anwendung sollte Open-Source sein, um die Reproduzierbarkeit der Ergebnisse zu gewährleisten.
+        Sie sollte auch unter einer Lizenz stehen, die kompatibel mit der Veröffentlichung dieser Arbeit ist, das heißt kompatibel mit der GNU General Public License, Version 3.
+    \item Eine strukturierte Repräsentation der GUI der Anwendung sollte zugänglich sein.
+\end{enumerate}
+
+Eine Art von Anwendung, die diese Anforderungen erfüllen kann, sind Webshops:
+Webshops enthalten eine Vielzahl von Interaktionselementen, wie Produktlisten, Warenkörbe und Kassenprozesse.
+Sie enthalten transaktionale Workflows, wie das Hinzufügen von Produkten zum Warenkorb gefolgt von einer Bestellung.
+Sie enthalten Validierungslogik, zum Beispiel bei dem Ausfüllen von Adressfeldern.
+Sie haben einen hohen Branching-Faktor, da es viele verschiedene Produkte gibt, die zu verschiedenen Anwendungszuständen führen.
+Sie sind extrem praxisrelevant, der Marktanteil von E-Commerce ist groß und wächst weiter.
+\footnote{
+Der Anteil von E-Commerce am Einzelhandelsumsatz in den USA betrug im Quartal 1, 2023 15,6\%. U.S. Bureau of the Census über FRED, Federal Reserve Bank of St. Louis. \url{https://fred.stlouisfed.org/series/ECOMPCTSA}}
+Außerdem sind sie als Webseite verfügbar, sodass die textuelle Repräsentation ihrer GUI, das HTML-Dokument, direkt verfügbar ist.
+
+Um eine geeignete Anwendung zu finden, haben wir eine Reihe von Open-Source-Projekten durchsucht, die als Webshop-Software oder Template für solche vermarktet werden.
+Eine Auswahl dieser Projekte ist in Abbildung \ref{tab:webshop_projects} aufgeführt.
+
+\begin{figure}[h]
+    \begin{minipage}[c]{\textwidth}
+        \centering
+        {
+            \scriptsize
+            \begin{tabular}{ | l | l | l | l | l |}
+                \hline
+                \textbf{Template} & \textbf{Last Commit} & \textbf{License} & \textbf{Technology} & \textbf{Remark} \\ \hline
+                Online Shopping Cart\footnote{\url{https://github.com/shashirajraja/shopping-cart}} & May 23 & Apache 2 & Java, Servlets, JSP, SQL & Demonstrationszweck \\ \hline
+                LifestyleStore\footnote{\url{https://github.com/sajalagrawal/LifestyleStore}} & Aug 20 & - & PHP, SQL & Lernzweck \\ \hline
+                Your Online Shop\footnote{\url{https://github.com/petazeta/youronlineshop}} & Dec 22 & custom & Node.js, MongoDB & - \\ \hline
+                Ecommerce-Website\footnote{\url{https://github.com/winston-dsouza/ecommerce-website}} & Feb 20 & MIT & PHP, SQL & keine transaktionalen Workflows \\ \hline
+                Book-Hub\footnote{\url{https://github.com/amberkakkar01/Book-Hub}} & Aug 21 & - & HTML & statisches HTML \\ \hline
+                online-shopping-site\footnote{\url{https://github.com/dinushchathurya/online-shopping-site}} & May 19 & GPLv3 & JavaScript & ohne Server \\ \hline
+                Online-Fashion-Store\footnote{\url{https://github.com/RazaRizvii/Online-Fashion-Store}} & Dec 22 & - & JavaScript & ohne Server \\ \hline
+                online-shopping-website\footnote{\url{https://github.com/nsk1512/online-shopping-website}} & Dec 19 & - & Node.js, MongoDB & - \\ \hline
+                Ketra-Mart\footnote{\url{https://github.com/Prajwal100/ketra-mart-free}} & Jun 23 & MIT & ? & Quellcode nur gegen Zahlung \\ \hline
+                Shuup\footnote{\url{https://github.com/shuup/shuup}} & Aug 21 & OSL & Python, SQL & Kommerziell, Multi-Vendor \\ \hline
+                EverShop\footnote{\url{https://github.com/evershopcommerce/evershop}} & Sep 23 & GPLv3 & Node.js, SQL & - \\ \hline
+                Hayroo\footnote{\url{https://github.com/hasan-py/MERN_Stack_Project_Ecommerce_Hayroo}} & May 23 & - & Node.js, MongoDB & - \\ \hline
+            \end{tabular}
+        }
+    \end{minipage}
+    \caption{Open-source Webshop Projekte, die für die Verwendung in dieser Arbeit gesichtet wurden.}
+    \label{tab:webshop_projects}
+\end{figure}
+
+Die meisten dieser Projekte sind nicht für die Verwendung in dieser Arbeit geeignet, da sie entweder nicht transaktional sind oder keine passende Lizenz haben.
+\textit{EverShop} und \textit{Shuup} erfüllen zwar alle Anforderungen, sind aber so komplex und umfangreich, dass ein maßgeblicher Teil der Arbeit darin bestehen würde, die Anwendung zu verstehen und zu modifizieren, um sie für die Evaluation des Ansatzes zu verwenden.
+\textit{online-shopping-website} hingegen ist streng genommen nicht für den praktischen Einsatz gedacht, erfüllt aber fast alle Anforderungen und ist klein und simpel.
+Nur eine Möglichkeit zur Kaufabwicklung mit einer validierten Eingabemaske fehlt, welche aber mit vertretbarem Aufwand hinzugefügt werden kann.
+Deshalb wurde entschieden, eine eigene Anwendung auf Basis von \textit{online-shopping-website} zu entwickeln, die alle Anforderungen erfüllt und gleichzeitig einfach genug ist, um sie in der verfügbaren Zeit zu evaluieren.
 
 \section{Forschungsfragen}
 
@@ -171,32 +236,6 @@ To save time, the demo application will be implemented using an open-source webs
 Multiple open-source web shop projects have been screened for their suitability for this purpose as described in table \ref{tab:webshop_projects}.
 Of these templates, EverShop has been chosen as the basis for the demo application, as it is the most actively maintained, is intended to be used commercially, and is licensed under the GNU General Public License, version 3.
 
-\begin{figure}[h]
-    \label{tab:webshop_projects}
-    \begin{minipage}[c]{\textwidth}
-        \centering
-        {
-            \scriptsize
-            \begin{tabular}{ | l | l | l | l | l |}
-                \hline
-                \textbf{Template} & \textbf{Last Commit} & \textbf{License} & \textbf{Technology} & \textbf{Remark} \\ \hline
-                Online Shopping Cart\footnote{\url{https://github.com/shashirajraja/shopping-cart}} & May 23 & Apache 2 & Java, Servlets, JSP, SQL & Demonstrational \\ \hline
-                LifestyleStore\footnote{\url{https://github.com/sajalagrawal/LifestyleStore}} & Aug 20 & - & PHP, SQL & learning purpose \\ \hline
-                Your Online Shop\footnote{\url{https://github.com/petazeta/youronlineshop}} & Dec 22 & custom & Node.js, MongoDB & - \\ \hline
-                Ecommerce-Website\footnote{\url{https://github.com/winston-dsouza/ecommerce-website}} & Feb 20 & MIT & PHP, SQL & no checkout / registration \\ \hline
-                Book-Hub\footnote{\url{https://github.com/amberkakkar01/Book-Hub}} & Aug 21 & - & HTML & static pages \\ \hline
-                online-shopping-site\footnote{\url{https://github.com/dinushchathurya/online-shopping-site}} & May 19 & GPLv3 & JavaScript & no server state \\ \hline
-                Online-Fashion-Store\footnote{\url{https://github.com/RazaRizvii/Online-Fashion-Store}} & Dec 22 & - & JavaScript & no server state \\ \hline
-                online-shopping-website\footnote{\url{https://github.com/nsk1512/online-shopping-website}} & Dec 19 & - & Node.js, MongoDB & - \\ \hline
-                Ketra-Mart\footnote{\url{https://github.com/Prajwal100/ketra-mart-free}} & Jun 23 & MIT & ? & source code against payment \\ \hline
-                Shuup\footnote{\url{https://github.com/shuup/shuup}} & Aug 21 & OSL & Python, SQL & Commercial, Multi-Vendor \\ \hline
-                EverShop\footnote{\url{https://github.com/evershopcommerce/evershop}} & Sep 23 & GPLv3 & Node.js, SQL & - \\ \hline
-                Hayroo\footnote{\url{https://github.com/hasan-py/MERN_Stack_Project_Ecommerce_Hayroo}} & May 23 & - & Node.js, MongoDB & - \\ \hline
-            \end{tabular}
-        }
-    \end{minipage}
-    \caption{Open-source web shop projects that were screened for suitability for this thesis}
-\end{figure}
 
 \section{Validierung}
 
