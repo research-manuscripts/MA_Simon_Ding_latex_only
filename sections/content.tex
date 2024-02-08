@@ -77,10 +77,11 @@ Diese Arbeit zielt darauf ab, eine automatisierte Pipeline zu entwickeln und zu 
 Unseres Wissens nach gibt es keine anderen Arbeiten, die LLMs für das automatisierte Testen von Webanwendungen verwenden.
 In neueren Literaturübersichten wird die Linguistische Sprachverarbeitung zwar als Werkzeug für das Testen von Software aufgeführt, jedoch nicht für das Generieren von Benutzerinteraktionen \cite{implementation_verma_2023, machine_fontes_2021}.
 
-Das hier in anderes Kapitel????
-Scheinbar grundlegend für diese Anwendung ist die Fähigkeit des LLMs, die GUI und Zustände der zu testenden Anwendung zu verstehen und zu navigieren.
+% Das hier in anderes Kapitel???? Nein, das ist hier richtig
+Scheinbar notwendig für diese Anwendung ist die Fähigkeit des LLMs, die GUI und Zustände der zu testenden Anwendung zu verstehen und zu navigieren.
 Zu dieser Navigation ist die Repräsentation der GUI als HTML-Dokument, einer Baumstruktur, von Bedeutung, und die Graphstruktur, die sich aus den Verknüpfungen der einzelnen Seiten und Zuständen der Anwendung ergibt.
-Ergebnisse der Kognitionswissenschaft legen allerdings nahe, dass zum Verständnis solcher Graphstrukturen eine Art von räumlichem Verständnis erforderlich ist \cite{what_is_a_cognitive_map}, das bisher bei LLMs scheinbar nicht vorhanden ist \cite{cogmaps_llm}.
+Ergebnisse der Kognitionswissenschaft legen allerdings nahe, dass zum Verständnis solcher Graphstrukturen eine Art von räumlichem Verständnis erforderlich ist \cite{what_is_a_cognitive_map}, das bisher bei LLMs scheinbar nicht vorhanden ist:
+Die Sprachmodelle konnten Fragen, die ein Verständnis der Navigation in einfachen Raumplänen erforderten, nicht korrekt beantworten \cite{cogmaps_llm}.
 Erschwerend kommt hinzu, dass der Zustandsgraph der Webanwendungen in dieser Anwendung nicht explizit gegeben ist, sondern vom LLM aus den Interaktionen mit der Webanwendung abgeleitet werden müsste.
 
 Einen komplett anderen Ansatz bieten Tsung et al.
