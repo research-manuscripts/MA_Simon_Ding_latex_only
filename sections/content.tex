@@ -48,47 +48,6 @@ Zuletzt befindet sich in Anlage \ref{ch:PracticalNotes} eine Sammlung von Erkenn
 
 % LLMs sind vielversprechend \cite{GPT3Testing}, 
 
-
-\chapter{Stand der Technik}
-\label{ch:RelatedWork}
-
-Ein verbreiteter Ansatz für das automatische Testen von Webanwendungen ohne hartkodierte Fehlerbedingungen ist das sogenannte Monkey-Testing.
-Dabei werden zufällige Benutzerinteraktionen simuliert und beobachtet, ob die Anwendung abstürzt.
-Dieser Ansatz ist einfach zu implementieren und kann auf jede Webanwendung angewendet werden, unabhängig von ihrer Struktur \cite{monkey_testing}.
-
-Aufbauend auf Monkey Testing gibt es viele Ansätze mit der Idee Algorithmen zu entwickeln, die die zu Testende Anwendung effizienter erkunden.
-TESTAR, ein Werkzeug für Monkey-Testing, enthält auch einen Algorithmus, der den Suchraum auf „interessante“ Pfade einschränken soll.
-Dafür wird eine anwendungsspezifische Prolog Wissendatenbank verwendet die relevante Benutzeraktionen aus dem Anwendungszustand ableitet.
-Aus diesen wird mittels Q-Learning ein Modell trainiert, das alle Anwendungszustände effizient zu erforschen versucht \cite{testar-q-learning}.
-Eskonen et al. verwenden bildbasiertes Deep Reinforcement Learning, um zu imitieren, wie Menschen die zu testende Anwendung erkunden \cite{deep_reinforcement_exploring}.
-Auf ähnliche Weise nutzen Saber et al. Computer Vision, um Anwendungszustände und Interaktionselemente aus Screenshots zu extrahieren, und verwenden dann Deep Q-Learning, um alle Anwendungszustände effizient zu erforschen \cite{saber_testing}. 
-%Diese Ansätze machen zwar menschliche Interaktion überflüssig und sind auf jede GUI-basierte Anwendung anwendbar, ermöglichen aber nicht die automatische Abarbeitung von natürlichsprachlichen Designer-Testfällen.
-Harris et al. schlagen DRIFT vor, ein Framework zur Navigation durch eine zu testende Anwendung bei der zuvor spezifizierte Softwarefunktionen ausgelöst werden sollen \cite{harries2020drift}.
-DRIFT arbeitet mit einer symbolischen Darstellung der Benutzeroberfläche und verwendet Q-Learning mit Graph Neural Networks.
-Dieser Prozess setzt jedoch die Beobachtung von Funktionsaufrufen der zu testenden Anwendung voraus, und die Definition von Tests erfordert technische Kenntnisse über die Interna der Anwendung.
-Khaliq et al. verwenden ein ähnliches System wie das in dieser Arbeit vorgeschlagene: Sie übergeben kurze textuelle Beschreibungen der Benutzeroberfläche an ein LLM, das eine Sequenz von Benutzeraktionen generiert, die von diesem Zustand aus zu verfolgen sind \cite{transformers_exploratory}.
-Neuere LLMs mit längereren maximalen Eingaben erlauben es jetzt aber, die vollständige Repräsentation der GUI in der Eingabe zu verwenden.
-
-Diese Arbeit folgt dem Ansatz von \Citeauthor{GPT3Testing}, eine strukturierte Darstellung der Benutzeroberfläche der zu testenden Anwendung zusammen mit einer natürlichsprachlichen Testbeschreibung als Eingabe für ein LLM-Modell zu verwenden \cite{GPT3Testing}.
-Das LLM generiert dann eine Benutzerinteraktion, die automatisch in der Anwendung ausgeführt wird.
-Sie evaluieren ihren Ansatz anhand einer sehr einfachen Anwendung, die aus einer Ansicht mit Knöpfen besteht und einer Vielzahl von Testbeschreibungen.
-Diese Arbeit zielt darauf ab, eine automatisierte Pipeline zu entwickeln und zu validieren, die den gleichen Ansatz für allgemeine GUI-basierte Webanwendungen mit HTML verwendet.
-
-Unseres Wissens nach gibt es keine anderen Arbeiten, die LLMs für das automatisierte Testen von Webanwendungen verwenden.
-In neueren Literaturübersichten wird die Linguistische Sprachverarbeitung zwar als Werkzeug für das Testen von Software aufgeführt, jedoch nicht für das Generieren von Benutzerinteraktionen \cite{implementation_verma_2023, machine_fontes_2021}.
-
-% Das hier in anderes Kapitel???? Nein, das ist hier richtig
-Scheinbar notwendig für diese Anwendung ist die Fähigkeit des LLMs, die GUI und Zustände der zu testenden Anwendung zu verstehen und zu navigieren.
-Zu dieser Navigation ist die Repräsentation der GUI als HTML-Dokument, einer Baumstruktur, von Bedeutung, und die Graphstruktur, die sich aus den Verknüpfungen der einzelnen Seiten und Zuständen der Anwendung ergibt.
-Ergebnisse der Kognitionswissenschaft legen allerdings nahe, dass zum Verständnis solcher Graphstrukturen eine Art von räumlichem Verständnis erforderlich ist \cite{what_is_a_cognitive_map}, das bisher bei LLMs scheinbar nicht vorhanden ist:
-Die Sprachmodelle konnten Fragen, die ein Verständnis der Navigation in einfachen Raumplänen erforderten, nicht korrekt beantworten \cite{cogmaps_llm}.
-Erschwerend kommt hinzu, dass der Zustandsgraph der Webanwendungen in dieser Anwendung nicht explizit gegeben ist, sondern vom LLM aus den Interaktionen mit der Webanwendung abgeleitet werden müsste.
-
-Einen komplett anderen Ansatz bieten Tsung et al.
-Sie stellen einen Arbeitsablauf vor, der auf der Spezifikation von Testskripten in einer strukturierten, für den Menschen lesbaren Sprache basiert, die auch Bilder enthält \cite{tsung}.
-Diese Skripte sind mit sehr wenig technischem Wissen verständlich und müssen nicht geändert werden, solange die visuellen Elemente der Benutzeroberfläche gleich bleiben.
-Auch wenn keine natürliche Sprache verwendet wird und Änderungen an der Benutzeroberfläche immer noch Änderungen am Skript erforderlich machen können, werden einige Nachteile regulärer Testskripte beseitigt.
-
 \chapter{Grundlagen}
 \label{ch:Foundations}
 
@@ -141,6 +100,46 @@ Because these models have been trained on such a large and diverse corpus of tex
 The sheer number of parameters used in these models allows them to capture a wide range of linguistic features, from simple grammatical structures to more complex semantic relationships. By leveraging this large amount of training data and parameter space, these models are able to learn to represent language in a highly nuanced and contextually appropriate way, allowing them to perform well on a wide range of tasks without the need for additional training.
 Furthermore, GPT-3 has shown impressive capabilities in generating source code for computer programs, including JavaScript, Python, and SQL. As a language model trained on a massive amount of code and natural language data, ChatGPT can also generate source code with a high degree of accuracy and efficiency, making it a valuable tool for software development and automation tasks.
 As such LLMs appear to be adequate to process both the structured representation of an application’s GUI, as well as natural language test cases, and provide a description of what action to follow next.
+
+\chapter{Stand der Technik}
+\label{ch:RelatedWork}
+
+Ein verbreiteter Ansatz für das automatische Testen von Webanwendungen ohne hartkodierte Fehlerbedingungen ist das sogenannte Monkey-Testing.
+Dabei werden zufällige Benutzerinteraktionen simuliert und beobachtet, ob die Anwendung abstürzt.
+Dieser Ansatz ist einfach zu implementieren und kann auf jede Webanwendung angewendet werden, unabhängig von ihrer Struktur \cite{monkey_testing}.
+
+Aufbauend auf Monkey Testing gibt es viele Ansätze mit der Idee Algorithmen zu entwickeln, die die zu Testende Anwendung effizienter erkunden.
+TESTAR, ein Werkzeug für Monkey-Testing, enthält auch einen Algorithmus, der den Suchraum auf „interessante“ Pfade einschränken soll.
+Dafür wird eine anwendungsspezifische Prolog Wissendatenbank verwendet die relevante Benutzeraktionen aus dem Anwendungszustand ableitet.
+Aus diesen wird mittels Q-Learning ein Modell trainiert, das alle Anwendungszustände effizient zu erforschen versucht \cite{testar-q-learning}.
+Eskonen et al. verwenden bildbasiertes Deep Reinforcement Learning, um zu imitieren, wie Menschen die zu testende Anwendung erkunden \cite{deep_reinforcement_exploring}.
+Auf ähnliche Weise nutzen Saber et al. Computer Vision, um Anwendungszustände und Interaktionselemente aus Screenshots zu extrahieren, und verwenden dann Deep Q-Learning, um alle Anwendungszustände effizient zu erforschen \cite{saber_testing}. 
+%Diese Ansätze machen zwar menschliche Interaktion überflüssig und sind auf jede GUI-basierte Anwendung anwendbar, ermöglichen aber nicht die automatische Abarbeitung von natürlichsprachlichen Designer-Testfällen.
+Harris et al. schlagen DRIFT vor, ein Framework zur Navigation durch eine zu testende Anwendung bei der zuvor spezifizierte Softwarefunktionen ausgelöst werden sollen \cite{harries2020drift}.
+DRIFT arbeitet mit einer symbolischen Darstellung der Benutzeroberfläche und verwendet Q-Learning mit Graph Neural Networks.
+Dieser Prozess setzt jedoch die Beobachtung von Funktionsaufrufen der zu testenden Anwendung voraus, und die Definition von Tests erfordert technische Kenntnisse über die Interna der Anwendung.
+Khaliq et al. verwenden ein ähnliches System wie das in dieser Arbeit vorgeschlagene: Sie übergeben kurze textuelle Beschreibungen der Benutzeroberfläche an ein LLM, das eine Sequenz von Benutzeraktionen generiert, die von diesem Zustand aus zu verfolgen sind \cite{transformers_exploratory}.
+Neuere LLMs mit längereren maximalen Eingaben erlauben es jetzt aber, die vollständige Repräsentation der GUI in der Eingabe zu verwenden.
+
+Diese Arbeit folgt dem Ansatz von \Citeauthor{GPT3Testing}, eine strukturierte Darstellung der Benutzeroberfläche der zu testenden Anwendung zusammen mit einer natürlichsprachlichen Testbeschreibung als Eingabe für ein LLM-Modell zu verwenden \cite{GPT3Testing}.
+Das LLM generiert dann eine Benutzerinteraktion, die automatisch in der Anwendung ausgeführt wird.
+Sie evaluieren ihren Ansatz anhand einer sehr einfachen Anwendung, die aus einer Ansicht mit Knöpfen besteht und einer Vielzahl von Testbeschreibungen.
+Diese Arbeit zielt darauf ab, eine automatisierte Pipeline zu entwickeln und zu validieren, die den gleichen Ansatz für allgemeine GUI-basierte Webanwendungen mit HTML verwendet.
+
+Unseres Wissens nach gibt es keine anderen Arbeiten, die LLMs für das automatisierte Testen von Webanwendungen verwenden.
+In neueren Literaturübersichten wird die Linguistische Sprachverarbeitung zwar als Werkzeug für das Testen von Software aufgeführt, jedoch nicht für das Generieren von Benutzerinteraktionen \cite{implementation_verma_2023, machine_fontes_2021}.
+
+% Das hier in anderes Kapitel???? Nein, das ist hier richtig
+Scheinbar notwendig für diese Anwendung ist die Fähigkeit des LLMs, die GUI und Zustände der zu testenden Anwendung zu verstehen und zu navigieren.
+Zu dieser Navigation ist die Repräsentation der GUI als HTML-Dokument, einer Baumstruktur, von Bedeutung, und die Graphstruktur, die sich aus den Verknüpfungen der einzelnen Seiten und Zuständen der Anwendung ergibt.
+Ergebnisse der Kognitionswissenschaft legen allerdings nahe, dass zum Verständnis solcher Graphstrukturen eine Art von räumlichem Verständnis erforderlich ist \cite{what_is_a_cognitive_map}, das bisher bei LLMs scheinbar nicht vorhanden ist:
+Die Sprachmodelle konnten Fragen, die ein Verständnis der Navigation in einfachen Raumplänen erforderten, nicht korrekt beantworten \cite{cogmaps_llm}.
+Erschwerend kommt hinzu, dass der Zustandsgraph der Webanwendungen in dieser Anwendung nicht explizit gegeben ist, sondern vom LLM aus den Interaktionen mit der Webanwendung abgeleitet werden müsste.
+
+Einen komplett anderen Ansatz bieten Tsung et al.
+Sie stellen einen Arbeitsablauf vor, der auf der Spezifikation von Testskripten in einer strukturierten, für den Menschen lesbaren Sprache basiert, die auch Bilder enthält \cite{tsung}.
+Diese Skripte sind mit sehr wenig technischem Wissen verständlich und müssen nicht geändert werden, solange die visuellen Elemente der Benutzeroberfläche gleich bleiben.
+Auch wenn keine natürliche Sprache verwendet wird und Änderungen an der Benutzeroberfläche immer noch Änderungen am Skript erforderlich machen können, werden einige Nachteile regulärer Testskripte beseitigt.
 
 
 \chapter{Versuchsaufbau}
