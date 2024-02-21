@@ -126,15 +126,15 @@ Das LLM generiert dann eine Benutzerinteraktion, die automatisch in der Anwendun
 Sie evaluieren ihren Ansatz anhand einer sehr einfachen Anwendung, die aus einer Ansicht mit Knöpfen besteht und einer Vielzahl von Testbeschreibungen.
 Diese Arbeit zielt darauf ab, eine automatisierte Pipeline zu entwickeln und zu validieren, die den gleichen Ansatz für allgemeine GUI-basierte Webanwendungen mit HTML verwendet.
 
-Unseres Wissens nach gibt es keine anderen Arbeiten, die LLMs für das automatisierte Testen von Webanwendungen verwenden.
+Meines Wissens nach gibt es keine anderen Arbeiten, die LLMs für das automatisierte Testen von Webanwendungen verwenden.
 In neueren Literaturübersichten wird die Linguistische Sprachverarbeitung zwar als Werkzeug für das Testen von Software aufgeführt, jedoch nicht für das Generieren von Benutzerinteraktionen \cite{implementation_verma_2023, machine_fontes_2021}.
 
 % Das hier in anderes Kapitel???? Nein, das ist hier richtig
 Scheinbar notwendig für diese Anwendung ist die Fähigkeit des LLMs, die GUI und Zustände der zu testenden Anwendung zu verstehen und zu navigieren.
-Zu dieser Navigation ist die Repräsentation der GUI als HTML-Dokument, einer Baumstruktur, von Bedeutung, und die Graphstruktur, die sich aus den Verknüpfungen der einzelnen Seiten und Zuständen der Anwendung ergibt.
-Ergebnisse der Kognitionswissenschaft legen allerdings nahe, dass zum Verständnis solcher Graphstrukturen eine Art von räumlichem Verständnis erforderlich ist \cite{what_is_a_cognitive_map}, das bisher bei LLMs scheinbar nicht vorhanden ist:
+Zu dieser Navigation ist die Repräsentation der GUI als HTML-Dokument, einer Baumstruktur, von Bedeutung, und der Zustandsgraf, der sich aus den möglichen Benutzerinteraktionen (Kanten) und Zuständen der Anwendung ergibt (Knoten).
+Ergebnisse der Kognitionswissenschaft legen allerdings nahe, dass zum Verständnis solcher Grafen eine Art von räumlichem Verständnis erforderlich ist \cite{what_is_a_cognitive_map}, das bisher bei LLMs scheinbar nicht vorhanden ist:
 Die Sprachmodelle konnten Fragen, die ein Verständnis der Navigation in einfachen Raumplänen erforderten, nicht korrekt beantworten \cite{cogmaps_llm}.
-Erschwerend kommt hinzu, dass der Zustandsgraph der Webanwendungen in dieser Anwendung nicht explizit gegeben ist, sondern vom LLM aus den Interaktionen mit der Webanwendung abgeleitet werden müsste.
+Erschwerend kommt hinzu, dass der Zustandsgraf der Webanwendungen in dieser Anwendung nicht explizit gegeben ist, sondern vom LLM aus den Interaktionen mit der Webanwendung abgeleitet werden müsste.
 
 Einen komplett anderen Ansatz bieten Tsung et al.
 Sie stellen einen Arbeitsablauf vor, der auf der Spezifikation von Testskripten in einer strukturierten, für den Menschen lesbaren Sprache basiert, die auch Bilder enthält \cite{tsung}.
@@ -145,42 +145,72 @@ Auch wenn keine natürliche Sprache verwendet wird und Änderungen an der Benutz
 \chapter{Versuchsaufbau}
 \label{ch:ExperimentalSetup}
 
-Nach der Kritik an der Arbeit von \Citeauthor{GPT3Testing}, dass die getestete Anwendung zu einfach sei, stellt sich die Frage, welche Art von Anwendung für die Evaluation des Ansatzes geeignet ist.
-Unserer Meinung nach sollte die Anwendung wenigstens folgende Eigenschaften haben:
+Nachdem die Arbeit von \Citeauthor{GPT3Testing} nur an einem einfachen Taschenrechner getestet wurde, stellt sich die Frage, welche Art von Anwendung für eine ausführlichere Evaluation des Ansatzes geeignet ist.
+Meiner Meinung nach sollte die Anwendung wenigstens folgende Eigenschaften haben:
 
 \begin{enumerate}
     \item
-        Die Anwendung sollte eine Vielzahl unterschiedlicher Interaktionselemente enthalten, die getestet werden können. 
+        Die Anwendung sollte praxisrelevant sein, idealerweise sollte sie sich nicht grundlegend von einer realen Anwendung unterscheiden.
+    \item
+        Die Anwendung sollte eine Vielzahl unterschiedlicher Interaktionselemente ent\-hal\-ten, die getestet werden können. 
         Sie sollte zumindest Hyperlinks, Knöpfe und Textfelder enthalten.
     \item
-        Die Anwendung sollte transaktionale Workflows enthalten.
+        Die Anwendung sollte transaktionale Arbeitsabläufe enthalten.
         Das bedeutet, dass der Benutzer eine Reihe von Interaktionen ausführen muss, um eine bestimmte Aktion auszuführen.
     \item
-        Die Anwendung sollte Validierungslogik enthalten. Dadurch ist der Tester gezwungen, auf Feedback der Anwendung zu reagieren, um eine bestimmte Interaktion auszuführen.
-        Ein Beispiel wäre das Ausfüllen eines Formulars, das nicht abgeschickt werden kann, bis alle Felder korrekt ausgefüllt sind.
+        Die Anwendung sollte Validierungslogik enthalten: Die Benutzereingaben sollten auf Korrektheit überprüft werden und die Anwendung sollte den Benutzer auffordern, fehlerhafte Eingaben zu korrigieren.
+        Dadurch ist der Tester gezwungen, auf Feedback der Anwendung zu reagieren, um eine bestimmte Interaktion auszuführen.
     \item
-        Die Zustandsraum der Anwendung sollte einen hohen Branching-Faktor haben.
-        Ein hoher Branching-Faktor bedeutet, dass es Anwendungszustände gibt, die viele verschiedene Interaktionen ermöglichen und so wiederum viele verschiedene Anwendungszustände erreichbar machen.
-        Ein Algorithmus, der rein zufällige Interaktionen ausführt, kann einen solchen Zustandsraum nur sehr ineffizient erkunden.
-    \item
-        Die Anwendung sollte praxisrelevant sein, idealerweise sollte sie sich nicht grundlegend von einer realen Anwendung unterscheiden.
+        Der Zustandsgraf der Anwendung sollte einen hohen Verzweigungsgrad haben.
+        Der Verzweigungsgrad eines Grafen ist ein Maß für die Komplexität des Grafen.
+        Er wird in endlichen Grafen als die Anzahl der Kanten geteilt durch die Anzahl der Knoten definiert.
+        Im Kontext eines GUI bedeutet das, dass es viele mögliche Benutzeraktionen gibt, die zu verschiedenen Anwendungszuständen führen.
     \item 
         Die Anwendung sollte Open-Source sein, um die Reproduzierbarkeit der Ergebnisse zu gewährleisten.
         Sie sollte auch unter einer Lizenz stehen, die kompatibel mit der Veröffentlichung dieser Arbeit ist, das heißt kompatibel mit der GNU General Public License, Version 3.
-    \item Eine strukturierte Repräsentation der GUI der Anwendung sollte zugänglich sein.
+    \item Schließlich ist eine textuelle Repräsentation der GUI der Anwendung notwendig, um sie dem LLM zu übergeben.
 \end{enumerate}
+
+Die Eigenschaften 1 bis 5 sind notwendig, um die Resultate der Evaluation auf möglichst viele reale Anwendungen übertragen zu können.
+Abbildung \ref{fig:sad_monkey} zeigt, dass Eigenschafen 3 bis 5 außerdem interessant sind, weil sie zusammen naives Monkey-Testing ineffizient machen und somit die Fähigkeiten des LLMs auf die Probe stellen.
+
+\begin{figure}
+    \centering
+    \begin{tikzpicture}[main/.style = {draw, circle},double_border/.style={draw, double, double distance=1pt,outer sep=1pt}] 
+        \node[main] (1) at (0,0) {$s$};
+        \node[main] (2) at (2, 0) {$v_1$};
+        \node[main] (3) at (4, 0){$v_2$};
+        \node[main] (4) at (6, 0) {$v_3$};
+        \node[main] (5) at (8, 0) {$v_4$};
+        \node[main,double_border] (6) at (10, 0) {$d$};
+        \node[main] (7) at (2, -2) {$e$};
+        \draw[->] (1) -- (2);
+        \draw[->] (2) -- node[below] {$1$} (3);
+        \draw[->] (3) -- node[below] {$1$} (4);
+        \draw[->] (4) -- node[below] {$1$} (5);
+        \draw[->] (5) -- node[below] {$1$} (6);
+        \draw[->] (5) .. controls +(down:2) .. node[align=right,right] {\ \ $99$} (7);
+        \draw[->] (4) .. controls +(down:1.5) .. node[right] {\ $99$} (7);
+        \draw[->] (3) .. controls +(down:1) .. node[right] {\ $99$} (7);
+        \draw[->] (2) .. controls +(down:1) .. node[right] {$99$} (7);
+        \draw[->] (7) .. controls +(left:2) ..  (1);
+        \draw[->] (-0.5,0) -- (1);
+    \end{tikzpicture} 
+    \caption{Zustandsgraf einer fiktiven Anwendung mit Validierung, einem transaktionalen Arbeitsablauf und einem hohen Verzweigungsgrad. $s$ ist der Startzustand, $d$ ist der Zielzustand, $e$ ist ein Fehlerzustand. Die Zahlen an den Kanten stehen für die Anzahl der möglichen Benutzerinteraktionen, die den Zustandsübergang auslösen. Die Wahrscheinlichkeit, dass ein Monkey-Tester den Zielzustand und nicht erneut den Startzustand erreicht, ist lediglich Eins in hundert Millionen.}
+    \label{fig:sad_monkey}
+\end{figure}
 
 Eine Art von Anwendung, die diese Anforderungen erfüllen kann, sind Webshops:
 Webshops enthalten eine Vielzahl von Interaktionselementen, wie Produktlisten, Warenkörbe und Kassenprozesse.
-Sie enthalten transaktionale Workflows, wie das Hinzufügen von Produkten zum Warenkorb gefolgt von einer Bestellung.
+Sie enthalten transaktionale Arbeitsabläufe, wie das Hinzufügen von Produkten zum Warenkorb gefolgt von einer Bestellung.
 Sie enthalten Validierungslogik, zum Beispiel bei dem Ausfüllen von Adressfeldern.
-Sie haben einen hohen Branching-Faktor, da es viele verschiedene Produkte gibt, die zu verschiedenen Anwendungszuständen führen.
-Sie sind extrem praxisrelevant, der Marktanteil von E-Commerce ist groß und wächst weiter.
+Sie haben einen hohen Verzweigungsgrad, da es viele verschiedene Produkte gibt, die zu verschiedenen Anwendungszuständen führen.
+Außerdem sind sie praxisrelevant: Der Marktanteil von E-Commerce ist groß und wächst weiter.
 \footnote{
 Der Anteil von E-Commerce am Einzelhandelsumsatz in den USA betrug im Quartal 1, 2023 15,6\%. U.S. Bureau of the Census über FRED, Federal Reserve Bank of St. Louis. \url{https://fred.stlouisfed.org/series/ECOMPCTSA}}
-Außerdem sind sie als Webseite verfügbar, sodass die textuelle Repräsentation ihrer GUI, das HTML-Dokument, direkt verfügbar ist.
+Und erfreulicherweise sind ihre GUIs in der Regel Webseiten, sodass die textuelle Repräsentation ihrer GUI, das HTML-Dokument, direkt verfügbar ist.
 
-Um eine geeignete Anwendung zu finden, haben wir eine Reihe von Open-Source-Projekten durchsucht, die als Webshop-Software oder Template für solche vermarktet werden.
+Um eine geeignete Anwendung zu finden, habe ich eine Reihe von Open-Source-Projekten durchsucht, die als Webshop-Software oder Template für solche vermarktet werden.
 Eine Auswahl dieser Projekte ist in Abbildung \ref{tab:webshop_projects} aufgeführt.
 
 \begin{figure}[h]
@@ -190,18 +220,18 @@ Eine Auswahl dieser Projekte ist in Abbildung \ref{tab:webshop_projects} aufgef�
             \scriptsize
             \begin{tabular}{ | l | l | l | l | l |}
                 \hline
-                \textbf{Template} & \textbf{Last Commit} & \textbf{License} & \textbf{Technology} & \textbf{Remark} \\ \hline
-                Online Shopping Cart\footnote{\url{https://github.com/shashirajraja/shopping-cart}} & May 23 & Apache 2 & Java, Servlets, JSP, SQL & Demonstrationszweck \\ \hline
-                LifestyleStore\footnote{\url{https://github.com/sajalagrawal/LifestyleStore}} & Aug 20 & - & PHP, SQL & Lernzweck \\ \hline
-                Your Online Shop\footnote{\url{https://github.com/petazeta/youronlineshop}} & Dec 22 & custom & Node.js, MongoDB & - \\ \hline
-                Ecommerce-Website\footnote{\url{https://github.com/winston-dsouza/ecommerce-website}} & Feb 20 & MIT & PHP, SQL & keine transaktionalen Workflows \\ \hline
-                Book-Hub\footnote{\url{https://github.com/amberkakkar01/Book-Hub}} & Aug 21 & - & HTML & statisches HTML \\ \hline
-                online-shopping-site\footnote{\url{https://github.com/dinushchathurya/online-shopping-site}} & May 19 & GPLv3 & JavaScript & ohne Server \\ \hline
-                Online-Fashion-Store\footnote{\url{https://github.com/RazaRizvii/Online-Fashion-Store}} & Dec 22 & - & JavaScript & ohne Server \\ \hline
-                online-shopping-website\footnote{\url{https://github.com/nsk1512/online-shopping-website}} & Dec 19 & - & Node.js, MongoDB & - \\ \hline
-                Ketra-Mart\footnote{\url{https://github.com/Prajwal100/ketra-mart-free}} & Jun 23 & MIT & ? & Quellcode nur gegen Zahlung \\ \hline
-                Shuup\footnote{\url{https://github.com/shuup/shuup}} & Aug 21 & OSL & Python, SQL & Kommerziell, Multi-Vendor \\ \hline
-                EverShop\footnote{\url{https://github.com/evershopcommerce/evershop}} & Sep 23 & GPLv3 & Node.js, SQL & - \\ \hline
+                \textbf{Projekt} & \textbf{Letzter Commit} & \textbf{Lizens} & \textbf{Technologie} & \textbf{Vermerk} \\ \hline
+                Online Shopping Cart\footnote{\url{https://github.com/shashirajraja/shopping-cart}} & Mai 23 & Apache 2 & Java, Servlets, JSP, SQL & Demonstrationszweck \\ \hline
+                LifestyleStore\footnote{\url{https://github.com/sajalagrawal/LifestyleStore}} & August 20 & - & PHP, SQL & Lernzweck \\ \hline
+                Your Online Shop\footnote{\url{https://github.com/petazeta/youronlineshop}} & Dezember 22 & custom & Node.js, MongoDB & - \\ \hline
+                Ecommerce-Website\footnote{\url{https://github.com/winston-dsouza/ecommerce-website}} & Februar 20 & MIT & PHP, SQL & keine transaktionalen Workflows \\ \hline
+                Book-Hub\footnote{\url{https://github.com/amberkakkar01/Book-Hub}} & August 21 & - & HTML & statisches HTML \\ \hline
+                online-shopping-site\footnote{\url{https://github.com/dinushchathurya/online-shopping-site}} & Mai 19 & GPLv3 & JavaScript & ohne Server \\ \hline
+                Online-Fashion-Store\footnote{\url{https://github.com/RazaRizvii/Online-Fashion-Store}} & Dezember 22 & - & JavaScript & ohne Server \\ \hline
+                online-shopping-website\footnote{\url{https://github.com/nsk1512/online-shopping-website}} & Dezember 19 & - & Node.js, MongoDB & - \\ \hline
+                Ketra-Mart\footnote{\url{https://github.com/Prajwal100/ketra-mart-free}} & Juni 23 & MIT & ? & Quellcode nur gegen Zahlung \\ \hline
+                Shuup\footnote{\url{https://github.com/shuup/shuup}} & August 21 & OSL & Python, SQL & Kommerziell, Multi-Vendor \\ \hline
+                EverShop\footnote{\url{https://github.com/evershopcommerce/evershop}} & September 23 & GPLv3 & Node.js, SQL & - \\ \hline
                 Hayroo\footnote{\url{https://github.com/hasan-py/MERN_Stack_Project_Ecommerce_Hayroo}} & May 23 & - & Node.js, MongoDB & - \\ \hline
             \end{tabular}
         }
@@ -229,15 +259,106 @@ Deshalb wurde entschieden, eine eigene Anwendung auf Basis von \textit{online-sh
 
 \section{Getestete Anwendung}
 
-As part of this thesis, a custom demo application will serve as the application under test.
-This demo application will mimic a real-world web shop application, where users can interact with various elements such as product listings, shopping carts, checkout processes, and user profiles.
-This will allow testing the approach under realistic circumstances with diverse GUI elements, transactional workflows, and data validation.
-To save time, the demo application will be implemented using an open-source webshop template, which will be modified to include additional features and functionality for validation.
-Multiple open-source web shop projects have been screened for their suitability for this purpose as described in table \ref{tab:webshop_projects}.
-Of these templates, EverShop has been chosen as the basis for the demo application, as it is the most actively maintained, is intended to be used commercially, and is licensed under the GNU General Public License, version 3.
+Um die Methode des automatisierten Testens von Webanwendungen mit LLMs zu evaluieren, habe ich eine eigene Anwendung entwickelt, die als Testanwendung dient.
+Diese Testanwendung ist ein Webshop, in dem Benutzer mit verschiedenen Elementen interagieren können, wie Produktlisten für verschiedene Produktkategorien, einem Warenkorb und dem Kassenprozess.
 
+Als Grundlage für die Testanwendung dient das Open-Source Projekt \textit{online-shopping-website} \footnote{\url{https://github.com/nsk1512/online-shopping-website}}.
+\textit{online-shopping-website} enthält bereits eine Startseite, Produktlisten und einen Warenkorb.
+Die Anwendung ist in JavaScript geschrieben und benötigt keine externen Abhängigkeiten, Server oder Datenbanken.
+Für diese Arbeit habe ich die Anwendung unter Verwendung der Bibliothek \textit{react}\footnote{\url{https://react.dev/}} neu implementiert und um eine Kassenfunktionalität, Validierungslogik und eine Bestellbestätigungsseite erweitert.
+Mit diesen Erweiterungen erfüllt die Anwendung alle Anforderungen, die am Anfang dieses Kapitels aufgeführt sind.
+
+Die Webseite ist jetzt wie folgt aufgebaut:
+Es gibt vier verschiedene Seiten, die der Benutzer besuchen kann: Die Startseite, die Produktlisten für verschiedene Produktkategorien, die Kasse und die Bestellbestätigungsseite.
+Diese sind in Abbildung \ref{fig:online-shopping-website} dargestellt.
+Jede Seite enthält eine Titelleiste mit einem aufklappbaren Menü, das den Benutzer zu den anderen Seiten führt und eine aufklappbare Warenkorbansicht.
+Die Produktlisten und die Startseite enthalten Bilder, Namen und Preise der Produkte und eine Schaltfläche, um das Produkt zum Warenkorb hinzuzufügen.
+Die Startseite enthält ausgewählte Produkte aus verschiedenen Kategorien und eine Schaltfläche um zu einer hervorgehobenen Produktkategorie zu gelangen.
+In dem aufklappbaren Warenkorb lassen sich die Produkte entfernen und die Anzahl der Produkte ändern und es gibt eine Schaltfläche, um zur Kasse zu gelangen.
+In der Kasse gibt es eine Bestellübersicht und dort gibt der Benutzer seine Adresse und Zahlungsdaten ein und bestätigt die Bestellung.
+Daraufhin werden die Benutzereingaben auf Vollständigkeit und korrekte Form validiert.
+Falls sie korrekt sind, gelangt der Nutzer zur Bestellbestätigungsseite, sonst wird er aufgefordert, die Eingaben entsprechend zu korrigieren.
+
+\begin{figure}
+    \centering
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{pictures/Start.png}
+        \caption{Startseite}
+        \label{fig:online-shopping-website-start}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{pictures/Leiste.png}
+        \caption{auf\-ge\-klappte Titelleiste}
+        \label{fig:online-shopping-website-menu}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{pictures/Cart.png}
+        \caption{Warenkorb}
+        \label{fig:online-shopping-website-cart}
+    \end{subfigure}
+    
+    % New row
+    \begin{subfigure}[b]{0.9\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{pictures/Products_Half.png}
+        \caption{Produktliste}
+        \label{fig:online-shopping-website-product-list}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.9\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{pictures/Checkout.png}
+        \caption{Kasse}
+        \label{fig:online-shopping-website-checkout}
+    \end{subfigure}
+
+    \caption{Screenshots der Testanwendung}
+    \label{fig:online-shopping-website}
+\end{figure}
+
+\section{Extraktion von Interaktionsmöglichkeiten}
+
+Für das Testen mittels LLM ist es notwendig, die möglichen Benutzerinteraktionen aus der HTML-Repräsentation der Anwendung zu extrahieren.
+Ein Monkey-Tester könnte die Interaktionselemente zwar auch durch rein zufällige Maus und Tastaturaktionen finden, dann wären die Testergebnisse nicht mehr vergleichbar mit denen des LLMs.
+
+Leider genügt es nicht, Interaktionselemente durch ihre HTML-Tags und -Attribute zu identifizieren, denn in der Praxis ist es schwierig, die Interaktionselemente zu identifizieren, die nicht verdeckt sind.
+Außerdem ist es mittels JavaScript möglich und gängig, auch HTML-Elemente interagierbar zu machen, die nicht dazu gedacht sind.
+Beispielsweise sind einige Knöpfe in der Testanwendung keine HTML-Buttons, sondern div-Elemente, die durch JavaScript-Event-Listener interagierbar sind.
+Rein auf Basis des HTML-Dokuments ist es nicht möglich, zu erkennen, dass diese Elemente interagierbar sind.
+
+Ich habe keine Möglichkeit gefunden, automatisch festzustellen, welche Elemente einer Webseite interagierbar sind.
+Deshalb habe ich die Verantwortlichkeit für die Identifikation dieser Elemente auf den Entwickler der zu testenden Anwendung gelegt.
+Für das Testframework, das ich entwickelt habe, ist es notwendig, dass benutzbare HTML-Elemente durch ein spezielles Attribut gekennzeichnet sind.
+
+Um herauszufinden, welche dieser gekennzeichneten Elemente nicht verdeckt sind, habe ich ein Skript entwickelt, das mithilfe der Bibliothek \textit{Selenium}\footnote{\url{https://www.selenium.dev/}} direkt im Browser ausgeführt wird.
+Es benutzt die DOM-API des Browsers, um abzufragen, welches Element an der Stelle eines gekennzeichneten Elements zu oberst liegt.
+Das gekennzeichnete Element kann nicht verdeckt sein, wenn das oberste Element Nachfahre des gekennzeichneten Elements oder das Element selbst ist.
+Für die Testanwendung reicht dieses Kriterium zwar aus, generell lassen sich aber Fälle konstruieren, in denen dieses Kriterium nicht ausreicht, oder nicht zutrifft:
+Beispielsweise durch absolute Positionierung oder z-index kann es sein, dass ein Element, das nicht vollständig verdeckt ist, nicht als solches erkannt wird.
+Oder wenn das gekennzeichnete Element vollständig von Kindelementen verdeckt ist, die selbst interagierbar sind, ist das gekennzeichnete Element nicht interagierbar.
+
+\section{Prompt-Engineering}
+
+Die Qualität der generierten Ausgabe eines LLM hängt stark von der Qualität der Eingabe ab, die dem LLM gegeben wird. \cite{chain-of-thought}
+Prompt-Engineering ist die Kunst, eine Eingabe zu formulieren, die das gewünschte Verhalten des LLM hervorruft.
+In dieser Arbeit habe ich mich auf die Entwicklung von Prompts konzentriert, die die Anwendung navigieren und testen.
+Im Speziellen sind Eingaben, mit denen das LLM zu Anwendungszuständen navigiert, die von klassischen Monkey-Testern schwer zu erreichen sind, von Interesse.
+
+Dazu vergleiche ich die Qualität der generierten Benutzerinteraktionen, wenn das LLM mit verschiedenen Eingabe aufgerufen wird.
+Die Qualität der generierten Benutzerinteraktionen wird anhand der Branchenabdeckung gemessen, mehr dazu in Abschnitt \ref{sec:vaildation}.
+
+\begin{enumerate}
+    \item Basis-Eingabe: Die Basis-Eingabe ist ein einfacher Satz, der das LLM auffordert, eine Benutzerinteraktion zu generieren die eine gegeben Webanwendung testen soll.
+    \item Verkettung: Zusätzlich zu der Basis-Eingabe wird jeweils die letzte Ausgabe des LLMs an die Eingabe angefügt.
+    \item Beschreibung: Zusätzlich zur Verkettung wird das LLM aufgefordert eine Beschreibung des Anwendungszustands zu generieren. Diese wird dann mit verkettet.
+\end{enumerate}
 
 \section{Validierung}
+\label{sec:vaildation}
 
 As we know of no other approaches to doing scripted testing using only natural language test descriptions, comparing it to other works is hard.
 As such validation of this part of the work will center around its feasibility.
