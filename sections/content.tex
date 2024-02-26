@@ -416,14 +416,19 @@ Die Qualität der generierten Benutzerinteraktionen wird anhand der Branchenabde
             ylabel={Branchenabdeckung [\%]},
             xlabel={Anzahl der generierten Benutzerinteraktionen [1]},
             no markers,
-            legend pos=north west,
+            legend pos=south east,
             %xtick=data,
             ]
             \addplot[color=green] table [x=x,y=average,col sep=comma] {experimental_data/monkey/results.csv};
-            \addlegendentry{Monkey-Testing}
-            \addplot[name path=monkey_top,color=green!70] table [x=x,y=above,col sep=comma] {experimental_data/monkey/results.csv};
-            \addplot[name path=monkey_bottom,color=green!70] table [x=x,y=below,col sep=comma] {experimental_data/monkey/results.csv};
-            \addplot[green!50,fill opacity=0.5] fill between[of=monkey_top and monkey_bottom];
+            \label{Monkey-Testing, n=10}
+            \addplot+[forget plot,name path=monkey_top,color=green!70] table [x=x,y=above,col sep=comma] {experimental_data/monkey/results.csv};
+            \addplot+[forget plot,name path=monkey_bottom,color=green!70] table [x=x,y=below,col sep=comma] {experimental_data/monkey/results.csv};
+            \addplot+[forget plot,green!50,fill opacity=0.5] fill between[of=monkey_top and monkey_bottom];
+            \addlegendentry{Monkey-Testing, n=10}
+
+            \addplot[color=blue] table [x=x,y=average,col sep=comma] {experimental_data/gpt4-base/results.csv};
+            \addlegendentry{GPT-4 Basiseingabe, n=4}
+            \label{Basis-Eingabe, n=4}
         \end{axis}
     \end{tikzpicture}
     
