@@ -1,0 +1,8 @@
+{
+    "url": "http://localhost:3000/",
+    "delay": 0.5,
+    "interactions": 10,
+    "load_wait_time": 10,
+    "test_type": "gpt-4-turbo-preview",
+    "output_dir": "results"
+}

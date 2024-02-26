@@ -1,0 +1,114 @@
+{
+  "response": {
+    "id": "chatcmpl-8wVXHh2xp4sTCJGm4S1ouJB9Ei9cJ",
+    "object": "chat.completion",
+    "created": 1708954939,
+    "model": "gpt-4-0125-preview",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": null,
+          "function_call": {
+            "name": "emulate_interaction",
+            "arguments": "{\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\"1:r4:\"}}"
+          }
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 376,
+      "completion_tokens": 16,
+      "total_tokens": 392
+    },
+    "system_fingerprint": "fp_91aa3742b1"
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "Given a web application, you are tasked with assisting in testing its functionality. The emulate_interaction function takes an interaction as input and emulates it on the web application. The return value of the function is the new, filtered HTML source code of the web application. The source code of previous interactions will be omitted from the input to the assistant. "
+    },
+    {
+      "role": "user",
+      "content": " The goal is to test as many different features as possible to find potential bugs, so make sure to include edge cases."
+    },
+    {
+      "role": "system",
+      "content": "Only use the click action with clickable elements. The clickable elements have the following ids: 1:r4:, 2:r4:, 3:r4:, 4:r4:, :r1:, :r2:. Only use the hover action with hoverable elements. The hoverable elements have the following ids: 1:r5:, 2:r5:, 3:r5:, 4:r5:. "
+    }
+  ],
+  "functions": [
+    {
+      "name": "emulate_interaction",
+      "description": "Emulates a user interaction with the web application",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "interaction": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "interaction_type": {
+                    "const": "click",
+                    "type": "string",
+                    "description": "The type of interaction to emulate"
+                  },
+                  "element_id": {
+                    "enum": [
+                      "1:r4:",
+                      "2:r4:",
+                      "3:r4:",
+                      "4:r4:",
+                      ":r1:",
+                      ":r2:"
+                    ],
+                    "type": "string",
+                    "description": "The id of the element to interact with"
+                  }
+                },
+                "required": [
+                  "interaction_type",
+                  "element_id"
+                ],
+                "description": "clicks on a html element"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "interaction_type": {
+                    "const": "hover",
+                    "type": "string",
+                    "description": "The type of interaction to emulate"
+                  },
+                  "element_id": {
+                    "enum": [
+                      "1:r5:",
+                      "2:r5:",
+                      "3:r5:",
+                      "4:r5:"
+                    ],
+                    "type": "string",
+                    "description": "The id of the element to interact with"
+                  }
+                },
+                "required": [
+                  "interaction_type",
+                  "element_id"
+                ],
+                "description": "moves the mouse over an html element"
+              }
+            ],
+            "description": "The interaction to emulate"
+          }
+        },
+        "required": [
+          "interaction"
+        ]
+      }
+    }
+  ]
+}
