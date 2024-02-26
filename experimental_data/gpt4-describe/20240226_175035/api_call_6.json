@@ -1,0 +1,169 @@
+{
+  "response": {
+    "id": "chatcmpl-8wYUOWfhXQgWLLaMa5fhqKd8QTyZP",
+    "object": "chat.completion",
+    "created": 1708966292,
+    "model": "gpt-4-0125-preview",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": null,
+          "function_call": {
+            "name": "emulate_interaction",
+            "arguments": "{\"page_description\":\"The current view is a cart overlay displayed on top of the main web application interface. The cart contains two items: Galaxy M20 and Galaxy A80, each with an image, name, price, options to remove the item, and buttons to adjust the quantity. The cart also shows the total cost of the items. Other visible elements include a 'clear cart' button and a 'checkout' button. The main interface beneath the overlay includes a navigation bar with categories (Home, Galaxy, S10, M Series, A Series) and a product section showing various Galaxy products.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":r6:\"}}"
+          }
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3068,
+      "completion_tokens": 135,
+      "total_tokens": 3203
+    },
+    "system_fingerprint": "fp_89b1a570e1"
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "Given a web application, you are tasked with assisting in testing its functionality. The emulate_interaction function takes an interaction as input and emulates it on the web application. The return value of the function is the new, filtered HTML source code of the web application. The source code of previous interactions will be omitted from the input to the assistant. "
+    },
+    {
+      "role": "user",
+      "content": "Please test my website. The goal is to test as many different features as possible to find potential bugs, so make sure to include edge cases. Here is the filtered HTML source code of the web application: 'omitted'. "
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The web application appears to be an online store for Samsung products, specifically focusing on the Galaxy S10 series of smartphones. The main elements on the site include a navigation bar with links to different product categories (Home, Galaxy, S10, M Series, A Series), a hero banner promoting the Samsung Store and encouraging users to shop now, a products section displaying four variations of the Galaxy S10 with their images, names, prices, and 'add to cart' buttons, and a cart overlay which seems to initiate the checkout process but its full functionality is not visible from the provided source code.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":r1:\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The web application is an e-commerce platform offering a variety of Samsung Galaxy phones. The homepage, accessible through the navigation bar, highlights the Samsung Store with a 'Shop now' button. The product section showcases four models of the Galaxy S10 series, each with an 'add to cart' option. The site includes a navbar for navigating to different product categories including Home, Galaxy, S10, M Series, and A Series. There's also a hamburger menu for additional navigation options and a cart icon indicating the number of items in the cart.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":r0:-galaxy\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The web application is currently displaying a selection of Galaxy products. Main elements include a navigation bar at the top with options for Home, Galaxy, S10, M Series, and A Series, indicating different categories of products. The page displays a series of products, including various models from the Galaxy series such as Galaxy S10 5G, Galaxy S10+, Galaxy S10, Galaxy S10e, Galaxy A2 Core, Galaxy M30, Galaxy M20, Galaxy M10, Galaxy A80, Galaxy A70, Galaxy A60, and Galaxy A30. Each product has an image, a name, a price, and an 'add to cart' button. There is also a cart overlay, but it's not currently active.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\"7:rc:\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"We have navigated to a product page featuring a variety of Galaxy products after adding the Galaxy M20 to the cart. The main elements on the site now include a navigation bar with categories (Home, Galaxy, S10, M Series, A Series), detailed listings for Galaxy products including image, name, price, and 'add to cart' buttons. There is an indication that the Galaxy M20 is already in the cart. Additionally, a cart overlay is present but not currently active.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":r9:\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The web application currently displays a cart overlay showing a single item, the Galaxy M20, which was previously added to the cart. Alongside, a summary of the cart's contents, including the total cost, is displayed. The cart overlay also features a remove item option, quantity adjustment controls (increase and decrease), a clear cart button, and a checkout button. The main interface still shows the navigation bar with Home, Galaxy, S10, M Series, and A Series categories, and the array of Galaxy products is visible in the background.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\"9:rc:\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "<html lang=\"en\"><head><title>React App</title></head><body><div id=\"root\"><nav class=\"Navbar visible\"><div class=\"Top-row\"><div class=\"Navbar-center\"><span class=\"Navbar-icon on-click\" id=\":r1:\"><i class=\"fas fa-bars\"></i></span><div class=\"Navbar-cart-btn on-click\" id=\":r2:\"><span class=\"Navbar-icon\"><i class=\"fas fa-cart-plus\"></i></span><div class=\"cart-items\">2</div></div></div></div><menu class=\"visible\"><li><a class=\"\" href=\"#/\" id=\":r0:-home\">Home</a></li><li><a aria-current=\"page\" class=\"active\" href=\"#/c/galaxy\" id=\":r0:-galaxy\">Galaxy</a></li><li><a class=\"\" href=\"#/c/s10\" id=\":r0:-s10\">S10</a></li><li><a class=\"\" href=\"#/c/m_series\" id=\":r0:-m_series\">M Series</a></li><li><a class=\"\" href=\"#/c/a_series\" id=\":r0:-a_series\">A Series</a></li></menu></nav><section class=\"Products\"><div class=\"Products-section-title\"><h2>Galaxy </h2></div><div class=\"Products-center\"><article class=\"Products-product\"><div class=\"Products-img-container\"><img alt=\"Galaxy S10 5G\" class=\"product-img mouse-over\" id=\"1:rd:\" src=\"./images/product-1.jpeg\"/><button class=\"bag-btn\" id=\"1:rc:\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button></div><h3>Galaxy S10 5G</h3><h4>$910.99</h4></article><article class=\"Products-product\"><div class=\"Products-img-container\"><img alt=\"Galaxy S10+\" class=\"product-img mouse-over\" id=\"2:rd:\" src=\"./images/product-2.jpeg\"/><button class=\"bag-btn\" id=\"2:rc:\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button></div><h3>Galaxy S10+</h3><h4>$812.99</h4></article><article class=\"Products-product\"><div class=\"Products-img-container\"><img alt=\"Galaxy S10\" class=\"product-img mouse-over\" id=\"3:rd:\" src=\"./images/product-3.jpeg\"/><button class=\"bag-btn\" id=\"3:rc:\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button></div><h3>Galaxy S10</h3><h4>$712.99</h4></article><article class=\"Products-product\"><div class=\"Products-img-container\"><img alt=\"Galaxy S10e\" class=\"product-img mouse-over\" id=\"4:rd:\" src=\"./images/product-4.jpeg\"/><button class=\"bag-btn\" id=\"4:rc:\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button></div><h3>Galaxy S10e</h3><h4>$622.99</h4></article><article class=\"Products-product\"><div class=\"Products-img-container\"><img alt=\"Galaxy A2 Core\" class=\"product-img mouse-over\" id=\"5:rd:\" src=\"./images/product-5.jpeg\"/><button class=\"bag-btn\" id=\"5:rc:\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button></div><h3>Galaxy A2 Core</h3><h4>$688.99</h4></article><article class=\"Products-product\"><div class=\"Products-img-container\"><img alt=\"Galaxy M30\" class=\"product-img mouse-over\" id=\"6:rd:\" src=\"./images/product-6.jpeg\"/><button class=\"bag-btn\" id=\"6:rc:\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button></div><h3>Galaxy M30</h3><h4>$532.99</h4></article><article class=\"Products-product\"><div class=\"Products-img-container\"><img alt=\"Galaxy M20\" class=\"product-img mouse-over\" id=\"7:rd:\" src=\"./images/product-7.jpeg\"/><button class=\"bag-btn\" id=\"7:rc:\"><i class=\"fas fa-shopping-cart\"></i>in cart</button></div><h3>Galaxy M20</h3><h4>$545.99</h4></article><article class=\"Products-product\"><div class=\"Products-img-container\"><img alt=\"Galaxy M10\" class=\"product-img mouse-over\" id=\"8:rd:\" src=\"./images/product-8.jpeg\"/><button class=\"bag-btn\" id=\"8:rc:\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button></div><h3>Galaxy M10</h3><h4>$440.99</h4></article><article class=\"Products-product\"><div class=\"Products-img-container\"><img alt=\"Galaxy A80\" class=\"product-img mouse-over\" id=\"9:rd:\" src=\"./images/product-9.jpeg\"/><button class=\"bag-btn\" id=\"9:rc:\"><i class=\"fas fa-shopping-cart\"></i>in cart</button></div><h3>Galaxy A80</h3><h4>$386.99</h4></article><article class=\"Products-product\"><div class=\"Products-img-container\"><img alt=\"Galaxy A70\" class=\"product-img mouse-over\" id=\"10:rd:\" src=\"./images/product-10.jpeg\"/><button class=\"bag-btn\" id=\"10:rc:\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button></div><h3>Galaxy A70</h3><h4>$378.99</h4></article><article class=\"Products-product\"><div class=\"Products-img-container\"><img alt=\"Galaxy A60\" class=\"product-img mouse-over\" id=\"11:rd:\" src=\"./images/product-11.jpeg\"/><button class=\"bag-btn\" id=\"11:rc:\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button></div><h3>Galaxy A60</h3><h4>$289.99</h4></article><article class=\"Products-product\"><div class=\"Products-img-container\"><img alt=\"Galaxy A30\" class=\"product-img mouse-over\" id=\"12:rd:\" src=\"./images/product-12.jpeg\"/><button class=\"bag-btn\" id=\"12:rc:\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button></div><h3>Galaxy A30</h3><h4>$248.99</h4></article></div></section><div class=\"on-click cart-overlay transparentBcg\" id=\":ra:\"><div class=\"on-click cart showCart\" id=\":rb:\"><span class=\"close-cart on-click\" id=\":r9:\"><i class=\"fas fa-window-close\"></i></span><h2>Your cart</h2><div class=\"cart-content\"><div class=\"cart-item\"><img alt=\"Galaxy M20\" src=\"./images/product-7.jpeg\"/><div><h4>Galaxy M20</h4><h5>$545.99</h5><span class=\"remove-item on-click\" id=\":re:\">remove</span></div><div><i class=\"fas fa-chevron-up on-click\" id=\":rf:\"></i><p class=\"item-amount\">1</p><i class=\"fas fa-chevron-down on-click\" id=\":rg:\"></i></div></div><div class=\"cart-item\"><img alt=\"Galaxy A80\" src=\"./images/product-9.jpeg\"/><div><h4>Galaxy A80</h4><h5>$386.99</h5><span class=\"remove-item on-click\" id=\":rh:\">remove</span></div><div><i class=\"fas fa-chevron-up on-click\" id=\":ri:\"></i><p class=\"item-amount\">1</p><i class=\"fas fa-chevron-down on-click\" id=\":rj:\"></i></div></div></div><div class=\"cart-footer\"><h3>your total: <span class=\"cart-total\">$932.98</span></h3><button class=\"clear-cart banner-btn\" id=\":r6:\">clear cart</button><a href=\"#/checkout\" id=\":r8:\" style=\"text-decoration: none;\"><div class=\"banner-btn clear-cart on-click\" id=\":r7:\">Checkout</div></a></div></div></div></div></body></html>"
+    },
+    {
+      "role": "system",
+      "content": "Start by describing the website supplied by the user. Give a short general description first then summarize the main elements on the website. Do not use HTML in your description."
+    },
+    {
+      "role": "system",
+      "content": "Only use the click action with clickable elements. The clickable elements have the following ids: :r6:, :r8:, :ra:, :rb:, :r9:, :re:, :rf:, :rg:, :rh:, :ri:, :rj:, :r7:. "
+    }
+  ],
+  "functions": [
+    {
+      "name": "emulate_interaction",
+      "description": "Emulates a user interaction with the web application",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "page_description": {
+            "type": "string",
+            "description": "A short textual description of the state of the web application: What is the current page? What are the main elements on the page? This description should not contain any HTML."
+          },
+          "interaction": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "interaction_type": {
+                    "const": "click",
+                    "type": "string",
+                    "description": "The type of interaction to emulate"
+                  },
+                  "element_id": {
+                    "enum": [
+                      ":r6:",
+                      ":r8:",
+                      ":ra:",
+                      ":rb:",
+                      ":r9:",
+                      ":re:",
+                      ":rf:",
+                      ":rg:",
+                      ":rh:",
+                      ":ri:",
+                      ":rj:",
+                      ":r7:"
+                    ],
+                    "type": "string",
+                    "description": "The id of the element to interact with"
+                  }
+                },
+                "required": [
+                  "interaction_type",
+                  "element_id"
+                ],
+                "description": "clicks on a html element"
+              }
+            ],
+            "description": "The interaction to emulate"
+          }
+        },
+        "required": [
+          "page_description",
+          "interaction"
+        ]
+      }
+    }
+  ]
+}

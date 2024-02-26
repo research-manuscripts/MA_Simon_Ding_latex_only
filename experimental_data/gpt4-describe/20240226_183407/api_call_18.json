@@ -1,0 +1,196 @@
+{
+  "response": {
+    "id": "chatcmpl-8wZDCuR2FEhJMDt58MKBP9JU1bf1w",
+    "object": "chat.completion",
+    "created": 1708969070,
+    "model": "gpt-4-0125-preview",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": null,
+          "function_call": {
+            "name": "emulate_interaction",
+            "arguments": "{\"page_description\":\"The website is a React-based e-commerce platform specializing in Samsung Galaxy products. The primary elements on the site are a navigation panel with links to Home, Galaxy, S10, M Series, and A Series categories, a checkout section that includes a form for customer, address, and payment information, and a cart overlay. The checkout form is divided into three sections for customer information, address details, and payment method, with input fields for first name, last name, email, country, street address, city, state, and zip code, and a dropdown for selecting the payment method (Invoice, Credit Card, PayPal). The submit button is for finalizing the purchase. The navigation panel and cart overlay suggest a typical e-commerce user journey from browsing products to initiating the checkout process.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":r0:-home\"}}"
+          }
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2192,
+      "completion_tokens": 176,
+      "total_tokens": 2368
+    },
+    "system_fingerprint": "fp_8c864dca93"
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "Given a web application, you are tasked with assisting in testing its functionality. The emulate_interaction function takes an interaction as input and emulates it on the web application. The return value of the function is the new, filtered HTML source code of the web application. The source code of previous interactions will be omitted from the input to the assistant. "
+    },
+    {
+      "role": "user",
+      "content": "Please test my website. The goal is to test as many different features as possible to find potential bugs, so make sure to include edge cases. Here is the filtered HTML source code of the web application: 'omitted'. "
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The web application is a Samsung e-commerce platform, currently displaying the Galaxy products category, with details on the Galaxy A60 in the cart. This section of the website allows users to click on products to add them to their shopping cart. Main elements include navigational links for Home, Galaxy, S10, M Series, and A Series. It displays a series of Galaxy models such as the S10 5G, S10+, S10, S10e, A2 Core, M30, M20, M10, A80, A70, A60, and A30, each with an 'Add to Cart' button. A cart overlay is present, displaying the Galaxy A60 with options to remove it or adjust its quantity. There's also a total price, a button to clear the cart, a checkout button, and a close overlay option.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":r8:\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The website has transitioned to a checkout page after adding the Galaxy A60 to the cart. This page features a comprehensive checkout form divided into three sections: Customer, Address, and Payment information. Each section contains various input fields such as First Name, Last Name, E-Mail, Country, Street Address, City, State, Zip Code, and a Payment method selector offering options like Invoice, Credit Card, and PayPal. At the bottom of the form, there's a 'Submit' button for processing the order. Besides the form, the checkout page retains the navigation bar at the top, allowing access to Home, Galaxy, S10, M Series, and A Series sections of the website.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":r2:\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The website appears to be a React-based e-commerce platform focusing on Samsung Galaxy products. It has a checkout page visible with a summary of cart items \u2013 in this case, a Galaxy A60, along with the total cost displayed. There is also a form for customer, address, and payment information subdivided into sections. The form fields include first name, last name, email, country, street address, city, state, zip code, and a payment method selector (Invoice, Credit Card, Paypal). A submit button is present for completing the order. Additionally, there's a navigation bar with links to different product categories including Home, Galaxy, S10, M Series, and A Series. A cart overlay can be spotted in the background.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":r9:\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The website is a React-based e-commerce platform specializing in Samsung Galaxy products. The main view is the checkout page featuring a summary of cart items, specifically a Galaxy A60 with its price. A detailed checkout form is present, requesting customer, address, and payment information through various input fields such as first name, last name, email, country, street address, city, state, zip code, and payment method options (Invoice, Credit Card, PayPal). The form concludes with a submit button. The page retains a navigation bar for accessing different product categories like Home, Galaxy, S10, M Series, and A Series. Additionally, a cart overlay shows the added item.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":r14:\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "<html lang=\"en\"><head><title>React App</title></head><body><div id=\"root\"><nav class=\"Navbar visible\"><div class=\"Top-row\"><div class=\"Navbar-center\"><span class=\"Navbar-icon on-click\" id=\":r1:\"><i class=\"fas fa-bars\"></i></span><div class=\"Navbar-cart-btn on-click\" id=\":r2:\"><span class=\"Navbar-icon\"><i class=\"fas fa-cart-plus\"></i></span><div class=\"cart-items\">0</div></div></div></div><menu class=\"visible\"><li><a class=\"\" href=\"#/\" id=\":r0:-home\">Home</a></li><li><a class=\"\" href=\"#/c/galaxy\" id=\":r0:-galaxy\">Galaxy</a></li><li><a class=\"\" href=\"#/c/s10\" id=\":r0:-s10\">S10</a></li><li><a class=\"\" href=\"#/c/m_series\" id=\":r0:-m_series\">M Series</a></li><li><a class=\"\" href=\"#/c/a_series\" id=\":r0:-a_series\">A Series</a></li></menu></nav><div class=\"checkout\"><div class=\"checkout__cart\"><h2>Cart</h2><h3>Total: $0.00</h3></div><form class=\"checkout__form\"><div class=\"checkout__form__customer\"><h2>Customer</h2><div><label for=\":r17:\">First Name</label><input class=\"\" id=\":r17:\" type=\"text\" value=\"\"/></div><div><label for=\":r18:\">Last Name</label><input class=\"\" id=\":r18:\" type=\"text\" value=\"\"/></div><div><label for=\":r19:\">E-Mail</label><input class=\"\" id=\":r19:\" type=\"text\" value=\"\"/></div></div><div class=\"checkout__form__address\"><h2>Address</h2><div><label for=\":r1a:\">Country</label><input class=\"\" id=\":r1a:\" type=\"text\" value=\"\"/></div><div><label for=\":r1b:\">Street Address</label><input class=\"\" id=\":r1b:\" type=\"text\" value=\"\"/></div><div><label for=\":r1c:\">City</label><input class=\"\" id=\":r1c:\" type=\"text\" value=\"\"/></div><div><label for=\":r1d:\">State</label><input class=\"\" id=\":r1d:\" type=\"text\" value=\"\"/></div><div><label for=\":r1e:\">Zip Code</label><input class=\"\" id=\":r1e:\" type=\"text\" value=\"\"/></div></div><div class=\"checkout__form__payment\"><h2>Payment</h2><select><option value=\"0\">Invoice</option><option value=\"1\">Credit Card</option><option value=\"2\">PayPal</option></select></div><button id=\":r13:\" type=\"submit\">Submit</button></form></div><div class=\"on-click cart-overlay\" id=\":ra:\"><div class=\"on-click cart\" id=\":rb:\"><span class=\"close-cart on-click\" id=\":r9:\"><i class=\"fas fa-window-close\"></i></span><h2>Your cart</h2><div class=\"cart-content\"></div><div class=\"cart-footer\"><h3>your total: <span class=\"cart-total\">$0.00</span></h3><button class=\"clear-cart banner-btn\" id=\":r6:\">clear cart</button><a href=\"#/checkout\" id=\":r8:\" style=\"text-decoration: none;\"><div class=\"banner-btn clear-cart on-click\" id=\":r7:\">Checkout</div></a></div></div></div></div></body></html>"
+    },
+    {
+      "role": "system",
+      "content": "Start by describing the website supplied by the user. Give a short general description first then summarize the main elements on the website. Do not use HTML in your description."
+    },
+    {
+      "role": "system",
+      "content": "Only use the click action with clickable elements. The clickable elements have the following ids: :r13:, :r0:-home, :r0:-galaxy, :r0:-s10, :r0:-m_series, :r0:-a_series, :r1:, :r2:. Only use the send_keys action with writable elements. The writable elements have the following ids: :r17:, :r18:, :r19:, :r1a:, :r1b:, :r1c:, :r1d:, :r1e:. "
+    }
+  ],
+  "functions": [
+    {
+      "name": "emulate_interaction",
+      "description": "Emulates a user interaction with the web application",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "page_description": {
+            "type": "string",
+            "description": "A short textual description of the state of the web application: What is the current page? What are the main elements on the page? This description should not contain any HTML."
+          },
+          "interaction": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "interaction_type": {
+                    "const": "click",
+                    "type": "string",
+                    "description": "The type of interaction to emulate"
+                  },
+                  "element_id": {
+                    "enum": [
+                      ":r13:",
+                      ":r0:-home",
+                      ":r0:-galaxy",
+                      ":r0:-s10",
+                      ":r0:-m_series",
+                      ":r0:-a_series",
+                      ":r1:",
+                      ":r2:"
+                    ],
+                    "type": "string",
+                    "description": "The id of the element to interact with"
+                  }
+                },
+                "required": [
+                  "interaction_type",
+                  "element_id"
+                ],
+                "description": "clicks on a html element"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "interaction_type": {
+                    "const": "send_keys",
+                    "type": "string",
+                    "description": "The type of interaction to emulate"
+                  },
+                  "element_id": {
+                    "enum": [
+                      ":r17:",
+                      ":r18:",
+                      ":r19:",
+                      ":r1a:",
+                      ":r1b:",
+                      ":r1c:",
+                      ":r1d:",
+                      ":r1e:"
+                    ],
+                    "type": "string",
+                    "description": "The id of the element to interact with"
+                  },
+                  "keys": {
+                    "type": "string",
+                    "description": "the keys to be sent to the input element"
+                  }
+                },
+                "required": [
+                  "interaction_type",
+                  "element_id",
+                  "keys"
+                ],
+                "description": "sends keystrokes to an html element"
+              }
+            ],
+            "description": "The interaction to emulate"
+          }
+        },
+        "required": [
+          "page_description",
+          "interaction"
+        ]
+      }
+    }
+  ]
+}
