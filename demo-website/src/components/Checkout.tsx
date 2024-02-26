@@ -68,7 +68,7 @@ const containsInteger = (value: string) => {
 const validateIsStreetAddress = (value: string, label: string) => {
     // validate that the street address is composed of a street name and a house number
     const parts = value.split(" ").filter(part => part.trim() !== "");
-    if (parts.length < 2 || !containsInteger(parts[parts.length - 1])) {
+    if (parts.length < 2 || !parts.some(containsInteger)) {
         return { message: `${label} must be a street name and a house number`, pedantic: false };
     }
 }
