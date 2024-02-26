@@ -1,0 +1,602 @@
+[
+    {
+        "step": 1,
+        "action": "action: click() element: <span id=\":r1:\" class=\"Navbar-icon on-click\"><i class=\"fas fa-bars\"></i></span>",
+        "observation": "todo",
+        "coverage percentage": 0.35714285714285715
+    },
+    {
+        "step": 2,
+        "action": "action: click() element: <div id=\":r2:\" class=\"Navbar-cart-btn on-click\"><span class=\"Navbar-icon\"><i class=\"fas fa-cart-plus\"></i></span><div class=\"cart-items\">0</div></div>",
+        "observation": "todo",
+        "coverage percentage": 0.3979591836734694
+    },
+    {
+        "step": 3,
+        "action": "action: click() element: <div id=\":ra:\" class=\"on-click cart-overlay transparentBcg\"><div id=\":rb:\" class=\"on-click cart showCart\"><span id=\":r9:\" class=\"close-cart on-click\"><i class=\"fas fa-window-close\"></i></span><h2>Your cart</h2><div class=\"cart-content\"></div><div class=\"cart-footer\"><h3>your total: <span class=\"cart-total\">$0.00</span></h3><button id=\":r6:\" class=\"clear-cart banner-btn\">clear cart</button><a id=\":r8:\" href=\"#/checkout\" style=\"text-decoration: none;\"><div id=\":r7:\" class=\"banner-btn clear-cart on-click\">Checkout</div></a></div></div></div>",
+        "observation": "todo",
+        "coverage percentage": 0.3979591836734694
+    },
+    {
+        "step": 4,
+        "action": "action: click() element: <div id=\":rb:\" class=\"on-click cart showCart\"><span id=\":r9:\" class=\"close-cart on-click\"><i class=\"fas fa-window-close\"></i></span><h2>Your cart</h2><div class=\"cart-content\"></div><div class=\"cart-footer\"><h3>your total: <span class=\"cart-total\">$0.00</span></h3><button id=\":r6:\" class=\"clear-cart banner-btn\">clear cart</button><a id=\":r8:\" href=\"#/checkout\" style=\"text-decoration: none;\"><div id=\":r7:\" class=\"banner-btn clear-cart on-click\">Checkout</div></a></div></div>",
+        "observation": "todo",
+        "coverage percentage": 0.3979591836734694
+    },
+    {
+        "step": 5,
+        "action": "action: click() element: <span id=\":r9:\" class=\"close-cart on-click\"><i class=\"fas fa-window-close\"></i></span>",
+        "observation": "todo",
+        "coverage percentage": 0.3979591836734694
+    },
+    {
+        "step": 6,
+        "action": "action: click() element: <a id=\":r0:-home\" aria-current=\"page\" class=\"active\" href=\"#/\">Home</a>",
+        "observation": "todo",
+        "coverage percentage": 0.3979591836734694
+    },
+    {
+        "step": 7,
+        "action": "action: click() element: <a id=\":r0:-galaxy\" class=\"\" href=\"#/c/galaxy\">Galaxy</a>",
+        "observation": "todo",
+        "coverage percentage": 0.3979591836734694
+    },
+    {
+        "step": 8,
+        "action": "action: click() element: <button id=\"7:rc:\" class=\"bag-btn\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button>",
+        "observation": "todo",
+        "coverage percentage": 0.4387755102040816
+    },
+    {
+        "step": 9,
+        "action": "action: click() element: <div id=\":r7:\" class=\"banner-btn clear-cart on-click\">Checkout</div>",
+        "observation": "todo",
+        "coverage percentage": 0.5408163265306123
+    },
+    {
+        "step": 10,
+        "action": "action: click() element: <i id=\":rj:\" class=\"fas fa-chevron-up on-click\"></i>",
+        "observation": "todo",
+        "coverage percentage": 0.5714285714285714
+    },
+    {
+        "step": 11,
+        "action": "action: click() element: <span id=\":r1:\" class=\"Navbar-icon on-click\"><i class=\"fas fa-bars\"></i></span>",
+        "observation": "todo",
+        "coverage percentage": 0.5714285714285714
+    },
+    {
+        "step": 12,
+        "action": "action: click() element: <div id=\":r2:\" class=\"Navbar-cart-btn on-click\"><span class=\"Navbar-icon\"><i class=\"fas fa-cart-plus\"></i></span><div class=\"cart-items\">2</div></div>",
+        "observation": "todo",
+        "coverage percentage": 0.5714285714285714
+    },
+    {
+        "step": 13,
+        "action": "action: click() element: <button id=\":r6:\" class=\"clear-cart banner-btn\">clear cart</button>",
+        "observation": "todo",
+        "coverage percentage": 0.5714285714285714
+    },
+    {
+        "step": 14,
+        "action": "action: send_keys(John) element: <input type=\"text\" id=\":rl:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.6122448979591837
+    },
+    {
+        "step": 15,
+        "action": "action: send_keys(Doe) element: <input type=\"text\" id=\":rm:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.6122448979591837
+    },
+    {
+        "step": 16,
+        "action": "action: send_keys(john.doe@example.com) element: <input type=\"text\" id=\":rn:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.6836734693877551
+    },
+    {
+        "step": 17,
+        "action": "action: send_keys(USA) element: <input type=\"text\" id=\":ro:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.6836734693877551
+    },
+    {
+        "step": 18,
+        "action": "action: send_keys(1234 Main St) element: <input type=\"text\" id=\":rp:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.7244897959183674
+    },
+    {
+        "step": 19,
+        "action": "action: send_keys(New York) element: <input type=\"text\" id=\":rq:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.7244897959183674
+    },
+    {
+        "step": 20,
+        "action": "action: send_keys(NY) element: <input type=\"text\" id=\":rr:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.7244897959183674
+    },
+    {
+        "step": 21,
+        "action": "action: send_keys(10001) element: <input type=\"text\" id=\":rs:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.7448979591836735
+    },
+    {
+        "step": 22,
+        "action": "action: click() element: <span id=\":r1:\" class=\"Navbar-icon on-click\"><i class=\"fas fa-bars\"></i></span>",
+        "observation": "todo",
+        "coverage percentage": 0.7448979591836735
+    },
+    {
+        "step": 23,
+        "action": "action: click() element: <a id=\":r0:-a_series\" class=\"\" href=\"#/c/a_series\">A Series</a>",
+        "observation": "todo",
+        "coverage percentage": 0.7448979591836735
+    },
+    {
+        "step": 24,
+        "action": "action: click() element: <button id=\"5:rt:\" class=\"bag-btn\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button>",
+        "observation": "todo",
+        "coverage percentage": 0.7448979591836735
+    },
+    {
+        "step": 25,
+        "action": "action: click() element: <div id=\":ra:\" class=\"on-click cart-overlay transparentBcg\"><div id=\":rb:\" class=\"on-click cart showCart\"><span id=\":r9:\" class=\"close-cart on-click\"><i class=\"fas fa-window-close\"></i></span><h2>Your cart</h2><div class=\"cart-content\"><div class=\"cart-item\"><img src=\"./images/product-5.jpeg\" alt=\"Galaxy A2 Core\"><div><h4>Galaxy A2 Core</h4><h5>$688.99</h5><span id=\":rv:\" class=\"remove-item on-click\">remove</span></div><div><i id=\":r10:\" class=\"fas fa-chevron-up on-click\"></i><p class=\"item-amount\">1</p><i id=\":r11:\" class=\"fas fa-chevron-down on-click\"></i></div></div></div><div class=\"cart-footer\"><h3>your total: <span class=\"cart-total\">$688.99</span></h3><button id=\":r6:\" class=\"clear-cart banner-btn\">clear cart</button><a id=\":r8:\" href=\"#/checkout\" style=\"text-decoration: none;\"><div id=\":r7:\" class=\"banner-btn clear-cart on-click\">Checkout</div></a></div></div></div>",
+        "observation": "todo",
+        "coverage percentage": 0.7448979591836735
+    },
+    {
+        "step": 26,
+        "action": "action: click() element: <a id=\":r8:\" href=\"#/checkout\" style=\"text-decoration: none;\"><div id=\":r7:\" class=\"banner-btn clear-cart on-click\">Checkout</div></a>",
+        "observation": "todo",
+        "coverage percentage": 0.7448979591836735
+    },
+    {
+        "step": 27,
+        "action": "action: click() element: <span id=\":r13:\" class=\"remove-item on-click\">remove</span>",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 28,
+        "action": "action: click() element: <span id=\":r1:\" class=\"Navbar-icon on-click\"><i class=\"fas fa-bars\"></i></span>",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 29,
+        "action": "action: click() element: <div id=\":r2:\" class=\"Navbar-cart-btn on-click\"><span class=\"Navbar-icon\"><i class=\"fas fa-cart-plus\"></i></span><div class=\"cart-items\">0</div></div>",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 30,
+        "action": "action: click() element: <span id=\":r9:\" class=\"close-cart on-click\"><i class=\"fas fa-window-close\"></i></span>",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 31,
+        "action": "action: send_keys(John) element: <input type=\"text\" id=\":r16:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 32,
+        "action": "action: send_keys(Doe) element: <input type=\"text\" id=\":r17:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 33,
+        "action": "action: send_keys(johndoe@example.com) element: <input type=\"text\" id=\":r18:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 34,
+        "action": "action: send_keys(USA) element: <input type=\"text\" id=\":r19:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 35,
+        "action": "action: send_keys(1234 Main St) element: <input type=\"text\" id=\":r1a:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 36,
+        "action": "action: send_keys(New York) element: <input type=\"text\" id=\":r1b:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 37,
+        "action": "action: send_keys(NY) element: <input type=\"text\" id=\":r1c:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 38,
+        "action": "action: send_keys(10001) element: <input type=\"text\" id=\":r1d:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 39,
+        "action": "action: click() element: <button id=\":r12:\" type=\"submit\">Submit</button>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 40,
+        "action": "action: click() element: <span id=\":r1:\" class=\"Navbar-icon on-click\"><i class=\"fas fa-bars\"></i></span>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 41,
+        "action": "action: click() element: <a id=\":r0:-galaxy\" class=\"\" href=\"#/c/galaxy\">Galaxy</a>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 42,
+        "action": "action: click() element: <button id=\"7:r1e:\" class=\"bag-btn\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 43,
+        "action": "action: click() element: <div id=\":r7:\" class=\"banner-btn clear-cart on-click\">Checkout</div>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 44,
+        "action": "action: click() element: <span id=\":r1k:\" class=\"remove-item on-click\">remove</span>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 45,
+        "action": "action: click() element: <div id=\":r2:\" class=\"Navbar-cart-btn on-click\"><span class=\"Navbar-icon\"><i class=\"fas fa-cart-plus\"></i></span><div class=\"cart-items\">0</div></div>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 46,
+        "action": "action: click() element: <button id=\":r6:\" class=\"clear-cart banner-btn\">clear cart</button>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 47,
+        "action": "action: click() element: <a id=\":r0:-galaxy\" class=\"\" href=\"#/c/galaxy\">Galaxy</a>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 48,
+        "action": "action: click() element: <button id=\"7:r1v:\" class=\"bag-btn\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 49,
+        "action": "action: click() element: <span id=\":r9:\" class=\"close-cart on-click\"><i class=\"fas fa-window-close\"></i></span>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 50,
+        "action": "action: click() element: <span id=\":r1:\" class=\"Navbar-icon on-click\"><i class=\"fas fa-bars\"></i></span>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 51,
+        "action": "action: click() element: <div id=\":r2:\" class=\"Navbar-cart-btn on-click\"><span class=\"Navbar-icon\"><i class=\"fas fa-cart-plus\"></i></span><div class=\"cart-items\">1</div></div>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 52,
+        "action": "action: click() element: <span id=\":r21:\" class=\"remove-item on-click\">remove</span>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 53,
+        "action": "action: click() element: <div id=\":ra:\" class=\"on-click cart-overlay transparentBcg\"><div id=\":rb:\" class=\"on-click cart showCart\"><span id=\":r9:\" class=\"close-cart on-click\"><i class=\"fas fa-window-close\"></i></span><h2>Your cart</h2><div class=\"cart-content\"></div><div class=\"cart-footer\"><h3>your total: <span class=\"cart-total\">$0.00</span></h3><button id=\":r6:\" class=\"clear-cart banner-btn\">clear cart</button><a id=\":r8:\" href=\"#/checkout\" style=\"text-decoration: none;\"><div id=\":r7:\" class=\"banner-btn clear-cart on-click\">Checkout</div></a></div></div></div>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 54,
+        "action": "action: click() element: <button id=\":r6:\" class=\"clear-cart banner-btn\">clear cart</button>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 55,
+        "action": "action: click() element: <button id=\"7:r1v:\" class=\"bag-btn\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 56,
+        "action": "action: click() element: <span id=\":r24:\" class=\"remove-item on-click\">remove</span>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 57,
+        "action": "action: click() element: <span id=\":r9:\" class=\"close-cart on-click\"><i class=\"fas fa-window-close\"></i></span>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 58,
+        "action": "action: click() element: <div id=\":r2:\" class=\"Navbar-cart-btn on-click\"><span class=\"Navbar-icon\"><i class=\"fas fa-cart-plus\"></i></span><div class=\"cart-items\">0</div></div>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 59,
+        "action": "action: click() element: <div id=\":ra:\" class=\"on-click cart-overlay transparentBcg\"><div id=\":rb:\" class=\"on-click cart showCart\"><span id=\":r9:\" class=\"close-cart on-click\"><i class=\"fas fa-window-close\"></i></span><h2>Your cart</h2><div class=\"cart-content\"></div><div class=\"cart-footer\"><h3>your total: <span class=\"cart-total\">$0.00</span></h3><button id=\":r6:\" class=\"clear-cart banner-btn\">clear cart</button><a id=\":r8:\" href=\"#/checkout\" style=\"text-decoration: none;\"><div id=\":r7:\" class=\"banner-btn clear-cart on-click\">Checkout</div></a></div></div></div>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 60,
+        "action": "action: click() element: <span id=\":r9:\" class=\"close-cart on-click\"><i class=\"fas fa-window-close\"></i></span>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 61,
+        "action": "action: click() element: <button id=\"7:r1v:\" class=\"bag-btn\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 62,
+        "action": "action: click() element: <span id=\":r27:\" class=\"remove-item on-click\">remove</span>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 63,
+        "action": "action: click() element: <div id=\":rb:\" class=\"on-click cart showCart\"><span id=\":r9:\" class=\"close-cart on-click\"><i class=\"fas fa-window-close\"></i></span><h2>Your cart</h2><div class=\"cart-content\"></div><div class=\"cart-footer\"><h3>your total: <span class=\"cart-total\">$0.00</span></h3><button id=\":r6:\" class=\"clear-cart banner-btn\">clear cart</button><a id=\":r8:\" href=\"#/checkout\" style=\"text-decoration: none;\"><div id=\":r7:\" class=\"banner-btn clear-cart on-click\">Checkout</div></a></div></div>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 64,
+        "action": "action: click() element: <button id=\":r6:\" class=\"clear-cart banner-btn\">clear cart</button>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 65,
+        "action": "action: click() element: <button id=\"8:r1v:\" class=\"bag-btn\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 66,
+        "action": "action: click() element: <span id=\":r2a:\" class=\"remove-item on-click\">remove</span>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 67,
+        "action": "action: click() element: <span id=\":r9:\" class=\"close-cart on-click\"><i class=\"fas fa-window-close\"></i></span>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 68,
+        "action": "action: click() element: <button id=\"7:r1v:\" class=\"bag-btn\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 69,
+        "action": "action: click() element: <span id=\":r2d:\" class=\"remove-item on-click\">remove</span>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 70,
+        "action": "action: click() element: <button id=\":r6:\" class=\"clear-cart banner-btn\">clear cart</button>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 71,
+        "action": "action: click() element: <button id=\"8:r1v:\" class=\"bag-btn\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 72,
+        "action": "action: click() element: <div id=\":r7:\" class=\"banner-btn clear-cart on-click\">Checkout</div>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 73,
+        "action": "action: click() element: <span id=\":r2k:\" class=\"remove-item on-click\">remove</span>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 74,
+        "action": "action: click() element: <span id=\":r1:\" class=\"Navbar-icon on-click\"><i class=\"fas fa-bars\"></i></span>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 75,
+        "action": "action: click() element: <a id=\":r0:-home\" class=\"\" href=\"#/\">Home</a>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 76,
+        "action": "action: click() element: <a id=\":r0:-galaxy\" class=\"\" href=\"#/c/galaxy\">Galaxy</a>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 77,
+        "action": "action: click() element: <button id=\"7:r32:\" class=\"bag-btn\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 78,
+        "action": "action: click() element: <span id=\":r9:\" class=\"close-cart on-click\"><i class=\"fas fa-window-close\"></i></span>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 79,
+        "action": "action: click() element: <button id=\"8:r32:\" class=\"bag-btn\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 80,
+        "action": "action: click() element: <span id=\":r34:\" class=\"remove-item on-click\">remove</span>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 81,
+        "action": "action: click() element: <button id=\":r6:\" class=\"clear-cart banner-btn\">clear cart</button>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 82,
+        "action": "action: click() element: <div id=\":r2:\" class=\"Navbar-cart-btn on-click\"><span class=\"Navbar-icon\"><i class=\"fas fa-cart-plus\"></i></span><div class=\"cart-items\">0</div></div>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 83,
+        "action": "action: click() element: <button id=\":r6:\" class=\"clear-cart banner-btn\">clear cart</button>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 84,
+        "action": "action: click() element: <button id=\"7:r32:\" class=\"bag-btn\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 85,
+        "action": "action: click() element: <div id=\":ra:\" class=\"on-click cart-overlay transparentBcg\"><div id=\":rb:\" class=\"on-click cart showCart\"><span id=\":r9:\" class=\"close-cart on-click\"><i class=\"fas fa-window-close\"></i></span><h2>Your cart</h2><div class=\"cart-content\"><div class=\"cart-item\"><img src=\"./images/product-7.jpeg\" alt=\"Galaxy M20\"><div><h4>Galaxy M20</h4><h5>$545.99</h5><span id=\":r3a:\" class=\"remove-item on-click\">remove</span></div><div><i id=\":r3b:\" class=\"fas fa-chevron-up on-click\"></i><p class=\"item-amount\">1</p><i id=\":r3c:\" class=\"fas fa-chevron-down on-click\"></i></div></div></div><div class=\"cart-footer\"><h3>your total: <span class=\"cart-total\">$545.99</span></h3><button id=\":r6:\" class=\"clear-cart banner-btn\">clear cart</button><a id=\":r8:\" href=\"#/checkout\" style=\"text-decoration: none;\"><div id=\":r7:\" class=\"banner-btn clear-cart on-click\">Checkout</div></a></div></div></div>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 86,
+        "action": "action: click() element: <div id=\":r7:\" class=\"banner-btn clear-cart on-click\">Checkout</div>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 87,
+        "action": "action: click() element: <span id=\":r3e:\" class=\"remove-item on-click\">remove</span>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 88,
+        "action": "action: click() element: <a id=\":r0:-galaxy\" class=\"\" href=\"#/c/galaxy\">Galaxy</a>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 89,
+        "action": "action: click() element: <button id=\"7:r3p:\" class=\"bag-btn\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 90,
+        "action": "action: click() element: <i id=\":r3s:\" class=\"fas fa-chevron-up on-click\"></i>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 91,
+        "action": "action: click() element: <span id=\":r3r:\" class=\"remove-item on-click\">remove</span>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 92,
+        "action": "action: click() element: <div id=\":ra:\" class=\"on-click cart-overlay transparentBcg\"><div id=\":rb:\" class=\"on-click cart showCart\"><span id=\":r9:\" class=\"close-cart on-click\"><i class=\"fas fa-window-close\"></i></span><h2>Your cart</h2><div class=\"cart-content\"></div><div class=\"cart-footer\"><h3>your total: <span class=\"cart-total\">$0.00</span></h3><button id=\":r6:\" class=\"clear-cart banner-btn\">clear cart</button><a id=\":r8:\" href=\"#/checkout\" style=\"text-decoration: none;\"><div id=\":r7:\" class=\"banner-btn clear-cart on-click\">Checkout</div></a></div></div></div>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 93,
+        "action": "action: click() element: <span id=\":r9:\" class=\"close-cart on-click\"><i class=\"fas fa-window-close\"></i></span>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 94,
+        "action": "action: click() element: <button id=\"8:r3p:\" class=\"bag-btn\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 95,
+        "action": "action: click() element: <span id=\":r3u:\" class=\"remove-item on-click\">remove</span>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 96,
+        "action": "action: click() element: <button id=\":r6:\" class=\"clear-cart banner-btn\">clear cart</button>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 97,
+        "action": "action: click() element: <span id=\":r1:\" class=\"Navbar-icon on-click\"><i class=\"fas fa-bars\"></i></span>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 98,
+        "action": "action: click() element: <button id=\"7:r3p:\" class=\"bag-btn\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 99,
+        "action": "action: click() element: <span id=\":r41:\" class=\"remove-item on-click\">remove</span>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    },
+    {
+        "step": 100,
+        "action": "action: click() element: <a id=\":r8:\" href=\"#/checkout\" style=\"text-decoration: none;\"><div id=\":r7:\" class=\"banner-btn clear-cart on-click\">Checkout</div></a>",
+        "observation": "todo",
+        "coverage percentage": 0.8061224489795918
+    }
+]
