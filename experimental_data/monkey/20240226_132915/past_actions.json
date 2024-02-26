@@ -1,0 +1,602 @@
+[
+    {
+        "step": 1,
+        "action": "action: hover element: <img id=\"3:r5:\" src=\"./images/product-3.jpeg\" alt=\"Galaxy S10\" class=\"product-img mouse-over\">",
+        "observation": "todo",
+        "coverage percentage": 0.336734693877551
+    },
+    {
+        "step": 2,
+        "action": "action: hover element: <img id=\"2:r5:\" src=\"./images/product-2.jpeg\" alt=\"Galaxy S10+\" class=\"product-img mouse-over\">",
+        "observation": "todo",
+        "coverage percentage": 0.336734693877551
+    },
+    {
+        "step": 3,
+        "action": "action: click element: <button id=\"2:r4:\" class=\"bag-btn\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button>",
+        "observation": "todo",
+        "coverage percentage": 0.3979591836734694
+    },
+    {
+        "step": 4,
+        "action": "action: click element: <button id=\":r6:\" class=\"clear-cart banner-btn\">clear cart</button>",
+        "observation": "todo",
+        "coverage percentage": 0.3979591836734694
+    },
+    {
+        "step": 5,
+        "action": "action: click element: <button id=\"4:r4:\" class=\"bag-btn\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button>",
+        "observation": "todo",
+        "coverage percentage": 0.3979591836734694
+    },
+    {
+        "step": 6,
+        "action": "action: click element: <div id=\":r7:\" class=\"banner-btn clear-cart on-click\">Checkout</div>",
+        "observation": "todo",
+        "coverage percentage": 0.5
+    },
+    {
+        "step": 7,
+        "action": "action: click element: <div id=\":r2:\" class=\"Navbar-cart-btn on-click\"><span class=\"Navbar-icon\"><i class=\"fas fa-cart-plus\"></i></span><div class=\"cart-items\">1</div></div>",
+        "observation": "todo",
+        "coverage percentage": 0.5204081632653061
+    },
+    {
+        "step": 8,
+        "action": "action: click element: <i id=\":rh:\" class=\"fas fa-chevron-down on-click\"></i>",
+        "observation": "todo",
+        "coverage percentage": 0.5816326530612245
+    },
+    {
+        "step": 9,
+        "action": "action: click element: <div id=\":rb:\" class=\"on-click cart showCart\"><span id=\":r9:\" class=\"close-cart on-click\"><i class=\"fas fa-window-close\"></i></span><h2>Your cart</h2><div class=\"cart-content\"></div><div class=\"cart-footer\"><h3>your total: <span class=\"cart-total\">$0.00</span></h3><button id=\":r6:\" class=\"clear-cart banner-btn\">clear cart</button><a id=\":r8:\" href=\"#/checkout\" style=\"text-decoration: none;\"><div id=\":r7:\" class=\"banner-btn clear-cart on-click\">Checkout</div></a></div></div>",
+        "observation": "todo",
+        "coverage percentage": 0.5816326530612245
+    },
+    {
+        "step": 10,
+        "action": "action: click element: <span id=\":r9:\" class=\"close-cart on-click\"><i class=\"fas fa-window-close\"></i></span>",
+        "observation": "todo",
+        "coverage percentage": 0.5816326530612245
+    },
+    {
+        "step": 11,
+        "action": "action: send_keys(Fdu488T) element: <input type=\"text\" id=\":rp:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.6224489795918368
+    },
+    {
+        "step": 12,
+        "action": "action: click element: <div id=\":r2:\" class=\"Navbar-cart-btn on-click\"><span class=\"Navbar-icon\"><i class=\"fas fa-cart-plus\"></i></span><div class=\"cart-items\">0</div></div>",
+        "observation": "todo",
+        "coverage percentage": 0.6224489795918368
+    },
+    {
+        "step": 13,
+        "action": "action: click element: <button id=\":r6:\" class=\"clear-cart banner-btn\">clear cart</button>",
+        "observation": "todo",
+        "coverage percentage": 0.6224489795918368
+    },
+    {
+        "step": 14,
+        "action": "action: click element: <span id=\":r1:\" class=\"Navbar-icon on-click\"><i class=\"fas fa-bars\"></i></span>",
+        "observation": "todo",
+        "coverage percentage": 0.6428571428571429
+    },
+    {
+        "step": 15,
+        "action": "action: click element: <div id=\":r2:\" class=\"Navbar-cart-btn on-click\"><span class=\"Navbar-icon\"><i class=\"fas fa-cart-plus\"></i></span><div class=\"cart-items\">0</div></div>",
+        "observation": "todo",
+        "coverage percentage": 0.6428571428571429
+    },
+    {
+        "step": 16,
+        "action": "action: click element: <div id=\":rb:\" class=\"on-click cart showCart\"><span id=\":r9:\" class=\"close-cart on-click\"><i class=\"fas fa-window-close\"></i></span><h2>Your cart</h2><div class=\"cart-content\"></div><div class=\"cart-footer\"><h3>your total: <span class=\"cart-total\">$0.00</span></h3><button id=\":r6:\" class=\"clear-cart banner-btn\">clear cart</button><a id=\":r8:\" href=\"#/checkout\" style=\"text-decoration: none;\"><div id=\":r7:\" class=\"banner-btn clear-cart on-click\">Checkout</div></a></div></div>",
+        "observation": "todo",
+        "coverage percentage": 0.6428571428571429
+    },
+    {
+        "step": 17,
+        "action": "action: click element: <div id=\":ra:\" class=\"on-click cart-overlay transparentBcg\"><div id=\":rb:\" class=\"on-click cart showCart\"><span id=\":r9:\" class=\"close-cart on-click\"><i class=\"fas fa-window-close\"></i></span><h2>Your cart</h2><div class=\"cart-content\"></div><div class=\"cart-footer\"><h3>your total: <span class=\"cart-total\">$0.00</span></h3><button id=\":r6:\" class=\"clear-cart banner-btn\">clear cart</button><a id=\":r8:\" href=\"#/checkout\" style=\"text-decoration: none;\"><div id=\":r7:\" class=\"banner-btn clear-cart on-click\">Checkout</div></a></div></div></div>",
+        "observation": "todo",
+        "coverage percentage": 0.6428571428571429
+    },
+    {
+        "step": 18,
+        "action": "action: click element: <button id=\":ri:\" type=\"submit\">Submit</button>",
+        "observation": "todo",
+        "coverage percentage": 0.7040816326530612
+    },
+    {
+        "step": 19,
+        "action": "action: send_keys(n EJ) element: <input type=\"text\" id=\":rn:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.7040816326530612
+    },
+    {
+        "step": 20,
+        "action": "action: clear element: <input type=\"text\" id=\":rn:\" class=\"\" value=\"n EJ\">",
+        "observation": "todo",
+        "coverage percentage": 0.7040816326530612
+    },
+    {
+        "step": 21,
+        "action": "action: send_keys(UHKB@fu) element: <input type=\"text\" id=\":rs:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.7040816326530612
+    },
+    {
+        "step": 22,
+        "action": "action: click element: <div id=\":r2:\" class=\"Navbar-cart-btn on-click\"><span class=\"Navbar-icon\"><i class=\"fas fa-cart-plus\"></i></span><div class=\"cart-items\">0</div></div>",
+        "observation": "todo",
+        "coverage percentage": 0.7040816326530612
+    },
+    {
+        "step": 23,
+        "action": "action: click element: <div id=\":ra:\" class=\"on-click cart-overlay transparentBcg\"><div id=\":rb:\" class=\"on-click cart showCart\"><span id=\":r9:\" class=\"close-cart on-click\"><i class=\"fas fa-window-close\"></i></span><h2>Your cart</h2><div class=\"cart-content\"></div><div class=\"cart-footer\"><h3>your total: <span class=\"cart-total\">$0.00</span></h3><button id=\":r6:\" class=\"clear-cart banner-btn\">clear cart</button><a id=\":r8:\" href=\"#/checkout\" style=\"text-decoration: none;\"><div id=\":r7:\" class=\"banner-btn clear-cart on-click\">Checkout</div></a></div></div></div>",
+        "observation": "todo",
+        "coverage percentage": 0.7040816326530612
+    },
+    {
+        "step": 24,
+        "action": "action: send_keys(QObnmFbC) element: <input type=\"text\" id=\":rm:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.7040816326530612
+    },
+    {
+        "step": 25,
+        "action": "action: send_keys(CDDHEa) element: <input type=\"text\" id=\":ro:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.7448979591836735
+    },
+    {
+        "step": 26,
+        "action": "action: send_keys(diJuw) element: <input type=\"text\" id=\":rm:\" class=\"\" value=\"QObnmFbC\">",
+        "observation": "todo",
+        "coverage percentage": 0.7448979591836735
+    },
+    {
+        "step": 27,
+        "action": "action: send_keys(Pr5l@PwS) element: <input type=\"text\" id=\":rq:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 28,
+        "action": "action: send_keys(9UcLcC27) element: <input type=\"text\" id=\":rs:\" class=\"\" value=\"UHKB@fu\">",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 29,
+        "action": "action: click element: <div id=\":r2:\" class=\"Navbar-cart-btn on-click\"><span class=\"Navbar-icon\"><i class=\"fas fa-cart-plus\"></i></span><div class=\"cart-items\">0</div></div>",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 30,
+        "action": "action: click element: <div id=\":rb:\" class=\"on-click cart showCart\"><span id=\":r9:\" class=\"close-cart on-click\"><i class=\"fas fa-window-close\"></i></span><h2>Your cart</h2><div class=\"cart-content\"></div><div class=\"cart-footer\"><h3>your total: <span class=\"cart-total\">$0.00</span></h3><button id=\":r6:\" class=\"clear-cart banner-btn\">clear cart</button><a id=\":r8:\" href=\"#/checkout\" style=\"text-decoration: none;\"><div id=\":r7:\" class=\"banner-btn clear-cart on-click\">Checkout</div></a></div></div>",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 31,
+        "action": "action: click element: <span id=\":r9:\" class=\"close-cart on-click\"><i class=\"fas fa-window-close\"></i></span>",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 32,
+        "action": "action: click element: <a id=\":r0:-m_series\" class=\"\" href=\"#/c/m_series\">M Series</a>",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 33,
+        "action": "action: hover element: <img id=\"8:rv:\" src=\"./images/product-8.jpeg\" alt=\"Galaxy M10\" class=\"product-img mouse-over\">",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 34,
+        "action": "action: click element: <a id=\":r0:-a_series\" class=\"\" href=\"#/c/a_series\">A Series</a>",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 35,
+        "action": "action: click element: <button id=\"9:ru:\" class=\"bag-btn\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button>",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 36,
+        "action": "action: click element: <div id=\":rb:\" class=\"on-click cart showCart\"><span id=\":r9:\" class=\"close-cart on-click\"><i class=\"fas fa-window-close\"></i></span><h2>Your cart</h2><div class=\"cart-content\"><div class=\"cart-item\"><img src=\"./images/product-9.jpeg\" alt=\"Galaxy A80\"><div><h4>Galaxy A80</h4><h5>$386.99</h5><span id=\":r10:\" class=\"remove-item on-click\">remove</span></div><div><i id=\":r11:\" class=\"fas fa-chevron-up on-click\"></i><p class=\"item-amount\">1</p><i id=\":r12:\" class=\"fas fa-chevron-down on-click\"></i></div></div></div><div class=\"cart-footer\"><h3>your total: <span class=\"cart-total\">$386.99</span></h3><button id=\":r6:\" class=\"clear-cart banner-btn\">clear cart</button><a id=\":r8:\" href=\"#/checkout\" style=\"text-decoration: none;\"><div id=\":r7:\" class=\"banner-btn clear-cart on-click\">Checkout</div></a></div></div>",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 37,
+        "action": "action: click element: <div id=\":ra:\" class=\"on-click cart-overlay transparentBcg\"><div id=\":rb:\" class=\"on-click cart showCart\"><span id=\":r9:\" class=\"close-cart on-click\"><i class=\"fas fa-window-close\"></i></span><h2>Your cart</h2><div class=\"cart-content\"><div class=\"cart-item\"><img src=\"./images/product-9.jpeg\" alt=\"Galaxy A80\"><div><h4>Galaxy A80</h4><h5>$386.99</h5><span id=\":r10:\" class=\"remove-item on-click\">remove</span></div><div><i id=\":r11:\" class=\"fas fa-chevron-up on-click\"></i><p class=\"item-amount\">1</p><i id=\":r12:\" class=\"fas fa-chevron-down on-click\"></i></div></div></div><div class=\"cart-footer\"><h3>your total: <span class=\"cart-total\">$386.99</span></h3><button id=\":r6:\" class=\"clear-cart banner-btn\">clear cart</button><a id=\":r8:\" href=\"#/checkout\" style=\"text-decoration: none;\"><div id=\":r7:\" class=\"banner-btn clear-cart on-click\">Checkout</div></a></div></div></div>",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 38,
+        "action": "action: hover element: <img id=\"10:rv:\" src=\"./images/product-10.jpeg\" alt=\"Galaxy A70\" class=\"product-img mouse-over\">",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 39,
+        "action": "action: hover element: <img id=\"11:rv:\" src=\"./images/product-11.jpeg\" alt=\"Galaxy A60\" class=\"product-img mouse-over\">",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 40,
+        "action": "action: click element: <a id=\":r0:-m_series\" class=\"\" href=\"#/c/m_series\">M Series</a>",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 41,
+        "action": "action: click element: <button id=\"7:ru:\" class=\"bag-btn\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button>",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 42,
+        "action": "action: click element: <div id=\":r7:\" class=\"banner-btn clear-cart on-click\">Checkout</div>",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 43,
+        "action": "action: click element: <a id=\":r0:-a_series\" class=\"\" href=\"#/c/a_series\">A Series</a>",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 44,
+        "action": "action: click element: <a id=\":r0:-galaxy\" class=\"\" href=\"#/c/galaxy\">Galaxy</a>",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 45,
+        "action": "action: hover element: <img id=\"9:r1m:\" src=\"./images/product-9.jpeg\" alt=\"Galaxy A80\" class=\"product-img mouse-over\">",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 46,
+        "action": "action: hover element: <img id=\"11:r1m:\" src=\"./images/product-11.jpeg\" alt=\"Galaxy A60\" class=\"product-img mouse-over\">",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 47,
+        "action": "action: click element: <button id=\"6:r1l:\" class=\"bag-btn\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button>",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 48,
+        "action": "action: click element: <i id=\":r12:\" class=\"fas fa-chevron-down on-click\"></i>",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 49,
+        "action": "action: click element: <div id=\":rb:\" class=\"on-click cart showCart\"><span id=\":r9:\" class=\"close-cart on-click\"><i class=\"fas fa-window-close\"></i></span><h2>Your cart</h2><div class=\"cart-content\"><div class=\"cart-item\"><img src=\"./images/product-7.jpeg\" alt=\"Galaxy M20\"><div><h4>Galaxy M20</h4><h5>$545.99</h5><span id=\":r10:\" class=\"remove-item on-click\">remove</span></div><div><i id=\":r11:\" class=\"fas fa-chevron-up on-click\"></i><p class=\"item-amount\">1</p><i id=\":r12:\" class=\"fas fa-chevron-down on-click\"></i></div></div><div class=\"cart-item\"><img src=\"./images/product-9.jpeg\" alt=\"Galaxy A80\"><div><h4>Galaxy A80</h4><h5>$386.99</h5><span id=\":r13:\" class=\"remove-item on-click\">remove</span></div><div><i id=\":r14:\" class=\"fas fa-chevron-up on-click\"></i><p class=\"item-amount\">1</p><i id=\":r15:\" class=\"fas fa-chevron-down on-click\"></i></div></div></div><div class=\"cart-footer\"><h3>your total: <span class=\"cart-total\">$932.98</span></h3><button id=\":r6:\" class=\"clear-cart banner-btn\">clear cart</button><a id=\":r8:\" href=\"#/checkout\" style=\"text-decoration: none;\"><div id=\":r7:\" class=\"banner-btn clear-cart on-click\">Checkout</div></a></div></div>",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 50,
+        "action": "action: click element: <div id=\":rb:\" class=\"on-click cart showCart\"><span id=\":r9:\" class=\"close-cart on-click\"><i class=\"fas fa-window-close\"></i></span><h2>Your cart</h2><div class=\"cart-content\"><div class=\"cart-item\"><img src=\"./images/product-7.jpeg\" alt=\"Galaxy M20\"><div><h4>Galaxy M20</h4><h5>$545.99</h5><span id=\":r10:\" class=\"remove-item on-click\">remove</span></div><div><i id=\":r11:\" class=\"fas fa-chevron-up on-click\"></i><p class=\"item-amount\">1</p><i id=\":r12:\" class=\"fas fa-chevron-down on-click\"></i></div></div><div class=\"cart-item\"><img src=\"./images/product-9.jpeg\" alt=\"Galaxy A80\"><div><h4>Galaxy A80</h4><h5>$386.99</h5><span id=\":r13:\" class=\"remove-item on-click\">remove</span></div><div><i id=\":r14:\" class=\"fas fa-chevron-up on-click\"></i><p class=\"item-amount\">1</p><i id=\":r15:\" class=\"fas fa-chevron-down on-click\"></i></div></div></div><div class=\"cart-footer\"><h3>your total: <span class=\"cart-total\">$932.98</span></h3><button id=\":r6:\" class=\"clear-cart banner-btn\">clear cart</button><a id=\":r8:\" href=\"#/checkout\" style=\"text-decoration: none;\"><div id=\":r7:\" class=\"banner-btn clear-cart on-click\">Checkout</div></a></div></div>",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 51,
+        "action": "action: click element: <a id=\":r8:\" href=\"#/checkout\" style=\"text-decoration: none;\"><div id=\":r7:\" class=\"banner-btn clear-cart on-click\">Checkout</div></a>",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 52,
+        "action": "action: send_keys(MTp.qY) element: <input type=\"text\" id=\":r23:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 53,
+        "action": "action: click element: <a id=\":r0:-m_series\" class=\"\" href=\"#/c/m_series\">M Series</a>",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 54,
+        "action": "action: hover element: <img id=\"8:r2a:\" src=\"./images/product-8.jpeg\" alt=\"Galaxy M10\" class=\"product-img mouse-over\">",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 55,
+        "action": "action: click element: <a id=\":r0:-home\" class=\"\" href=\"#/\">Home</a>",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 56,
+        "action": "action: click element: <span id=\":r1:\" class=\"Navbar-icon on-click\"><i class=\"fas fa-bars\"></i></span>",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 57,
+        "action": "action: click element: <span id=\":r1:\" class=\"Navbar-icon on-click\"><i class=\"fas fa-bars\"></i></span>",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 58,
+        "action": "action: click element: <button id=\"2:r2c:\" class=\"bag-btn\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button>",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 59,
+        "action": "action: click element: <div id=\":ra:\" class=\"on-click cart-overlay transparentBcg\"><div id=\":rb:\" class=\"on-click cart showCart\"><span id=\":r9:\" class=\"close-cart on-click\"><i class=\"fas fa-window-close\"></i></span><h2>Your cart</h2><div class=\"cart-content\"><div class=\"cart-item\"><img src=\"./images/product-2.jpeg\" alt=\"Galaxy S10+\"><div><h4>Galaxy S10+</h4><h5>$812.99</h5><span id=\":r10:\" class=\"remove-item on-click\">remove</span></div><div><i id=\":r11:\" class=\"fas fa-chevron-up on-click\"></i><p class=\"item-amount\">1</p><i id=\":r12:\" class=\"fas fa-chevron-down on-click\"></i></div></div><div class=\"cart-item\"><img src=\"./images/product-7.jpeg\" alt=\"Galaxy M20\"><div><h4>Galaxy M20</h4><h5>$545.99</h5><span id=\":r13:\" class=\"remove-item on-click\">remove</span></div><div><i id=\":r14:\" class=\"fas fa-chevron-up on-click\"></i><p class=\"item-amount\">1</p><i id=\":r15:\" class=\"fas fa-chevron-down on-click\"></i></div></div><div class=\"cart-item\"><img src=\"./images/product-9.jpeg\" alt=\"Galaxy A80\"><div><h4>Galaxy A80</h4><h5>$386.99</h5><span id=\":r2e:\" class=\"remove-item on-click\">remove</span></div><div><i id=\":r2f:\" class=\"fas fa-chevron-up on-click\"></i><p class=\"item-amount\">1</p><i id=\":r2g:\" class=\"fas fa-chevron-down on-click\"></i></div></div></div><div class=\"cart-footer\"><h3>your total: <span class=\"cart-total\">$1,745.97</span></h3><button id=\":r6:\" class=\"clear-cart banner-btn\">clear cart</button><a id=\":r8:\" href=\"#/checkout\" style=\"text-decoration: none;\"><div id=\":r7:\" class=\"banner-btn clear-cart on-click\">Checkout</div></a></div></div></div>",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 60,
+        "action": "action: hover element: <img id=\"3:r2d:\" src=\"./images/product-3.jpeg\" alt=\"Galaxy S10\" class=\"product-img mouse-over\">",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 61,
+        "action": "action: hover element: <img id=\"3:r2d:\" src=\"./images/product-3.jpeg\" alt=\"Galaxy S10\" class=\"product-img mouse-over\">",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 62,
+        "action": "action: click element: <span id=\":r1:\" class=\"Navbar-icon on-click\"><i class=\"fas fa-bars\"></i></span>",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 63,
+        "action": "action: click element: <div id=\":r2:\" class=\"Navbar-cart-btn on-click\"><span class=\"Navbar-icon\"><i class=\"fas fa-cart-plus\"></i></span><div class=\"cart-items\">3</div></div>",
+        "observation": "todo",
+        "coverage percentage": 0.7653061224489796
+    },
+    {
+        "step": 64,
+        "action": "action: click element: <span id=\":r13:\" class=\"remove-item on-click\">remove</span>",
+        "observation": "todo",
+        "coverage percentage": 0.7857142857142857
+    },
+    {
+        "step": 65,
+        "action": "action: click element: <div id=\":r7:\" class=\"banner-btn clear-cart on-click\">Checkout</div>",
+        "observation": "todo",
+        "coverage percentage": 0.7857142857142857
+    },
+    {
+        "step": 66,
+        "action": "action: click element: <div id=\":r2:\" class=\"Navbar-cart-btn on-click\"><span class=\"Navbar-icon\"><i class=\"fas fa-cart-plus\"></i></span><div class=\"cart-items\">2</div></div>",
+        "observation": "todo",
+        "coverage percentage": 0.7857142857142857
+    },
+    {
+        "step": 67,
+        "action": "action: click element: <a id=\":r8:\" href=\"#/checkout\" style=\"text-decoration: none;\"><div id=\":r7:\" class=\"banner-btn clear-cart on-click\">Checkout</div></a>",
+        "observation": "todo",
+        "coverage percentage": 0.7857142857142857
+    },
+    {
+        "step": 68,
+        "action": "action: send_keys( aoz) element: <input type=\"text\" id=\":r2u:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.7857142857142857
+    },
+    {
+        "step": 69,
+        "action": "action: click element: <div id=\":r2:\" class=\"Navbar-cart-btn on-click\"><span class=\"Navbar-icon\"><i class=\"fas fa-cart-plus\"></i></span><div class=\"cart-items\">2</div></div>",
+        "observation": "todo",
+        "coverage percentage": 0.7857142857142857
+    },
+    {
+        "step": 70,
+        "action": "action: click element: <span id=\":r10:\" class=\"remove-item on-click\">remove</span>",
+        "observation": "todo",
+        "coverage percentage": 0.7857142857142857
+    },
+    {
+        "step": 71,
+        "action": "action: click element: <span id=\":r10:\" class=\"remove-item on-click\">remove</span>",
+        "observation": "todo",
+        "coverage percentage": 0.7857142857142857
+    },
+    {
+        "step": 72,
+        "action": "action: click element: <div id=\":rb:\" class=\"on-click cart showCart\"><span id=\":r9:\" class=\"close-cart on-click\"><i class=\"fas fa-window-close\"></i></span><h2>Your cart</h2><div class=\"cart-content\"></div><div class=\"cart-footer\"><h3>your total: <span class=\"cart-total\">$0.00</span></h3><button id=\":r6:\" class=\"clear-cart banner-btn\">clear cart</button><a id=\":r8:\" href=\"#/checkout\" style=\"text-decoration: none;\"><div id=\":r7:\" class=\"banner-btn clear-cart on-click\">Checkout</div></a></div></div>",
+        "observation": "todo",
+        "coverage percentage": 0.7857142857142857
+    },
+    {
+        "step": 73,
+        "action": "action: click element: <div id=\":r7:\" class=\"banner-btn clear-cart on-click\">Checkout</div>",
+        "observation": "todo",
+        "coverage percentage": 0.7857142857142857
+    },
+    {
+        "step": 74,
+        "action": "action: send_keys(1laU.) element: <input type=\"text\" id=\":r2p:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.7857142857142857
+    },
+    {
+        "step": 75,
+        "action": "action: send_keys(EXC) element: <input type=\"text\" id=\":r2r:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.7857142857142857
+    },
+    {
+        "step": 76,
+        "action": "action: click element: <button id=\":r2h:\" type=\"submit\">Submit</button>",
+        "observation": "todo",
+        "coverage percentage": 0.7857142857142857
+    },
+    {
+        "step": 77,
+        "action": "action: clear element: <input type=\"text\" id=\":r2r:\" class=\"\" value=\"EXC\">",
+        "observation": "todo",
+        "coverage percentage": 0.7857142857142857
+    },
+    {
+        "step": 78,
+        "action": "action: send_keys(nC6) element: <input type=\"text\" id=\":r2u:\" class=\"\" value=\" aoz\">",
+        "observation": "todo",
+        "coverage percentage": 0.7857142857142857
+    },
+    {
+        "step": 79,
+        "action": "action: send_keys(go0U) element: <input type=\"text\" id=\":r2s:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.7857142857142857
+    },
+    {
+        "step": 80,
+        "action": "action: send_keys(4l4vBIyx) element: <input type=\"text\" id=\":r2u:\" class=\"\" value=\" aoznC6\">",
+        "observation": "todo",
+        "coverage percentage": 0.7857142857142857
+    },
+    {
+        "step": 81,
+        "action": "action: click element: <div id=\":r2:\" class=\"Navbar-cart-btn on-click\"><span class=\"Navbar-icon\"><i class=\"fas fa-cart-plus\"></i></span><div class=\"cart-items\">0</div></div>",
+        "observation": "todo",
+        "coverage percentage": 0.7857142857142857
+    },
+    {
+        "step": 82,
+        "action": "action: click element: <a id=\":r8:\" href=\"#/checkout\" style=\"text-decoration: none;\"><div id=\":r7:\" class=\"banner-btn clear-cart on-click\">Checkout</div></a>",
+        "observation": "todo",
+        "coverage percentage": 0.7857142857142857
+    },
+    {
+        "step": 83,
+        "action": "action: send_keys(tUxpjY) element: <input type=\"text\" id=\":r2t:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.7857142857142857
+    },
+    {
+        "step": 84,
+        "action": "action: send_keys(Kcy) element: <input type=\"text\" id=\":r2t:\" class=\"\" value=\"tUxpjY\">",
+        "observation": "todo",
+        "coverage percentage": 0.7857142857142857
+    },
+    {
+        "step": 85,
+        "action": "action: click element: <span id=\":r1:\" class=\"Navbar-icon on-click\"><i class=\"fas fa-bars\"></i></span>",
+        "observation": "todo",
+        "coverage percentage": 0.7857142857142857
+    },
+    {
+        "step": 86,
+        "action": "action: click element: <a id=\":r0:-a_series\" class=\"\" href=\"#/c/a_series\">A Series</a>",
+        "observation": "todo",
+        "coverage percentage": 0.7857142857142857
+    },
+    {
+        "step": 87,
+        "action": "action: click element: <div id=\":r2:\" class=\"Navbar-cart-btn on-click\"><span class=\"Navbar-icon\"><i class=\"fas fa-cart-plus\"></i></span><div class=\"cart-items\">0</div></div>",
+        "observation": "todo",
+        "coverage percentage": 0.7857142857142857
+    },
+    {
+        "step": 88,
+        "action": "action: click element: <span id=\":r9:\" class=\"close-cart on-click\"><i class=\"fas fa-window-close\"></i></span>",
+        "observation": "todo",
+        "coverage percentage": 0.7857142857142857
+    },
+    {
+        "step": 89,
+        "action": "action: hover element: <img id=\"9:r31:\" src=\"./images/product-9.jpeg\" alt=\"Galaxy A80\" class=\"product-img mouse-over\">",
+        "observation": "todo",
+        "coverage percentage": 0.7857142857142857
+    },
+    {
+        "step": 90,
+        "action": "action: hover element: <img id=\"9:r31:\" src=\"./images/product-9.jpeg\" alt=\"Galaxy A80\" class=\"product-img mouse-over\">",
+        "observation": "todo",
+        "coverage percentage": 0.7857142857142857
+    },
+    {
+        "step": 91,
+        "action": "action: click element: <button id=\"9:r30:\" class=\"bag-btn\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button>",
+        "observation": "todo",
+        "coverage percentage": 0.7857142857142857
+    },
+    {
+        "step": 92,
+        "action": "action: click element: <a id=\":r8:\" href=\"#/checkout\" style=\"text-decoration: none;\"><div id=\":r7:\" class=\"banner-btn clear-cart on-click\">Checkout</div></a>",
+        "observation": "todo",
+        "coverage percentage": 0.7857142857142857
+    },
+    {
+        "step": 93,
+        "action": "action: click element: <i id=\":r37:\" class=\"fas fa-chevron-up on-click\"></i>",
+        "observation": "todo",
+        "coverage percentage": 0.8163265306122449
+    },
+    {
+        "step": 94,
+        "action": "action: click element: <span id=\":r36:\" class=\"remove-item on-click\">remove</span>",
+        "observation": "todo",
+        "coverage percentage": 0.8163265306122449
+    },
+    {
+        "step": 95,
+        "action": "action: send_keys(z5SBV) element: <input type=\"text\" id=\":r3g:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.8367346938775511
+    },
+    {
+        "step": 96,
+        "action": "action: click element: <span id=\":r1:\" class=\"Navbar-icon on-click\"><i class=\"fas fa-bars\"></i></span>",
+        "observation": "todo",
+        "coverage percentage": 0.8367346938775511
+    },
+    {
+        "step": 97,
+        "action": "action: clear element: <input type=\"text\" id=\":r3g:\" class=\"\" value=\"z5SBV\">",
+        "observation": "todo",
+        "coverage percentage": 0.8367346938775511
+    },
+    {
+        "step": 98,
+        "action": "action: send_keys(NGp7Xvgt) element: <input type=\"text\" id=\":r3a:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.8367346938775511
+    },
+    {
+        "step": 99,
+        "action": "action: send_keys(dZH) element: <input type=\"text\" id=\":r3a:\" class=\"\" value=\"NGp7Xvgt\">",
+        "observation": "todo",
+        "coverage percentage": 0.8367346938775511
+    },
+    {
+        "step": 100,
+        "action": "action: clear element: <input type=\"text\" id=\":r3a:\" class=\"\" value=\"NGp7XvgtdZH\">",
+        "observation": "todo",
+        "coverage percentage": 0.8367346938775511
+    }
+]
