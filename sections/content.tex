@@ -353,17 +353,81 @@ Die Qualität der generierten Benutzerinteraktionen wird anhand der Branchenabde
 
 \begin{enumerate}
     \item Basis-Eingabe: Die Basis-Eingabe ist ein einfacher Satz, der das LLM auffordert, eine Benutzerinteraktion zu generieren die eine gegeben Webanwendung testen soll.
+    \\
+    Beispieleingabe:
+    \\
+    \textit{Du bist Tester für Webanwendungen und sollst eine gegebene Anwendung möglichst ausführlich Testen.
+    Hier ist die HTML-Repräsentation der Anwendung: ...
+    Antworte mit einer der folgenden Benutzerinteraktionen: Klick auf \dq weiter\dq, Klick auf \dq zurück\dq.}
     \item Verkettung: Zusätzlich zu der Basis-Eingabe wird jeweils die letzte Ausgabe des LLMs an die Eingabe angefügt.
-    \item Beschreibung: Zusätzlich zur Verkettung wird das LLM aufgefordert eine Beschreibung des Anwendungszustands zu generieren. Diese wird dann mit verkettet.
+    \\
+    Beispieleingabe:
+    \\
+    \textit{System: Du bist Tester für Webanwendungen und sollst eine gegebene Anwendung möglichst ausführlich Testen.
+    Hier ist die HTML-Repräsentation der Anwendung: ...
+    Antworte mit einer der folgenden Benutzerinteraktionen: Klick auf \dq weiter\dq, Klick auf \dq zurück\dq.
+    \\
+    LLM: Klick auf \dq weiter\dq
+    \\
+    System: Hier ist die neue HTML-Repräsentation der Anwendung: ... Bitte fahre mit dem Testen fort. Antworte mit einer der folgenden Benutzerinteraktionen: Klick auf \dq weiter\dq, Klick auf \dq zurück\dq.
+    }
+    \item Beschreibung: Zusätzlich zur Verkettung wird das LLM aufgefordert eine Beschreibung des Anwendungszustands zu generieren. Diese wird dann mit in folgenden Eingaben verkettet.
+    \\
+    Beispieleingabe:
+    \\
+    \textit{System: Du bist Tester für Webanwendungen und sollst eine gegebene Anwendung möglichst ausführlich Testen.
+    Hier ist die HTML-Repräsentation der Anwendung: ... 
+    Gib eine kurze Beschreibung des Anwendungszustands an, dann antworte mit einer der folgenden Benutzerinteraktionen: Klick auf \dq weiter\dq, Klick auf \dq zurück\dq.
+    \\
+    LLM: Es wird ein Dialog mit dem Warnhinweis angezeigt, dass die Löschung des Benutzerkontos endgültig ist. Klick auf \dq weiter\dq
+    \\
+    System: Hier ist die neue HTML-Repräsentation ...
+    }
+    \item Begründung: Das Model wird dazu aufgefordert eine Begründung für die Entscheidung zur Nutzerinteraktion zu liefern.
+    \\
+    Beispieleingabe:
+    \\
+    \textit{System: Du bist Tester für Webanwendungen und sollst eine gegebene Anwendung möglichst ausführlich Testen.
+    Hier ist die HTML-Repräsentation der Anwendung: ... 
+    Gib eine kurze Beschreibung des Anwendungszustands an, dann antworte mit einer einem Plan was als nächstes getestet werden soll und einer der folgenden Benutzerinteraktionen, die dafür gewählt werden muss: Klick auf \dq weiter\dq, Klick auf \dq zurück\dq. 
+    \\
+    LLM: Es wird ein Dialog mit dem Warnhinweis angezeigt, dass die Löschung des Benutzerkontos endgültig ist.
+    Teste das Löschen des Benutzerkontos.
+    Klick auf \dq weiter\dq
+    \\
+    System: Hier ist die neue HTML-Repräsentation ...
+    }
+    \item Selbst-Formulierte Ziele: Das LLM wird dazu aufgefordert Ziele zu formulieren, die es in der Anwendung erreichen soll. Diese Ziele sollen mehrere Benutzerinteraktionen umfassen.
+    \item 
+    \item Chain of Thought Eingaben: Das erwartete Format für die Ausgabe des LLM enthält einen kompletten erklärenden Gedankengang. Dazu werden Beispiele im Prompt geliefert \cite{chain-of-thought}.
 \end{enumerate}
 
-\section{Validierung}
+\section{Resultate}
 \label{sec:vaildation}
 
-As we know of no other approaches to doing scripted testing using only natural language test descriptions, comparing it to other works is hard.
-As such validation of this part of the work will center around its feasibility.
-The new system's ability to navigate the AUT will be compared to monkey testing.
-The test oracle part of the system will be validated using mutation testing and its results will be captured in a confusion matrix.
+\begin{figure}
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            ymajorgrids=true,
+            xmin=0, xmax=100,
+            grid style=dashed,
+            width=0.9\textwidth,
+            ylabel={Branchenabdeckung [\%]},
+            xlabel={Anzahl der generierten Benutzerinteraktionen [1]},
+            no markers,
+            legend pos=north west,
+            %xtick=data,
+            ]
+            \addplot[color=green] table [x=x,y=average,col sep=comma] {experimental_data/monkey/results.csv};
+            \addlegendentry{Monkey-Testing}
+            \addplot[name path=monkey_top,color=green!70] table [x=x,y=above,col sep=comma] {experimental_data/monkey/results.csv};
+            \addplot[name path=monkey_bottom,color=green!70] table [x=x,y=below,col sep=comma] {experimental_data/monkey/results.csv};
+            \addplot[green!50,fill opacity=0.5] fill between[of=monkey_top and monkey_bottom];
+        \end{axis}
+    \end{tikzpicture}
+    
+\end{figure}
 
 \iffalse
 \chapter{Execution}
