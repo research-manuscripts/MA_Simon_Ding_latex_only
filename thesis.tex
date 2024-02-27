@@ -17,8 +17,6 @@
 %% Available modes: draft, final (see README)
 \documentclass[twoside, ngerman]{sdqthesis}
 
-\usepackage{pgfgantt}
-
 %% ---------------------------------
 %% | Information about the thesis  |
 %% ---------------------------------
@@ -66,10 +64,20 @@
 %% --------------------------------
 %% | Packages                     |
 %% --------------------------------
+\usepackage{pgfgantt}
+
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{pgfplots}
 \usepgfplotslibrary{fillbetween}
+
+
+%% --------------------------------
+%% | Custom Commands              |
+%% --------------------------------
+\newboolean{showtodos}
+\setboolean{showtodos}{true}
+\newcommand{\todo}[1]{\ifthenelse{\boolean{showtodos}}{\textcolor{red}{TODO: #1}}{}}
 
 %% ====================================
 %% ====================================

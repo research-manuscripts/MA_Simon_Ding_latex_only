@@ -13,6 +13,9 @@
 \chapter{Einleitung}
 \label{ch:Introduction}
 
+
+\todo{Ist hier irgendwas spezifisch zu Unit Tests? Die sind nicht mehr Inhalt dieser Arbeit.}
+
 % testen ist wichtig
 
 Das Testen von Software ist ein wichtiger Bestandteil der Softwareentwicklung, der sicherstellt, dass die Software wie erwartet funktioniert und die festgelegten Anforderungen erfüllt.
@@ -26,7 +29,7 @@ Zumindest einzelne Komponenten einer Webanwendung werden gewöhnlich in dem Webb
 Dadurch ergeben sich besondere Herausforderungen für das Testen von Webanwendungen.
 Einerseits verschärfen die Ausführung von Anwendungscode und Darstellung im Browser das Problem der Flakiness, bei der Tests kein konsistentes Ergebnis liefern, auch wenn die Anwendung nicht geändert wurde.
 Gleichzeitig bedeuten Änderungen an der grafischen Benutzeroberfläche (Englisch: graphical user interface, GUI) oft, dass auch die Tests geändert werden müssen \cite{ChallengesSelenium}.
-Lösungsansätze für diese Probleme sind Gegenstand aktiver Forschung und eine Auswahl wird in Kapitel \ref{ch:RelatedWork} vorgestellt.
+Lösungsansätze für diese Probleme sind Gegenstand aktiver Forschung, eine Auswahl wird in Kapitel \ref{ch:RelatedWork} vorgestellt.
 
 % es wäre schön, wenn Tests ohne hartkodierte Fehlerbedingungen Fehler erkennen könnten
 
@@ -41,7 +44,7 @@ In den Kapiteln \ref{ch:ExperimentalSetup} und \ref{ch:Results} liefert diese Ar
 Erstens wird der Ansatz an einer komplexeren Webanwendung mit verschiedenen Möglichkeiten zur Interaktion getestet.
 Zweitens wird untersucht, ob das LLM gleichzeitig als Testorakel verwendet werden kann, das heißt, ob das LLM auch in der Lage ist, Fehlerzustände zu erkennen.
 
-Absatz über \ref{ch:Conclusion}
+\todo{Absatz über \ref{ch:Conclusion}}
 
 Zuletzt befindet sich in Anlage \ref{ch:PracticalNotes} eine Sammlung von Erkenntnissen, die sich im Verlauf dieser Arbeit gezeigt haben und die für den praktischen Einsatz hilfreich sein könnten.
 
@@ -54,7 +57,7 @@ Zuletzt befindet sich in Anlage \ref{ch:PracticalNotes} eine Sammlung von Erkenn
 \section{Systemtests auf Grundlage von grafischen Benutzeroberflächen}
 \label{sec:Foundations:GUIBasedSystemTests}
 Softwaretests sind ein wesentlicher Bestandteil der Softwareentwicklung.
-Er umfasst die Bewertung einer Softwareanwendung oder eines Systems, um etwaige Mängel oder Fehler zu erkennen, die die Funktionalität, Zuverlässigkeit oder Leistung beeinträchtigen könnten.
+\todo{Er oder sie} umfasst die Bewertung einer Softwareanwendung oder eines Systems, um etwaige Mängel oder Fehler zu erkennen, die die Funktionalität, Zuverlässigkeit oder Leistung beeinträchtigen könnten.
 Das Ziel von Softwaretests ist es, sicherzustellen, dass die Software wie erwartet funktioniert und die festgelegten Anforderungen erfüllt.
 Es gibt verschiedene Arten von Softwaretests, darunter Unit-Tests, Integrations-Tests, Systemtests und Akzeptanztests.
 Das Testen eines GUI-basierten Systems, bei dem nur auf die GUI zugegriffen wird, nennen wir einen GUI-basierten Systemtest oder GUI-Test.
@@ -66,32 +69,118 @@ GUI-Tests können grob in exploratives Testen und Testen auf der Grundlage von D
 Beim explorativen Testen besteht das Ziel in der Regel darin, Pfade in der zu testenden Anwendung (Englisch: application under test, AUT) zu finden, die zu Abstürzen führen.
 Eine grundlegende Technik für exploratives Testen, die leicht automatisiert werden kann, ist das Monkey-Testing, bei dem zufällige Benutzeraktionen simuliert werden.
 Im Gegensatz dazu sind Tests, die von Designern spezifiziert werden, oft sehr viel kostspieliger.
-Um diese zu automatisieren, müssen die Programmierer aus der Spezifikation ein Testskripte ableiten, die parallel zu Änderungen an der grafischen Benutzeroberfläche gewartet werden müssen.
+Um diese zu automatisieren, müssen die Programmierer aus der Spezifikation Testskripte ableiten, die parallel zu Änderungen an der grafischen Benutzeroberfläche gewartet werden müssen.
 Dies ist ein Problem, da die grafische Benutzeroberfläche oft der sich am häufigsten ändernde Teil eines Systems ist.
+
+\section{Neuronale Netzwerke}
+\label{subsec:Foundations:NeuralNetworks}
+
+\todo{WIP}
+Maschinelles Lernen ist ein Teilgebiet der Künstlichen Intelligenz, das im letzten Jahrzehnt eine Renaissance erlebt hat.
+Es befasst sich mit Algorithmen und statistischen Modellen, die es Computern ermöglichen, die Lösungen für Aufgaben zu finden, ohne explizit darauf programmiert zu werden.
+Eine dieser Techniken ist das künstliche neuronale Netzwerk (KNN), ein Modell, das von der Funktionsweise des menschlichen Gehirns inspiriert ist.
+
+Ein KNN besteht aus einer Reihe von miteinander verbundenen Neuronen.
+Jedes Neuron erhält Eingabesignale von verbundenen Neuronen, verarbeitet sie und gibt ein Ausgangssignal aus, das wieder als Eingabe für andere Neuronen dienen kann.
+Die Stärke der Verbindung zwischen zwei Neuronen wird durch ein Gewicht repräsentiert.
+Durch das sogenannte Training des KNNs werden die Gewichte so optimiert, dass das KNN die gewünschte Aufgabe möglichst gut erfüllt.
+
+Die Grundform eines Neurons ist die des Perzeptrons, das schon 1958 von \Citeauthor{Rosenblatt1958} entwickelt wurde \cite{Rosenblatt1958}.
+Es bildet eine gewichtete Summe seiner Eingaben und gibt als binäre Ausgabe 1 oder 0 aus, je nachdem, ob die gewichtete Summe einen Schwellenwert überschreitet oder nicht.
+Mit Verwendung der Sprungfunktion $\theta$ kann ein Perzeptron kann als eine mit dem Gewichtsvektor $\mathbf{w}$ parametrisierte Funktion $f$ mit dem Eingabevektor $\mathbf{x}$ dargestellt werden:
+
+$$
+\begin{aligned}
+    \theta (z) = \begin{cases} 1 & \text{falls } z \geq 0 \\ 0 & \text{sonst} \end{cases}
+\\
+f(\mathbf{x}) = \theta \left(\mathbf{w} \cdot \binom{1}{\mathbf{x}} \right)
+\end{aligned}
+$$
+
+\begin{figure}
+    \label{fig:perzeptron}
+    \centering
+    \begin{tikzpicture}[main/.style = {draw, circle}]
+        \node (1) at (0,0) {$x_1$};
+        \node (2) at (0,-1) {$x_2$};
+        \node (3) at (0,-2) {$x_3$};
+        \node[main] (4) at (2,0) {$h_1$};
+        \node[main] (5) at (2,-1) {$h_2$};
+        \node[main] (6) at (2,-2) {$h_3$};
+        \node[main] (7) at (4,-1) {$p$};
+        \node (8) at (6,-1) {$y$};
+        \draw[->] (1) -- (4);
+        \draw[->] (1) -- (5);
+        \draw[->] (1) -- (6);
+        \draw[->] (2) -- (4);
+        \draw[->] (2) -- (5);
+        \draw[->] (2) -- (6);
+        \draw[->] (3) -- (4);
+        \draw[->] (3) -- (5);
+        \draw[->] (3) -- (6);
+        \draw[->] (4) -- (7);
+        \draw[->] (5) -- (7);
+        \draw[->] (6) -- (7); 
+        \draw[->] (7) -- (8);
+    \end{tikzpicture}
+    \caption{Ein Perzeptron mit drei Eingaben, drei versteckten Neuronen und einem Ausgabeneuron.}
+\end{figure}
+
+\Citeauthor{Rosenblatt1958} verkettete schon mehrere Perzeptronen zu einem mehrschichtigen Perzeptron , das in der Lage ist, nicht-lineare binäre Funktionen zu berechnen.
+Dabei wird die Ausgabe eines Neurons als Eingabe für ein Neuron in einer darauf folgenden Schicht verwendet, wie in \ref{fig:perzeptron} zu sehen ist.
+Ersetzt man die Sprungfunktion auch noch durch eine stetige Funktion, ist es nicht nur möglich auch stetige Funktionen zu berechnen.
+Es lassen sich sogar alle stetigen Funktionen berechnen, deren Bildraum Teil des n-dimensionalen Hyperwürfel ist, wenn das mehrschichtige Perzeptron genügend Neuronen enthält \cite{Cybenko1989}.
+Da diese Einschränkung sehr schwach ist, wird dies als universelle Approximationseigenschaft bezeichnet und ist ein wichtiger Grund, warum KNNs so vielfältig einsetzbar sind.
+
+Heute werden KNNs dieser Art als Feedforward-Netzwerke bezeichnet.
+Ist die Aktivierungsfunktion der Neuronen differenzierbar, können die Gewichte des Netzwerks durch das sogenannte Backpropagation-Verfahren trainiert werden \cite{Rumelhart1986}.
+Dieser Algorithmus ist schon seit den 1960er Jahren bekannt \cite{Amari1967}, wurde aber erst in den 1980er Jahren populär, als es möglich wurde, ihn auf Computern effizient auszuführen.
+Um die Gewichte des Netzwerks zu optimieren, wird eine Kostenfunktion definiert, die die Differenz zwischen den Ausgaben des Netzwerks und den gewünschten Ausgaben bei gegebenen Trainingsbeispielen misst.
+Dann wird ausgehend von einer Initialisierung der Gewichte die Kostenfunktion durch Anpassung der Gewichte minimiert.
+Gleichzeitig für jedes Gewicht $w$ wird die partielle Ableitung der Kostenfunktion $C(w)$ nach dem Gewicht berechnet und das Gewicht in die entgegengesetzte Richtung der Ableitung verschoben:
+
+$$
+w \leftarrow w - \alpha \frac{\partial C}{\partial w}
+$$
+
+Die Lernrate $\alpha$ ist eine positive Konstante, die die Schrittweite bestimmt.
+Der Prozess wird so lange wiederholt, bis die Kostenfunktion einen akzeptablen Wert erreicht hat.
+
+Das Backpropagation-Verfahren ist prinzipiell die Anwendung der Kettenregel der Differentialrechnung auf die Kostenfunktion um die partiellen Ableitungen zu berechnen.
+All dies scheint auf den ersten Blick sehr einfach, aber in der Praxis gibt es viele Herausforderungen, die es zu bewältigen gilt.
+In den Anfängen des maschinellen Lernens war es schlicht nicht möglich, die partiellen Ableitungen der Kostenfunktion für große Netze zu berechnen, weil es an der Rechenleistung fehlte.
+Außerdem garantiert das Backpropagation-Verfahren nur, das Finden von einem lokalen Minimum der Kostenfunktion und wahrscheinlich aufgrund der universellen Approximationseigenschaft wurde viel mit nicht optimalen Netzwerkarchitekturen experimentiert.
+
+Deshalb ist es nicht verwunderlich, dass KNNs in den 1990er Jahren in der Versenkung verschwanden, als die Erwartungen nicht erfüllt wurden.
+Erst in den 2010er Jahren, als die Rechenleistung und die Datenmengen groß genug wurden, um tiefe Netzwerke mit mehr Schichten zu trainieren, erlebten KNNs eine Renaissance \cite{Schmidhuber2015}.
 
 \section{Transformer: Ein Überblick}
 \label{subsec:Foundations:Transformer}
-Transformer \cite{transformers} sind eine Klasse von Deep-Learning-Modellen, die sich bei einer Vielzahl von Aufgaben der Linguistischen Datenverarbeitung wie maschineller Übersetzung, Texterzeugung und Sprachmodellierung als äußerst effektiv erwiesen hat \cite{transformers,bert,FewShotLearners,gpt4}.
+\todo{linguistische Datenverarbeitung groß kleinschreiben}
+Transformer \cite{transformers} sind eine Klasse von Deep-Learning-Modellen, die sich bei einer Vielzahl von Aufgaben der Linguistischen Datenverarbeitung wie maschineller Übersetzung, Text\-er\-zeugung und Sprachmodellierung als äußerst effektiv erwiesen hat \cite{transformers,bert,FewShotLearners,gpt4}.
 Sie basieren auf einer Architektur, die sich von herkömmlichen rekurrenten neuronalen Netzen (RNNs) und Convolutional Neural Networks (CNNs) unterscheidet.
 In jedem Schritt der Verarbeitung wird die Eingabesequenz zu jeweils einem Ausgabetoken verarbeitet.
 Durch wiederholte Anwendung kann so eine Sequenz von Ausgabetoken erzeugt werden.
-Ein grundlegender Baustein eines Transformator-Modells ist der Self-Attention-Mechanismus, der es dem Modell ermöglicht, sich während der Kodierungs- und Dekodierungsphasen auf bestimmte Teile der Ein- und Ausgabesequenzen zu „konzentrieren“.
+Ein grundlegender Baustein eines Transformer-Modells ist der Self-Attention-Mechanismus, der es dem Modell ermöglicht, sich während der Kodierungs- und Dekodierungsphasen auf bestimmte Teile der Ein- und Ausgabesequenzen zu „konzentrieren“.
 Er ist notwendig um Abhängigkeiten zwischen weit voneinander entfernten Teilen der Eingabe zu erfassen, was besonders wichtig für Aufgaben des Sprachverständnisses ist.
 In einem Transformer-Modell wird die Eingabesequenz zunächst von einer Reihe von Kodierungsschichten verarbeitet, die jeweils aus einem Self-Attention-Modul und einem neuronalen Feedforward-Netzwerk bestehen.
 Das Self-Attention-Modul berechnet eine Gewichtung der Aufmerksamkeit auf die Positionen in der Eingangssequenz, die verwendet wird, um den Einfluss dieser Eingabeteile auf das jeweils nächste Ausgabetoken zu vergrößern.
 Nach den Kodierungsschichten wird die Ausgabesequenz durch eine Reihe von Dekodierungsschichten erzeugt, die im Gegensatz zu den Kodierungsschichten sowohl auf die Eingabesequenz als auch auf die zuvor erzeugten Ausgabesequenzen zugreifen.
 Die Dekodierungsschichten ermöglichen es dem Modell, Ausgabesequenzen zu erzeugen, die von der Eingabesequenz und zuvor erzeugten Ausgabetokens abhängen.
 Einer der Hauptunterschiede von Transformermodellen gegenüber den älteren RNNs ist, dass zwischen den einzelnen Berechnungsschritten kein Zustand mitgeführt wird.
-Das hat zwei Vorteile: Dieser Zustand nicht „vergessen“ werden und da keine Abhängigkeiten zwischen den Trainingsschritten existieren kann das Modell besser parallel trainiert werden.
+Das hat zwei Vorteile: Dieser Zustand kann nicht „vergessen“ werden und da keine Abhängigkeiten zwischen den Trainingsschritten existieren kann das Modell besser parallel trainiert werden.
 
 Insgesamt können Transformermodelle Eingaben und Ausgaben variabler Länge verarbeiten und lassen sich mit großen Datensätzen trainieren, wodurch sie sich gut für Aufgaben der Linguistischen Datenverarbeitung eignen.
 Transformer haben sich für eine Vielzahl von Aufgaben der Linguistischen Datenverarbeitung zum State-of-the-Art-Ansatz entwickelt und sind nach wie vor ein aktives Forschungsgebiet.
 Zu den jüngeren Fortschritten gehören Techniken für das Training immer größerer Transformermodelle auf riesigen Datensätzen:
-Zu den bekanntesten Transformermodellen gehören BERT \cite{bert}, GPT-3 \cite{FewShotLearners} und GPT-4 \cite{gpt4}, die sich vor allem in ihrer Größe, aber mutmaßlich nicht grundlegend in ihrer Architekturen unterscheiden \footnote{Im Fall von GPT-4, werden auch Bilder als Teil der Eingabe akzeptiert. Die genaue Architektur von GPT-4 ist nicht öffentlich bekannt.}.
+Zu den bekanntesten Transformermodellen gehören BERT \cite{bert}, GPT-3 \cite{FewShotLearners} und GPT-4 \cite{gpt4}, die sich vor allem in ihrer Größe, aber mutmaßlich nicht grundlegend in ihren Architekturen unterscheiden \footnote{Im Fall von GPT-4, werden auch Bilder als Teil der Eingabe akzeptiert. Die genaue Architektur von GPT-4 ist nicht öffentlich bekannt.}.
 Als Bezeichnung für diese Modelle hat sich der Begriff Large Language Model (LLM) etabliert.
 
 \section{Große Sprachmodelle und ihre Anwendungen in der Softwareentwicklung}
 \label{subsec:Foundations:LLM}
+
+
+\todo{Komplett überarbeiten oder löschen}
 
 Large language models like GPT-3 can be used task-agnostically because they are trained on vast amounts of text data in an unsupervised manner. During training, the model learns to understand the underlying patterns and relationships in language, allowing it to generate coherent and contextually appropriate responses to a wide range of tasks without the need for task-specific training data.
 One key advantage of these models is their massive size, with GPT-3 containing 175 billion parameters.
@@ -108,16 +197,16 @@ Ein verbreiteter Ansatz für das automatische Testen von Webanwendungen ohne har
 Dabei werden zufällige Benutzerinteraktionen simuliert und beobachtet, ob die Anwendung abstürzt.
 Dieser Ansatz ist einfach zu implementieren und kann auf jede Webanwendung angewendet werden, unabhängig von ihrer Struktur \cite{monkey_testing}.
 
-Aufbauend auf Monkey Testing gibt es viele Ansätze mit der Idee Algorithmen zu entwickeln, die die zu Testende Anwendung effizienter erkunden.
+Aufbauend auf Monkey-Testing gibt es viele Ansätze mit der Idee, Algorithmen zu entwickeln, die die zu testende Anwendung effizienter erkunden.
 TESTAR, ein Werkzeug für Monkey-Testing, enthält auch einen Algorithmus, der den Suchraum auf „interessante“ Pfade einschränken soll.
-Dafür wird eine anwendungsspezifische Prolog Wissendatenbank verwendet die relevante Benutzeraktionen aus dem Anwendungszustand ableitet.
+Dafür wird eine anwendungsspezifische Prolog Wissendatenbank verwendet, die relevante Benutzeraktionen aus dem Anwendungszustand ableitet.
 Aus diesen wird mittels Q-Learning ein Modell trainiert, das alle Anwendungszustände effizient zu erforschen versucht \cite{testar-q-learning}.
 Eskonen et al. verwenden bildbasiertes Deep Reinforcement Learning, um zu imitieren, wie Menschen die zu testende Anwendung erkunden \cite{deep_reinforcement_exploring}.
 Auf ähnliche Weise nutzen Saber et al. Computer Vision, um Anwendungszustände und Interaktionselemente aus Screenshots zu extrahieren, und verwenden dann Deep Q-Learning, um alle Anwendungszustände effizient zu erforschen \cite{saber_testing}. 
 %Diese Ansätze machen zwar menschliche Interaktion überflüssig und sind auf jede GUI-basierte Anwendung anwendbar, ermöglichen aber nicht die automatische Abarbeitung von natürlichsprachlichen Designer-Testfällen.
-Harris et al. schlagen DRIFT vor, ein Framework zur Navigation durch eine zu testende Anwendung bei der zuvor spezifizierte Softwarefunktionen ausgelöst werden sollen \cite{harries2020drift}.
+Harris et al. schlagen DRIFT vor, ein Framework zur Navigation durch eine zu testende Anwendung, bei der zuvor spezifizierte Softwarefunktionen ausgelöst werden sollen \cite{harries2020drift}.
 DRIFT arbeitet mit einer symbolischen Darstellung der Benutzeroberfläche und verwendet Q-Learning mit Graph Neural Networks.
-Dieser Prozess setzt jedoch die Beobachtung von Funktionsaufrufen der zu testenden Anwendung voraus, und die Definition von Tests erfordert technische Kenntnisse über die Interna der Anwendung.
+Dieser Prozess setzt jedoch die Beobachtung von Funktionsaufrufen der zu testenden Anwendung voraus; die Definition von Tests erfordert technische Kenntnisse über die Interna der Anwendung.
 Khaliq et al. verwenden ein ähnliches System wie das in dieser Arbeit vorgeschlagene: Sie übergeben kurze textuelle Beschreibungen der Benutzeroberfläche an ein LLM, das eine Sequenz von Benutzeraktionen generiert, die von diesem Zustand aus zu verfolgen sind \cite{transformers_exploratory}.
 Neuere LLMs mit längereren maximalen Eingaben erlauben es jetzt aber, die vollständige Repräsentation der GUI in der Eingabe zu verwenden.
 
@@ -146,7 +235,7 @@ Auch wenn keine natürliche Sprache verwendet wird und Änderungen an der Benutz
 \label{ch:ExperimentalSetup}
 
 Nachdem die Arbeit von \Citeauthor{GPT3Testing} nur an einem einfachen Taschenrechner getestet wurde, stellt sich die Frage, welche Art von Anwendung für eine ausführlichere Evaluation des Ansatzes geeignet ist.
-Meiner Meinung nach sollte die Anwendung wenigstens folgende Eigenschaften haben:
+Meiner Meinung nach sollte die Anwendung mindestens folgende Eigenschaften haben:
 
 \begin{enumerate}
     \item
@@ -172,7 +261,7 @@ Meiner Meinung nach sollte die Anwendung wenigstens folgende Eigenschaften haben
 \end{enumerate}
 
 Die Eigenschaften 1 bis 5 sind notwendig, um die Resultate der Evaluation auf möglichst viele reale Anwendungen übertragen zu können.
-Abbildung \ref{fig:sad_monkey} zeigt, dass Eigenschafen 3 bis 5 außerdem interessant sind, weil sie zusammen naives Monkey-Testing ineffizient machen und somit die Fähigkeiten des LLMs auf die Probe stellen.
+Abbildung \ref{fig:sad_monkey} zeigt, dass Eigenschaften 3 bis 5 außerdem interessant sind, weil sie zusammen naives Monkey-Testing ineffizient machen und somit die Fähigkeiten des LLMs auf die Probe stellen.
 
 \begin{figure}
     \centering
@@ -196,7 +285,7 @@ Abbildung \ref{fig:sad_monkey} zeigt, dass Eigenschafen 3 bis 5 außerdem intere
         \draw[->] (7) .. controls +(left:2) ..  (1);
         \draw[->] (-0.5,0) -- (1);
     \end{tikzpicture} 
-    \caption{Zustandsgraf einer fiktiven Anwendung mit Validierung, einem transaktionalen Arbeitsablauf und einem hohen Verzweigungsgrad. $s$ ist der Startzustand, $d$ ist der Zielzustand, $e$ ist ein Fehlerzustand. Die Zahlen an den Kanten stehen für die Anzahl der möglichen Benutzerinteraktionen, die den Zustandsübergang auslösen. Die Wahrscheinlichkeit, dass ein Monkey-Tester den Zielzustand und nicht erneut den Startzustand erreicht, ist lediglich Eins in hundert Millionen.}
+    \caption{Zustandsgraf einer fiktiven Anwendung mit Validierung, einem transaktionalen Arbeitsablauf und einem hohen Verzweigungsgrad. $s$ ist der Startzustand, $d$ ist der Zielzustand, $e$ ist ein Fehlerzustand. Die Zahlen an den Kanten stehen für die Anzahl der möglichen Benutzerinteraktionen, die den Zustandsübergang auslösen. Die Wahrscheinlichkeit, dass ein Monkey-Tester den Zielzustand und nicht erneut den Startzustand erreicht, ist lediglich eins in hundert Millionen.}
     \label{fig:sad_monkey}
 \end{figure}
 
@@ -220,7 +309,7 @@ Eine Auswahl dieser Projekte ist in Abbildung \ref{tab:webshop_projects} aufgef�
             \scriptsize
             \begin{tabular}{ | l | l | l | l | l |}
                 \hline
-                \textbf{Projekt} & \textbf{Letzter Commit} & \textbf{Lizens} & \textbf{Technologie} & \textbf{Vermerk} \\ \hline
+                \textbf{Projekt} & \textbf{Letzter Commit} & \textbf{Lizenz} & \textbf{Technologie} & \textbf{Vermerk} \\ \hline
                 Online Shopping Cart\footnote{\url{https://github.com/shashirajraja/shopping-cart}} & Mai 23 & Apache 2 & Java, Servlets, JSP, SQL & Demonstrationszweck \\ \hline
                 LifestyleStore\footnote{\url{https://github.com/sajalagrawal/LifestyleStore}} & August 20 & - & PHP, SQL & Lernzweck \\ \hline
                 Your Online Shop\footnote{\url{https://github.com/petazeta/youronlineshop}} & Dezember 22 & custom & Node.js, MongoDB & - \\ \hline
@@ -242,11 +331,14 @@ Eine Auswahl dieser Projekte ist in Abbildung \ref{tab:webshop_projects} aufgef�
 
 Die meisten dieser Projekte sind nicht für die Verwendung in dieser Arbeit geeignet, da sie entweder nicht transaktional sind oder keine passende Lizenz haben.
 \textit{EverShop} und \textit{Shuup} erfüllen zwar alle Anforderungen, sind aber so komplex und umfangreich, dass ein maßgeblicher Teil der Arbeit darin bestehen würde, die Anwendung zu verstehen und zu modifizieren, um sie für die Evaluation des Ansatzes zu verwenden.
+
 \textit{online-shopping-website} hingegen ist streng genommen nicht für den praktischen Einsatz gedacht, erfüllt aber fast alle Anforderungen und ist klein und simpel.
 Nur eine Möglichkeit zur Kaufabwicklung mit einer validierten Eingabemaske fehlt, welche aber mit vertretbarem Aufwand hinzugefügt werden kann.
 Deshalb wurde entschieden, eine eigene Anwendung auf Basis von \textit{online-shopping-website} zu entwickeln, die alle Anforderungen erfüllt und gleichzeitig einfach genug ist, um sie in der verfügbaren Zeit zu evaluieren.
 
 \section{Forschungsfragen}
+
+\todo{Keine Orakel, nur Interaktionen}
 
 \begin{enumerate}
     \item Can LLMs understand HTML?
@@ -259,7 +351,7 @@ Deshalb wurde entschieden, eine eigene Anwendung auf Basis von \textit{online-sh
 
 \section{Getestete Anwendung}
 
-Um die Methode des automatisierten Testens von Webanwendungen mit LLMs zu evaluieren, habe ich eine eigene Anwendung entwickelt, die als Testanwendung dient.
+Um die Methode des automatisierten Testens von Webanwendungen mit LLMs zu evaluieren, habe ich eine eigene Anwendung entwickelt, die als Test\-anwendung dient.
 Diese Testanwendung ist ein Webshop, in dem Benutzer mit verschiedenen Elementen interagieren können, wie Produktlisten für verschiedene Produktkategorien, einem Warenkorb und dem Kassenprozess.
 
 Als Grundlage für die Testanwendung dient das Open-Source Projekt \textit{online-shopping-website} \footnote{\url{https://github.com/nsk1512/online-shopping-website}}.
@@ -268,14 +360,16 @@ Die Anwendung ist in JavaScript geschrieben und benötigt keine externen Abhäng
 Für diese Arbeit habe ich die Anwendung unter Verwendung der Bibliothek \textit{react}\footnote{\url{https://react.dev/}} neu implementiert und um eine Kassenfunktionalität, Validierungslogik und eine Bestellbestätigungsseite erweitert.
 Mit diesen Erweiterungen erfüllt die Anwendung alle Anforderungen, die am Anfang dieses Kapitels aufgeführt sind.
 
+\todo{Das hier genauer, vllt. über Benutztererfahrung? Startseite -> Produktliste -> Warenkorb -> Kasse -> Bestellbestätigung}
+
 Die Webseite ist jetzt wie folgt aufgebaut:
 Es gibt vier verschiedene Seiten, die der Benutzer besuchen kann: Die Startseite, die Produktlisten für verschiedene Produktkategorien, die Kasse und die Bestellbestätigungsseite.
 Diese sind in Abbildung \ref{fig:online-shopping-website} dargestellt.
 Jede Seite enthält eine Titelleiste mit einem aufklappbaren Menü, das den Benutzer zu den anderen Seiten führt und eine aufklappbare Warenkorbansicht.
-Die Produktlisten und die Startseite enthalten Bilder, Namen und Preise der Produkte und eine Schaltfläche, um das Produkt zum Warenkorb hinzuzufügen.
-Die Startseite enthält ausgewählte Produkte aus verschiedenen Kategorien und eine Schaltfläche um zu einer hervorgehobenen Produktkategorie zu gelangen.
-In dem aufklappbaren Warenkorb lassen sich die Produkte entfernen und die Anzahl der Produkte ändern und es gibt eine Schaltfläche, um zur Kasse zu gelangen.
-In der Kasse gibt es eine Bestellübersicht und dort gibt der Benutzer seine Adresse und Zahlungsdaten ein und bestätigt die Bestellung.
+Die Produktlisten und die Startseite enthalten Bilder, Namen und Preise der Produkte sowie eine Schaltfläche, um das Produkt zum Warenkorb hinzuzufügen.
+Die Startseite enthält ausgewählte Produkte aus verschiedenen Kategorien und eine Schaltfläche, um zu einer hervorgehobenen Produktkategorie zu gelangen.
+In dem aufklappbaren Warenkorb lassen sich die Produkte entfernen, die Anzahl der Produkte ändern und es gibt eine Schaltfläche, um zur Kasse zu gelangen.
+In der Kasse gibt es eine Bestellübersicht, dort gibt der Benutzer seine Adresse und Zahlungsdaten ein und bestätigt die Bestellung.
 Daraufhin werden die Benutzereingaben auf Vollständigkeit und korrekte Form validiert.
 Falls sie korrekt sind, gelangt der Nutzer zur Bestellbestätigungsseite, sonst wird er aufgefordert, die Eingaben entsprechend zu korrigieren.
 
@@ -335,7 +429,7 @@ Deshalb habe ich die Verantwortlichkeit für die Identifikation dieser Elemente 
 Für das Testframework, das ich entwickelt habe, ist es notwendig, dass benutzbare HTML-Elemente durch ein spezielles Attribut gekennzeichnet sind.
 
 Um herauszufinden, welche dieser gekennzeichneten Elemente nicht verdeckt sind, habe ich ein Skript entwickelt, das mithilfe der Bibliothek \textit{Selenium}\footnote{\url{https://www.selenium.dev/}} direkt im Browser ausgeführt wird.
-Es benutzt die DOM-API des Browsers, um abzufragen, welches Element an der Stelle eines gekennzeichneten Elements zu oberst liegt.
+Es benutzt die DOM-API des Browsers, um abzufragen, welches Element an der Stelle eines gekennzeichneten Elements zuoberst liegt.
 Das gekennzeichnete Element kann nicht verdeckt sein, wenn das oberste Element Nachfahre des gekennzeichneten Elements oder das Element selbst ist.
 Für die Testanwendung reicht dieses Kriterium zwar aus, generell lassen sich aber Fälle konstruieren, in denen dieses Kriterium nicht ausreicht, oder nicht zutrifft:
 Beispielsweise durch absolute Positionierung oder z-index kann es sein, dass ein Element, das nicht vollständig verdeckt ist, nicht als solches erkannt wird.
@@ -348,22 +442,22 @@ Prompt-Engineering ist die Kunst, eine Eingabe zu formulieren, die das gewünsch
 In dieser Arbeit habe ich mich auf die Entwicklung von Prompts konzentriert, die die Anwendung navigieren und testen.
 Im Speziellen sind Eingaben, mit denen das LLM zu Anwendungszuständen navigiert, die von klassischen Monkey-Testern schwer zu erreichen sind, von Interesse.
 
-Dazu vergleiche ich die Qualität der generierten Benutzerinteraktionen, wenn das LLM mit verschiedenen Eingabe aufgerufen wird.
+Dazu vergleiche ich die Qualität der generierten Benutzerinteraktionen, wenn das LLM mit verschiedenen Eingaben aufgerufen wird.
 Die Qualität der generierten Benutzerinteraktionen wird anhand der Branchenabdeckung gemessen, mehr dazu in Abschnitt \ref{sec:vaildation}.
 
 \begin{enumerate}
-    \item Basis-Eingabe: Die Basis-Eingabe ist ein einfacher Satz, der das LLM auffordert, eine Benutzerinteraktion zu generieren die eine gegeben Webanwendung testen soll.
+    \item Basis-Eingabe: Die Basis-Eingabe ist ein einfacher Satz, der das LLM auffordert, eine Benutzerinteraktion zu generieren, die eine gegebene Webanwendung testen soll.
     \\
     Beispieleingabe:
     \\
-    \textit{Du bist Tester für Webanwendungen und sollst eine gegebene Anwendung möglichst ausführlich Testen.
+    \textit{Du bist Tester für Webanwendungen und sollst eine gegebene Anwendung möglichst ausführlich testen.
     Hier ist die HTML-Repräsentation der Anwendung: ...
     Antworte mit einer der folgenden Benutzerinteraktionen: Klick auf \dq weiter\dq, Klick auf \dq zurück\dq.}
-    \item Verkettung: Zusätzlich zu der Basis-Eingabe wird jeweils die letzte Ausgabe des LLMs an die Eingabe angefügt.
+    \item Verkettung: Zusätzlich zur Basis-Eingabe wird jeweils die letzte Ausgabe des LLMs an die Eingabe angefügt.
     \\
     Beispieleingabe:
     \\
-    \textit{System: Du bist Tester für Webanwendungen und sollst eine gegebene Anwendung möglichst ausführlich Testen.
+    \textit{System: Du bist Tester für Webanwendungen und sollst eine gegebene Anwendung möglichst ausführlich testen.
     Hier ist die HTML-Repräsentation der Anwendung: ...
     Antworte mit einer der folgenden Benutzerinteraktionen: Klick auf \dq weiter\dq, Klick auf \dq zurück\dq.
     \\
@@ -371,11 +465,11 @@ Die Qualität der generierten Benutzerinteraktionen wird anhand der Branchenabde
     \\
     System: Hier ist die neue HTML-Repräsentation der Anwendung: ... Bitte fahre mit dem Testen fort. Antworte mit einer der folgenden Benutzerinteraktionen: Klick auf \dq weiter\dq, Klick auf \dq zurück\dq.
     }
-    \item Beschreibung: Zusätzlich zur Verkettung wird das LLM aufgefordert eine Beschreibung des Anwendungszustands zu generieren. Diese wird dann mit in folgenden Eingaben verkettet.
+    \item Beschreibung: Zusätzlich zur Verkettung wird das LLM aufgefordert, eine Beschreibung des Anwendungszustands zu generieren. Diese wird dann mit in den folgenden Eingaben verkettet.
     \\
     Beispieleingabe:
     \\
-    \textit{System: Du bist Tester für Webanwendungen und sollst eine gegebene Anwendung möglichst ausführlich Testen.
+    \textit{System: Du bist Tester für Webanwendungen und sollst eine gegebene Anwendung möglichst ausführlich testen.
     Hier ist die HTML-Repräsentation der Anwendung: ... 
     Gib eine kurze Beschreibung des Anwendungszustands an, dann antworte mit einer der folgenden Benutzerinteraktionen: Klick auf \dq weiter\dq, Klick auf \dq zurück\dq.
     \\
@@ -387,9 +481,9 @@ Die Qualität der generierten Benutzerinteraktionen wird anhand der Branchenabde
     \\
     Beispieleingabe:
     \\
-    \textit{System: Du bist Tester für Webanwendungen und sollst eine gegebene Anwendung möglichst ausführlich Testen.
+    \textit{System: Du bist Tester für Webanwendungen und sollst eine gegebene Anwendung möglichst ausführlich testen.
     Hier ist die HTML-Repräsentation der Anwendung: ... 
-    Gib eine kurze Beschreibung des Anwendungszustands an, dann antworte mit einer einem Plan was als nächstes getestet werden soll und einer der folgenden Benutzerinteraktionen, die dafür gewählt werden muss: Klick auf \dq weiter\dq, Klick auf \dq zurück\dq. 
+    Gib eine kurze Beschreibung des Anwendungszustands an, dann antworte mit einem Plan, was als nächstes getestet werden soll und einer der folgenden Benutzerinteraktionen, die dafür gewählt werden muss: Klick auf \dq weiter\dq, Klick auf \dq zurück\dq. 
     \\
     LLM: Es wird ein Dialog mit dem Warnhinweis angezeigt, dass die Löschung des Benutzerkontos endgültig ist.
     Teste das Löschen des Benutzerkontos.
@@ -397,81 +491,29 @@ Die Qualität der generierten Benutzerinteraktionen wird anhand der Branchenabde
     \\
     System: Hier ist die neue HTML-Repräsentation ...
     }
-    \item Selbst-Formulierte Ziele: Das LLM wird dazu aufgefordert Ziele zu formulieren, die es in der Anwendung erreichen soll. Diese Ziele sollen mehrere Benutzerinteraktionen umfassen.
-    \item 
-    \item Chain of Thought Eingaben: Das erwartete Format für die Ausgabe des LLM enthält einen kompletten erklärenden Gedankengang. Dazu werden Beispiele im Prompt geliefert \cite{chain-of-thought}.
+    \item Selbst formulierte Ziele: Das LLM wird dazu aufgefordert, Ziele zu formulieren, die es in der Anwendung erreichen soll. Diese Ziele sollen mehrere Benutzerinteraktionen umfassen.
+    \\
+    Beispieleingabe:
+    \\
+    \textit{System: Du bist Tester für Webanwendungen und sollst eine gegebene Anwendung möglichst ausführlich testen.
+    Hier ist die HTML-Repräsentation der Anwendung: ... 
+    Gib eine kurze Beschreibung des Anwendungszustands an, dann stell zunächst abstraktes Ziel auf, das du über die nächsten Benutzerinteraktionen erreichen möchtest.
+    Stelle dann einen Plan auf, wie das Ziel erreicht werden soll, gefolgt von einer Benutzerinteraktion, die dafür ausgeführt werden muss: Klick auf \dq weiter\dq, Klick auf \dq zurück\dq. 
+    \\
+    LLM: Es wird ein Dialog mit dem Warnhinweis angezeigt, dass die Löschung des Benutzerkontos endgültig ist.
+    Neues Ziel: Teste das Erstellen neuer Kommentare.
+    Plan: Bleibe eingeloggt und navigiere zu einem Artikel, der noch keine Kommentare hat. Schreibe einen Kommentar und überprüfe, ob er angezeigt wird.
+    Klick auf \dq zurück\dq
+    \\
+    System: Hier ist die neue HTML-Repräsentation ...
+    }
+    \item \todo{Bindestriche?} Chain of Thought Eingaben: Das erwartete Format für die Ausgabe des LLM enthält einen kompletten erklärenden Gedankengang. Im Gegensatz zum Ansatz 5 werden dazu Beispiele im Prompt geliefert \cite{chain-of-thought}.\todo{Das ist sehr unklar}
 \end{enumerate}
 
-\section{Resultate}
+\section{Validierung}
 \label{sec:vaildation}
 
-\begin{figure}
-    \centering
-    \begin{tikzpicture}
-        \begin{axis}[
-            ymajorgrids=true,
-            xmin=0, xmax=100,
-            grid style=dashed,
-            width=0.9\textwidth,
-            ylabel={Branchenabdeckung [\%]},
-            xlabel={Anzahl der generierten Benutzerinteraktionen [1]},
-            no markers,
-            legend pos=south east,
-            %xtick=data,
-            ]
-            \addplot[color=green] table [x=x,y=average,col sep=comma] {experimental_data/monkey/results.csv};
-            \label{Monkey-Testing, n=10}
-            \addplot+[forget plot,name path=monkey_top,color=green!70] table [x=x,y=above,col sep=comma] {experimental_data/monkey/results.csv};
-            \addplot+[forget plot,name path=monkey_bottom,color=green!70] table [x=x,y=below,col sep=comma] {experimental_data/monkey/results.csv};
-            \addplot+[forget plot,green!50,fill opacity=0.5] fill between[of=monkey_top and monkey_bottom];
-            \addlegendentry{Monkey-Testing, n=10}
-
-            \addplot[color=blue] table [x=x,y=average,col sep=comma] {experimental_data/gpt4-base/results.csv};
-            \addlegendentry{GPT-4 Basiseingabe, n=4}
-            \label{Basis-Eingabe, n=4}
-        \end{axis}
-    \end{tikzpicture}
-    
-\end{figure}
-
-\iffalse
-\chapter{Execution}
-
-\section{Riscs}
-
-\section{Schedule}
-
-\ganttset{%
-    calendar week text={%
-        \currentweek
-    }%
-}
-\begin{ganttchart}[hgrid,
-time slot format=isodate,
-    x unit=2pt,]{2023-06-12}{2023-12-11}
-    \gantttitlecalendar{year, month, week}\\
-    %\gantttitle{2023-06-12}{2024-01-1} \\
-    %\gantttitlelist{1,...,12}{1} \\
-    \ganttbar{Lit. Research}{2023-06-12}{2023-06-26} \\%2
-    \ganttgroup{Implementation}{2023-06-26}{2023-08-21} \\
-    \ganttbar{AUT}{2023-06-26}{2023-07-24} \\%4
-    \ganttbar{Implementation}{2023-07-24}{2023-08-21} \\%4
-    \ganttgroup{Validation}{2023-08-21}{2023-10-02} \\
-    \ganttbar{Design Tests}{2023-08-21}{2023-09-04} \\%2
-    \ganttbar{GPT3}{2023-09-04}{2023-09-11} \\%1
-    \ganttbar{GPT4}{2023-09-11}{2023-09-18} \\%1
-    \ganttbar{Monkey Testing}{2023-09-18}{2023-10-02} \\%2
-    %\ganttbar{open source GPT}{2023-10-09}{2023-10-23} \\
-    %\ganttbar{Monkey Testing}{2023-10-09}{2023-10-23} \\
-    \ganttgroup{Documentation}{2023-10-02}{2023-11-27} \\%4
-    \ganttbar{Writing}{2023-10-02}{2023-11-13} \\%6
-    \ganttbar{Finalize}{2023-11-13}{2023-11-27} \\%2
-    \ganttbar{Buffer}{2023-11-27}{2023-12-11}%2
-    %\ganttbar{Final Task}{8}{12}
-    %\ganttlink{elem2}{elem3}
-    %\ganttlink{elem3}{elem4}
-\end{ganttchart}
-\fi
+\todo{erklärung der Branchenabdeckung (oder in Grundlagen damit?) und warum Monkey-Testing}
 
 %% ---------------------
 %% | / Example content |
