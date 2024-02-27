@@ -1,0 +1,233 @@
+{
+  "response": {
+    "id": "chatcmpl-8wrThfuGH3ekNyPkrerid78SfED1G",
+    "object": "chat.completion",
+    "created": 1709039285,
+    "model": "gpt-4-0125-preview",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": null,
+          "function_call": {
+            "name": "emulate_interaction",
+            "arguments": "{\"page_description\":\"The checkout is almost complete with the customer information and address partially filled out. The 'Street Address' has been successfully entered as '123 Apple St'. The sections still requiring input are 'City', 'State', and 'Zip Code' in the Address section, as well as the selection of a payment method in the Payment section. The cart shows a Galaxy A80 with a total price displayed. The form is displaying error messages for the missing required fields in the Address section. The navigation bar allows access to other sections of the site, like Home, Galaxy, S10, M Series, and A Series.\",\"explanation\":\"Let's continue filling in the Address Section. The next step is to fill in the 'City' field to help ensure the web application processes address details correctly.\",\"interaction\":{\"interaction_type\":\"send_keys\",\"element_id\":\":r3b:\",\"keys\":\"New York\"}}"
+          }
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3073,
+      "completion_tokens": 183,
+      "total_tokens": 3256
+    },
+    "system_fingerprint": "fp_89b1a570e1"
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "Given a web application, you are tasked with assisting in testing its functionality. The emulate_interaction function takes an interaction as input and emulates it on the web application. The return value of the function is the new, filtered HTML source code of the web application. The source code of previous interactions will be omitted from the input to the assistant. "
+    },
+    {
+      "role": "user",
+      "content": "Please test my website. The goal is to test as many different features as possible to find potential bugs, so make sure to include edge cases. Here is the filtered HTML source code of the web application: 'omitted'. "
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The web application has transitioned to a checkout page after attempting to proceed with the checkout process. The page is a React-based form structured into three primary sections: Customer information, Address, and Payment options. Each section requires input from the user, including personal and payment details such as name, email, address, and payment method choice (Invoice, Credit Card, PayPal). A 'Submit' button is provided at the bottom for final submission. Additionally, the navigation bar remains visible with the shopping cart icon indicating 1 item in the cart. The checkout form also displays error messages indicating that all fields are required but have been left empty.\",\"explanation\":\"To properly test the checkout functionality, let's fill in the Customer Information section of the form with valid test data. This action will help determine if the form correctly processes and accepts input before proceeding to submit the form.\",\"interaction\":{\"interaction_type\":\"send_keys\",\"element_id\":\":r36:\",\"keys\":\"John\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"After filling in the first name as 'John' in the Customer Information section of the checkout form, the page shows the form divided into several sections requiring different types of information: Customer information (with the first name 'John' filled in), Address, and Payment options. There are unfilled inputs for the Last Name, E-Mail, Country, Street Address, City, State, and Zip Code. Apart from the form fields, there's a shopping cart indicating 1 item (Galaxy A80) in the cart, the total price displayed, and a submit button at the bottom of the form. Error messages indicate required fields that are still missing. The navigation bar with links to different sections (Home, Galaxy, S10, M Series, and A Series) is also present.\",\"explanation\":\"To continue testing the checkout functionality, fill in the Last Name in the Customer Information section with valid test data.\",\"interaction\":{\"interaction_type\":\"send_keys\",\"element_id\":\":r37:\",\"keys\":\"Doe\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"After entering the last name 'Doe' in the Customer Information section, the checkout page is showing all filled data in the Customer section, partially complete. The Address and Payment options sections are still empty, except for the already provided names. The navigation bar is present, with options to navigate to other parts of the site. A shopping cart indicates 1 item in the cart, with a summary visible. The form has multiple fields for address details and payment options, and there's a submit button at the bottom. Error messages have updated to reflect the remaining required fields.\",\"explanation\":\"Next, let's fill in the Email field in the Customer Information section to continue populating the checkout form with test data.\",\"interaction\":{\"interaction_type\":\"send_keys\",\"element_id\":\":r38:\",\"keys\":\"john.doe@example.com\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The web application, after entering the email in the Customer Information section, shows a checkout page with fields partially filled out. The form includes a 'Customer' section with 'First Name', 'Last Name', and 'E-Mail' fields, now containing 'John', 'Doe', and 'john.doe@example.com', respectively. There are empty fields under the 'Address' section for 'Country', 'Street Address', 'City', 'State', and 'Zip Code'. The 'Payment' section provides options to choose between 'Invoice', 'Credit Card', and 'PayPal'. Additionally, the page displays a summary of the cart with 1 Galaxy A80 in it, showing the product image, name, and price along with the total amount. The navigation bar allows navigation to Home, Galaxy, S10, M Series, and A Series pages.\",\"explanation\":\"To proceed with testing the address input functionality, let's fill in the 'Country' field under the Address section with valid test data.\",\"interaction\":{\"interaction_type\":\"send_keys\",\"element_id\":\":r39:\",\"keys\":\"United States\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The web application currently displays a checkout page, with sections for customer information, address details, and payment options visibly filled out up to the 'Country' field, which is set as 'United States'. The customer information section includes first name 'John', last name 'Doe', and email 'john.doe@example.com'. The address section has begun to be filled out, with 'Country' being the only completed field. Other fields in this section such as 'Street Address', 'City', 'State', and 'Zip Code' are still empty. Additionally, there's a summary of the cart content showing a Galaxy A80 with its price, and options for the payment method including Invoice, Credit Card, and PayPal. A 'Submit' button is present for finishing the checkout process. Error messages indicating the absence of 'City', 'State', 'Street Address', and 'Zip Code' fields are shown, emphasizing their necessity for form submission. The navigation bar at the top offers navigation to Home, Galaxy, S10, M Series, and A Series pages.\",\"explanation\":\"To continue testing the checkout process, the next step is to fill in the 'Street Address' field in the Address section. This step will help assess whether the web application properly allows entry of address details, which is crucial for processing orders.\",\"interaction\":{\"interaction_type\":\"send_keys\",\"element_id\":\":r3a:\",\"keys\":\"123 Apple St\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "<html lang=\"en\"><head><title>React App</title></head><body><div id=\"root\"><nav class=\"Navbar visible\"><div class=\"Top-row\"><div class=\"Navbar-center\"><span class=\"Navbar-icon on-click\" id=\":r1:\"><i class=\"fas fa-bars\"></i></span><div class=\"Navbar-cart-btn on-click\" id=\":r2:\"><span class=\"Navbar-icon\"><i class=\"fas fa-cart-plus\"></i></span><div class=\"cart-items\">1</div></div></div></div><menu class=\"visible\"><li><a class=\"\" href=\"#/\" id=\":r0:-home\">Home</a></li><li><a class=\"\" href=\"#/c/galaxy\" id=\":r0:-galaxy\">Galaxy</a></li><li><a class=\"\" href=\"#/c/s10\" id=\":r0:-s10\">S10</a></li><li><a class=\"\" href=\"#/c/m_series\" id=\":r0:-m_series\">M Series</a></li><li><a class=\"\" href=\"#/c/a_series\" id=\":r0:-a_series\">A Series</a></li></menu></nav><div class=\"checkout\"><div class=\"checkout__cart\"><h2>Cart</h2><div class=\"cart-item\"><img alt=\"Galaxy A80\" src=\"./images/product-9.jpeg\"/><div><h4>Galaxy A80</h4><h5>$386.99</h5><span class=\"remove-item on-click\" id=\":r33:\">remove</span></div><div><i class=\"fas fa-chevron-up on-click\" id=\":r34:\"></i><p class=\"item-amount\">1</p><i class=\"fas fa-chevron-down on-click\" id=\":r35:\"></i></div></div><h3>Total: $386.99</h3></div><form class=\"checkout__form\"><div class=\"checkout__form__customer\"><h2>Customer</h2><div><label for=\":r36:\">First Name</label><input class=\"\" id=\":r36:\" type=\"text\" value=\"John\"/></div><div><label for=\":r37:\">Last Name</label><input class=\"\" id=\":r37:\" type=\"text\" value=\"Doe\"/></div><div><label for=\":r38:\">E-Mail</label><input class=\"\" id=\":r38:\" type=\"text\" value=\"john.doe@example.com\"/></div></div><div class=\"checkout__form__address\"><h2>Address</h2><div><label for=\":r39:\">Country</label><input class=\"\" id=\":r39:\" type=\"text\" value=\"United States\"/></div><div><label for=\":r3a:\">Street Address</label><input class=\"\" id=\":r3a:\" type=\"text\" value=\"123 Apple St\"/></div><div><label for=\":r3b:\">City</label><input class=\"\" id=\":r3b:\" type=\"text\" value=\"\"/></div><div><label for=\":r3c:\">State</label><input class=\"\" id=\":r3c:\" type=\"text\" value=\"\"/></div><div><label for=\":r3d:\">Zip Code</label><input class=\"\" id=\":r3d:\" type=\"text\" value=\"\"/></div></div><div class=\"checkout__form__payment\"><h2>Payment</h2><select><option value=\"0\">Invoice</option><option value=\"1\">Credit Card</option><option value=\"2\">PayPal</option></select></div><button id=\":r32:\" type=\"submit\">Submit</button><div class=\"checkout__form__errors\"><div>City is required</div><div>State is required</div><div>Zip Code is required</div></div></form></div><div class=\"on-click cart-overlay\" id=\":ra:\"><div class=\"on-click cart\" id=\":rb:\"><span class=\"close-cart on-click\" id=\":r9:\"><i class=\"fas fa-window-close\"></i></span><h2>Your cart</h2><div class=\"cart-content\"><div class=\"cart-item\"><img alt=\"Galaxy A80\" src=\"./images/product-9.jpeg\"/><div><h4>Galaxy A80</h4><h5>$386.99</h5><span class=\"remove-item on-click\" id=\":r2v:\">remove</span></div><div><i class=\"fas fa-chevron-up on-click\" id=\":r30:\"></i><p class=\"item-amount\">1</p><i class=\"fas fa-chevron-down on-click\" id=\":r31:\"></i></div></div></div><div class=\"cart-footer\"><h3>your total: <span class=\"cart-total\">$386.99</span></h3><button class=\"clear-cart banner-btn\" id=\":r6:\">clear cart</button><a href=\"#/checkout\" id=\":r8:\" style=\"text-decoration: none;\"><div class=\"banner-btn clear-cart on-click\" id=\":r7:\">Checkout</div></a></div></div></div></div></body></html>"
+    },
+    {
+      "role": "system",
+      "content": "Start by describing the website supplied by the user. Give a short general description first then summarize the main elements on the website. Do not use HTML in your description. Then explain what should be achieved with the next action. And finally, describe the interaction to emulate."
+    },
+    {
+      "role": "system",
+      "content": "Only use the click action with clickable elements. The clickable elements have the following ids: :r32:, :r0:-home, :r0:-galaxy, :r0:-s10, :r0:-m_series, :r0:-a_series, :r1:, :r2:, :r33:, :r34:, :r35:. Only use the send_keys action with writable elements. The writable elements have the following ids: :r36:, :r37:, :r38:, :r39:, :r3a:, :r3b:, :r3c:, :r3d:. Only use the clear action with clearable elements. The clearable elements have the following ids: :r36:, :r37:, :r38:, :r39:, :r3a:. "
+    }
+  ],
+  "functions": [
+    {
+      "name": "emulate_interaction",
+      "description": "Emulates a user interaction with the web application",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "page_description": {
+            "type": "string",
+            "description": "A short textual description of the state of the web application: What is the current page? What are the main elements on the page? This description should not contain any HTML."
+          },
+          "explanation": {
+            "type": "string",
+            "description": "Explanation of what should be achieved with the next action"
+          },
+          "interaction": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "interaction_type": {
+                    "const": "click",
+                    "type": "string",
+                    "description": "The type of interaction to emulate"
+                  },
+                  "element_id": {
+                    "enum": [
+                      ":r32:",
+                      ":r0:-home",
+                      ":r0:-galaxy",
+                      ":r0:-s10",
+                      ":r0:-m_series",
+                      ":r0:-a_series",
+                      ":r1:",
+                      ":r2:",
+                      ":r33:",
+                      ":r34:",
+                      ":r35:"
+                    ],
+                    "type": "string",
+                    "description": "The id of the element to interact with"
+                  }
+                },
+                "required": [
+                  "interaction_type",
+                  "element_id"
+                ],
+                "description": "clicks on a html element"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "interaction_type": {
+                    "const": "send_keys",
+                    "type": "string",
+                    "description": "The type of interaction to emulate"
+                  },
+                  "element_id": {
+                    "enum": [
+                      ":r36:",
+                      ":r37:",
+                      ":r38:",
+                      ":r39:",
+                      ":r3a:",
+                      ":r3b:",
+                      ":r3c:",
+                      ":r3d:"
+                    ],
+                    "type": "string",
+                    "description": "The id of the element to interact with"
+                  },
+                  "keys": {
+                    "type": "string",
+                    "description": "the keys to be sent to the input element"
+                  }
+                },
+                "required": [
+                  "interaction_type",
+                  "element_id",
+                  "keys"
+                ],
+                "description": "sends keystrokes to an html element"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "interaction_type": {
+                    "const": "clear",
+                    "type": "string",
+                    "description": "The type of interaction to emulate"
+                  },
+                  "element_id": {
+                    "enum": [
+                      ":r36:",
+                      ":r37:",
+                      ":r38:",
+                      ":r39:",
+                      ":r3a:"
+                    ],
+                    "type": "string",
+                    "description": "The id of the element to interact with"
+                  }
+                },
+                "required": [
+                  "interaction_type",
+                  "element_id"
+                ],
+                "description": "resets the contents of an html element"
+              }
+            ],
+            "description": "The interaction to emulate"
+          }
+        },
+        "required": [
+          "page_description",
+          "explanation",
+          "interaction"
+        ]
+      }
+    }
+  ]
+}

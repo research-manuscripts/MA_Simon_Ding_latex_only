@@ -1,0 +1,164 @@
+{
+  "response": {
+    "id": "chatcmpl-8wrs3Z5LcWsDjCexxMStDRK5F6JbE",
+    "object": "chat.completion",
+    "created": 1709040795,
+    "model": "gpt-4-0125-preview",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": null,
+          "function_call": {
+            "name": "emulate_interaction",
+            "arguments": "{\"page_description\":\"Post-purchase, the website has transitioned to a confirmation page thanking the customer for the purchase. The main navigation bar is visible with icons for a menu and a shopping cart, showing '0' items, indicating the cart's empty status post-purchase. The content area below welcomes the customer and acknowledges the completed transaction with a 'Thank you for your purchase!' message. Additionally, an overlay for the cart is present, albeit with a $0.00 total, suggesting the cart is clear. The page displays a 'clear cart' button, seemingly redundant given the cart's empty state, and a 'Checkout' option, although the checkout process was already completed.\",\"explanation\":\"To explore the functionality further and test the website's responsiveness after a purchase, try opening the website's main menu to review navigation options, ensuring the links to various sections (e.g., home, product categories) are accessible post-purchase.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":r1:\"}}"
+          }
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1894,
+      "completion_tokens": 204,
+      "total_tokens": 2098
+    },
+    "system_fingerprint": "fp_91aa3742b1"
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "Given a web application, you are tasked with assisting in testing its functionality. The emulate_interaction function takes an interaction as input and emulates it on the web application. The return value of the function is the new, filtered HTML source code of the web application. The source code of previous interactions will be omitted from the input to the assistant. "
+    },
+    {
+      "role": "user",
+      "content": "Please test my website. The goal is to test as many different features as possible to find potential bugs, so make sure to include edge cases. Here is the filtered HTML source code of the web application: 'omitted'. "
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The website has successfully registered the entry for 'United States' in the Country field within the Address section of the checkout form. The checkout page shows the form divided into the Customer, Address, and Payment sections with the Customer section filled out, partially completing the Address section, and the Payment section untouched. A cart summary is present showing a Galaxy S10 5G with options to adjust quantity or remove the item, and there's a 'Submit' button for the form. Error messages for the unfilled required fields in the Address and Payment sections are displayed, pointing out the incomplete fields for City, State, Street Address, and Zip Code.\",\"explanation\":\"Continue filling out the address details by entering a Street Address, as part of completing the form to test form functionality.\",\"interaction\":{\"interaction_type\":\"send_keys\",\"element_id\":\":rn:\",\"keys\":\"123 Main St\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The website is now showing the checkout page with progress made in filling out the form. The form is divided into sections for Customer, Address, and Payment. The Customer section is fully completed, featuring the First Name 'John', Last Name 'Doe', and E-Mail address 'john.doe@example.com'. The Address section has 'United States' as the country and '123 Main St' as the street address, but the City, State, and Zip Code fields remain empty. The Payment section still requires selection. Beside the form, there's a cart summary showing a Galaxy S10 5G with control options for adjusting quantity or removing it. Error messages for the City, State, and Zip Code indicate these are required fields. The main elements include the form fields for the remaining address details, payment method selection dropdown, a 'Submit' button for form submission, and adjustment controls for the cart item.\",\"explanation\":\"Continue filling out the form by entering the City name in the appropriate field. This action aims to further complete the address section of the form.\",\"interaction\":{\"interaction_type\":\"send_keys\",\"element_id\":\":ro:\",\"keys\":\"New York\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The checkout page currently shows significant progress in form completion. The Customer section is filled out with personal details (First Name, Last Name, Email). The Address section has Country and Street Address filled, with 'United States' and '123 Main St' respectively, and the City field recently filled with 'New York'. However, State and Zip Code remain empty. The Payment section has not been addressed yet. On the page, there's also a cart summary displaying a Galaxy S10 5G, with the total amount showing as $910.99, and options to adjust the item quantity or remove it. The form's Submit button is present but inactive due to incomplete required fields, indicated by error messages for State and Zip Code.\",\"explanation\":\"Proceed to fill out the State field in the form to advance towards completing the address requirements and moving closer to testing the submission process.\",\"interaction\":{\"interaction_type\":\"send_keys\",\"element_id\":\":rp:\",\"keys\":\"NY\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The website now shows the checkout page with the form nearing completion. All sections of the form have been addressed except for the Zip Code in the Address section. The form's Address section details include Country as 'United States', Street Address as '123 Main St', City as 'New York', and State as 'NY'. The Payment section remains untouched. The cart summary on the side displays a Galaxy S10 5G with a total price of $910.99, and features to adjust the quantity or remove the item. A 'Submit' button is present but remains inactive due to the form's incomplete state, indicated by an error message for the missing Zip Code.\",\"explanation\":\"Proceed to fill out the Zip Code field to complete the Address section of the form, moving towards enabling the form submission.\",\"interaction\":{\"interaction_type\":\"send_keys\",\"element_id\":\":rq:\",\"keys\":\"10001\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The website now displays a complete checkout form with sections for Customer, Address, and Payment. The Customer section contains personal details, and the Address section includes details such as country, street address, city, state, and zip code. The Payment section displays a dropdown for selecting a payment method, but it hasn't been interacted with yet. Beside the form, there's a cart summary showing a Galaxy S10 5G, priced at $910.99, with quantity adjustment options and a remove button. The page also has a submit button for the form, which might become active after selecting a payment method.\",\"explanation\":\"The next step is to choose a payment method from the dropdown to complete the payment section of the form, which is a crucial step towards submitting the checkout form.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":rf:\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "<html lang=\"en\"><head><title>React App</title></head><body><div id=\"root\"><nav class=\"Navbar\"><div class=\"Top-row\"><div class=\"Navbar-center\"><span class=\"Navbar-icon on-click\" id=\":r1:\"><i class=\"fas fa-bars\"></i></span><div class=\"Navbar-cart-btn on-click\" id=\":r2:\"><span class=\"Navbar-icon\"><i class=\"fas fa-cart-plus\"></i></span><div class=\"cart-items\">0</div></div></div></div><menu class=\"\"><li><a class=\"\" href=\"#/\" id=\":r0:-home\">Home</a></li><li><a class=\"\" href=\"#/c/galaxy\" id=\":r0:-galaxy\">Galaxy</a></li><li><a class=\"\" href=\"#/c/s10\" id=\":r0:-s10\">S10</a></li><li><a class=\"\" href=\"#/c/m_series\" id=\":r0:-m_series\">M Series</a></li><li><a class=\"\" href=\"#/c/a_series\" id=\":r0:-a_series\">A Series</a></li></menu></nav><h2>Thank you for your purchase!</h2><div class=\"on-click cart-overlay\" id=\":ra:\"><div class=\"on-click cart\" id=\":rb:\"><span class=\"close-cart on-click\" id=\":r9:\"><i class=\"fas fa-window-close\"></i></span><h2>Your cart</h2><div class=\"cart-content\"></div><div class=\"cart-footer\"><h3>your total: <span class=\"cart-total\">$0.00</span></h3><button class=\"clear-cart banner-btn\" id=\":r6:\">clear cart</button><a href=\"#/checkout\" id=\":r8:\" style=\"text-decoration: none;\"><div class=\"banner-btn clear-cart on-click\" id=\":r7:\">Checkout</div></a></div></div></div></div></body></html>"
+    },
+    {
+      "role": "system",
+      "content": "Start by describing the website supplied by the user. Give a short general description first then summarize the main elements on the website. Do not use HTML in your description. Then explain what should be achieved with the next action. And finally, describe the interaction to emulate."
+    },
+    {
+      "role": "system",
+      "content": "Only use the click action with clickable elements. The clickable elements have the following ids: :r1:, :r2:. "
+    }
+  ],
+  "functions": [
+    {
+      "name": "emulate_interaction",
+      "description": "Emulates a user interaction with the web application",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "page_description": {
+            "type": "string",
+            "description": "A short textual description of the state of the web application: What is the current page? What are the main elements on the page? This description should not contain any HTML."
+          },
+          "explanation": {
+            "type": "string",
+            "description": "Explanation of what should be achieved with the next action"
+          },
+          "interaction": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "interaction_type": {
+                    "const": "click",
+                    "type": "string",
+                    "description": "The type of interaction to emulate"
+                  },
+                  "element_id": {
+                    "enum": [
+                      ":r1:",
+                      ":r2:"
+                    ],
+                    "type": "string",
+                    "description": "The id of the element to interact with"
+                  }
+                },
+                "required": [
+                  "interaction_type",
+                  "element_id"
+                ],
+                "description": "clicks on a html element"
+              }
+            ],
+            "description": "The interaction to emulate"
+          }
+        },
+        "required": [
+          "page_description",
+          "explanation",
+          "interaction"
+        ]
+      }
+    }
+  ]
+}

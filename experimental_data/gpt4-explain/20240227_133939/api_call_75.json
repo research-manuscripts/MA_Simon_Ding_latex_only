@@ -1,0 +1,225 @@
+{
+  "response": {
+    "id": "chatcmpl-8wrMZpRU3lw4Pe09pPzNYVxJIS8nD",
+    "object": "chat.completion",
+    "created": 1709038843,
+    "model": "gpt-4-0125-preview",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": null,
+          "function_call": {
+            "name": "emulate_interaction",
+            "arguments": "{\"page_description\":\"The website has transitioned to the checkout page, displaying the cart summary highlighting a Galaxy A2 Core priced at $688.99. The checkout page is categorized into sections like Cart, Customer, Address, and Payment information, requiring details like First Name, Last Name, E-Mail, Country, Street Address, City, State, Zip Code, and Payment method. A 'Submit' button finalizes the checkout. A floating overlay for the shopping cart shows the product in the cart, options for quantity adjustment, item removal, or proceeding to checkout. The 'First Name' field has been filled with 'John'.\",\"explanation\":\"Continue filling out the customer information by entering the 'Last Name'.\",\"interaction\":{\"interaction_type\":\"send_keys\",\"element_id\":\":r2m:\",\"keys\":\"Doe\"}}"
+          }
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2738,
+      "completion_tokens": 167,
+      "total_tokens": 2905
+    },
+    "system_fingerprint": "fp_89b1a570e1"
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "Given a web application, you are tasked with assisting in testing its functionality. The emulate_interaction function takes an interaction as input and emulates it on the web application. The return value of the function is the new, filtered HTML source code of the web application. The source code of previous interactions will be omitted from the input to the assistant. "
+    },
+    {
+      "role": "user",
+      "content": "Please test my website. The goal is to test as many different features as possible to find potential bugs, so make sure to include edge cases. Here is the filtered HTML source code of the web application: 'omitted'. "
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The website has now navigated to the 'Galaxy' products section, showcasing a wide range of Galaxy series smartphones. Each product is displayed with an image, model name (e.g., Galaxy S10 5G, Galaxy A2 Core, Galaxy M10, etc.), and a price. Below each product image, there's an 'add to cart' button. The navigation bar at the top provides options to explore other product categories like 'Home', 'S10', 'M Series', and 'A Series'. Additionally, a floating cart overlay appears empty since no products have been added to the cart yet.\",\"explanation\":\"To start testing the website's shopping cart functionality, add the 'Galaxy S10 5G' to the shopping cart by clicking on the 'add to cart' button associated with the product.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\"1:r2c:\"}}"
+      }
+    },
+    {
+      "role": "system",
+      "content": "Error: This element is hidden by another element and can not be interacted with."
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The website showcases various Galaxy series smartphones in the Galaxy products section, including Galaxy S10 5G, Galaxy A2 Core, Galaxy M10, and so on. Each product is displayed with an image, model name, and price, alongside an 'add to cart' button. The top navigation bar offers links to product categories like 'Home', 'S10', 'M Series', and 'A Series'. A floating cart overlay indicates that no products have been added to the cart yet. The previously attempted interaction with the 'add to cart' button for the Galaxy S10 5G was blocked due to another element obscuring it.\",\"explanation\":\"Since the initial attempt to add the Galaxy S10 5G to the cart was unsuccessful due to the element being hidden, let's attempt to add a different product to the cart. This time, choose the Galaxy A2 Core as it is listed and should be accessible.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\"5:r2c:\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The website, as currently displayed, showcases various Galaxy series smartphones, focusing on models such as Galaxy S10 5G, Galaxy A2 Core, Galaxy M10, and others. Each product is presented with an image, model name, price, and an 'add to cart' button. The top navigation bar offers links to different product categories like 'Home', 'S10', 'M Series', and 'A Series'. After adding the Galaxy A2 Core to the cart, a floating cart overlay is visible, showing that this product is in the cart along with its price ($688.99). The cart overlay includes options to 'clear cart,' 'checkout,' and to 'remove' the added product. It also allows adjusting the product quantity.\",\"explanation\":\"The next step in testing the website's functionality involves proceeding to checkout with the currently added Galaxy A2 Core in the cart. This will test the website's checkout process and potentially reveal any issues or challenges in completing a purchase.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":r7:\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The web application has navigated to the checkout page, which displays a summary of the items in the cart, specifically highlighting a Galaxy A2 Core with a price tag of $688.99. The checkout process is segmented into different sections, including Cart, Customer, Address, and Payment information. Users are prompted to enter their details in respective fields such as First Name, Last Name, E-Mail, Country, Street Address, City, State, and Zip Code. There's also a 'Submit' button for completing the checkout. A floating overlay for the shopping cart is visible, illustrating the same product in the cart along with options to amend the quantity, remove the item, or proceed to checkout.\",\"explanation\":\"To perform a realistic checkout flow, start filling out the customer information beginning with the 'First Name' field.\",\"interaction\":{\"interaction_type\":\"send_keys\",\"element_id\":\":r2l:\",\"keys\":\"John\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "<html lang=\"en\"><head><title>React App</title></head><body><div id=\"root\"><nav class=\"Navbar visible\"><div class=\"Top-row\"><div class=\"Navbar-center\"><span class=\"Navbar-icon on-click\" id=\":r1:\"><i class=\"fas fa-bars\"></i></span><div class=\"Navbar-cart-btn on-click\" id=\":r2:\"><span class=\"Navbar-icon\"><i class=\"fas fa-cart-plus\"></i></span><div class=\"cart-items\">1</div></div></div></div><menu class=\"visible\"><li><a class=\"\" href=\"#/\" id=\":r0:-home\">Home</a></li><li><a class=\"\" href=\"#/c/galaxy\" id=\":r0:-galaxy\">Galaxy</a></li><li><a class=\"\" href=\"#/c/s10\" id=\":r0:-s10\">S10</a></li><li><a class=\"\" href=\"#/c/m_series\" id=\":r0:-m_series\">M Series</a></li><li><a class=\"\" href=\"#/c/a_series\" id=\":r0:-a_series\">A Series</a></li></menu></nav><div class=\"checkout\"><div class=\"checkout__cart\"><h2>Cart</h2><div class=\"cart-item\"><img alt=\"Galaxy A2 Core\" src=\"./images/product-5.jpeg\"/><div><h4>Galaxy A2 Core</h4><h5>$688.99</h5><span class=\"remove-item on-click\" id=\":r2i:\">remove</span></div><div><i class=\"fas fa-chevron-up on-click\" id=\":r2j:\"></i><p class=\"item-amount\">1</p><i class=\"fas fa-chevron-down on-click\" id=\":r2k:\"></i></div></div><h3>Total: $688.99</h3></div><form class=\"checkout__form\"><div class=\"checkout__form__customer\"><h2>Customer</h2><div><label for=\":r2l:\">First Name</label><input class=\"\" id=\":r2l:\" type=\"text\" value=\"John\"/></div><div><label for=\":r2m:\">Last Name</label><input class=\"\" id=\":r2m:\" type=\"text\" value=\"\"/></div><div><label for=\":r2n:\">E-Mail</label><input class=\"\" id=\":r2n:\" type=\"text\" value=\"\"/></div></div><div class=\"checkout__form__address\"><h2>Address</h2><div><label for=\":r2o:\">Country</label><input class=\"\" id=\":r2o:\" type=\"text\" value=\"\"/></div><div><label for=\":r2p:\">Street Address</label><input class=\"\" id=\":r2p:\" type=\"text\" value=\"\"/></div><div><label for=\":r2q:\">City</label><input class=\"\" id=\":r2q:\" type=\"text\" value=\"\"/></div><div><label for=\":r2r:\">State</label><input class=\"\" id=\":r2r:\" type=\"text\" value=\"\"/></div><div><label for=\":r2s:\">Zip Code</label><input class=\"\" id=\":r2s:\" type=\"text\" value=\"\"/></div></div><div class=\"checkout__form__payment\"><h2>Payment</h2><select><option value=\"0\">Invoice</option><option value=\"1\">Credit Card</option><option value=\"2\">PayPal</option></select></div><button id=\":r2h:\" type=\"submit\">Submit</button></form></div><div class=\"on-click cart-overlay\" id=\":ra:\"><div class=\"on-click cart\" id=\":rb:\"><span class=\"close-cart on-click\" id=\":r9:\"><i class=\"fas fa-window-close\"></i></span><h2>Your cart</h2><div class=\"cart-content\"><div class=\"cart-item\"><img alt=\"Galaxy A2 Core\" src=\"./images/product-5.jpeg\"/><div><h4>Galaxy A2 Core</h4><h5>$688.99</h5><span class=\"remove-item on-click\" id=\":r2e:\">remove</span></div><div><i class=\"fas fa-chevron-up on-click\" id=\":r2f:\"></i><p class=\"item-amount\">1</p><i class=\"fas fa-chevron-down on-click\" id=\":r2g:\"></i></div></div></div><div class=\"cart-footer\"><h3>your total: <span class=\"cart-total\">$688.99</span></h3><button class=\"clear-cart banner-btn\" id=\":r6:\">clear cart</button><a href=\"#/checkout\" id=\":r8:\" style=\"text-decoration: none;\"><div class=\"banner-btn clear-cart on-click\" id=\":r7:\">Checkout</div></a></div></div></div></div></body></html>"
+    },
+    {
+      "role": "system",
+      "content": "Start by describing the website supplied by the user. Give a short general description first then summarize the main elements on the website. Do not use HTML in your description. Then explain what should be achieved with the next action. And finally, describe the interaction to emulate."
+    },
+    {
+      "role": "system",
+      "content": "Only use the click action with clickable elements. The clickable elements have the following ids: :r2h:, :r0:-home, :r0:-galaxy, :r0:-s10, :r0:-m_series, :r0:-a_series, :r1:, :r2:, :r2i:, :r2j:, :r2k:. Only use the send_keys action with writable elements. The writable elements have the following ids: :r2l:, :r2m:, :r2n:, :r2o:, :r2p:, :r2q:, :r2r:, :r2s:. Only use the clear action with clearable elements. The clearable elements have the following ids: :r2l:. "
+    }
+  ],
+  "functions": [
+    {
+      "name": "emulate_interaction",
+      "description": "Emulates a user interaction with the web application",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "page_description": {
+            "type": "string",
+            "description": "A short textual description of the state of the web application: What is the current page? What are the main elements on the page? This description should not contain any HTML."
+          },
+          "explanation": {
+            "type": "string",
+            "description": "Explanation of what should be achieved with the next action"
+          },
+          "interaction": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "interaction_type": {
+                    "const": "click",
+                    "type": "string",
+                    "description": "The type of interaction to emulate"
+                  },
+                  "element_id": {
+                    "enum": [
+                      ":r2h:",
+                      ":r0:-home",
+                      ":r0:-galaxy",
+                      ":r0:-s10",
+                      ":r0:-m_series",
+                      ":r0:-a_series",
+                      ":r1:",
+                      ":r2:",
+                      ":r2i:",
+                      ":r2j:",
+                      ":r2k:"
+                    ],
+                    "type": "string",
+                    "description": "The id of the element to interact with"
+                  }
+                },
+                "required": [
+                  "interaction_type",
+                  "element_id"
+                ],
+                "description": "clicks on a html element"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "interaction_type": {
+                    "const": "send_keys",
+                    "type": "string",
+                    "description": "The type of interaction to emulate"
+                  },
+                  "element_id": {
+                    "enum": [
+                      ":r2l:",
+                      ":r2m:",
+                      ":r2n:",
+                      ":r2o:",
+                      ":r2p:",
+                      ":r2q:",
+                      ":r2r:",
+                      ":r2s:"
+                    ],
+                    "type": "string",
+                    "description": "The id of the element to interact with"
+                  },
+                  "keys": {
+                    "type": "string",
+                    "description": "the keys to be sent to the input element"
+                  }
+                },
+                "required": [
+                  "interaction_type",
+                  "element_id",
+                  "keys"
+                ],
+                "description": "sends keystrokes to an html element"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "interaction_type": {
+                    "const": "clear",
+                    "type": "string",
+                    "description": "The type of interaction to emulate"
+                  },
+                  "element_id": {
+                    "enum": [
+                      ":r2l:"
+                    ],
+                    "type": "string",
+                    "description": "The id of the element to interact with"
+                  }
+                },
+                "required": [
+                  "interaction_type",
+                  "element_id"
+                ],
+                "description": "resets the contents of an html element"
+              }
+            ],
+            "description": "The interaction to emulate"
+          }
+        },
+        "required": [
+          "page_description",
+          "explanation",
+          "interaction"
+        ]
+      }
+    }
+  ]
+}

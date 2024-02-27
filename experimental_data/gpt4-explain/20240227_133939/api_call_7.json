@@ -1,0 +1,228 @@
+{
+  "response": {
+    "id": "chatcmpl-8wr4JlKKF9fuPsCFfCP4nm6du3vP3",
+    "object": "chat.completion",
+    "created": 1709037711,
+    "model": "gpt-4-0125-preview",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": null,
+          "function_call": {
+            "name": "emulate_interaction",
+            "arguments": "{\"page_description\":\"The checkout page shows a detailed form for completing a purchase, with fields for Customer information (first name 'John', last name 'Doe'), Address, and Payment Method. The Address section awaits inputs for country, street address, city, state, and zip code. Users can choose between Invoice, Credit Card, or PayPal for payment.\",\"explanation\":\"Proceed by filling in the email address in the Customer section to complete that part of the form.\",\"interaction\":{\"interaction_type\":\"send_keys\",\"element_id\":\":rr:\",\"keys\":\"johndoe@example.com\"}}"
+          }
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2887,
+      "completion_tokens": 118,
+      "total_tokens": 3005
+    },
+    "system_fingerprint": "fp_91aa3742b1"
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "Given a web application, you are tasked with assisting in testing its functionality. The emulate_interaction function takes an interaction as input and emulates it on the web application. The return value of the function is the new, filtered HTML source code of the web application. The source code of previous interactions will be omitted from the input to the assistant. "
+    },
+    {
+      "role": "user",
+      "content": "Please test my website. The goal is to test as many different features as possible to find potential bugs, so make sure to include edge cases. Here is the filtered HTML source code of the web application: 'omitted'. "
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"After trying to interact with the cart icon, it seems there was an obstruction preventing interaction. Now, looking at the updated web application, there's a cart overlay currently visible on the page following a previous interaction. This overlay includes detailed information about the items added to the cart - specifically, a Galaxy S10 5G with the price listed. This overlay also has a 'remove' button for items in the cart, a close ('X') button, buttons to increase or decrease the quantity of the selected item, and a checkout button. Aside from the cart overlay, the rest of the webpage remains as described before with product listings and navigational elements.\",\"explanation\":\"To proceed, let's test the functionality of closing the cart overlay to ensure that users can easily go back to shopping or viewing the website without items in their view.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":r9:\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The Samsung Store web application now shows the main navigation bar with links to Home, Galaxy, S10, M Series, and A Series categories. A hero banner promotes Galaxy products. The main section showcases four Galaxy S10 series smartphones, all with 'add to cart' buttons, except the Galaxy S10 5G which shows 'in cart'. The cart overlay that appeared after adding a product is now closed, revealing the cart icon in the top right corner indicating 1 item in the cart.\",\"explanation\":\"Explore how the web application responds to adding multiple different products to the cart to see if it can handle more than one item and updates the cart indicator accordingly.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\"2:r4:\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The web application is a Samsung Store, currently showing the main navigation bar, a hero banner promoting Galaxy products, and a section listing four Galaxy S10 series smartphones - the Galaxy S10 5G and Galaxy S10+ marked as 'in cart', while the Galaxy S10 and Galaxy S10e are available to add to the cart. The cart icon on the top right indicates 2 items. A previously hidden cart overlay is now visible, listing the added products (Galaxy S10 5G and Galaxy S10+) with details such as image, name, price, a 'remove' button for each, and buttons to increase or decrease their quantity. The total price is shown at the bottom, along with 'clear cart' and 'checkout' buttons.\",\"explanation\":\"Next, let's test the functionality of the checkout process by trying to proceed to the checkout page from the cart overlay.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":r7:\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The web application has progressed to the checkout page after attempting to proceed with the checkout process from the cart overlay. Now, the page displays a detailed checkout form divided into sections: Customer information (including fields for first name, last name, and email), Address (with fields for country, street address, city, state, and zip code), and a payment method selector offering Invoice, Credit Card, or PayPal as options. Additionally, there\u2019s a \u2018Submit\u2019 button to complete the transaction. The cart overview is no longer visible, focusing user interaction on completing the purchase.\",\"explanation\":\"To simulate a complete user purchase journey, let's start by filling out the customer information section of the checkout form, beginning with the first name.\",\"interaction\":{\"interaction_type\":\"send_keys\",\"element_id\":\":rp:\",\"keys\":\"John\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The checkout page is currently displayed, showing a form divided into 'Customer', 'Address', and 'Payment' sections. The 'Customer' section has fields for first name (already filled with 'John'), last name, and email. The 'Address' section awaits inputs for country, street address, city, state, and zip code. In the 'Payment' section, users can choose between Invoice, Credit Card, or PayPal. A submit button is available to complete the transaction.\",\"explanation\":\"Continue filling out the checkout form by completing the 'Last Name' field.\",\"interaction\":{\"interaction_type\":\"send_keys\",\"element_id\":\":rq:\",\"keys\":\"Doe\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "<html lang=\"en\"><head><title>React App</title></head><body><div id=\"root\"><nav class=\"Navbar\"><div class=\"Top-row\"><div class=\"Navbar-center\"><span class=\"Navbar-icon on-click\" id=\":r1:\"><i class=\"fas fa-bars\"></i></span><div class=\"Navbar-cart-btn on-click\" id=\":r2:\"><span class=\"Navbar-icon\"><i class=\"fas fa-cart-plus\"></i></span><div class=\"cart-items\">2</div></div></div></div><menu class=\"\"><li><a class=\"\" href=\"#/\" id=\":r0:-home\">Home</a></li><li><a class=\"\" href=\"#/c/galaxy\" id=\":r0:-galaxy\">Galaxy</a></li><li><a class=\"\" href=\"#/c/s10\" id=\":r0:-s10\">S10</a></li><li><a class=\"\" href=\"#/c/m_series\" id=\":r0:-m_series\">M Series</a></li><li><a class=\"\" href=\"#/c/a_series\" id=\":r0:-a_series\">A Series</a></li></menu></nav><div class=\"checkout\"><div class=\"checkout__cart\"><h2>Cart</h2><div class=\"cart-item\"><img alt=\"Galaxy S10 5G\" src=\"./images/product-1.jpeg\"/><div><h4>Galaxy S10 5G</h4><h5>$910.99</h5><span class=\"remove-item on-click\" id=\":rj:\">remove</span></div><div><i class=\"fas fa-chevron-up on-click\" id=\":rk:\"></i><p class=\"item-amount\">1</p><i class=\"fas fa-chevron-down on-click\" id=\":rl:\"></i></div></div><div class=\"cart-item\"><img alt=\"Galaxy S10+\" src=\"./images/product-2.jpeg\"/><div><h4>Galaxy S10+</h4><h5>$812.99</h5><span class=\"remove-item on-click\" id=\":rm:\">remove</span></div><div><i class=\"fas fa-chevron-up on-click\" id=\":rn:\"></i><p class=\"item-amount\">1</p><i class=\"fas fa-chevron-down on-click\" id=\":ro:\"></i></div></div><h3>Total: $1,723.98</h3></div><form class=\"checkout__form\"><div class=\"checkout__form__customer\"><h2>Customer</h2><div><label for=\":rp:\">First Name</label><input class=\"\" id=\":rp:\" type=\"text\" value=\"John\"/></div><div><label for=\":rq:\">Last Name</label><input class=\"\" id=\":rq:\" type=\"text\" value=\"Doe\"/></div><div><label for=\":rr:\">E-Mail</label><input class=\"\" id=\":rr:\" type=\"text\" value=\"\"/></div></div><div class=\"checkout__form__address\"><h2>Address</h2><div><label for=\":rs:\">Country</label><input class=\"\" id=\":rs:\" type=\"text\" value=\"\"/></div><div><label for=\":rt:\">Street Address</label><input class=\"\" id=\":rt:\" type=\"text\" value=\"\"/></div><div><label for=\":ru:\">City</label><input class=\"\" id=\":ru:\" type=\"text\" value=\"\"/></div><div><label for=\":rv:\">State</label><input class=\"\" id=\":rv:\" type=\"text\" value=\"\"/></div><div><label for=\":r10:\">Zip Code</label><input class=\"\" id=\":r10:\" type=\"text\" value=\"\"/></div></div><div class=\"checkout__form__payment\"><h2>Payment</h2><select><option value=\"0\">Invoice</option><option value=\"1\">Credit Card</option><option value=\"2\">PayPal</option></select></div><button id=\":ri:\" type=\"submit\">Submit</button></form></div><div class=\"on-click cart-overlay\" id=\":ra:\"><div class=\"on-click cart\" id=\":rb:\"><span class=\"close-cart on-click\" id=\":r9:\"><i class=\"fas fa-window-close\"></i></span><h2>Your cart</h2><div class=\"cart-content\"><div class=\"cart-item\"><img alt=\"Galaxy S10 5G\" src=\"./images/product-1.jpeg\"/><div><h4>Galaxy S10 5G</h4><h5>$910.99</h5><span class=\"remove-item on-click\" id=\":rc:\">remove</span></div><div><i class=\"fas fa-chevron-up on-click\" id=\":rd:\"></i><p class=\"item-amount\">1</p><i class=\"fas fa-chevron-down on-click\" id=\":re:\"></i></div></div><div class=\"cart-item\"><img alt=\"Galaxy S10+\" src=\"./images/product-2.jpeg\"/><div><h4>Galaxy S10+</h4><h5>$812.99</h5><span class=\"remove-item on-click\" id=\":rf:\">remove</span></div><div><i class=\"fas fa-chevron-up on-click\" id=\":rg:\"></i><p class=\"item-amount\">1</p><i class=\"fas fa-chevron-down on-click\" id=\":rh:\"></i></div></div></div><div class=\"cart-footer\"><h3>your total: <span class=\"cart-total\">$1,723.98</span></h3><button class=\"clear-cart banner-btn\" id=\":r6:\">clear cart</button><a href=\"#/checkout\" id=\":r8:\" style=\"text-decoration: none;\"><div class=\"banner-btn clear-cart on-click\" id=\":r7:\">Checkout</div></a></div></div></div></div></body></html>"
+    },
+    {
+      "role": "system",
+      "content": "Start by describing the website supplied by the user. Give a short general description first then summarize the main elements on the website. Do not use HTML in your description. Then explain what should be achieved with the next action. And finally, describe the interaction to emulate."
+    },
+    {
+      "role": "system",
+      "content": "Only use the click action with clickable elements. The clickable elements have the following ids: :ri:, :r1:, :r2:, :rj:, :rk:, :rl:, :rm:, :rn:, :ro:. Only use the send_keys action with writable elements. The writable elements have the following ids: :rp:, :rq:, :rr:, :rs:, :rt:, :ru:, :rv:, :r10:. Only use the clear action with clearable elements. The clearable elements have the following ids: :rp:, :rq:. "
+    }
+  ],
+  "functions": [
+    {
+      "name": "emulate_interaction",
+      "description": "Emulates a user interaction with the web application",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "page_description": {
+            "type": "string",
+            "description": "A short textual description of the state of the web application: What is the current page? What are the main elements on the page? This description should not contain any HTML."
+          },
+          "explanation": {
+            "type": "string",
+            "description": "Explanation of what should be achieved with the next action"
+          },
+          "interaction": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "interaction_type": {
+                    "const": "click",
+                    "type": "string",
+                    "description": "The type of interaction to emulate"
+                  },
+                  "element_id": {
+                    "enum": [
+                      ":ri:",
+                      ":r1:",
+                      ":r2:",
+                      ":rj:",
+                      ":rk:",
+                      ":rl:",
+                      ":rm:",
+                      ":rn:",
+                      ":ro:"
+                    ],
+                    "type": "string",
+                    "description": "The id of the element to interact with"
+                  }
+                },
+                "required": [
+                  "interaction_type",
+                  "element_id"
+                ],
+                "description": "clicks on a html element"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "interaction_type": {
+                    "const": "send_keys",
+                    "type": "string",
+                    "description": "The type of interaction to emulate"
+                  },
+                  "element_id": {
+                    "enum": [
+                      ":rp:",
+                      ":rq:",
+                      ":rr:",
+                      ":rs:",
+                      ":rt:",
+                      ":ru:",
+                      ":rv:",
+                      ":r10:"
+                    ],
+                    "type": "string",
+                    "description": "The id of the element to interact with"
+                  },
+                  "keys": {
+                    "type": "string",
+                    "description": "the keys to be sent to the input element"
+                  }
+                },
+                "required": [
+                  "interaction_type",
+                  "element_id",
+                  "keys"
+                ],
+                "description": "sends keystrokes to an html element"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "interaction_type": {
+                    "const": "clear",
+                    "type": "string",
+                    "description": "The type of interaction to emulate"
+                  },
+                  "element_id": {
+                    "enum": [
+                      ":rp:",
+                      ":rq:"
+                    ],
+                    "type": "string",
+                    "description": "The id of the element to interact with"
+                  }
+                },
+                "required": [
+                  "interaction_type",
+                  "element_id"
+                ],
+                "description": "resets the contents of an html element"
+              }
+            ],
+            "description": "The interaction to emulate"
+          }
+        },
+        "required": [
+          "page_description",
+          "explanation",
+          "interaction"
+        ]
+      }
+    }
+  ]
+}

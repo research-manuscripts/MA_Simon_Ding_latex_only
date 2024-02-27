@@ -1,0 +1,602 @@
+[
+    {
+        "step": 1,
+        "action": "action: click() element: <button id=\"1:r4:\" class=\"bag-btn\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button>",
+        "observation": "todo",
+        "coverage percentage": 0.3979591836734694
+    },
+    {
+        "step": 2,
+        "action": "action: click() element: <span id=\":r9:\" class=\"close-cart on-click\"><i class=\"fas fa-window-close\"></i></span>",
+        "observation": "todo",
+        "coverage percentage": 0.3979591836734694
+    },
+    {
+        "step": 3,
+        "action": "action: click() element: <button id=\"2:r4:\" class=\"bag-btn\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button>",
+        "observation": "todo",
+        "coverage percentage": 0.3979591836734694
+    },
+    {
+        "step": 4,
+        "action": "action: click() element: <div id=\":r7:\" class=\"banner-btn clear-cart on-click\">Checkout</div>",
+        "observation": "todo",
+        "coverage percentage": 0.5
+    },
+    {
+        "step": 5,
+        "action": "action: send_keys(John) element: <input type=\"text\" id=\":rp:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.5408163265306123
+    },
+    {
+        "step": 6,
+        "action": "action: send_keys(Doe) element: <input type=\"text\" id=\":rq:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.5408163265306123
+    },
+    {
+        "step": 7,
+        "action": "action: send_keys(johndoe@example.com) element: <input type=\"text\" id=\":rr:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.6122448979591837
+    },
+    {
+        "step": 8,
+        "action": "action: send_keys(United States) element: <input type=\"text\" id=\":rs:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.6122448979591837
+    },
+    {
+        "step": 9,
+        "action": "action: send_keys(123 Galaxy Way) element: <input type=\"text\" id=\":rt:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.6530612244897959
+    },
+    {
+        "step": 10,
+        "action": "action: send_keys(New York) element: <input type=\"text\" id=\":ru:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.6530612244897959
+    },
+    {
+        "step": 11,
+        "action": "action: send_keys(NY) element: <input type=\"text\" id=\":rv:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.6530612244897959
+    },
+    {
+        "step": 12,
+        "action": "action: send_keys(10001) element: <input type=\"text\" id=\":r10:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.673469387755102
+    },
+    {
+        "step": 13,
+        "action": "action: send_keys(1) element: <input type=\"text\" id=\":r10:\" class=\"\" value=\"10001\">",
+        "observation": "todo",
+        "coverage percentage": 0.673469387755102
+    },
+    {
+        "step": 14,
+        "action": "action: send_keys(10001) element: <input type=\"text\" id=\":r10:\" class=\"error\" value=\"100011\">",
+        "observation": "todo",
+        "coverage percentage": 0.673469387755102
+    },
+    {
+        "step": 15,
+        "action": "action: clear() element: <input type=\"text\" id=\":r10:\" class=\"error\" value=\"10001110001\">",
+        "observation": "todo",
+        "coverage percentage": 0.673469387755102
+    },
+    {
+        "step": 16,
+        "action": "action: send_keys(10001) element: <input type=\"text\" id=\":r10:\" class=\"error\" value=\"10001110001\">",
+        "observation": "todo",
+        "coverage percentage": 0.673469387755102
+    },
+    {
+        "step": 17,
+        "action": "action: click() element: <button id=\":ri:\" type=\"submit\">Submit</button>",
+        "observation": "todo",
+        "coverage percentage": 0.7142857142857143
+    },
+    {
+        "step": 18,
+        "action": "action: click() element: <span id=\":r1:\" class=\"Navbar-icon on-click\"><i class=\"fas fa-bars\"></i></span>",
+        "observation": "todo",
+        "coverage percentage": 0.7346938775510204
+    },
+    {
+        "step": 19,
+        "action": "action: click() element: <a id=\":r0:-home\" class=\"\" href=\"#/\">Home</a>",
+        "observation": "todo",
+        "coverage percentage": 0.7346938775510204
+    },
+    {
+        "step": 20,
+        "action": "action: click() element: <a id=\":r0:-galaxy\" class=\"\" href=\"#/c/galaxy\">Galaxy</a>",
+        "observation": "todo",
+        "coverage percentage": 0.7346938775510204
+    },
+    {
+        "step": 21,
+        "action": "action: click() element: <button id=\"7:r14:\" class=\"bag-btn\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button>",
+        "observation": "todo",
+        "coverage percentage": 0.7346938775510204
+    },
+    {
+        "step": 22,
+        "action": "action: click() element: <span id=\":r9:\" class=\"close-cart on-click\"><i class=\"fas fa-window-close\"></i></span>",
+        "observation": "todo",
+        "coverage percentage": 0.7346938775510204
+    },
+    {
+        "step": 23,
+        "action": "action: click() element: <button id=\"7:r14:\" class=\"bag-btn\"><i class=\"fas fa-shopping-cart\"></i>in cart</button>",
+        "observation": "todo",
+        "coverage percentage": 0.7346938775510204
+    },
+    {
+        "step": 24,
+        "action": "action: click() element: <span id=\":r16:\" class=\"remove-item on-click\">remove</span>",
+        "observation": "todo",
+        "coverage percentage": 0.7551020408163265
+    },
+    {
+        "step": 25,
+        "action": "action: click() element: <div id=\":rb:\" class=\"on-click cart showCart\"><span id=\":r9:\" class=\"close-cart on-click\"><i class=\"fas fa-window-close\"></i></span><h2>Your cart</h2><div class=\"cart-content\"></div><div class=\"cart-footer\"><h3>your total: <span class=\"cart-total\">$0.00</span></h3><button id=\":r6:\" class=\"clear-cart banner-btn\">clear cart</button><a id=\":r8:\" href=\"#/checkout\" style=\"text-decoration: none;\"><div id=\":r7:\" class=\"banner-btn clear-cart on-click\">Checkout</div></a></div></div>",
+        "observation": "todo",
+        "coverage percentage": 0.7551020408163265
+    },
+    {
+        "step": 26,
+        "action": "action: click() element: <div id=\":ra:\" class=\"on-click cart-overlay transparentBcg\"><div id=\":rb:\" class=\"on-click cart showCart\"><span id=\":r9:\" class=\"close-cart on-click\"><i class=\"fas fa-window-close\"></i></span><h2>Your cart</h2><div class=\"cart-content\"></div><div class=\"cart-footer\"><h3>your total: <span class=\"cart-total\">$0.00</span></h3><button id=\":r6:\" class=\"clear-cart banner-btn\">clear cart</button><a id=\":r8:\" href=\"#/checkout\" style=\"text-decoration: none;\"><div id=\":r7:\" class=\"banner-btn clear-cart on-click\">Checkout</div></a></div></div></div>",
+        "observation": "todo",
+        "coverage percentage": 0.7551020408163265
+    },
+    {
+        "step": 27,
+        "action": "action: click() element: <a id=\":r0:-s10\" class=\"\" href=\"#/c/s10\">S10</a>",
+        "observation": "todo",
+        "coverage percentage": 0.7551020408163265
+    },
+    {
+        "step": 28,
+        "action": "action: click() element: <button id=\"2:r14:\" class=\"bag-btn\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button>",
+        "observation": "todo",
+        "coverage percentage": 0.7551020408163265
+    },
+    {
+        "step": 29,
+        "action": "action: click() element: <i id=\":r1a:\" class=\"fas fa-chevron-up on-click\"></i>",
+        "observation": "todo",
+        "coverage percentage": 0.7857142857142857
+    },
+    {
+        "step": 30,
+        "action": "action: click() element: <i id=\":r1b:\" class=\"fas fa-chevron-down on-click\"></i>",
+        "observation": "todo",
+        "coverage percentage": 0.8367346938775511
+    },
+    {
+        "step": 31,
+        "action": "action: click() element: <div id=\":r7:\" class=\"banner-btn clear-cart on-click\">Checkout</div>",
+        "observation": "todo",
+        "coverage percentage": 0.8367346938775511
+    },
+    {
+        "step": 32,
+        "action": "action: send_keys(Doe) element: <input type=\"text\" id=\":r1h:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.8367346938775511
+    },
+    {
+        "step": 33,
+        "action": "action: send_keys(john.doe@example.com) element: <input type=\"text\" id=\":r1i:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.8367346938775511
+    },
+    {
+        "step": 34,
+        "action": "action: send_keys(United States) element: <input type=\"text\" id=\":r1j:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.8367346938775511
+    },
+    {
+        "step": 35,
+        "action": "action: send_keys(123 Main St) element: <input type=\"text\" id=\":r1k:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.8367346938775511
+    },
+    {
+        "step": 36,
+        "action": "action: send_keys(San Francisco) element: <input type=\"text\" id=\":r1l:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.8367346938775511
+    },
+    {
+        "step": 37,
+        "action": "action: send_keys(CA) element: <input type=\"text\" id=\":r1m:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.8367346938775511
+    },
+    {
+        "step": 38,
+        "action": "action: send_keys(94107) element: <input type=\"text\" id=\":r1n:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.8367346938775511
+    },
+    {
+        "step": 39,
+        "action": "action: click() element: <button id=\":r1c:\" type=\"submit\">Submit</button>",
+        "observation": "todo",
+        "coverage percentage": 0.8775510204081632
+    },
+    {
+        "step": 40,
+        "action": "action: send_keys(John) element: <input type=\"text\" id=\":r1g:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.8775510204081632
+    },
+    {
+        "step": 41,
+        "action": "action: send_keys(Credit Card) element: <input type=\"text\" id=\":r1n:\" class=\"\" value=\"94107\">",
+        "observation": "todo",
+        "coverage percentage": 0.8775510204081632
+    },
+    {
+        "step": 42,
+        "action": "action: clear() element: <input type=\"text\" id=\":r1n:\" class=\"error\" value=\"94107Credit Card\">",
+        "observation": "todo",
+        "coverage percentage": 0.8775510204081632
+    },
+    {
+        "step": 43,
+        "action": "action: send_keys(94107) element: <input type=\"text\" id=\":r1n:\" class=\"error\" value=\"94107Credit Card\">",
+        "observation": "todo",
+        "coverage percentage": 0.8775510204081632
+    },
+    {
+        "step": 44,
+        "action": "action: send_keys(1) element: <input type=\"text\" id=\":r1n:\" class=\"\" value=\"94107\">",
+        "observation": "todo",
+        "coverage percentage": 0.8775510204081632
+    },
+    {
+        "step": 45,
+        "action": "action: click() element: <button id=\":r1c:\" type=\"submit\">Submit</button>",
+        "observation": "todo",
+        "coverage percentage": 0.8775510204081632
+    },
+    {
+        "step": 46,
+        "action": "action: click() element: <button id=\":r1c:\" type=\"submit\">Submit</button>",
+        "observation": "todo",
+        "coverage percentage": 0.8775510204081632
+    },
+    {
+        "step": 47,
+        "action": "action: clear() element: <input type=\"text\" id=\":r1n:\" class=\"error\" value=\"941071\">",
+        "observation": "todo",
+        "coverage percentage": 0.8775510204081632
+    },
+    {
+        "step": 48,
+        "action": "action: send_keys(94107) element: <input type=\"text\" id=\":r1n:\" class=\"error\" value=\"941071\">",
+        "observation": "todo",
+        "coverage percentage": 0.8775510204081632
+    },
+    {
+        "step": 49,
+        "action": "action: click() element: <div id=\":r2:\" class=\"Navbar-cart-btn on-click\"><span class=\"Navbar-icon\"><i class=\"fas fa-cart-plus\"></i></span><div class=\"cart-items\">1</div></div>",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 50,
+        "action": "action: click() element: <span id=\":r19:\" class=\"remove-item on-click\">remove</span>",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 51,
+        "action": "action: click() element: <span id=\":r9:\" class=\"close-cart on-click\"><i class=\"fas fa-window-close\"></i></span>",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 52,
+        "action": "action: send_keys(Credit Card) element: <input type=\"text\" id=\":r1l:\" class=\"\" value=\"San Francisco\">",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 53,
+        "action": "action: send_keys(San Francisco) element: <input type=\"text\" id=\":r1l:\" class=\"\" value=\"San FranciscoCredit Card\">",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 54,
+        "action": "action: clear() element: <input type=\"text\" id=\":r1l:\" class=\"\" value=\"San FranciscoCredit CardSan Francisco\">",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 55,
+        "action": "action: click() element: <a id=\":r0:-home\" class=\"\" href=\"#/\">Home</a>",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 56,
+        "action": "action: click() element: <a id=\":r0:-galaxy\" class=\"\" href=\"#/c/galaxy\">Galaxy</a>",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 57,
+        "action": "action: click() element: <button id=\"5:r1r:\" class=\"bag-btn\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button>",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 58,
+        "action": "action: click() element: <div id=\":r7:\" class=\"banner-btn clear-cart on-click\">Checkout</div>",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 59,
+        "action": "action: send_keys(John) element: <input type=\"text\" id=\":r24:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 60,
+        "action": "action: send_keys(Doe) element: <input type=\"text\" id=\":r25:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 61,
+        "action": "action: send_keys(john.doe@example.com) element: <input type=\"text\" id=\":r26:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 62,
+        "action": "action: send_keys(United States) element: <input type=\"text\" id=\":r27:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 63,
+        "action": "action: send_keys(123 Galaxy Way) element: <input type=\"text\" id=\":r28:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 64,
+        "action": "action: send_keys(Galaxy City) element: <input type=\"text\" id=\":r29:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 65,
+        "action": "action: send_keys(California) element: <input type=\"text\" id=\":r2a:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 66,
+        "action": "action: send_keys(90210) element: <input type=\"text\" id=\":r2b:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 67,
+        "action": "action: send_keys(Credit Card) element: <input type=\"text\" id=\":r27:\" class=\"\" value=\"United States\">",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 68,
+        "action": "action: clear() element: <input type=\"text\" id=\":r27:\" class=\"\" value=\"United StatesCredit Card\">",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 69,
+        "action": "action: send_keys(United States) element: <input type=\"text\" id=\":r27:\" class=\"\" value=\"United StatesCredit Card\">",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 70,
+        "action": "action: click() element: <button id=\":r20:\" type=\"submit\">Submit</button>",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 71,
+        "action": "action: click() element: <a id=\":r0:-galaxy\" class=\"\" href=\"#/c/galaxy\">Galaxy</a>",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 72,
+        "action": "action: click() element: <button id=\"5:r2c:\" class=\"bag-btn\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button>",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 73,
+        "action": "action: click() element: <div id=\":r7:\" class=\"banner-btn clear-cart on-click\">Checkout</div>",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 74,
+        "action": "action: send_keys(John) element: <input type=\"text\" id=\":r2l:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 75,
+        "action": "action: send_keys(Doe) element: <input type=\"text\" id=\":r2m:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 76,
+        "action": "action: send_keys(johndoe@example.com) element: <input type=\"text\" id=\":r2n:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 77,
+        "action": "action: send_keys(USA) element: <input type=\"text\" id=\":r2o:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 78,
+        "action": "action: send_keys(123 Galaxy Lane) element: <input type=\"text\" id=\":r2p:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 79,
+        "action": "action: send_keys(Techopolis) element: <input type=\"text\" id=\":r2q:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 80,
+        "action": "action: send_keys(CA) element: <input type=\"text\" id=\":r2r:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 81,
+        "action": "action: send_keys(90001) element: <input type=\"text\" id=\":r2s:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 82,
+        "action": "action: send_keys(Credit Card) element: <input type=\"text\" id=\":r2s:\" class=\"\" value=\"90001\">",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 83,
+        "action": "action: clear() element: <input type=\"text\" id=\":r2s:\" class=\"error\" value=\"90001Credit Card\">",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 84,
+        "action": "action: click() element: <button id=\":r2h:\" type=\"submit\">Submit</button>",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 85,
+        "action": "action: click() element: <button id=\":r2h:\" type=\"submit\">Submit</button>",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 86,
+        "action": "action: clear() element: <input type=\"text\" id=\":r2s:\" class=\"error\" value=\"90001Credit Card\">",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 87,
+        "action": "action: send_keys(90001) element: <input type=\"text\" id=\":r2s:\" class=\"error\" value=\"90001Credit Card\">",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 88,
+        "action": "action: click() element: <button id=\":r2h:\" type=\"submit\">Submit</button>",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 89,
+        "action": "action: click() element: <a id=\":r0:-galaxy\" class=\"\" href=\"#/c/galaxy\">Galaxy</a>",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 90,
+        "action": "action: click() element: <button id=\"9:r2t:\" class=\"bag-btn\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button>",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 91,
+        "action": "action: click() element: <i id=\":r30:\" class=\"fas fa-chevron-up on-click\"></i>",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 92,
+        "action": "action: click() element: <i id=\":r31:\" class=\"fas fa-chevron-down on-click\"></i>",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 93,
+        "action": "action: click() element: <div id=\":r7:\" class=\"banner-btn clear-cart on-click\">Checkout</div>",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 94,
+        "action": "action: click() element: <button id=\":r32:\" type=\"submit\">Submit</button>",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 95,
+        "action": "action: send_keys(John) element: <input type=\"text\" id=\":r36:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 96,
+        "action": "action: send_keys(Doe) element: <input type=\"text\" id=\":r37:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 97,
+        "action": "action: send_keys(john.doe@example.com) element: <input type=\"text\" id=\":r38:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 98,
+        "action": "action: send_keys(United States) element: <input type=\"text\" id=\":r39:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 99,
+        "action": "action: send_keys(123 Apple St) element: <input type=\"text\" id=\":r3a:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    },
+    {
+        "step": 100,
+        "action": "action: send_keys(New York) element: <input type=\"text\" id=\":r3b:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.8979591836734694
+    }
+]
