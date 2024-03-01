@@ -1,0 +1,246 @@
+{
+  "response": {
+    "id": "chatcmpl-8xBztIlvqqtkffTFFYrELnnfrWIaR",
+    "object": "chat.completion",
+    "created": 1709118161,
+    "model": "gpt-4-0125-preview",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": null,
+          "function_call": {
+            "name": "emulate_interaction",
+            "arguments": "{\"page_description\":\"The web application currently displays the checkout page prominently featuring a structured and intuitive buying experience. The checkout page is organized into several sections, including the Cart Overview, Customer Information Form, Address Form, and Payment Options. The Cart Overview section presents the Galaxy S10+ as the item in the cart, complete with an image, product name, price, and quantity controls. The Customer Information Form is partially filled with 'TestFirstName', 'TestLastName', and 'testuser@example.com' in their respective fields, while the Address Form remains empty. The Payment Options section offers a dropdown menu for selecting between Invoice, Credit Card, and PayPal. A 'Submit' button is available for completing the checkout process.\",\"new_testing_goal\":\"Continue with the checkout process by completing the Address Form. This includes filling in fields for Country, Street Address, City, State, and Zip Code. This phase of testing will assess the form's ability to capture detailed address information accurately, which is pivotal for any e-commerce transaction. Additionally, it enables the testing of the form's validation mechanisms for address inputs and ensures that the checkout process is robust and user-friendly.\",\"explanation\":\"To advance our testing of the checkout process, the next step involves filling in the Address Form with detailed address information. This is a critical part of the checkout process as it determines the shipping destination of the product. We'll start by entering a test country into the 'Country' field, followed by the street address, city, state, and zip code. By examining how the web application processes and validates these details, we can identify potential issues or improvements needed to enhance the checkout experience. Inputting accurate and complete address details will also test the application's capability to handle various address formats and potential edge cases.\",\"interaction\":{\"interaction_type\":\"send_keys\",\"element_id\":\":r29:\",\"keys\":\"TestCountry\"}}"
+          }
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 5495,
+      "completion_tokens": 376,
+      "total_tokens": 5871
+    },
+    "system_fingerprint": "fp_91aa3742b1"
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "Given a web application, you are tasked with assisting in testing its functionality. The emulate_interaction function takes an interaction as input and emulates it on the web application. The return value of the function is the new, filtered HTML source code of the web application. The source code of previous interactions will be omitted from the input to the assistant. "
+    },
+    {
+      "role": "user",
+      "content": "Please test my website. The goal is to test as many different features as possible to find potential bugs, so make sure to include edge cases. Here is the filtered HTML source code of the web application: 'omitted'. "
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The webpage now reflects a state where the cart has been successfully emptied previously, and the previously encountered interaction issue has been resolved by closing the cart overlay. The main elements visible include a variety of Galaxy S10 models: S10 5G, S10+, S10, and S10e, each accompanied by an 'add to cart' button. The navigation bar includes links to Home, Galaxy, S Series, M Series, and A Series. The website also includes a cart overlay button indicating '0' items, suggesting that the cart is currently empty.\",\"new_testing_goal\":\"Explore the checkout process by adding the Galaxy S10+ to the cart and proceeding with the checkout phase. This task involves assessing the simplicity and functionality of adding a product to the cart, navigating through the cart, and exploring the checkout process, including form submissions and the variety of payment options available.\",\"explanation\":\"To explore the checkout process, the first step is to add a product to the cart. Given the visual or interaction issues were previously addressed by closing the cart overlay, adding a product to the cart should now be feasible. The Galaxy S10+ will be added to the cart as it offers a blend of features that could potentially require different interactions during the checkout process. This is the first step in a series aimed at assessing the website's checkout process comprehensively.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\"2:r1q:\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The webpage currently displays the product section for Galaxy S10 models including S10 5G, S10+, S10, and S10e, each listed with an 'add to cart' button. Since the Galaxy S10+ was previously added to the cart, its button now indicates 'in cart'. The navigation bar remains consistent with links to Home, Galaxy, S Series, M Series, and A Series. The cart overlay, displayed in a sidebar, shows 1 item (Galaxy S10+) in the cart, detailing the product name, price, options to increase or decrease quantity, a 'remove' button, and a total price. At the bottom of the cart overlay, buttons for 'clear cart' and 'Checkout' are present.\",\"new_testing_goal\":\"Proceed with the checkout process by navigating to the checkout page. This stage will enable the testing of the checkout form, including information submission and responsiveness to user input. It's crucial to assess if the checkout process is intuitive for users, with form validations and clear instructions. The objective is to ensure that users can seamlessly complete their purchases without encountering interface or functional barriers.\",\"explanation\":\"With the Galaxy S10+ successfully added to the cart, the next step is to navigate to the checkout page. This involves clicking the 'Checkout' button present in the cart overlay. This action should redirect the website to the checkout page, where the checkout form is expected to be filled out and submitted. Testing this part of the web application is essential to confirm its functionality and user-friendliness during the final stages of making a purchase.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":r7:\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The web application has successfully navigated to the checkout page after adding the Galaxy S10+ to the cart. The page is divided into several sections: Cart Overview, Customer Information Form, Address Form, and Payment Options. The Cart Overview section lists the Galaxy S10+ as the item in the cart with its price, quantity controls, and a remove button. The Customer Information Form and Address Form are both empty, waiting for user input, and feature fields for first and last name, email, country, street address, city, state, and zip code. Payment Options include a dropdown with choices such as Invoice, Credit Card, and PayPal. A submit button is available to complete the checkout process.\",\"new_testing_goal\":\"Fill in the checkout form with test customer information, address details, select a payment method, and submit the form. This will assess the form's validation mechanisms, how it handles user input, and the feedback it provides upon submission. This process aims to ensure a smooth and intuitive checkout experience for users.\",\"explanation\":\"To effectively test the checkout process, we'll begin by filling in the customer information section with test data. This includes providing a first name, last name, and email. Following this, we will proceed to enter address details such as country, street address, city, state, and zip code. Finally, we will select a payment method from the given options. Completing these steps will allow us to submit the form, thereby testing the form's submission process, its validation system for user input, and what feedback or next steps it provides to the user following submission. This comprehensive test will help identify any potential issues or improvements needed in the checkout experience. Our first step will involve entering a first name in the corresponding field.\",\"interaction\":{\"interaction_type\":\"send_keys\",\"element_id\":\":r26:\",\"keys\":\"TestFirstName\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The current state of the website shows the checkout page with the Galaxy S10+ already added to the cart. The checkout page is divided into different sections: the Cart Overview which lists the Galaxy S10+ with its price and quantity controls; the Customer Information Form, which partially filled with 'TestFirstName' in the first name field; the Address Form, which is still empty; and the Payment Options section. The forms are awaiting completion, and the submit button is available to finalize the purchase.\",\"new_testing_goal\":\"Continue filling out the checkout form by entering the last name, email, and address details. This will further test the checkout form's responsiveness and functionality, ensuring that it accurately captures and processes user input. By focusing on completing the customer and address information, we aim to simulate a realistic checkout scenario and assess the website's readiness for actual user transactions.\",\"explanation\":\"To proceed with testing the checkout form's functionality, the next logical step is to enter the last name into the 'Last Name' field. This simulates a user continuing to fill out their information during the checkout process. By sequentially filling out the form fields and observing how the website processes the input, we can identify any potential issues or areas for improvement in user experience. Testing form input is crucial for ensuring that the website is user-friendly and ready for real transactions.\",\"interaction\":{\"interaction_type\":\"send_keys\",\"element_id\":\":r27:\",\"keys\":\"TestLastName\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The website displays the checkout page, highlighting a structured and user-friendly buying process. The main elements include: a navigation bar with links to Home, Galaxy, S Series, M Series, and A Series; a Cart Overview showing the Galaxy S10+ in the cart with controls for quantity adjustment; Customer Information Form partially filled with 'TestFirstName' and 'TestLastName'; Address Form completely empty; and Payment Options offering Invoice, Credit Card, and PayPal selections. Finally, a 'Submit' button is present, concluding the checkout form.\",\"new_testing_goal\":\"Complete the customer information section of the checkout form by entering an email. Completing this section is crucial as it marks the user's identification during the checkout process. This step forward will enable the testing of field validation for email input and assess how the form processes different types of email inputs, which is critical for avoiding issues during actual user transactions.\",\"explanation\":\"The next step in evaluating the checkout process involves filling the 'E-Mail' field in the Customer Information Form. This action simulates user interaction by providing an email address, further testing the form's functionality and validation for email inputs. We aim to ensure the form accurately handles different email formats and provides appropriate feedback. Identifying any potential issues with email input handling will be key in ensuring a smooth checkout experience for users. Therefore, entering a test email address is our immediate focus.\",\"interaction\":{\"interaction_type\":\"send_keys\",\"element_id\":\":r28:\",\"keys\":\"testuser@example.com\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "<html lang=\"en\"><head><title>React App</title></head><body><div id=\"root\"><nav class=\"Navbar visible\"><div class=\"Top-row\"><div class=\"Navbar-center\"><span class=\"Navbar-icon on-click\" id=\":r1:\"><i class=\"fas fa-bars\"></i></span><div class=\"Navbar-cart-btn on-click\" id=\":r2:\"><span class=\"Navbar-icon\"><i class=\"fas fa-cart-plus\"></i></span><div class=\"cart-items\">1</div></div></div></div><menu class=\"visible\"><li><a class=\"\" href=\"#/\" id=\":r0:-home\">Home</a></li><li><a class=\"\" href=\"#/c/galaxy\" id=\":r0:-galaxy\">Galaxy</a></li><li><a class=\"\" href=\"#/c/s10\" id=\":r0:-s10\">S10</a></li><li><a class=\"\" href=\"#/c/m_series\" id=\":r0:-m_series\">M Series</a></li><li><a class=\"\" href=\"#/c/a_series\" id=\":r0:-a_series\">A Series</a></li></menu></nav><div class=\"checkout\"><div class=\"checkout__cart\"><h2>Cart</h2><div class=\"cart-item\"><img alt=\"Galaxy S10+\" src=\"./images/product-2.jpeg\"/><div><h4>Galaxy S10+</h4><h5>$812.99</h5><span class=\"remove-item on-click\" id=\":r23:\">remove</span></div><div><i class=\"fas fa-chevron-up on-click\" id=\":r24:\"></i><p class=\"item-amount\">1</p><i class=\"fas fa-chevron-down on-click\" id=\":r25:\"></i></div></div><h3>Total: $812.99</h3></div><form class=\"checkout__form\"><div class=\"checkout__form__customer\"><h2>Customer</h2><div><label for=\":r26:\">First Name</label><input class=\"\" id=\":r26:\" type=\"text\" value=\"TestFirstName\"/></div><div><label for=\":r27:\">Last Name</label><input class=\"\" id=\":r27:\" type=\"text\" value=\"TestLastName\"/></div><div><label for=\":r28:\">E-Mail</label><input class=\"\" id=\":r28:\" type=\"text\" value=\"testuser@example.com\"/></div></div><div class=\"checkout__form__address\"><h2>Address</h2><div><label for=\":r29:\">Country</label><input class=\"\" id=\":r29:\" type=\"text\" value=\"\"/></div><div><label for=\":r2a:\">Street Address</label><input class=\"\" id=\":r2a:\" type=\"text\" value=\"\"/></div><div><label for=\":r2b:\">City</label><input class=\"\" id=\":r2b:\" type=\"text\" value=\"\"/></div><div><label for=\":r2c:\">State</label><input class=\"\" id=\":r2c:\" type=\"text\" value=\"\"/></div><div><label for=\":r2d:\">Zip Code</label><input class=\"\" id=\":r2d:\" type=\"text\" value=\"\"/></div></div><div class=\"checkout__form__payment\"><h2>Payment</h2><select><option value=\"0\">Invoice</option><option value=\"1\">Credit Card</option><option value=\"2\">PayPal</option></select></div><button id=\":r22:\" type=\"submit\">Submit</button></form></div><div class=\"on-click cart-overlay\" id=\":ra:\"><div class=\"on-click cart\" id=\":rb:\"><span class=\"close-cart on-click\" id=\":r9:\"><i class=\"fas fa-window-close\"></i></span><h2>Your cart</h2><div class=\"cart-content\"><div class=\"cart-item\"><img alt=\"Galaxy S10+\" src=\"./images/product-2.jpeg\"/><div><h4>Galaxy S10+</h4><h5>$812.99</h5><span class=\"remove-item on-click\" id=\":r1v:\">remove</span></div><div><i class=\"fas fa-chevron-up on-click\" id=\":r20:\"></i><p class=\"item-amount\">1</p><i class=\"fas fa-chevron-down on-click\" id=\":r21:\"></i></div></div></div><div class=\"cart-footer\"><h3>your total: <span class=\"cart-total\">$812.99</span></h3><button class=\"clear-cart banner-btn\" id=\":r6:\">clear cart</button><a href=\"#/checkout\" id=\":r8:\" style=\"text-decoration: none;\"><div class=\"banner-btn clear-cart on-click\" id=\":r7:\">Checkout</div></a></div></div></div></div></body></html>"
+    },
+    {
+      "role": "system",
+      "content": "The user provided the following end instructions: Please test my website. The goal is to test as many different features as possible to find potential bugs, so make sure to include edge cases."
+    },
+    {
+      "role": "system",
+      "content": "Pursue your self-assigned sub-goal or assign a new one: Complete the customer information section of the checkout form by entering an email. Completing this section is crucial as it marks the user's identification during the checkout process. This step forward will enable the testing of field validation for email input and assess how the form processes different types of email inputs, which is critical for avoiding issues during actual user transactions.."
+    },
+    {
+      "role": "system",
+      "content": "Previously executed interactions by goal: {\"Verify the functionality of adding items to the shopping cart.\": 1, \"Test the cart's quantity adjustments and removal functionalities.\": 2, \"Test the functionality of removing an item from the shopping cart.\": 1, \"Test the checkout process with multiple items in the cart, including edge cases such as an empty cart.\": 1, \"Attempt to add multiple products to the cart from the homepage, leading to testing the checkout process with varied cart contents.\": 1, \"Explore the cart functionality further by removing the item from the cart, then continue with adding another product to the cart for checkout.\": 1, \"Attempt to add a product to the cart again and proceed to the checkout process.\": 1, \"Attempt to add a different product to the cart, specifically the Galaxy S10, then proceed to inspect the cart's contents.\": 1, \"Proceed to checkout with the added product to test the checkout process, including form submissions and payment options.\": 1, \"Fill in the customer information and address in the checkout form to simulate a user completing their purchase details.\": 1, \"Continue filling out the checkout form by completing the rest of the customer information and address details.\": 1, \"Complete the checkout form by inputting the remaining customer information and address details to fully test the checkout process.\": 1, \"Fill in the address information in the checkout form to advance the testing of the checkout process.\": 1, \"Continue to fill in the address details in the checkout form for a comprehensive test of the checkout process.\": 1, \"Fill in the remaining address details (City, State, Zip Code) in the checkout form to advance in testing the checkout process.\": 1, \"Complete the State and Zip Code fields in the checkout form to finish testing the form's completion capabilities.\": 1, \"Enter a test Zip Code in the checkout form and submit it to fully test the form\\u2019s completion and submission functionality.\": 1, \"Submit the checkout form to test the form submission process and identify any potential post-submission functionalities or issues.\": 1, \"Explore the website's navigational structure to assess its functionality and identify any potential issues.\": 1, \"Test the functionality of the navigation bar links to ensure they lead to the correct sections or categories within the website.\": 1, \"Test the functionality of adding different Galaxy products to the cart and inspect how the cart updates and manages multiple products.\": 1, \"Test the removal functionality of an item in the shopping cart to ensure the cart updates correctly upon item removal.\": 1, \"Explore the checkout process from the cart overlay to identify the flow and potential issues experienced by users.\": 1, \"Proceed to checkout with the item in the cart to explore the checkout process, identifying any potential issues or bugs.\": 1, \"Fill in and submit the checkout form to test its functionality, including validation and form submission.\": 1, \"Fill in the checkout form with realistic data for further testing.\": 1, \"Fill in the rest of the checkout form including the address, email, and select a payment method to further evaluate the form's functionality.\": 1, \"Complete filling in the checkout form and attempt form submission to thoroughly test form processing, validation, and post-submission behavior.\": 1, \"Complete the checkout process by filling in the remaining form details and submitting the form to assess the procedure's efficiency and user-friendliness.\": 1, \"Complete filling in the City, State, and Zip Code fields in the checkout form, select a payment option, and submit the form.\": 1, \"Complete the State field in the checkout form and continue with the next steps of the checkout process.\": 1, \"Enter a test Zip Code and select a payment method in the checkout form to complete all fields. Subsequently, submit the form to assess form submission functionalities and identify potential issues.\": 1, \"Select a payment method and submit the checkout form to assess the system's handling of form submission and to identify any potential issues or errors in the process.\": 1, \"Explore and test the cart functionality after completing a purchase, ensuring the cart is indeed empty and behaves as expected post-checkout.\": 1, \"Attempt to 'clear' an already empty cart to observe the website's response to this action. This will help assess the robustness of the cart's functionality and identify any unforeseen behaviors or potential bugs.\": 1, \"Test the navigation by exploring different sections of the website from the navigation bar to ensure they are accessible and functioning correctly. This will help assess the website\\u2019s navigation structure and utility, potentially uncovering issues or enhancements needed in the navigation experience.\": 1, \"Explore and test the functionality of adding products to the cart from the Galaxy section, ensuring the 'add to cart' buttons are functional and the cart updates correctly.\": 1, \"Test the functionality of decreasing the product quantity in the cart to ensure it correctly updates both the quantity and total price.\": 1, \"Test the functionality of removing an item from the cart to ensure that the cart updates correctly and behaves as expected when emptied.\": 2, \"Test the product addition to cart functionality from the Galaxy section, focusing on the responsiveness of the 'add to cart' buttons and the cart's update mechanism.\": 1, \"Test navigation and explore different sections of the website from the navigation bar. The goal is to ensure different sections are accessible and functioning correctly, potentially uncovering issues or enhancements needed in the navigation experience.\": 1, \"Explore the S Series section of the website to assess its functionality, product offerings, and how it integrates with the overall website structure.\": 1, \"Assess the functionality of adding S Series products to the cart, focusing on the responsiveness of the 'add to cart' buttons for each S10 model and observing how the cart updates accordingly.\": 1, \"Test the cart's quantity adjustments and removal functionalities by modifying the quantity of the added product and attempting to remove it from the cart.\": 1, \"Proceed with testing the functionality of decreasing the product quantity in the cart to ensure it correctly updates both the quantity and total price.\": 1, \"Explore the checkout process by adding a product to the cart and proceeding with the checkout phase. This will help assess the completeness and user-friendliness of the checkout process, including form submissions and payment options. An alternative course of action will be planned in case adding a product to the cart is not feasible due to visual or interaction issues.\": 1, \"Explore the checkout process by adding the Galaxy S10+ to the cart and proceeding with the checkout phase. This task involves assessing the simplicity and functionality of adding a product to the cart, navigating through the cart, and exploring the checkout process, including form submissions and the variety of payment options available.\": 1, \"Proceed with the checkout process by navigating to the checkout page. This stage will enable the testing of the checkout form, including information submission and responsiveness to user input. It's crucial to assess if the checkout process is intuitive for users, with form validations and clear instructions. The objective is to ensure that users can seamlessly complete their purchases without encountering interface or functional barriers.\": 1, \"Fill in the checkout form with test customer information, address details, select a payment method, and submit the form. This will assess the form's validation mechanisms, how it handles user input, and the feedback it provides upon submission. This process aims to ensure a smooth and intuitive checkout experience for users.\": 1, \"Continue filling out the checkout form by entering the last name, email, and address details. This will further test the checkout form's responsiveness and functionality, ensuring that it accurately captures and processes user input. By focusing on completing the customer and address information, we aim to simulate a realistic checkout scenario and assess the website's readiness for actual user transactions.\": 1, \"Complete the customer information section of the checkout form by entering an email. Completing this section is crucial as it marks the user's identification during the checkout process. This step forward will enable the testing of field validation for email input and assess how the form processes different types of email inputs, which is critical for avoiding issues during actual user transactions.\": 1}."
+    },
+    {
+      "role": "system",
+      "content": "Start by describing the website supplied by the function call. Give a short general description first then summarize the main elements on the website. Do not use HTML in your description. Then you may formulate a high level sub-goal to the user's instructions, that should be persued with the next couple of interactions. You should formulate a new sub-goal if the current one has been completed or seems to be unattainable. Give an action plan that explains how the goal should be reached. And finally, describe the interaction to emulate."
+    },
+    {
+      "role": "system",
+      "content": "Only use the click action with clickable elements. The clickable elements have the following ids: :r22:, :r0:-home, :r0:-galaxy, :r0:-s10, :r0:-m_series, :r0:-a_series, :r1:, :r2:, :r23:, :r24:, :r25:. Only use the send_keys action with writable elements. The writable elements have the following ids: :r26:, :r27:, :r28:, :r29:, :r2a:, :r2b:, :r2c:, :r2d:. Only use the clear action with clearable elements. The clearable elements have the following ids: :r26:, :r27:, :r28:. "
+    }
+  ],
+  "functions": [
+    {
+      "name": "emulate_interaction",
+      "description": "Emulates a user interaction with the web application",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "page_description": {
+            "type": "string",
+            "description": "A short textual description of the state of the web application: What is the current page? What are the main elements on the page? This description should not contain any HTML."
+          },
+          "new_testing_goal": {
+            "type": "string",
+            "description": "Assigns a new high level sub-goal that shall be followed in order to complete the users instructions. This goal should take multiple user interactions to complete. The assistant shall try to complete this goal in the next couple of interactions and then assign a new one."
+          },
+          "explanation": {
+            "type": "string",
+            "description": "An action plan that explains how the goal should be reached."
+          },
+          "interaction": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "interaction_type": {
+                    "const": "click",
+                    "type": "string",
+                    "description": "The type of interaction to emulate"
+                  },
+                  "element_id": {
+                    "enum": [
+                      ":r22:",
+                      ":r0:-home",
+                      ":r0:-galaxy",
+                      ":r0:-s10",
+                      ":r0:-m_series",
+                      ":r0:-a_series",
+                      ":r1:",
+                      ":r2:",
+                      ":r23:",
+                      ":r24:",
+                      ":r25:"
+                    ],
+                    "type": "string",
+                    "description": "The id of the element to interact with"
+                  }
+                },
+                "required": [
+                  "interaction_type",
+                  "element_id"
+                ],
+                "description": "clicks on a html element"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "interaction_type": {
+                    "const": "send_keys",
+                    "type": "string",
+                    "description": "The type of interaction to emulate"
+                  },
+                  "element_id": {
+                    "enum": [
+                      ":r26:",
+                      ":r27:",
+                      ":r28:",
+                      ":r29:",
+                      ":r2a:",
+                      ":r2b:",
+                      ":r2c:",
+                      ":r2d:"
+                    ],
+                    "type": "string",
+                    "description": "The id of the element to interact with"
+                  },
+                  "keys": {
+                    "type": "string",
+                    "description": "the keys to be sent to the input element"
+                  }
+                },
+                "required": [
+                  "interaction_type",
+                  "element_id",
+                  "keys"
+                ],
+                "description": "sends keystrokes to an html element"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "interaction_type": {
+                    "const": "clear",
+                    "type": "string",
+                    "description": "The type of interaction to emulate"
+                  },
+                  "element_id": {
+                    "enum": [
+                      ":r26:",
+                      ":r27:",
+                      ":r28:"
+                    ],
+                    "type": "string",
+                    "description": "The id of the element to interact with"
+                  }
+                },
+                "required": [
+                  "interaction_type",
+                  "element_id"
+                ],
+                "description": "resets the contents of an html element"
+              }
+            ],
+            "description": "The interaction to emulate"
+          }
+        },
+        "required": [
+          "page_description",
+          "explanationinteraction"
+        ]
+      }
+    }
+  ]
+}

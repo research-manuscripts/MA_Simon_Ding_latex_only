@@ -1,0 +1,189 @@
+{
+  "response": {
+    "id": "chatcmpl-8wwqmuCzM3JWPoRxQJhhPvf6BVfcF",
+    "object": "chat.completion",
+    "created": 1709059936,
+    "model": "gpt-4-0125-preview",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": null,
+          "function_call": {
+            "name": "emulate_interaction",
+            "arguments": "{\"page_description\":\"Following the successful addition of the Galaxy A70 to the cart, the shopping cart icon now reflects 2 items, indicating that the cart contains both the Galaxy A80 and the Galaxy A70. The website displays the 'A Series' product section with smartphones including the Galaxy A2 Core, Galaxy A80, and Galaxy A70 all marked as 'in cart'. The remaining products, the Galaxy A60 and Galaxy A30, are available with their respective 'add to cart' buttons. The bottom of the page features a cart overlay, listing the Galaxy A80 and Galaxy A70, each with options for quantity adjustment and removal. There's also a total price displayed along with buttons for 'clear cart' and 'Checkout'.\",\"new_testing_goal\":\"Test the 'clear cart' functionality to verify if it can properly empty the shopping cart. This will assess how the application handles the removal of multiple items from the cart simultaneously, which is crucial for users who wish to start their shopping selection afresh.\",\"explanation\":\"The following step involves using the 'clear cart' functionality to see if the website correctly empties the shopping cart, removing all items at once. This test is important for evaluating the robustness and reliability of the cart's management features, ensuring users can effectively manage their cart items. To do this, we will click the 'clear cart' button found within the cart overlay.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":r6:\"}}"
+          }
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 6014,
+      "completion_tokens": 298,
+      "total_tokens": 6312
+    },
+    "system_fingerprint": "fp_89b1a570e1"
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "Given a web application, you are tasked with assisting in testing its functionality. The emulate_interaction function takes an interaction as input and emulates it on the web application. The return value of the function is the new, filtered HTML source code of the web application. The source code of previous interactions will be omitted from the input to the assistant. "
+    },
+    {
+      "role": "user",
+      "content": "Please test my website. The goal is to test as many different features as possible to find potential bugs, so make sure to include edge cases. Here is the filtered HTML source code of the web application: 'omitted'. "
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"After attempting to add the Galaxy A80 to the cart, an error occurred due to the cart overlay being in place, blocking further interactions with product elements. The screen now displays the cart overlay which is showing details of the already added product, the Galaxy A2 Core, including an option to remove it, and buttons to increase or decrease the item quantity. The navigation bar remains at the top with links to other product categories. The rest of the 'A Series' products are still listed on the page but are currently inaccessible for interaction due to the overlay.\",\"new_testing_goal\":\"Test the removal and quantity adjustment functionalities in the shopping cart to ensure they work as intended. This involves testing the buttons to increase or decrease product quantity as well as the remove button to ensure they accurately reflect changes in the cart. These operations are fundamental for a good user experience in managing the shopping cart.\",\"explanation\":\"To remove the cart overlay that's preventing interactions with other products, we'll start by closing the cart overlay. This will allow us to interact with other elements on the page freely again. Closing the cart is essential before we proceed with any further testing of the shopping cart functionalities, such as adjusting product quantities or the removal of products. The action plan involves clicking the 'close cart' button on the overlay to carry out this interaction.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":r9:\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The website now shows the 'A Series' product category section after closing the cart overlay. This section includes a range of smartphones, such as the Galaxy A2 Core, Galaxy A80, Galaxy A70, Galaxy A60, and Galaxy A30, each with an accompanying image, model name, price, and an 'add to cart' button. There is a cart icon indicating one item in the cart. The top navigation bar includes links to the 'Home', 'Galaxy', 'S10', 'M Series', and 'A Series' categories. The cart overlay has been closed to interact with other elements on the page.\",\"new_testing_goal\":\"Test the 'add to cart' functionality for the remaining products within the 'A Series' section individually, focusing on how the website updates the shopping cart and handles multiple products in the cart.\",\"explanation\":\"Now that the cart overlay is closed, the next step is to add the Galaxy A80 to the cart. This action will help assess how the application updates the shopping cart when a second different product is added. It's crucial to observe how the cart icon count changes and how the cart contents update to reflect the addition of a new item. Clicking the 'add to cart' button for the Galaxy A80 will emulate this interaction.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\"9:r28:\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The website now displays the 'A Series' products section with Galaxy A2 Core and Galaxy A80 marked as 'in cart', indicating they have been successfully added to the shopping cart. The cart icon at the top right corner shows a count of 2 items, reflecting these additions. Other available products include Galaxy A70, Galaxy A60, and Galaxy A30, each with an 'add to cart' button. Additionally, the cart overlay is visible, showing the items currently in the cart (Galaxy A2 Core and Galaxy A80), each with options to remove the item or adjust its quantity, and displaying the total amount. There are also buttons for 'clear cart' and 'Checkout'.\",\"new_testing_goal\":\"Continue testing the 'add to cart' functionality for the remaining Galaxy A Series products (Galaxy A70, Galaxy A60, Galaxy A30) to assess how the application handles adding multiple distinct products to the cart, reflecting on the overall functionality of managing a diverse shopping cart.\",\"explanation\":\"The next action involves adding the Galaxy A70 to the shopping cart. This step is crucial for evaluating how the application updates the shopping cart with a third distinct product, focusing on how it manages the cart icon count, cart contents, and total amount updates. To perform this action, we will click the 'add to cart' button for the Galaxy A70.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":r2a:\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"After attempting to add the Galaxy A70 to the shopping cart, it appears the website did not reflect the expected increase in the number of items in the shopping cart as indicated by the cart icon. The cart icon shows a count of 1 item, suggesting that the expected addition of Galaxy A70 did not occur, and possibly only Galaxy A80 is currently in the cart. The website is currently showing the 'A Series' products section with Galaxy A2 Core, Galaxy A80, Galaxy A70, Galaxy A60, and Galaxy A30 listed, each with their price and an 'add to cart' button for those not already in the cart. The Galaxy A80 is indicated as 'in cart'. Below, there's a visible cart overlay showing only the Galaxy A80 in it, with options for quantity adjustment and removal, alongside the total price and buttons for cart management, including clear cart and checkout.\",\"new_testing_goal\":\"Investigate the 'add to cart' functionality further to understand why the Galaxy A70 did not appear in the cart despite the previous attempt to add it. This involves re-trying the addition of the Galaxy A70 to the cart and closely observing the cart's behavior and website's response to ensure that the shopping cart accurately reflects the addition of products.\",\"explanation\":\"Since the Galaxy A70 did not appear to be added to the cart as expected, the immediate action would be to close the cart overlay to get a clear view and access to the Add to Cart buttons. Once the overlay is closed, we'll attempt once more to add the Galaxy A70 to the cart. This is critical for confirming whether the issue was a one-time error or if there's a glitch with this specific product's add to cart functionality.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":r9:\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"After attempting to close the cart overlay to access the 'add to cart' buttons for other products on the website, the cart overlay remains visible. The current view includes the 'A Series' section of smartphones, with models such as Galaxy A2 Core, Galaxy A80, Galaxy A70, Galaxy A60, and Galaxy A30 displayed. Each product is listed with an image, name, price, and an 'add to cart' button, except for Galaxy A80 which is indicated as 'in cart'. The cart icon indicates 1 item in it. The page also features a navigation bar with links to Home, Galaxy, S10, M Series, and A Series, and the cart overlay detailing the inclusion of Galaxy A80 in the cart.\",\"new_testing_goal\":\"Attempt to add the Galaxy A70 to the shopping cart again, as the previous attempt did not successfully update the cart. This action will provide insight into the functionality and reliability of the 'add to cart' mechanism for different products on the website, especially in cases where the expected behavior was not initially observed.\",\"explanation\":\"Given the previous unsuccessful attempt to add the Galaxy A70 to the cart, the immediate goal is to retry adding this product to assess if the issue was a one-time error or a persistent problem. This test is crucial for confirming the reliability of the 'add to cart' functionality for items listed on the site. The action plan involves clicking the 'add to cart' button for the Galaxy A70 once more.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\"10:r28:\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "<html lang=\"en\"><head><title>React App</title></head><body><div id=\"root\"><nav class=\"Navbar visible\"><div class=\"Top-row\"><div class=\"Navbar-center\"><span class=\"Navbar-icon on-click\" id=\":r1:\"><i class=\"fas fa-bars\"></i></span><div class=\"Navbar-cart-btn on-click\" id=\":r2:\"><span class=\"Navbar-icon\"><i class=\"fas fa-cart-plus\"></i></span><div class=\"cart-items\">2</div></div></div></div><menu class=\"visible\"><li><a class=\"\" href=\"#/\" id=\":r0:-home\">Home</a></li><li><a class=\"\" href=\"#/c/galaxy\" id=\":r0:-galaxy\">Galaxy</a></li><li><a class=\"\" href=\"#/c/s10\" id=\":r0:-s10\">S10</a></li><li><a class=\"\" href=\"#/c/m_series\" id=\":r0:-m_series\">M Series</a></li><li><a aria-current=\"page\" class=\"active\" href=\"#/c/a_series\" id=\":r0:-a_series\">A Series</a></li></menu></nav><section class=\"Products\"><div class=\"Products-section-title\"><h2>A Series <small>- Phones for everyone.</small></h2></div><div class=\"Products-center\"><article class=\"Products-product\"><div class=\"Products-img-container\"><img alt=\"Galaxy A2 Core\" class=\"product-img mouse-over\" id=\"5:r29:\" src=\"./images/product-5.jpeg\"/><button class=\"bag-btn\" id=\"5:r28:\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button></div><h3>Galaxy A2 Core</h3><h4>$688.99</h4></article><article class=\"Products-product\"><div class=\"Products-img-container\"><img alt=\"Galaxy A80\" class=\"product-img mouse-over\" id=\"9:r29:\" src=\"./images/product-9.jpeg\"/><button class=\"bag-btn\" id=\"9:r28:\"><i class=\"fas fa-shopping-cart\"></i>in cart</button></div><h3>Galaxy A80</h3><h4>$386.99</h4></article><article class=\"Products-product\"><div class=\"Products-img-container\"><img alt=\"Galaxy A70\" class=\"product-img mouse-over\" id=\"10:r29:\" src=\"./images/product-10.jpeg\"/><button class=\"bag-btn\" id=\"10:r28:\"><i class=\"fas fa-shopping-cart\"></i>in cart</button></div><h3>Galaxy A70</h3><h4>$378.99</h4></article><article class=\"Products-product\"><div class=\"Products-img-container\"><img alt=\"Galaxy A60\" class=\"product-img mouse-over\" id=\"11:r29:\" src=\"./images/product-11.jpeg\"/><button class=\"bag-btn\" id=\"11:r28:\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button></div><h3>Galaxy A60</h3><h4>$289.99</h4></article><article class=\"Products-product\"><div class=\"Products-img-container\"><img alt=\"Galaxy A30\" class=\"product-img mouse-over\" id=\"12:r29:\" src=\"./images/product-12.jpeg\"/><button class=\"bag-btn\" id=\"12:r28:\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button></div><h3>Galaxy A30</h3><h4>$248.99</h4></article></div></section><div class=\"on-click cart-overlay transparentBcg\" id=\":ra:\"><div class=\"on-click cart showCart\" id=\":rb:\"><span class=\"close-cart on-click\" id=\":r9:\"><i class=\"fas fa-window-close\"></i></span><h2>Your cart</h2><div class=\"cart-content\"><div class=\"cart-item\"><img alt=\"Galaxy A80\" src=\"./images/product-9.jpeg\"/><div><h4>Galaxy A80</h4><h5>$386.99</h5><span class=\"remove-item on-click\" id=\":r2a:\">remove</span></div><div><i class=\"fas fa-chevron-up on-click\" id=\":r2b:\"></i><p class=\"item-amount\">1</p><i class=\"fas fa-chevron-down on-click\" id=\":r2c:\"></i></div></div><div class=\"cart-item\"><img alt=\"Galaxy A70\" src=\"./images/product-10.jpeg\"/><div><h4>Galaxy A70</h4><h5>$378.99</h5><span class=\"remove-item on-click\" id=\":r2g:\">remove</span></div><div><i class=\"fas fa-chevron-up on-click\" id=\":r2h:\"></i><p class=\"item-amount\">1</p><i class=\"fas fa-chevron-down on-click\" id=\":r2i:\"></i></div></div></div><div class=\"cart-footer\"><h3>your total: <span class=\"cart-total\">$765.98</span></h3><button class=\"clear-cart banner-btn\" id=\":r6:\">clear cart</button><a href=\"#/checkout\" id=\":r8:\" style=\"text-decoration: none;\"><div class=\"banner-btn clear-cart on-click\" id=\":r7:\">Checkout</div></a></div></div></div></div></body></html>"
+    },
+    {
+      "role": "system",
+      "content": "The user provided the following end instructions: Please test my website. The goal is to test as many different features as possible to find potential bugs, so make sure to include edge cases."
+    },
+    {
+      "role": "system",
+      "content": "Pursue your self-assigned sub-goal or assign a new one: Attempt to add the Galaxy A70 to the shopping cart again, as the previous attempt did not successfully update the cart. This action will provide insight into the functionality and reliability of the 'add to cart' mechanism for different products on the website, especially in cases where the expected behavior was not initially observed.."
+    },
+    {
+      "role": "system",
+      "content": "Previously executed interactions by goal: {\"Test the 'add to cart' functionality for each product to ensure they can be added to the shopping cart correctly.\": 3, \"Test the removal and quantity adjustment functionalities in the shopping cart to ensure they work as intended.\": 5, \"Test the checkout process by filling out the form to ensure that data input and submission work smoothly.\": 8, \"Finalize testing of the checkout process by completing the remaining form fields and attempting form submission.\": 3, \"Explore the product selection and details pages to ensure they display correctly and contain all expected functionalities.\": 2, \"Test the 'add to cart' functionality for the 'Galaxy S10 5G' to ensure it can be successfully added to the shopping cart.\": 1, \"Test the cart's 'clear cart' functionality to verify if it can properly empty the shopping cart.\": 1, \"Test the navigation functionality to ensure that the website's navigation bar and product category links work correctly and lead to the appropriate sections.\": 1, \"Explore the 'Galaxy' product category to assess the functionality and content of this section, checking for proper product display and interaction capabilities.\": 1, \"Test the 'add to cart' functionality for each product within the 'Galaxy' section, focusing on edge cases.\": 1, \"Test the product quantity adjustment feature in the shopping cart to ensure that it can correctly increase and decrease the number of items.\": 1, \"Test the product quantity reduction functionality in the shopping cart to confirm it correctly decreases the number of items and updates the total price accordingly.\": 1, \"Test the 'remove' functionality for an item in the shopping cart to ensure it correctly removes the item and updates the cart's status.\": 1, \"Test the 'clear cart' functionality to verify if it can properly empty the shopping cart.\": 1, \"Refill the cart with multiple items from different categories to prepare for testing the 'clear cart' functionality.\": 1, \"Continue to refill the cart with multiple items from different categories to prepare for testing the 'clear cart' functionality.\": 1, \"Attempt to add another product to the cart to explore the functionality further and then proceed with testing the 'clear cart' functionality.\": 1, \"Continue testing the checkout process by completing the Address and Payment sections, then submit the form to assess its functionality.\": 1, \"Continue testing the checkout process by completing the Address section of the form, followed by selecting a payment method in the Payment section, and finally submitting the form to gauge the overall functionality and user interaction.\": 1, \"Finish filling out the Address section, select a payment method, and submit the form to complete the checkout process. This will assess the functionality of form submission and observe the application's response.\": 1, \"Proceed with filling out the Address section, select a payment method, and attempt to submit the form to see how the system responds to a submission attempt. This will test both the functionality of the form's remaining fields and the form's submission process.\": 1, \"Complete the Address section by filling out the state and zip code fields, select a payment method, and then attempt to submit the form. This will allow us to assess the overall submission process and the web application's handling of complete form submissions.\": 1, \"Finalize the checkout form by adding a zip code, choosing a payment method, and submitting the form. This will test the form's capability to handle submission with fully entered data and the application's response thereafter.\": 1, \"Complete the final steps of the checkout process by selecting a payment method and submitting the form to evaluate the application's handling of a full checkout sequence. This will cover the finalization of form entry, choice of payment, and the submission action, allowing us to test the checkout functionality to its completion.\": 1, \"Explore the website's navigation functionality, particularly focusing on the 'Galaxy' section to assess its content, layout, and any specific functionalities associated with this section.\": 1, \"Test the 'add to cart' functionality for each product within the 'Galaxy' section, emphasizing edge cases such as attempting to add the same product multiple times to assess how the website handles such scenarios. This will evaluate the robustness of the web application's shopping cart feature.\": 1, \"Resolve the interaction issue preventing the addition of the 'Galaxy S10+' to the cart, by first closing the cart overlay that is currently obstructing product interaction. This will allow us to proceed with testing the 'add to cart' functionality for each product within the 'Galaxy' section and addressing edge cases such as adding the same product multiple times.\": 1, \"Test the 'add to cart' functionality for the 'Galaxy S10+' to ensure it can be successfully added to the shopping cart. Then proceed to test adding different products to the cart to evaluate how the application handles multiple items, focusing on the correct update of items counts and total amounts.\": 1, \"Attempt to interact with the shopping cart overlay by clicking the 'close cart' button. This aims to test the overlay's interaction responsiveness, specifically checking if the overlay can be closed to return to the main shopping interface without issues. Closing the cart overlay is essential for providing users a seamless experience between cart management and continued shopping.\": 1, \"Explore the 'checkout' functionality by attempting to proceed to the checkout page from the cart overlay. This will allow us to assess the web application's handling of transitioning users from the cart review step to the actual checkout process, which is critical for user experience and the operational flow of e-commerce platforms.\": 1, \"Complete the checkout process by filling out all necessary fields in the form and submitting it. This will test the form's capability to handle user input, validate the entered information, and process the submission, assessing the responsiveness and functionality of the checkout process.\": 1, \"Continue filling out the checkout form by inputting 'Doe' into the 'Last Name' field and 'johndoe@example.com' into the 'Email' field. This step will evaluate the checkout form's ability to handle additional customer information inputs without issues.\": 1, \"Fill out the 'Email', 'Country', 'Street Address', 'City', 'State', and 'Zip Code' fields in the checkout form with appropriate test data. This action assesses the form's ability to accept various forms of text input without errors, ensuring each part of the address and contact information sections can be completed by users.\": 1, \"Fill out the remaining fields in the checkout form under the Address details and Payment sections, then attempt to submit the form. This will complete the checkout process, testing the web application's ability to process various text inputs, selection inputs, and ultimately, the form submission. Completing these steps will evaluate the web application's end-to-end functionality in handling a typical checkout scenario.\": 1, \"Proceed with filling out the Address section by completing the 'Street Address', 'City', 'State', and 'Zip Code' fields, then select a payment method from the options provided. This step is crucial for conducting a comprehensive test of the checkout process, assessing the web application's handling of input across various form fields and the successful submission of a complete set of user information.\": 1, \"Fill out the 'City' field in the checkout form, which will allow further testing of the Address details section. This aims to assess the form's capability to accept diverse textual inputs for address information.\": 1, \"Fill out the 'State' and 'Zip Code' fields to complete the Address details section of the checkout form, then select a payment method. This aims to test the form's capability to handle various address inputs and prepare for a complete form submission.\": 1, \"Complete the Address details section by filling out the 'Zip Code' field. Then proceed to select a payment method and submit the form to conclude the checkout process test. This action will evaluate the form's capability to accept the full range of input and test the functionality of form submission.\": 1, \"Select a payment method from the available options and attempt to submit the checkout form. This action targets testing the functionality of the payment selection and the overall form submission process, highlighting how the web application processes a complete checkout scenario.\": 1, \"Explore the website's navigation functionality, particularly focusing on the 'Galaxy' section to assess its content, layout, and any specific functionalities associated with this section. Navigating through the website's categories will provide insight into the user experience, page layout consistency, and whether all product categories are accessible and function as expected.\": 1, \"Explore the 'Galaxy' section by navigating to it using the navigation bar to evaluate the page layout, content, and any dedicated features. This action aims to inspect the user experience in accessing and traversing through product categories, ensuring they are readily accessible and rendered correctly.\": 1, \"Investigate other product categories beyond 'Galaxy' to assess the diversity and content across the website. This looks into how different sections are populated, providing insight into the user experience and whether the website maintains content quality and presentation consistency across various product categories. Testing various sections can also reveal navigation issues or inconsistency in product displays and availability.\": 1, \"Explore the 'M Series' product category to assess the diversity, content quality, and presentation consistency of the website. This step aims to further understand how the website populates different product categories and maintains quality across these sections. Testing the 'M Series' will also help identify any navigation issues or inconsistencies in product display.\": 1, \"Explore the 'A Series' product category to assess the diversity, content quality, and presentation consistency of the website. This effort seeks to thoroughly understand how the website populates different product categories and ensures quality across these sections. Investigating the 'A Series' will also aid in identifying any navigation issues or inconsistencies in product display.\": 1, \"Test the 'add to cart' functionality for each product within the 'A Series' section, focusing on edge cases such as attempting to add the same product multiple times to assess how the website handles such scenarios. This will evaluate the robustness of the web application's shopping cart feature.\": 1, \"Test the removal and quantity adjustment functionalities in the shopping cart to ensure they work as intended. This involves testing the buttons to increase or decrease product quantity as well as the remove button to ensure they accurately reflect changes in the cart. These operations are fundamental for a good user experience in managing the shopping cart.\": 1, \"Test the 'add to cart' functionality for the remaining products within the 'A Series' section individually, focusing on how the website updates the shopping cart and handles multiple products in the cart.\": 1, \"Continue testing the 'add to cart' functionality for the remaining Galaxy A Series products (Galaxy A70, Galaxy A60, Galaxy A30) to assess how the application handles adding multiple distinct products to the cart, reflecting on the overall functionality of managing a diverse shopping cart.\": 1, \"Investigate the 'add to cart' functionality further to understand why the Galaxy A70 did not appear in the cart despite the previous attempt to add it. This involves re-trying the addition of the Galaxy A70 to the cart and closely observing the cart's behavior and website's response to ensure that the shopping cart accurately reflects the addition of products.\": 1, \"Attempt to add the Galaxy A70 to the shopping cart again, as the previous attempt did not successfully update the cart. This action will provide insight into the functionality and reliability of the 'add to cart' mechanism for different products on the website, especially in cases where the expected behavior was not initially observed.\": 1}."
+    },
+    {
+      "role": "system",
+      "content": "Start by describing the website supplied by the function call. Give a short general description first then summarize the main elements on the website. Do not use HTML in your description. Then you may formulate a high level sub-goal to the user's instructions, that should be persued with the next couple of interactions. You should formulate a new sub-goal if the current one has been completed or seems to be unattainable. Give an action plan that explains how the goal should be reached. And finally, describe the interaction to emulate."
+    },
+    {
+      "role": "system",
+      "content": "Only use the click action with clickable elements. The clickable elements have the following ids: :r6:, :r8:, :ra:, :rb:, :r9:, :r2a:, :r2b:, :r2c:, :r2g:, :r2h:, :r2i:, :r7:. "
+    }
+  ],
+  "functions": [
+    {
+      "name": "emulate_interaction",
+      "description": "Emulates a user interaction with the web application",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "page_description": {
+            "type": "string",
+            "description": "A short textual description of the state of the web application: What is the current page? What are the main elements on the page? This description should not contain any HTML."
+          },
+          "new_testing_goal": {
+            "type": "string",
+            "description": "Assigns a new high level sub-goal that shall be followed in order to complete the users instructions. This goal should take multiple user interactions to complete. The assistant shall try to complete this goal in the next couple of interactions and then assign a new one."
+          },
+          "explanation": {
+            "type": "string",
+            "description": "An action plan that explains how the goal should be reached."
+          },
+          "interaction": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "interaction_type": {
+                    "const": "click",
+                    "type": "string",
+                    "description": "The type of interaction to emulate"
+                  },
+                  "element_id": {
+                    "enum": [
+                      ":r6:",
+                      ":r8:",
+                      ":ra:",
+                      ":rb:",
+                      ":r9:",
+                      ":r2a:",
+                      ":r2b:",
+                      ":r2c:",
+                      ":r2g:",
+                      ":r2h:",
+                      ":r2i:",
+                      ":r7:"
+                    ],
+                    "type": "string",
+                    "description": "The id of the element to interact with"
+                  }
+                },
+                "required": [
+                  "interaction_type",
+                  "element_id"
+                ],
+                "description": "clicks on a html element"
+              }
+            ],
+            "description": "The interaction to emulate"
+          }
+        },
+        "required": [
+          "page_description",
+          "explanationinteraction"
+        ]
+      }
+    }
+  ]
+}
