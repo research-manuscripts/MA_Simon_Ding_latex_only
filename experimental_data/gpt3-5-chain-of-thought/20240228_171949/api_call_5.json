@@ -1,0 +1,335 @@
+{
+  "response": {
+    "id": "chatcmpl-8xGxVmRBjoPMhFuKNtbdjcZhan9KU",
+    "object": "chat.completion",
+    "created": 1709137233,
+    "model": "gpt-3.5-turbo-0125",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": null,
+          "function_call": {
+            "name": "emulate_interaction",
+            "arguments": "{\"page_description\":\"An online Samsung store specializing in Galaxy phones like S10, S10+, S10 5G, and S10e. The store provides a range of products, a shopping cart for purchases, and a checkout process.\",\"new_testing_goal\":\"Test the checkout process by entering customer information and completing a purchase.\",\"explanation\":\"Enter customer details in the form fields for address, payment method, and submit the order to test the checkout process.\",\"interaction\":{\"interaction_type\":\"send_keys\",\"element_id\":\":rm:\",\"keys\":\"John\"}}"
+          }
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3499,
+      "completion_tokens": 111,
+      "total_tokens": 3610
+    },
+    "system_fingerprint": "fp_86156a94a0"
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "Given a web application, you are tasked with assisting in testing its functionality. The emulate_interaction function takes an interaction as input and emulates it on the web application. The return value of the function is the new, filtered HTML source code of the web application. The source code of previous interactions will be omitted from the input to the assistant. "
+    },
+    {
+      "role": "system",
+      "content": "Here are some examples how the 'emulate_interaction' function should be used."
+    },
+    {
+      "role": "user",
+      "content": "Please test my website: omitted"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\": \"The start page of a web site with multiple calculators for different purposes. There are buttons to navigate to the differet calculators and a button to switch the language of the web site. The current language is English.\", \"new_testing_goal\": \"Test the calculator for calculating the area of a circle in multiple languages.\", \"explanation\": \"First navigate to the calculator for the area of a circle. Then input a radius and calculate the area. Switch the language of the web site and repeat the process.\", \"interaction\": {\"interaction_type\": \"click\", \"element_id\": \"btn-area-circle\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "system",
+      "content": "Pursue your self-assigned sub-goal or assign a new one: Test the calculator for calculating the area of a circle in multiple languages.."
+    },
+    {
+      "role": "system",
+      "content": "Previously executed interactions by goal: {\"Test the calculator for calculating the area of a circle in multiple languages.\": 1 }."
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\": \"A page with a calculator for calculating the area of a circle. There is an empty text field to enter the radius of the circle and a button labeled 'Calculate'. The current language is English.\", \"explanation\": \"Enter the radius in the text field and click the 'Calculate' button. Then switch the language of the web site and repeat the process.\", \"interaction\": {\"interaction_type\": \"send_keys\", \"element_id\": \"radius\", \"keys\": \"5\"}}"
+      }
+    },
+    {
+      "role": "user",
+      "content": "Please test my website: omitted"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\": \"An article on a news website. The main part of the article is hidden by a login prompt. The navigation bar has links to different news categories.\", \"new_testing_goal\": \"Subscribe to the comment section of the article.\", \"explanation\": \"To subscribe to a comment sections the user has to be logged in. First login to the website. Then navigate to an article and subscribe to the comment section.\", \"interaction\": {\"interaction_type\": \"send_keys\", \"element_id\": \"user-id\", \"keys\": \"john.doe@fictional.tld\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "system",
+      "content": "Pursue your self-assigned sub-goal or assign a new one: Subscribe to the comment section of the article.."
+    },
+    {
+      "role": "system",
+      "content": "Previously executed interactions by goal: {\"Subscribe to the comment section of the article.\": 1 }."
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\": \"An article on a news website. The main part of the article is hidden by a login prompt. The navigation bar has links to different news categories.\", \"explanation\": \"Complete the login process. Then subscribe to the comment section.\", \"interaction\": {\"interaction_type\": \"send_keys\", \"element_id\": \"user-password\", \"keys\": \"verysecurepassword\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "system",
+      "content": "Pursue your self-assigned sub-goal or assign a new one: Subscribe to the comment section of the article.."
+    },
+    {
+      "role": "system",
+      "content": "Previously executed interactions by goal: {\"Subscribe to the comment section of the article.\": 2 }."
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\": \"An article on a news website. The main part of the article is hidden by a login prompt. The navigation bar has links to different news categories.\", \"explanation\": \"Complete the login process. Then subscribe to the comment section.\", \"interaction\": {\"interaction_type\": \"click\", \"element_id\": \"login-btn\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "system",
+      "content": "Pursue your self-assigned sub-goal or assign a new one: Subscribe to the comment section of the article.."
+    },
+    {
+      "role": "system",
+      "content": "Previously executed interactions by goal: {\"Subscribe to the comment section of the article.\": 3 }."
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\": \"An article on a news website. The navigation bar has links to different news categories.\", \"explanation\": \"Subscribe to the article by clicking on the subscribe button.\", \"interaction\": {\"interaction_type\": \"click\", \"element_id\": \"subscribe-btn\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "system",
+      "content": "Pursue your self-assigned sub-goal or assign a new one: Subscribe to the comment section of the article.."
+    },
+    {
+      "role": "system",
+      "content": "Previously executed interactions by goal: {\"Subscribe to the comment section of the article.\": 4 }."
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\": \"An article on a news website. There is a popup message saying success. The navigation bar has links to different news categories.\", \"new_testing_goal\": \"Test if it's possible to subscribe to the article multiple times and if it's possible to unsubscribe.\", \"explanation\": \"Close the success message and try to subscribe to the article again. Then try to unsubscribe from the article.\", \"interaction\": {\"interaction_type\": \"click\", \"element_id\": \"success-close\"}}"
+      }
+    },
+    {
+      "role": "user",
+      "content": "Please test my website. The goal is to test as many different features as possible to find potential bugs, so make sure to include edge cases. Here is the filtered HTML source code of the web application: 'omitted'. "
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"An online Samsung store showcasing various Galaxy phones like S10, S10 5G, S10+, and S10e. The website features a navigation menu, product sections, and a cart for purchases.\",\"new_testing_goal\":\"Add multiple products to the cart and checkout to test the cart functionality.\",\"explanation\":\"Add different products to the cart by clicking 'add to cart' buttons for each product. Once products are added, check the cart by clicking on the cart icon and proceed to checkout.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\"1:r4:\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"An online Samsung store featuring different models of Galaxy phones including S10, S10 5G, S10+, and S10e. The website has a navigation menu, product sections, and a shopping cart for purchases.\",\"new_testing_goal\":\"Clear the cart and add the same product multiple times to test the cart functionality.\",\"explanation\":\"Clear the cart by clicking 'Clear Cart'. Add the same product to the cart multiple times by clicking 'Add to Cart' multiple times for the same product.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":r6:\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"An online Samsung store with a focus on Galaxy phones such as S10, S10+, S10 5G, and S10e. The site contains a navigation menu, product sections, and a cart for purchases.\",\"new_testing_goal\":\"Simulate adding the same product to the cart multiple times to test the cart functionality with edge cases.\",\"explanation\":\"Add the same product multiple times to the cart by clicking the 'Add to Cart' button for the same product multiple times. Observe how the cart handles the additions of the same product repeatedly.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\"1:r4:\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"An online Samsung store showcasing various Galaxy phones like S10, S10 5G, S10+, and S10e. The website features a navigation menu, product sections, and a cart for purchases.\",\"new_testing_goal\":\"Test the checkout process with multiple products in the cart and check if discounts are applied correctly.\",\"explanation\":\"Add different products to the cart by clicking 'add to cart' buttons for each product. Proceed to checkout and observe the total cost. Apply any available discount codes to see if they are properly applied before the final purchase.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":r7:\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "<html lang=\"en\"><head><title>React App</title></head><body><div id=\"root\"><nav class=\"Navbar\"><div class=\"Top-row\"><div class=\"Navbar-center\"><span class=\"Navbar-icon on-click\" id=\":r1:\"><i class=\"fas fa-bars\"></i></span><div class=\"Navbar-cart-btn on-click\" id=\":r2:\"><span class=\"Navbar-icon\"><i class=\"fas fa-cart-plus\"></i></span><div class=\"cart-items\">1</div></div></div></div><menu class=\"\"><li><a class=\"\" href=\"#/\" id=\":r0:-home\">Home</a></li><li><a class=\"\" href=\"#/c/galaxy\" id=\":r0:-galaxy\">Galaxy</a></li><li><a class=\"\" href=\"#/c/s10\" id=\":r0:-s10\">S10</a></li><li><a class=\"\" href=\"#/c/m_series\" id=\":r0:-m_series\">M Series</a></li><li><a class=\"\" href=\"#/c/a_series\" id=\":r0:-a_series\">A Series</a></li></menu></nav><div class=\"checkout\"><div class=\"checkout__cart\"><h2>Cart</h2><div class=\"cart-item\"><img alt=\"Galaxy S10 5G\" src=\"./images/product-1.jpeg\"/><div><h4>Galaxy S10 5G</h4><h5>$910.99</h5><span class=\"remove-item on-click\" id=\":rj:\">remove</span></div><div><i class=\"fas fa-chevron-up on-click\" id=\":rk:\"></i><p class=\"item-amount\">1</p><i class=\"fas fa-chevron-down on-click\" id=\":rl:\"></i></div></div><h3>Total: $910.99</h3></div><form class=\"checkout__form\"><div class=\"checkout__form__customer\"><h2>Customer</h2><div><label for=\":rm:\">First Name</label><input class=\"\" id=\":rm:\" type=\"text\" value=\"\"/></div><div><label for=\":rn:\">Last Name</label><input class=\"\" id=\":rn:\" type=\"text\" value=\"\"/></div><div><label for=\":ro:\">E-Mail</label><input class=\"\" id=\":ro:\" type=\"text\" value=\"\"/></div></div><div class=\"checkout__form__address\"><h2>Address</h2><div><label for=\":rp:\">Country</label><input class=\"\" id=\":rp:\" type=\"text\" value=\"\"/></div><div><label for=\":rq:\">Street Address</label><input class=\"\" id=\":rq:\" type=\"text\" value=\"\"/></div><div><label for=\":rr:\">City</label><input class=\"\" id=\":rr:\" type=\"text\" value=\"\"/></div><div><label for=\":rs:\">State</label><input class=\"\" id=\":rs:\" type=\"text\" value=\"\"/></div><div><label for=\":rt:\">Zip Code</label><input class=\"\" id=\":rt:\" type=\"text\" value=\"\"/></div></div><div class=\"checkout__form__payment\"><h2>Payment</h2><select><option value=\"0\">Invoice</option><option value=\"1\">Credit Card</option><option value=\"2\">PayPal</option></select></div><button id=\":ri:\" type=\"submit\">Submit</button></form></div><div class=\"on-click cart-overlay\" id=\":ra:\"><div class=\"on-click cart\" id=\":rb:\"><span class=\"close-cart on-click\" id=\":r9:\"><i class=\"fas fa-window-close\"></i></span><h2>Your cart</h2><div class=\"cart-content\"><div class=\"cart-item\"><img alt=\"Galaxy S10 5G\" src=\"./images/product-1.jpeg\"/><div><h4>Galaxy S10 5G</h4><h5>$910.99</h5><span class=\"remove-item on-click\" id=\":rf:\">remove</span></div><div><i class=\"fas fa-chevron-up on-click\" id=\":rg:\"></i><p class=\"item-amount\">1</p><i class=\"fas fa-chevron-down on-click\" id=\":rh:\"></i></div></div></div><div class=\"cart-footer\"><h3>your total: <span class=\"cart-total\">$910.99</span></h3><button class=\"clear-cart banner-btn\" id=\":r6:\">clear cart</button><a href=\"#/checkout\" id=\":r8:\" style=\"text-decoration: none;\"><div class=\"banner-btn clear-cart on-click\" id=\":r7:\">Checkout</div></a></div></div></div></div></body></html>"
+    },
+    {
+      "role": "system",
+      "content": "The user provided the following end instructions: Please test my website. The goal is to test as many different features as possible to find potential bugs, so make sure to include edge cases."
+    },
+    {
+      "role": "system",
+      "content": "Pursue your self-assigned sub-goal or assign a new one: Test the checkout process with multiple products in the cart and check if discounts are applied correctly.."
+    },
+    {
+      "role": "system",
+      "content": "Previously executed interactions by goal: {\"Add multiple products to the cart and checkout to test the cart functionality.\": 1, \"Clear the cart and add the same product multiple times to test the cart functionality.\": 1, \"Simulate adding the same product to the cart multiple times to test the cart functionality with edge cases.\": 1, \"Test the checkout process with multiple products in the cart and check if discounts are applied correctly.\": 1}."
+    },
+    {
+      "role": "system",
+      "content": "Start by describing the website supplied by the function call. Give a short general description first then summarize the main elements on the website. Do not use HTML in your description. Then you may formulate a high level sub-goal to the user's instructions, that should be persued with the next couple of interactions. You should formulate a new sub-goal if the current one has been completed or seems to be unattainable. Give an action plan that explains how the goal should be reached. And finally, describe the interaction to emulate."
+    },
+    {
+      "role": "system",
+      "content": "Only use the click action with clickable elements. The clickable elements have the following ids: :ri:, :r1:, :r2:, :rj:, :rk:, :rl:. Only use the send_keys action with writable elements. The writable elements have the following ids: :rm:, :rn:, :ro:, :rp:, :rq:, :rr:, :rs:, :rt:. "
+    }
+  ],
+  "functions": [
+    {
+      "name": "emulate_interaction",
+      "description": "Emulates a user interaction with the web application",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "page_description": {
+            "type": "string",
+            "description": "A short textual description of the state of the web application: What is the current page? What are the main elements on the page? This description should not contain any HTML."
+          },
+          "new_testing_goal": {
+            "type": "string",
+            "description": "Assigns a new high level sub-goal that shall be followed in order to complete the users instructions. This goal should take multiple user interactions to complete. The assistant shall try to complete this goal in the next couple of interactions and then assign a new one."
+          },
+          "explanation": {
+            "type": "string",
+            "description": "An action plan that explains how the goal should be reached."
+          },
+          "interaction": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "interaction_type": {
+                    "const": "click",
+                    "type": "string",
+                    "description": "The type of interaction to emulate"
+                  },
+                  "element_id": {
+                    "enum": [
+                      ":ri:",
+                      ":r1:",
+                      ":r2:",
+                      ":rj:",
+                      ":rk:",
+                      ":rl:"
+                    ],
+                    "type": "string",
+                    "description": "The id of the element to interact with"
+                  }
+                },
+                "required": [
+                  "interaction_type",
+                  "element_id"
+                ],
+                "description": "clicks on a html element"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "interaction_type": {
+                    "const": "send_keys",
+                    "type": "string",
+                    "description": "The type of interaction to emulate"
+                  },
+                  "element_id": {
+                    "enum": [
+                      ":rm:",
+                      ":rn:",
+                      ":ro:",
+                      ":rp:",
+                      ":rq:",
+                      ":rr:",
+                      ":rs:",
+                      ":rt:"
+                    ],
+                    "type": "string",
+                    "description": "The id of the element to interact with"
+                  },
+                  "keys": {
+                    "type": "string",
+                    "description": "the keys to be sent to the input element"
+                  }
+                },
+                "required": [
+                  "interaction_type",
+                  "element_id",
+                  "keys"
+                ],
+                "description": "sends keystrokes to an html element"
+              }
+            ],
+            "description": "The interaction to emulate"
+          }
+        },
+        "required": [
+          "page_description",
+          "explanationinteraction"
+        ]
+      }
+    }
+  ]
+}

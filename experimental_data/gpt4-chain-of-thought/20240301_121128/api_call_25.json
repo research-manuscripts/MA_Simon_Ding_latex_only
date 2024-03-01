@@ -1,0 +1,318 @@
+{
+  "response": {
+    "id": "chatcmpl-8xvCDL8m6sx8rfxGqsa37wCRcghR5",
+    "object": "chat.completion",
+    "created": 1709291905,
+    "model": "gpt-4-0125-preview",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": null,
+          "function_call": {
+            "name": "emulate_interaction",
+            "arguments": "{\"page_description\":\"The website is displaying its Galaxy product category page, featuring a variety of Galaxy smartphones including the S10 series, A series, and M series. Each product is showcased with an image, name, price, and an 'add to cart' button. Some products indicate if they are already in the cart. The navigation includes links to the Home page, Galaxy, S10 series, M Series, and A Series pages. Additionally, the shopping cart icon shows one item in the cart. A cart overlay is also present, with details of the Galaxy A2 Core in the cart, including the option to remove it, adjust quantity, clear the cart, or checkout.\",\"new_testing_goal\":\"Navigate to the M Series category and add a product to the cart to test multi-category cart functionality and website responsiveness.\",\"explanation\":\"Close the cart overlay to return to the product listings. Navigate to the M Series category by clicking on the M Series link in the navigation bar. This will allow us to explore a different product category. After navigating, select a product from the M Series to add to the cart, evaluating how the system handles products from various categories and updates the cart accordingly.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":r0:-m_series\"}}"
+          }
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 5499,
+      "completion_tokens": 255,
+      "total_tokens": 5754
+    },
+    "system_fingerprint": "fp_70b2088885"
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "Given a web application, you are tasked with assisting in testing its functionality. The emulate_interaction function takes an interaction as input and emulates it on the web application. The return value of the function is the new, filtered HTML source code of the web application. The source code of previous interactions will be omitted from the input to the assistant. "
+    },
+    {
+      "role": "system",
+      "content": "Here are some examples how the 'emulate_interaction' function should be used."
+    },
+    {
+      "role": "user",
+      "content": "Please test my website: omitted"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\": \"The start page of a web site with multiple calculators for different purposes. There are buttons to navigate to the differet calculators and a button to switch the language of the web site. The current language is English.\", \"new_testing_goal\": \"Test the calculator for calculating the area of a circle in multiple languages.\", \"explanation\": \"First navigate to the calculator for the area of a circle. Then input a radius and calculate the area. Switch the language of the web site and repeat the process.\", \"interaction\": {\"interaction_type\": \"click\", \"element_id\": \"btn-area-circle\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "system",
+      "content": "Pursue your self-assigned sub-goal or assign a new one: Test the calculator for calculating the area of a circle in multiple languages.."
+    },
+    {
+      "role": "system",
+      "content": "Previously executed interactions by goal: {\"Test the calculator for calculating the area of a circle in multiple languages.\": 1 }."
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\": \"A page with a calculator for calculating the area of a circle. There is an empty text field to enter the radius of the circle and a button labeled 'Calculate'. The current language is English.\", \"explanation\": \"Enter the radius in the text field and click the 'Calculate' button. Then switch the language of the web site and repeat the process.\", \"interaction\": {\"interaction_type\": \"send_keys\", \"element_id\": \"radius\", \"keys\": \"5\"}}"
+      }
+    },
+    {
+      "role": "user",
+      "content": "Please test my website: omitted"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\": \"An article on a news website. The main part of the article is hidden by a login prompt. The navigation bar has links to different news categories.\", \"new_testing_goal\": \"Subscribe to the comment section of the article.\", \"explanation\": \"To subscribe to a comment sections the user has to be logged in. First login to the website. Then navigate to an article and subscribe to the comment section.\", \"interaction\": {\"interaction_type\": \"send_keys\", \"element_id\": \"user-id\", \"keys\": \"john.doe@fictional.tld\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "system",
+      "content": "Pursue your self-assigned sub-goal or assign a new one: Subscribe to the comment section of the article.."
+    },
+    {
+      "role": "system",
+      "content": "Previously executed interactions by goal: {\"Subscribe to the comment section of the article.\": 1 }."
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\": \"An article on a news website. The main part of the article is hidden by a login prompt. The navigation bar has links to different news categories.\", \"explanation\": \"Complete the login process. Then subscribe to the comment section.\", \"interaction\": {\"interaction_type\": \"send_keys\", \"element_id\": \"user-password\", \"keys\": \"verysecurepassword\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "system",
+      "content": "Pursue your self-assigned sub-goal or assign a new one: Subscribe to the comment section of the article.."
+    },
+    {
+      "role": "system",
+      "content": "Previously executed interactions by goal: {\"Subscribe to the comment section of the article.\": 2 }."
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\": \"An article on a news website. The main part of the article is hidden by a login prompt. The navigation bar has links to different news categories.\", \"explanation\": \"Complete the login process. Then subscribe to the comment section.\", \"interaction\": {\"interaction_type\": \"click\", \"element_id\": \"login-btn\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "system",
+      "content": "Pursue your self-assigned sub-goal or assign a new one: Subscribe to the comment section of the article.."
+    },
+    {
+      "role": "system",
+      "content": "Previously executed interactions by goal: {\"Subscribe to the comment section of the article.\": 3 }."
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\": \"An article on a news website. The navigation bar has links to different news categories.\", \"explanation\": \"Subscribe to the article by clicking on the subscribe button.\", \"interaction\": {\"interaction_type\": \"click\", \"element_id\": \"subscribe-btn\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "system",
+      "content": "Pursue your self-assigned sub-goal or assign a new one: Subscribe to the comment section of the article.."
+    },
+    {
+      "role": "system",
+      "content": "Previously executed interactions by goal: {\"Subscribe to the comment section of the article.\": 4 }."
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\": \"An article on a news website. There is a popup message saying success. The navigation bar has links to different news categories.\", \"new_testing_goal\": \"Test if it's possible to subscribe to the article multiple times and if it's possible to unsubscribe.\", \"explanation\": \"Close the success message and try to subscribe to the article again. Then try to unsubscribe from the article.\", \"interaction\": {\"interaction_type\": \"click\", \"element_id\": \"success-close\"}}"
+      }
+    },
+    {
+      "role": "user",
+      "content": "Please test my website. The goal is to test as many different features as possible to find potential bugs, so make sure to include edge cases. Here is the filtered HTML source code of the web application: 'omitted'. "
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The website is currently displaying the shopping cart overlay with one item in the cart, the Galaxy A2 Core, listed with its price, an option to remove the item, and buttons to increase or decrease the quantity. There's a summary including the total cart value and buttons for clearing the cart or proceeding to checkout. The navigation bar includes options for accessing different product categories or returning to the homepage.\",\"new_testing_goal\":\"Test the checkout process including updating product quantities, removing items, and clearing the cart to observe the website's response in handling these actions.\",\"explanation\":\"First, let's test updating the product quantity by increasing the Galaxy A2 Core's quantity in the cart. This will allow us to assess how the website updates the total price and item count. Follow this by testing the remove item functionality and observing how the cart updates. Finally, we'll clear the cart and proceed to the checkout process to ensure all functionalities are working as expected.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":r11:\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The website's current display is the shopping cart overlay with the Galaxy A2 Core product listed twice, indicating a quantity of 2 for this item with a total price of $1,377.98. There are options to remove the item, adjust its quantity, clear the cart entirely, or proceed to checkout. The navigation bar provides access to different product categories and the homepage.\",\"new_testing_goal\":\"Test the remove item and clear cart functionalities to ensure accurate cart updates, then proceed to checkout to evaluate the checkout process.\",\"explanation\":\"First, test the remove item functionality by clicking on the 'remove' button for the Galaxy A2 Core in the cart. This should result in the update of the cart's contents and total price. Next, if the product removal functions correctly, test the clear cart functionality to ensure it empties the cart as expected. After verifying these functionalities, proceed to the checkout by clicking on the 'Checkout' button to assess the checkout process and how the system handles transactions without any items in the cart.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":r10:\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The home page of the web application is currently displaying a selection of Galaxy products, including models like Galaxy S10 5G, S10+, S10, S10e, Galaxy A2 Core, Galaxy M30, Galaxy M20, Galaxy M10, Galaxy A80, Galaxy A70, Galaxy A60, and Galaxy A30. Each product is listed with an image, name, price, and an 'add to cart' button. The navigation bar at the top includes links to various product categories such as Home, Galaxy, S10, M Series, and A Series, in addition to a shopping cart icon indicating zero items. There's also a cart overlay button, although the cart currently displays a total of $0.00, suggesting it's empty.\",\"new_testing_goal\":\"Explore the website further, focusing on the product detail pages and the functionality of the 'add to cart' buttons for multiple products. Additionally, assess the website's navigation by accessing different product categories from the navigation menu.\",\"explanation\":\"Start by selecting a product to view its detail page, where we can understand more about the product including detailed specifications, customer reviews, and related products. This will allow us to test the 'add to cart' functionality from the product detail page and check the responsiveness of the website. After exploring a product detail page, navigate back to the main page, access different product categories from the navigation menu, and repeat the process with another product. This plan will help us test the navigation, product detail pages, and add to cart functionality across different categories.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":r6:\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The product detail page for the Galaxy S10 5G is displayed with an overview of the smartphone including an image, detailed specifications such as screen size, processor, camera details, and color options. A customer reviews section lists user comments and ratings. There's an 'add to cart' button along with options for selecting product variations. The navigation bar on top provides links to different product categories like Home, Galaxy, S10 Series, M Series, and A Series, as well as a shopping cart icon indicating zero items in the cart.\",\"new_testing_goal\":\"Add the Galaxy S10 5G to the cart, navigate to a different product category, and evaluate the 'add to cart' process for a different product type. This will test the capability to handle multiple products from different categories in the cart and how it updates accordingly.\",\"explanation\":\"First, add the Galaxy S10 5G to the cart. After that, navigate to the M Series product category using the navigation bar. Select a product from the M Series, visit its detail page, and test the 'add to cart' functionality again. This sequence will help us understand how the website handles adding products from different categories and updating the cart summary.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\"5:ru:\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The website's current display is the shopping cart overlay with the Galaxy A2 Core product listed once, indicating a quantity of 1 for this item with a total price of $688.99. There are options to remove the item, adjust its quantity, clear the cart entirely, or proceed to checkout. The navigation bar provides access to different product categories and the homepage.\",\"new_testing_goal\":\"Test the functionality of adding a product from a different category to the cart, and assess the cart's response to varying product quantities.\",\"explanation\":\"Close the shopping cart overlay by clicking on the close (X) icon, then navigate to the M Series category using the navigation bar. This action will allow us to select a product from a different category and add it to the cart, testing how the website manages multiple items from different categories within the cart environment.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":r9:\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "<html lang=\"en\"><head><title>React App</title></head><body><div id=\"root\"><nav class=\"Navbar visible\"><div class=\"Top-row\"><div class=\"Navbar-center\"><span class=\"Navbar-icon on-click\" id=\":r1:\"><i class=\"fas fa-bars\"></i></span><div class=\"Navbar-cart-btn on-click\" id=\":r2:\"><span class=\"Navbar-icon\"><i class=\"fas fa-cart-plus\"></i></span><div class=\"cart-items\">1</div></div></div></div><menu class=\"visible\"><li><a class=\"\" href=\"#/\" id=\":r0:-home\">Home</a></li><li><a aria-current=\"page\" class=\"active\" href=\"#/c/galaxy\" id=\":r0:-galaxy\">Galaxy</a></li><li><a class=\"\" href=\"#/c/s10\" id=\":r0:-s10\">S10</a></li><li><a class=\"\" href=\"#/c/m_series\" id=\":r0:-m_series\">M Series</a></li><li><a class=\"\" href=\"#/c/a_series\" id=\":r0:-a_series\">A Series</a></li></menu></nav><section class=\"Products\"><div class=\"Products-section-title\"><h2>Galaxy </h2></div><div class=\"Products-center\"><article class=\"Products-product\"><div class=\"Products-img-container\"><img alt=\"Galaxy S10 5G\" class=\"product-img mouse-over\" id=\"1:rv:\" src=\"./images/product-1.jpeg\"/><button class=\"bag-btn\" id=\"1:ru:\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button></div><h3>Galaxy S10 5G</h3><h4>$910.99</h4></article><article class=\"Products-product\"><div class=\"Products-img-container\"><img alt=\"Galaxy S10+\" class=\"product-img mouse-over\" id=\"2:rv:\" src=\"./images/product-2.jpeg\"/><button class=\"bag-btn\" id=\"2:ru:\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button></div><h3>Galaxy S10+</h3><h4>$812.99</h4></article><article class=\"Products-product\"><div class=\"Products-img-container\"><img alt=\"Galaxy S10\" class=\"product-img mouse-over\" id=\"3:rv:\" src=\"./images/product-3.jpeg\"/><button class=\"bag-btn\" id=\"3:ru:\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button></div><h3>Galaxy S10</h3><h4>$712.99</h4></article><article class=\"Products-product\"><div class=\"Products-img-container\"><img alt=\"Galaxy S10e\" class=\"product-img mouse-over\" id=\"4:rv:\" src=\"./images/product-4.jpeg\"/><button class=\"bag-btn\" id=\"4:ru:\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button></div><h3>Galaxy S10e</h3><h4>$622.99</h4></article><article class=\"Products-product\"><div class=\"Products-img-container\"><img alt=\"Galaxy A2 Core\" class=\"product-img mouse-over\" id=\"5:rv:\" src=\"./images/product-5.jpeg\"/><button class=\"bag-btn\" id=\"5:ru:\"><i class=\"fas fa-shopping-cart\"></i>in cart</button></div><h3>Galaxy A2 Core</h3><h4>$688.99</h4></article><article class=\"Products-product\"><div class=\"Products-img-container\"><img alt=\"Galaxy M30\" class=\"product-img mouse-over\" id=\"6:rv:\" src=\"./images/product-6.jpeg\"/><button class=\"bag-btn\" id=\"6:ru:\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button></div><h3>Galaxy M30</h3><h4>$532.99</h4></article><article class=\"Products-product\"><div class=\"Products-img-container\"><img alt=\"Galaxy M20\" class=\"product-img mouse-over\" id=\"7:rv:\" src=\"./images/product-7.jpeg\"/><button class=\"bag-btn\" id=\"7:ru:\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button></div><h3>Galaxy M20</h3><h4>$545.99</h4></article><article class=\"Products-product\"><div class=\"Products-img-container\"><img alt=\"Galaxy M10\" class=\"product-img mouse-over\" id=\"8:rv:\" src=\"./images/product-8.jpeg\"/><button class=\"bag-btn\" id=\"8:ru:\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button></div><h3>Galaxy M10</h3><h4>$440.99</h4></article><article class=\"Products-product\"><div class=\"Products-img-container\"><img alt=\"Galaxy A80\" class=\"product-img mouse-over\" id=\"9:rv:\" src=\"./images/product-9.jpeg\"/><button class=\"bag-btn\" id=\"9:ru:\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button></div><h3>Galaxy A80</h3><h4>$386.99</h4></article><article class=\"Products-product\"><div class=\"Products-img-container\"><img alt=\"Galaxy A70\" class=\"product-img mouse-over\" id=\"10:rv:\" src=\"./images/product-10.jpeg\"/><button class=\"bag-btn\" id=\"10:ru:\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button></div><h3>Galaxy A70</h3><h4>$378.99</h4></article><article class=\"Products-product\"><div class=\"Products-img-container\"><img alt=\"Galaxy A60\" class=\"product-img mouse-over\" id=\"11:rv:\" src=\"./images/product-11.jpeg\"/><button class=\"bag-btn\" id=\"11:ru:\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button></div><h3>Galaxy A60</h3><h4>$289.99</h4></article><article class=\"Products-product\"><div class=\"Products-img-container\"><img alt=\"Galaxy A30\" class=\"product-img mouse-over\" id=\"12:rv:\" src=\"./images/product-12.jpeg\"/><button class=\"bag-btn\" id=\"12:ru:\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button></div><h3>Galaxy A30</h3><h4>$248.99</h4></article></div></section><div class=\"on-click cart-overlay\" id=\":ra:\"><div class=\"on-click cart\" id=\":rb:\"><span class=\"close-cart on-click\" id=\":r9:\"><i class=\"fas fa-window-close\"></i></span><h2>Your cart</h2><div class=\"cart-content\"><div class=\"cart-item\"><img alt=\"Galaxy A2 Core\" src=\"./images/product-5.jpeg\"/><div><h4>Galaxy A2 Core</h4><h5>$688.99</h5><span class=\"remove-item on-click\" id=\":r13:\">remove</span></div><div><i class=\"fas fa-chevron-up on-click\" id=\":r14:\"></i><p class=\"item-amount\">1</p><i class=\"fas fa-chevron-down on-click\" id=\":r15:\"></i></div></div></div><div class=\"cart-footer\"><h3>your total: <span class=\"cart-total\">$688.99</span></h3><button class=\"clear-cart banner-btn\" id=\":r6:\">clear cart</button><a href=\"#/checkout\" id=\":r8:\" style=\"text-decoration: none;\"><div class=\"banner-btn clear-cart on-click\" id=\":r7:\">Checkout</div></a></div></div></div></div></body></html>"
+    },
+    {
+      "role": "system",
+      "content": "The user provided the following end instructions: Please test my website. The goal is to test as many different features as possible to find potential bugs, so make sure to include edge cases."
+    },
+    {
+      "role": "system",
+      "content": "Pursue your self-assigned sub-goal or assign a new one: Test the functionality of adding a product from a different category to the cart, and assess the cart's response to varying product quantities.."
+    },
+    {
+      "role": "system",
+      "content": "Previously executed interactions by goal: {\"Test adding different products to the cart and proceeding to checkout.\": 3, \"Check if multiple products can be added and removed from the cart, and then complete a checkout.\": 2, \"Complete a checkout process with mock customer information and validate the transaction.\": 1, \"Submit the checkout form with mock customer and address information, selecting a payment method to complete the transaction process.\": 1, \"Complete filling in the checkout form by providing mock information for the remaining fields and submit it to test the transaction processes.\": 1, \"Fill out the address information on the checkout form, select a payment method, and submit the form to test if the checkout process completes successfully.\": 1, \"Complete the address information and select a payment method for the checkout.\": 1, \"Complete the address section by filling in all required fields, choose a payment method, and submit the form to simulate a transaction.\": 1, \"Finish inputting the required fields in the Address section, select a payment method, and submit the checkout form to ensure the transaction completes properly.\": 1, \"Enter the zip code in the provided field, select a payment method, and submit the checkout form to complete the transaction process. Verify the final submission and observe any confirmation or error messages that appear.\": 1, \"Select a payment method from the dropdown menu, submit the checkout form, and observe the application's response.\": 1, \"Explore the product categories and add multiple products to the cart to test the shopping cart's handling of various items.\": 1, \"Explore and test product category pages and their functionality, including viewing products, adding them to the cart, and then navigating to the cart summary.\": 1, \"Add multiple different models of Galaxy products to the shopping cart to test the cart's functionality and UI responsiveness to multiple items.\": 1, \"Add another product from a different category to the cart and proceed to checkout. This will show how the website handles adding multiple items from different categories to the shopping cart, updates the cart total and item count, and transitions to the checkout process.\": 1, \"Test the functionality of the shopping cart's remove item and checkout options.\": 1, \"Test the checkout process including updating product quantities, removing items, and clearing the cart to observe the website's response in handling these actions.\": 1, \"Test the remove item and clear cart functionalities to ensure accurate cart updates, then proceed to checkout to evaluate the checkout process.\": 1, \"Explore the website further, focusing on the product detail pages and the functionality of the 'add to cart' buttons for multiple products. Additionally, assess the website's navigation by accessing different product categories from the navigation menu.\": 1, \"Add the Galaxy S10 5G to the cart, navigate to a different product category, and evaluate the 'add to cart' process for a different product type. This will test the capability to handle multiple products from different categories in the cart and how it updates accordingly.\": 1, \"Test the functionality of adding a product from a different category to the cart, and assess the cart's response to varying product quantities.\": 1}."
+    },
+    {
+      "role": "system",
+      "content": "Start by describing the website supplied by the function call. Give a short general description first then summarize the main elements on the website. Do not use HTML in your description. Then you may formulate a high level sub-goal to the user's instructions, that should be persued with the next couple of interactions. You should formulate a new sub-goal if the current one has been completed or seems to be unattainable. Give an action plan that explains how the goal should be reached. And finally, describe the interaction to emulate."
+    },
+    {
+      "role": "system",
+      "content": "Only use the click action with clickable elements. The clickable elements have the following ids: 5:ru:, 6:ru:, 7:ru:, 8:ru:, 9:ru:, 10:ru:, 11:ru:, 12:ru:, :r0:-home, :r0:-galaxy, :r0:-s10, :r0:-m_series, :r0:-a_series, :r1:, :r2:. "
+    }
+  ],
+  "functions": [
+    {
+      "name": "emulate_interaction",
+      "description": "Emulates a user interaction with the web application",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "page_description": {
+            "type": "string",
+            "description": "A short textual description of the state of the web application: What is the current page? What are the main elements on the page? This description should not contain any HTML."
+          },
+          "new_testing_goal": {
+            "type": "string",
+            "description": "Assigns a new high level sub-goal that shall be followed in order to complete the users instructions. This goal should take multiple user interactions to complete. The assistant shall try to complete this goal in the next couple of interactions and then assign a new one."
+          },
+          "explanation": {
+            "type": "string",
+            "description": "An action plan that explains how the goal should be reached."
+          },
+          "interaction": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "interaction_type": {
+                    "const": "click",
+                    "type": "string",
+                    "description": "The type of interaction to emulate"
+                  },
+                  "element_id": {
+                    "enum": [
+                      "5:ru:",
+                      "6:ru:",
+                      "7:ru:",
+                      "8:ru:",
+                      "9:ru:",
+                      "10:ru:",
+                      "11:ru:",
+                      "12:ru:",
+                      ":r0:-home",
+                      ":r0:-galaxy",
+                      ":r0:-s10",
+                      ":r0:-m_series",
+                      ":r0:-a_series",
+                      ":r1:",
+                      ":r2:"
+                    ],
+                    "type": "string",
+                    "description": "The id of the element to interact with"
+                  }
+                },
+                "required": [
+                  "interaction_type",
+                  "element_id"
+                ],
+                "description": "clicks on a html element"
+              }
+            ],
+            "description": "The interaction to emulate"
+          }
+        },
+        "required": [
+          "page_description",
+          "explanationinteraction"
+        ]
+      }
+    }
+  ]
+}

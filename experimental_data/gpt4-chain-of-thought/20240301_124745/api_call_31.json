@@ -1,0 +1,379 @@
+{
+  "response": {
+    "id": "chatcmpl-8xvn4QUopgmqlpfuoxaEukiZ1H26R",
+    "object": "chat.completion",
+    "created": 1709294190,
+    "model": "gpt-4-0125-preview",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": null,
+          "function_call": {
+            "name": "emulate_interaction",
+            "arguments": "{\"page_description\":\"The checkout page now has all customer and address information filled out, except for the Zip Code which remains empty. The payment method is not yet selected. This page is crucial for completing transactions and testing the application's checkout process. The navigation menu is available for exploring other product categories. \",\"new_testing_goal\":\"Fill in the Zip Code, select a payment method, and submit the checkout form to fully test the checkout process including form submission and transaction completion.\",\"explanation\":\"First, fill in the Zip Code field to complete the address information. Next, select a payment method from the options available. Finally, attempt to submit the checkout form by clicking the 'Submit' button. This will verify the form submission process and the application's handling of the transaction.\",\"interaction\":{\"interaction_type\":\"send_keys\",\"element_id\":\":r1n:\",\"keys\":\"10001\"}}"
+          }
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 5459,
+      "completion_tokens": 176,
+      "total_tokens": 5635
+    },
+    "system_fingerprint": "fp_00ceb2df5b"
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "Given a web application, you are tasked with assisting in testing its functionality. The emulate_interaction function takes an interaction as input and emulates it on the web application. The return value of the function is the new, filtered HTML source code of the web application. The source code of previous interactions will be omitted from the input to the assistant. "
+    },
+    {
+      "role": "system",
+      "content": "Here are some examples how the 'emulate_interaction' function should be used."
+    },
+    {
+      "role": "user",
+      "content": "Please test my website: omitted"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\": \"The start page of a web site with multiple calculators for different purposes. There are buttons to navigate to the differet calculators and a button to switch the language of the web site. The current language is English.\", \"new_testing_goal\": \"Test the calculator for calculating the area of a circle in multiple languages.\", \"explanation\": \"First navigate to the calculator for the area of a circle. Then input a radius and calculate the area. Switch the language of the web site and repeat the process.\", \"interaction\": {\"interaction_type\": \"click\", \"element_id\": \"btn-area-circle\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "system",
+      "content": "Pursue your self-assigned sub-goal or assign a new one: Test the calculator for calculating the area of a circle in multiple languages.."
+    },
+    {
+      "role": "system",
+      "content": "Previously executed interactions by goal: {\"Test the calculator for calculating the area of a circle in multiple languages.\": 1 }."
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\": \"A page with a calculator for calculating the area of a circle. There is an empty text field to enter the radius of the circle and a button labeled 'Calculate'. The current language is English.\", \"explanation\": \"Enter the radius in the text field and click the 'Calculate' button. Then switch the language of the web site and repeat the process.\", \"interaction\": {\"interaction_type\": \"send_keys\", \"element_id\": \"radius\", \"keys\": \"5\"}}"
+      }
+    },
+    {
+      "role": "user",
+      "content": "Please test my website: omitted"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\": \"An article on a news website. The main part of the article is hidden by a login prompt. The navigation bar has links to different news categories.\", \"new_testing_goal\": \"Subscribe to the comment section of the article.\", \"explanation\": \"To subscribe to a comment sections the user has to be logged in. First login to the website. Then navigate to an article and subscribe to the comment section.\", \"interaction\": {\"interaction_type\": \"send_keys\", \"element_id\": \"user-id\", \"keys\": \"john.doe@fictional.tld\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "system",
+      "content": "Pursue your self-assigned sub-goal or assign a new one: Subscribe to the comment section of the article.."
+    },
+    {
+      "role": "system",
+      "content": "Previously executed interactions by goal: {\"Subscribe to the comment section of the article.\": 1 }."
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\": \"An article on a news website. The main part of the article is hidden by a login prompt. The navigation bar has links to different news categories.\", \"explanation\": \"Complete the login process. Then subscribe to the comment section.\", \"interaction\": {\"interaction_type\": \"send_keys\", \"element_id\": \"user-password\", \"keys\": \"verysecurepassword\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "system",
+      "content": "Pursue your self-assigned sub-goal or assign a new one: Subscribe to the comment section of the article.."
+    },
+    {
+      "role": "system",
+      "content": "Previously executed interactions by goal: {\"Subscribe to the comment section of the article.\": 2 }."
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\": \"An article on a news website. The main part of the article is hidden by a login prompt. The navigation bar has links to different news categories.\", \"explanation\": \"Complete the login process. Then subscribe to the comment section.\", \"interaction\": {\"interaction_type\": \"click\", \"element_id\": \"login-btn\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "system",
+      "content": "Pursue your self-assigned sub-goal or assign a new one: Subscribe to the comment section of the article.."
+    },
+    {
+      "role": "system",
+      "content": "Previously executed interactions by goal: {\"Subscribe to the comment section of the article.\": 3 }."
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\": \"An article on a news website. The navigation bar has links to different news categories.\", \"explanation\": \"Subscribe to the article by clicking on the subscribe button.\", \"interaction\": {\"interaction_type\": \"click\", \"element_id\": \"subscribe-btn\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "system",
+      "content": "Pursue your self-assigned sub-goal or assign a new one: Subscribe to the comment section of the article.."
+    },
+    {
+      "role": "system",
+      "content": "Previously executed interactions by goal: {\"Subscribe to the comment section of the article.\": 4 }."
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\": \"An article on a news website. There is a popup message saying success. The navigation bar has links to different news categories.\", \"new_testing_goal\": \"Test if it's possible to subscribe to the article multiple times and if it's possible to unsubscribe.\", \"explanation\": \"Close the success message and try to subscribe to the article again. Then try to unsubscribe from the article.\", \"interaction\": {\"interaction_type\": \"click\", \"element_id\": \"success-close\"}}"
+      }
+    },
+    {
+      "role": "user",
+      "content": "Please test my website. The goal is to test as many different features as possible to find potential bugs, so make sure to include edge cases. Here is the filtered HTML source code of the web application: 'omitted'. "
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The checkout page displaying a summary of the cart with two items, options for entering customer and address information, and selecting a payment method. The checkout form is partially filled with the first name 'John', and the rest of the customer, address, and payment information fields are empty. There's a submit button for completing the transaction. The top navigation menu allows navigation to different product categories.\",\"explanation\":\"Continue filling out the checkout form by entering the email address and then proceed to fill in the address information. After the entire checkout form is filled, attempt to complete the transaction by submitting the form. This process will help in evaluating the form submission and interaction with the payment gateway or error handling mechanisms.\",\"interaction\":{\"interaction_type\":\"send_keys\",\"element_id\":\":r1i:\",\"keys\":\"john.doe@example.com\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The checkout page of the web application currently displays a summary of the cart with two items, the Galaxy A2 Core and the Galaxy M30, indicating a successful addition of products from different categories. The total cost is shown. The page includes sections for inputting customer information, address details, and choosing a payment method. Currently, the customer's first name, last name, and e-mail have been filled in. The rest of the form remains unfilled. The navigation menu offers ways to return to other product categories.\",\"new_testing_goal\":\"Fill in the remaining address details, select a payment method, and submit the form. This will test the web application's ability to process a transaction and handle form submissions correctly.\",\"explanation\":\"Proceed to fill in the address details starting with the country, followed by the street address, city, state, and zip code. After all address details are entered, select a payment method. Finally, submit the form to complete the transaction. This sequence of actions will test the web application's handling of form data submission and transaction processing.\",\"interaction\":{\"interaction_type\":\"send_keys\",\"element_id\":\":r1j:\",\"keys\":\"United States\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The checkout page now shows the customer and address information sections partially filled. The customer's first name, last name, and email are completed, and the country is set to 'United States'. Remaining fields like street address, city, state, and zip code need to be filled, and a payment method needs to be selected before the transaction can be completed. The page also features a navigation menu for returning to product categories.\",\"new_testing_goal\":\"Complete filling in the address information, select a payment method, and submit the checkout form.\",\"explanation\":\"Proceed to fill in the Street Address field next. After completing the address information, choose a payment method from the available options and then submit the form to finalize the transaction. This will test the web application's functionality in handling checkout processes.\",\"interaction\":{\"interaction_type\":\"send_keys\",\"element_id\":\":r1k:\",\"keys\":\"123 Main St\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The checkout page currently has customer and some address information filled out. Customer's name, email, country, and street address have been entered. Remaining fields such as city, state, and zip code are still empty. There is also a section for selecting a payment method, but no option has been selected yet. A submit button is available at the bottom of the form.\",\"new_testing_goal\":\"Fill in the remaining address details, select a payment method, and attempt submitting the form to complete the transaction. This activity will help in checking the web application's process flow and its ability to handle transactions.\",\"explanation\":\"First, fill in the 'City' field with an example city name, then proceed to fill in the 'State' and 'Zip Code' fields. After all address details are filled, select a payment method from the given options. With all the required information filled, attempt submitting the form by clicking the 'Submit' button. This process will complete testing the checkout procedure.\",\"interaction\":{\"interaction_type\":\"send_keys\",\"element_id\":\":r1l:\",\"keys\":\"Example City\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The checkout page now features completed customer information and partially filled address information. The country 'United States', street address '123 Main St', and city 'Example City' have been provided. The fields for state and zip code are still empty, and a payment method has not yet been selected. The bottom of the page has a submit button.\",\"new_testing_goal\":\"Finish filling the address details, including the state and zip code, select a payment method, and then submit the checkout form to complete the transaction. This step is crucial to test the functionality and responsiveness of the checkout process.\",\"explanation\":\"Proceed to fill in the State field with a sample state name. After this, fill in the Zip Code, select a payment method, and then attempt to submit the form by clicking the 'Submit' button. This sequence will help in testing the functionality and robustness of the checkout process as well as the application's handling of form submissions.\",\"interaction\":{\"interaction_type\":\"send_keys\",\"element_id\":\":r1m:\",\"keys\":\"New York\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "<html lang=\"en\"><head><title>React App</title></head><body><div id=\"root\"><nav class=\"Navbar visible\"><div class=\"Top-row\"><div class=\"Navbar-center\"><span class=\"Navbar-icon on-click\" id=\":r1:\"><i class=\"fas fa-bars\"></i></span><div class=\"Navbar-cart-btn on-click\" id=\":r2:\"><span class=\"Navbar-icon\"><i class=\"fas fa-cart-plus\"></i></span><div class=\"cart-items\">2</div></div></div></div><menu class=\"visible\"><li><a class=\"\" href=\"#/\" id=\":r0:-home\">Home</a></li><li><a class=\"\" href=\"#/c/galaxy\" id=\":r0:-galaxy\">Galaxy</a></li><li><a class=\"\" href=\"#/c/s10\" id=\":r0:-s10\">S10</a></li><li><a class=\"\" href=\"#/c/m_series\" id=\":r0:-m_series\">M Series</a></li><li><a class=\"\" href=\"#/c/a_series\" id=\":r0:-a_series\">A Series</a></li></menu></nav><div class=\"checkout\"><div class=\"checkout__cart\"><h2>Cart</h2><div class=\"cart-item\"><img alt=\"Galaxy A2 Core\" src=\"./images/product-5.jpeg\"/><div><h4>Galaxy A2 Core</h4><h5>$688.99</h5><span class=\"remove-item on-click\" id=\":r1a:\">remove</span></div><div><i class=\"fas fa-chevron-up on-click\" id=\":r1b:\"></i><p class=\"item-amount\">1</p><i class=\"fas fa-chevron-down on-click\" id=\":r1c:\"></i></div></div><div class=\"cart-item\"><img alt=\"Galaxy M30\" src=\"./images/product-6.jpeg\"/><div><h4>Galaxy M30</h4><h5>$532.99</h5><span class=\"remove-item on-click\" id=\":r1d:\">remove</span></div><div><i class=\"fas fa-chevron-up on-click\" id=\":r1e:\"></i><p class=\"item-amount\">1</p><i class=\"fas fa-chevron-down on-click\" id=\":r1f:\"></i></div></div><h3>Total: $1,221.98</h3></div><form class=\"checkout__form\"><div class=\"checkout__form__customer\"><h2>Customer</h2><div><label for=\":r1g:\">First Name</label><input class=\"\" id=\":r1g:\" type=\"text\" value=\"John\"/></div><div><label for=\":r1h:\">Last Name</label><input class=\"\" id=\":r1h:\" type=\"text\" value=\"Doe\"/></div><div><label for=\":r1i:\">E-Mail</label><input class=\"\" id=\":r1i:\" type=\"text\" value=\"john.doe@example.com\"/></div></div><div class=\"checkout__form__address\"><h2>Address</h2><div><label for=\":r1j:\">Country</label><input class=\"\" id=\":r1j:\" type=\"text\" value=\"United States\"/></div><div><label for=\":r1k:\">Street Address</label><input class=\"\" id=\":r1k:\" type=\"text\" value=\"123 Main St\"/></div><div><label for=\":r1l:\">City</label><input class=\"\" id=\":r1l:\" type=\"text\" value=\"Example City\"/></div><div><label for=\":r1m:\">State</label><input class=\"\" id=\":r1m:\" type=\"text\" value=\"New York\"/></div><div><label for=\":r1n:\">Zip Code</label><input class=\"\" id=\":r1n:\" type=\"text\" value=\"\"/></div></div><div class=\"checkout__form__payment\"><h2>Payment</h2><select><option value=\"0\">Invoice</option><option value=\"1\">Credit Card</option><option value=\"2\">PayPal</option></select></div><button id=\":r19:\" type=\"submit\">Submit</button></form></div><div class=\"on-click cart-overlay\" id=\":ra:\"><div class=\"on-click cart\" id=\":rb:\"><span class=\"close-cart on-click\" id=\":r9:\"><i class=\"fas fa-window-close\"></i></span><h2>Your cart</h2><div class=\"cart-content\"><div class=\"cart-item\"><img alt=\"Galaxy A2 Core\" src=\"./images/product-5.jpeg\"/><div><h4>Galaxy A2 Core</h4><h5>$688.99</h5><span class=\"remove-item on-click\" id=\":r13:\">remove</span></div><div><i class=\"fas fa-chevron-up on-click\" id=\":r14:\"></i><p class=\"item-amount\">1</p><i class=\"fas fa-chevron-down on-click\" id=\":r15:\"></i></div></div><div class=\"cart-item\"><img alt=\"Galaxy M30\" src=\"./images/product-6.jpeg\"/><div><h4>Galaxy M30</h4><h5>$532.99</h5><span class=\"remove-item on-click\" id=\":r16:\">remove</span></div><div><i class=\"fas fa-chevron-up on-click\" id=\":r17:\"></i><p class=\"item-amount\">1</p><i class=\"fas fa-chevron-down on-click\" id=\":r18:\"></i></div></div></div><div class=\"cart-footer\"><h3>your total: <span class=\"cart-total\">$1,221.98</span></h3><button class=\"clear-cart banner-btn\" id=\":r6:\">clear cart</button><a href=\"#/checkout\" id=\":r8:\" style=\"text-decoration: none;\"><div class=\"banner-btn clear-cart on-click\" id=\":r7:\">Checkout</div></a></div></div></div></div></body></html>"
+    },
+    {
+      "role": "system",
+      "content": "The user provided the following end instructions: Please test my website. The goal is to test as many different features as possible to find potential bugs, so make sure to include edge cases."
+    },
+    {
+      "role": "system",
+      "content": "Pursue your self-assigned sub-goal or assign a new one: Finish filling the address details, including the state and zip code, select a payment method, and then submit the checkout form to complete the transaction. This step is crucial to test the functionality and responsiveness of the checkout process.."
+    },
+    {
+      "role": "system",
+      "content": "Previously executed interactions by goal: {\"Test the shopping cart functionality by adding products to the cart and checking out.\": 3, \"Proceed to checkout and test the checkout process for completeness and any potential issues.\": 1, \"Complete the checkout process while testing form validation and response to incomplete inputs.\": 1, \"Verify form validation by submitting an incomplete form.\": 1, \"Test the responsiveness of the form to incomplete submissions and ensure error handling is in place.\": 1, \"Submit the checkout form with incomplete address information to test form validation and response.\": 1, \"Attempt to submit the checkout form with essential information missing, to observe the website's handling of incomplete submissions.\": 1, \"Adjust the cart contents by removing items and changing quantities, then revisit the checkout process.\": 1, \"Increase the quantity of Galaxy S10+ in the cart, then proceed to fill in the remaining mandatory address information.\": 1, \"Complete filling the address information, select a payment option, and attempt to submit the checkout form to observe the final validation and submission process.\": 1, \"Fill in all the required address fields, select a payment option, and submit the form to complete the checkout process.\": 1, \"Fill in the State and Zip Code fields, select a payment option, and then attempt to submit the checkout form.\": 1, \"Fill the missing Zip Code field, select a payment option, and submit the checkout form to validate the entire checkout process.\": 1, \"Complete the checkout process by selecting a payment method and submitting the form. Ensure the form's submission is properly handled, and any confirmation or error messages are observed.\": 1, \"Explore the functionality of the clear cart button and navigate the store to add new items to the cart.\": 1, \"Explore the website's product range by navigating through the various product categories available in the main navigation. Add products to the cart from different categories to test the cart's functionality in adding and displaying items.\": 1, \"Add a product from the 'Galaxy' category to the cart to test the add to cart functionality, including the cart's ability to update the item count and display the correct total cost.\": 1, \"Navigate to the 'M Series' category and add a product to the cart to test the website's ability to handle multiple types of products in the cart. This will help in assessing the cart's functionality when dealing with varied items simultaneously.\": 1, \"Navigate to the 'M Series' category and add a product to the cart. This will test the web application\\u2019s ability to handle adding different types of products to the cart and updating the cart's item count and total cost accordingly.\": 1, \"Add a Galaxy M series product to the cart and check the cart's functionality regarding item count and total cost update. Subsequently, explore other sections and add more products to test the cart's handling of multiple items.\": 1, \"Proceed to checkout and simulate a purchase to test the checkout functionality and the application's response to completing a transaction.\": 1, \"Complete the checkout process by filling in all required customer, address information, selecting a payment method, and submitting the form. This will test the web application's handling of the transaction completion.\": 1, \"Fill in the last name and email address fields to continue testing the checkout process. After successfully filling these fields, proceed to fill in the address information and select a payment method. This step is crucial for testing the form's responsiveness and the completion of the checkout process.\": 2, \"Fill in the remaining address details, select a payment method, and submit the form. This will test the web application's ability to process a transaction and handle form submissions correctly.\": 1, \"Complete filling in the address information, select a payment method, and submit the checkout form.\": 1, \"Fill in the remaining address details, select a payment method, and attempt submitting the form to complete the transaction. This activity will help in checking the web application's process flow and its ability to handle transactions.\": 1, \"Finish filling the address details, including the state and zip code, select a payment method, and then submit the checkout form to complete the transaction. This step is crucial to test the functionality and responsiveness of the checkout process.\": 1}."
+    },
+    {
+      "role": "system",
+      "content": "Start by describing the website supplied by the function call. Give a short general description first then summarize the main elements on the website. Do not use HTML in your description. Then you may formulate a high level sub-goal to the user's instructions, that should be persued with the next couple of interactions. You should formulate a new sub-goal if the current one has been completed or seems to be unattainable. Give an action plan that explains how the goal should be reached. And finally, describe the interaction to emulate."
+    },
+    {
+      "role": "system",
+      "content": "Only use the click action with clickable elements. The clickable elements have the following ids: :r19:, :r0:-home, :r0:-galaxy, :r0:-s10, :r0:-m_series, :r0:-a_series, :r1:, :r2:, :r1a:, :r1b:, :r1c:, :r1d:, :r1e:, :r1f:. Only use the send_keys action with writable elements. The writable elements have the following ids: :r1g:, :r1h:, :r1i:, :r1j:, :r1k:, :r1l:, :r1m:, :r1n:. Only use the clear action with clearable elements. The clearable elements have the following ids: :r1g:, :r1h:, :r1i:, :r1j:, :r1k:, :r1l:, :r1m:. "
+    }
+  ],
+  "functions": [
+    {
+      "name": "emulate_interaction",
+      "description": "Emulates a user interaction with the web application",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "page_description": {
+            "type": "string",
+            "description": "A short textual description of the state of the web application: What is the current page? What are the main elements on the page? This description should not contain any HTML."
+          },
+          "new_testing_goal": {
+            "type": "string",
+            "description": "Assigns a new high level sub-goal that shall be followed in order to complete the users instructions. This goal should take multiple user interactions to complete. The assistant shall try to complete this goal in the next couple of interactions and then assign a new one."
+          },
+          "explanation": {
+            "type": "string",
+            "description": "An action plan that explains how the goal should be reached."
+          },
+          "interaction": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "interaction_type": {
+                    "const": "click",
+                    "type": "string",
+                    "description": "The type of interaction to emulate"
+                  },
+                  "element_id": {
+                    "enum": [
+                      ":r19:",
+                      ":r0:-home",
+                      ":r0:-galaxy",
+                      ":r0:-s10",
+                      ":r0:-m_series",
+                      ":r0:-a_series",
+                      ":r1:",
+                      ":r2:",
+                      ":r1a:",
+                      ":r1b:",
+                      ":r1c:",
+                      ":r1d:",
+                      ":r1e:",
+                      ":r1f:"
+                    ],
+                    "type": "string",
+                    "description": "The id of the element to interact with"
+                  }
+                },
+                "required": [
+                  "interaction_type",
+                  "element_id"
+                ],
+                "description": "clicks on a html element"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "interaction_type": {
+                    "const": "send_keys",
+                    "type": "string",
+                    "description": "The type of interaction to emulate"
+                  },
+                  "element_id": {
+                    "enum": [
+                      ":r1g:",
+                      ":r1h:",
+                      ":r1i:",
+                      ":r1j:",
+                      ":r1k:",
+                      ":r1l:",
+                      ":r1m:",
+                      ":r1n:"
+                    ],
+                    "type": "string",
+                    "description": "The id of the element to interact with"
+                  },
+                  "keys": {
+                    "type": "string",
+                    "description": "the keys to be sent to the input element"
+                  }
+                },
+                "required": [
+                  "interaction_type",
+                  "element_id",
+                  "keys"
+                ],
+                "description": "sends keystrokes to an html element"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "interaction_type": {
+                    "const": "clear",
+                    "type": "string",
+                    "description": "The type of interaction to emulate"
+                  },
+                  "element_id": {
+                    "enum": [
+                      ":r1g:",
+                      ":r1h:",
+                      ":r1i:",
+                      ":r1j:",
+                      ":r1k:",
+                      ":r1l:",
+                      ":r1m:"
+                    ],
+                    "type": "string",
+                    "description": "The id of the element to interact with"
+                  }
+                },
+                "required": [
+                  "interaction_type",
+                  "element_id"
+                ],
+                "description": "resets the contents of an html element"
+              }
+            ],
+            "description": "The interaction to emulate"
+          }
+        },
+        "required": [
+          "page_description",
+          "explanationinteraction"
+        ]
+      }
+    }
+  ]
+}

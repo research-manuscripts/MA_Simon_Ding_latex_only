@@ -1,0 +1,220 @@
+{
+  "response": {
+    "id": "chatcmpl-8xArgUtbMhU8h0LWkBEMF1Da78PJU",
+    "object": "chat.completion",
+    "created": 1709113808,
+    "model": "gpt-4-0125-preview",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": null,
+          "function_call": {
+            "name": "emulate_interaction",
+            "arguments": "{\"page_description\":\"The web application has redirected to the checkout page after clicking the 'Checkout' button. The checkout page is divided into three sections: Cart, Customer Information, and Address details. The Cart section lists the products added with options to remove each and adjust their quantities, and shows the total price. In the Customer Information section, fields for entering first name, last name, and email address are provided. The Address section asks for country, street address, city, state, and zip code. At the bottom, there's a Payment section with options for payment methods including 'Invoice', 'Credit Card', and 'PayPal'. A 'Submit' button is available to complete the checkout process.\",\"new_testing_goal\":\"Test the checkout functionality by filling in customer information, address details, and selecting a payment method.\",\"explanation\":\"Fill in the required fields in the Customer Information and Address sections, choose a payment method, and then submit the form. This will test if the data is correctly sent and handled by the server, and if any validation is performed on the input fields.\",\"interaction\":{\"interaction_type\":\"send_keys\",\"element_id\":\":rp:\",\"keys\":\"John\"}}"
+          }
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3154,
+      "completion_tokens": 236,
+      "total_tokens": 3390
+    },
+    "system_fingerprint": "fp_89b1a570e1"
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "Given a web application, you are tasked with assisting in testing its functionality. The emulate_interaction function takes an interaction as input and emulates it on the web application. The return value of the function is the new, filtered HTML source code of the web application. The source code of previous interactions will be omitted from the input to the assistant. "
+    },
+    {
+      "role": "user",
+      "content": "Please test my website. The goal is to test as many different features as possible to find potential bugs, so make sure to include edge cases. Here is the filtered HTML source code of the web application: 'omitted'. "
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The website appears to be an e-commerce platform, specifically a Samsung Store, focusing on selling various Galaxy models including the S10 series and other Galaxy series smartphones. The homepage showcases a navigation bar with links to different phone categories, a hero section with a prominent call-to-action button urging visitors to shop now, and a products section that lists four Galaxy S10 models with 'add to cart' buttons for each. Other features include a shopping cart icon indicating the number of items in the cart, and potentially a shopping cart detail view, given there are elements related to closing the cart and checking out. \",\"new_testing_goal\":\"Add multiple items to the shopping cart to check the cart's update mechanism and view the cart's contents.\",\"explanation\":\"Start by adding the first product (Galaxy S10 5G) to the shopping cart to observe how the website handles the addition of items to the cart. After adding the item, the next step will be to check the cart by clicking on the shopping cart icon. This will help in verifying whether the item was successfully added and how the cart updates its contents and total amount.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\"1:r4:\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"After adding the first product (Galaxy S10 5G) to the shopping cart, the cart updated to show 1 item. The cart overlay is visible, displaying the details of the Galaxy S10 5G added to the cart, including an image, the product name, price, and options to remove the item or adjust its quantity. The total price of the cart is also shown, along with buttons for clearing the cart and proceeding to checkout.\",\"explanation\":\"Next, close the shopping cart overlay to return to the products page. This action is necessary to add more items to the cart to further test the cart's update mechanism.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":r9:\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"Now back on the products page, it lists four Galaxy S10 models including the Galaxy S10 5G (already in the cart), Galaxy S10+, Galaxy S10, and Galaxy S10e. Each product has an 'add to cart' button, except for the Galaxy S10 5G which is indicated as 'in cart'. The shopping cart icon on the navigation bar shows '1' indicating there is one item in the cart.\",\"explanation\":\"Next, add the Galaxy S10+ to the shopping cart to test further the cart's update mechanism, especially with different models. This action is to observe how the application handles multiple distinct items in the cart, whether it updates the item count correctly, and avoids any duplication issues.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\"2:r4:\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"After adding the Galaxy S10+ to the cart, the shopping cart now shows 2 items. There's a cart overlay active with details for both Galaxy S10 5G and Galaxy S10+, displaying images, names, prices, and options to adjust quantities or remove items. The total price is updated accordingly. Other notable elements include 'clear cart' and 'checkout' buttons in the cart overlay.\",\"explanation\":\"To continue testing the cart's functionality, especially with quantity adjustments for added items, increase the quantity of one product, the Galaxy S10 5G, by clicking the 'increase quantity' button associated with it. This will help in assessing the application's ability to handle changes in quantities of the same item within the cart.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":rd:\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"After successfully increasing the quantity of the Galaxy S10 5G in the shopping cart, the total cart count now shows 3 items. The website features a navigation bar with various categories, a hero section with a shop now button, and a products section listing available Galaxy S10 models. Two of these models are already in the cart indicated as 'in cart', and the other two have 'add to cart' buttons. The cart overlay is active and displays the Galaxy S10 5G with increased quantity and Galaxy S10+ along with options for removing items, adjusting quantities, and the total price. There are also options to clear the cart and proceed to checkout.\",\"new_testing_goal\":\"Proceed to checkout to test the website's checkout process.\",\"explanation\":\"Click on the 'Checkout' button in the shopping cart overlay to initiate the checkout process. This will help in assessing the website's checkout functionality, including redirection to the checkout page, data handling, and potential UI/UX issues around the checkout experience.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":r7:\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "<html lang=\"en\"><head><title>React App</title></head><body><div id=\"root\"><nav class=\"Navbar\"><div class=\"Top-row\"><div class=\"Navbar-center\"><span class=\"Navbar-icon on-click\" id=\":r1:\"><i class=\"fas fa-bars\"></i></span><div class=\"Navbar-cart-btn on-click\" id=\":r2:\"><span class=\"Navbar-icon\"><i class=\"fas fa-cart-plus\"></i></span><div class=\"cart-items\">3</div></div></div></div><menu class=\"\"><li><a class=\"\" href=\"#/\" id=\":r0:-home\">Home</a></li><li><a class=\"\" href=\"#/c/galaxy\" id=\":r0:-galaxy\">Galaxy</a></li><li><a class=\"\" href=\"#/c/s10\" id=\":r0:-s10\">S10</a></li><li><a class=\"\" href=\"#/c/m_series\" id=\":r0:-m_series\">M Series</a></li><li><a class=\"\" href=\"#/c/a_series\" id=\":r0:-a_series\">A Series</a></li></menu></nav><div class=\"checkout\"><div class=\"checkout__cart\"><h2>Cart</h2><div class=\"cart-item\"><img alt=\"Galaxy S10 5G\" src=\"./images/product-1.jpeg\"/><div><h4>Galaxy S10 5G</h4><h5>$910.99</h5><span class=\"remove-item on-click\" id=\":rj:\">remove</span></div><div><i class=\"fas fa-chevron-up on-click\" id=\":rk:\"></i><p class=\"item-amount\">2</p><i class=\"fas fa-chevron-down on-click\" id=\":rl:\"></i></div></div><div class=\"cart-item\"><img alt=\"Galaxy S10+\" src=\"./images/product-2.jpeg\"/><div><h4>Galaxy S10+</h4><h5>$812.99</h5><span class=\"remove-item on-click\" id=\":rm:\">remove</span></div><div><i class=\"fas fa-chevron-up on-click\" id=\":rn:\"></i><p class=\"item-amount\">1</p><i class=\"fas fa-chevron-down on-click\" id=\":ro:\"></i></div></div><h3>Total: $2,634.97</h3></div><form class=\"checkout__form\"><div class=\"checkout__form__customer\"><h2>Customer</h2><div><label for=\":rp:\">First Name</label><input class=\"\" id=\":rp:\" type=\"text\" value=\"\"/></div><div><label for=\":rq:\">Last Name</label><input class=\"\" id=\":rq:\" type=\"text\" value=\"\"/></div><div><label for=\":rr:\">E-Mail</label><input class=\"\" id=\":rr:\" type=\"text\" value=\"\"/></div></div><div class=\"checkout__form__address\"><h2>Address</h2><div><label for=\":rs:\">Country</label><input class=\"\" id=\":rs:\" type=\"text\" value=\"\"/></div><div><label for=\":rt:\">Street Address</label><input class=\"\" id=\":rt:\" type=\"text\" value=\"\"/></div><div><label for=\":ru:\">City</label><input class=\"\" id=\":ru:\" type=\"text\" value=\"\"/></div><div><label for=\":rv:\">State</label><input class=\"\" id=\":rv:\" type=\"text\" value=\"\"/></div><div><label for=\":r10:\">Zip Code</label><input class=\"\" id=\":r10:\" type=\"text\" value=\"\"/></div></div><div class=\"checkout__form__payment\"><h2>Payment</h2><select><option value=\"0\">Invoice</option><option value=\"1\">Credit Card</option><option value=\"2\">PayPal</option></select></div><button id=\":ri:\" type=\"submit\">Submit</button></form></div><div class=\"on-click cart-overlay\" id=\":ra:\"><div class=\"on-click cart\" id=\":rb:\"><span class=\"close-cart on-click\" id=\":r9:\"><i class=\"fas fa-window-close\"></i></span><h2>Your cart</h2><div class=\"cart-content\"><div class=\"cart-item\"><img alt=\"Galaxy S10 5G\" src=\"./images/product-1.jpeg\"/><div><h4>Galaxy S10 5G</h4><h5>$910.99</h5><span class=\"remove-item on-click\" id=\":rc:\">remove</span></div><div><i class=\"fas fa-chevron-up on-click\" id=\":rd:\"></i><p class=\"item-amount\">2</p><i class=\"fas fa-chevron-down on-click\" id=\":re:\"></i></div></div><div class=\"cart-item\"><img alt=\"Galaxy S10+\" src=\"./images/product-2.jpeg\"/><div><h4>Galaxy S10+</h4><h5>$812.99</h5><span class=\"remove-item on-click\" id=\":rf:\">remove</span></div><div><i class=\"fas fa-chevron-up on-click\" id=\":rg:\"></i><p class=\"item-amount\">1</p><i class=\"fas fa-chevron-down on-click\" id=\":rh:\"></i></div></div></div><div class=\"cart-footer\"><h3>your total: <span class=\"cart-total\">$2,634.97</span></h3><button class=\"clear-cart banner-btn\" id=\":r6:\">clear cart</button><a href=\"#/checkout\" id=\":r8:\" style=\"text-decoration: none;\"><div class=\"banner-btn clear-cart on-click\" id=\":r7:\">Checkout</div></a></div></div></div></div></body></html>"
+    },
+    {
+      "role": "system",
+      "content": "The user provided the following end instructions: Please test my website. The goal is to test as many different features as possible to find potential bugs, so make sure to include edge cases."
+    },
+    {
+      "role": "system",
+      "content": "Pursue your self-assigned sub-goal or assign a new one: Proceed to checkout to test the website's checkout process.."
+    },
+    {
+      "role": "system",
+      "content": "Previously executed interactions by goal: {\"Add multiple items to the shopping cart to check the cart's update mechanism and view the cart's contents.\": 4, \"Proceed to checkout to test the website's checkout process.\": 1}."
+    },
+    {
+      "role": "system",
+      "content": "Start by describing the website supplied by the function call. Give a short general description first then summarize the main elements on the website. Do not use HTML in your description. Then you may formulate a high level sub-goal to the user's instructions, that should be persued with the next couple of interactions. You should formulate a new sub-goal if the current one has been completed or seems to be unattainable. Give an action plan that explains how the goal should be reached. And finally, describe the interaction to emulate."
+    },
+    {
+      "role": "system",
+      "content": "Only use the click action with clickable elements. The clickable elements have the following ids: :ri:, :r1:, :r2:, :rj:, :rk:, :rl:, :rm:, :rn:, :ro:. Only use the send_keys action with writable elements. The writable elements have the following ids: :rp:, :rq:, :rr:, :rs:, :rt:, :ru:, :rv:, :r10:. "
+    }
+  ],
+  "functions": [
+    {
+      "name": "emulate_interaction",
+      "description": "Emulates a user interaction with the web application",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "page_description": {
+            "type": "string",
+            "description": "A short textual description of the state of the web application: What is the current page? What are the main elements on the page? This description should not contain any HTML."
+          },
+          "new_testing_goal": {
+            "type": "string",
+            "description": "Assigns a new high level sub-goal that shall be followed in order to complete the users instructions. This goal should take multiple user interactions to complete. The assistant shall try to complete this goal in the next couple of interactions and then assign a new one."
+          },
+          "explanation": {
+            "type": "string",
+            "description": "An action plan that explains how the goal should be reached."
+          },
+          "interaction": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "interaction_type": {
+                    "const": "click",
+                    "type": "string",
+                    "description": "The type of interaction to emulate"
+                  },
+                  "element_id": {
+                    "enum": [
+                      ":ri:",
+                      ":r1:",
+                      ":r2:",
+                      ":rj:",
+                      ":rk:",
+                      ":rl:",
+                      ":rm:",
+                      ":rn:",
+                      ":ro:"
+                    ],
+                    "type": "string",
+                    "description": "The id of the element to interact with"
+                  }
+                },
+                "required": [
+                  "interaction_type",
+                  "element_id"
+                ],
+                "description": "clicks on a html element"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "interaction_type": {
+                    "const": "send_keys",
+                    "type": "string",
+                    "description": "The type of interaction to emulate"
+                  },
+                  "element_id": {
+                    "enum": [
+                      ":rp:",
+                      ":rq:",
+                      ":rr:",
+                      ":rs:",
+                      ":rt:",
+                      ":ru:",
+                      ":rv:",
+                      ":r10:"
+                    ],
+                    "type": "string",
+                    "description": "The id of the element to interact with"
+                  },
+                  "keys": {
+                    "type": "string",
+                    "description": "the keys to be sent to the input element"
+                  }
+                },
+                "required": [
+                  "interaction_type",
+                  "element_id",
+                  "keys"
+                ],
+                "description": "sends keystrokes to an html element"
+              }
+            ],
+            "description": "The interaction to emulate"
+          }
+        },
+        "required": [
+          "page_description",
+          "explanationinteraction"
+        ]
+      }
+    }
+  ]
+}
