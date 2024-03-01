@@ -1,0 +1,74 @@
+@startuml
+
+class Action {
+String elementId
+void execute()
+}
+
+object Click {
+name="click"
+description=\n"clicks on an html element"
+adjective="clickable"
+silentExceptions=[ClickIntercepted]
+}
+object Clear{
+name="clear"
+description=\n"resets the contents of an HTML element"
+adjective="clearable"
+}
+object SendKeys{
+name="send_keys"
+description=\n"sends keystrokes to an html element"
+adjective="writable"
+}
+
+ActionType <|-- Click
+ActionType <|-- Clear
+ActionType <|-- SendKeys
+
+ActionExecutor <--* ActionType
+ActionFactory <--* ActionType
+ArgumentDescriptor "*" <--* ActionType
+
+ActionType <--o Action
+
+
+class ActionType<T extends Action>{
+String name
+String description
+String adjective
+Class[] silentExceptions
+}
+
+note right of ActionType
+Die Attribute von ActionType werden benutzt,
+um die Eingabe für das LLM zu erzeugen.
+end note
+
+interface ActionExecutor<T extends Action> {
+void execute(Action action)
+}
+interface ActionFactory<T extends Action> {
+Action[] extractActions(SeleniumDriver driver)
+}
+
+class ArgumentDescriptor<T>{
+String name
+String description
+T randomValue()
+}
+
+note left of ArgumentDescriptor::"randomValue()"
+Erzeugt Argumente für den Monkey-Tester.
+end note
+
+object Keys{
+name="keys"
+description="the keys to be sent to the html element"
+}
+
+Keys <--* SendKeys
+ArgumentDescriptor <|-- Keys
+
+
+@enduml
