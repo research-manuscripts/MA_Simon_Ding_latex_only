@@ -28,7 +28,7 @@ Diese werden in Kapitel \ref{sec:Foundations:GUIBasedSystemTests} näher beschri
 Zumindest einzelne Komponenten einer Webanwendung werden gewöhnlich in dem Webbrowser des Benutzers ausgeführt, in dem die Anwendung auch dargestellt wird.
 Dadurch ergeben sich besondere Herausforderungen für das Testen von Webanwendungen.
 Einerseits verschärfen die Ausführung von Anwendungscode und Darstellung im Browser das Problem der Flakiness, bei der Tests kein konsistentes Ergebnis liefern, auch wenn die Anwendung nicht geändert wurde.
-Gleichzeitig bedeuten Änderungen an der grafischen Benutzeroberfläche (Englisch: graphical user interface, GUI) oft, dass auch die Tests geändert werden müssen \cite{ChallengesSelenium}.
+Gleichzeitig bedeuten Änderungen an der graphischen Benutzeroberfläche (Englisch: graphical user interface, GUI) oft, dass auch die Tests geändert werden müssen \cite{ChallengesSelenium}.
 Lösungsansätze für diese Probleme sind Gegenstand aktiver Forschung, eine Auswahl wird in Kapitel \ref{ch:RelatedWork} vorgestellt.
 
 % es wäre schön, wenn Tests ohne hartkodierte Fehlerbedingungen Fehler erkennen könnten
@@ -37,7 +37,7 @@ Diese Arbeit schließt an die Arbeit von \Citeauthor{GPT3Testing} an.
 Ihr Ansatz ermöglicht das automatische Testen über GUIs, was sie an einer einfachen Webanwendung evaluieren.
 Sie verwenden ein großes Sprachmodell (Englisch: large language model, LLM), um Benutzerinteraktionen zu generieren, mit denen die Anwendung getestet wird.
 Dabei handelt es sich um eine Anwendung aus dem Bereich des maschinellen Lernens, die in der Lage ist, kontextuell angemessene Antworten auf eine Vielzahl von Aufgaben zu generieren \cite{FewShotLearners}.
-Das LLM bekommt eine strukturierte Repräsentation der grafischen Benutzeroberfläche, vorherige Benutzerinteraktionen und eine natürlichsprachliche Testbeschreibung als Eingabe.
+Das LLM bekommt eine strukturierte Repräsentation der graphischen Benutzeroberfläche, vorherige Benutzerinteraktionen und eine natürlichsprachliche Testbeschreibung als Eingabe.
 Es wird aufgefordert, eine Benutzerinteraktion zu generieren, die anschließend automatisch in der Anwendung ausgeführt wird \cite{GPT3Testing}.
 
 In den Kapiteln \ref{ch:ExperimentalSetup} und \ref{ch:Results} liefert diese Arbeit zwei Beiträge:
@@ -54,7 +54,7 @@ Zuletzt befindet sich in Anlage \ref{ch:PracticalNotes} eine Sammlung von Erkenn
 \chapter{Grundlagen}
 \label{ch:Foundations}
 
-\section{Systemtests auf Grundlage von grafischen Benutzeroberflächen}
+\section{Systemtests auf Grundlage von graphischen Benutzeroberflächen}
 \label{sec:Foundations:GUIBasedSystemTests}
 Softwaretests sind ein wesentlicher Bestandteil der Softwareentwicklung.
 \todo{Er oder sie} umfasst die Bewertung einer Softwareanwendung oder eines Systems, um etwaige Mängel oder Fehler zu erkennen, die die Funktionalität, Zuverlässigkeit oder Leistung beeinträchtigen könnten.
@@ -69,8 +69,8 @@ GUI-Tests können grob in exploratives Testen und Testen auf der Grundlage von D
 Beim explorativen Testen besteht das Ziel in der Regel darin, Pfade in der zu testenden Anwendung (Englisch: application under test, AUT) zu finden, die zu Abstürzen führen.
 Eine grundlegende Technik für exploratives Testen, die leicht automatisiert werden kann, ist das Monkey-Testing, bei dem zufällige Benutzeraktionen simuliert werden.
 Im Gegensatz dazu sind Tests, die von Designern spezifiziert werden, oft sehr viel kostspieliger.
-Um diese zu automatisieren, müssen die Programmierer aus der Spezifikation Testskripte ableiten, die parallel zu Änderungen an der grafischen Benutzeroberfläche gewartet werden müssen.
-Dies ist ein Problem, da die grafische Benutzeroberfläche oft der sich am häufigsten ändernde Teil eines Systems ist.
+Um diese zu automatisieren, müssen die Programmierer aus der Spezifikation Testskripte ableiten, die parallel zu Änderungen an der graphischen Benutzeroberfläche gewartet werden müssen.
+Dies ist ein Problem, da die graphische Benutzeroberfläche oft der sich am häufigsten ändernde Teil eines Systems ist.
 
 \section{Metriken für die Testabdeckung}
 \label{sec:Foundations:TestCoverageMetrics}
@@ -401,10 +401,10 @@ In neueren Literaturübersichten wird die linguistische Sprachverarbeitung zwar 
 
 % Das hier in anderes Kapitel???? Nein, das ist hier richtig
 Scheinbar notwendig für diese Anwendung ist die Fähigkeit des LLMs, die GUI und Zustände der zu testenden Anwendung zu verstehen und zu navigieren.
-Zu dieser Navigation ist die Repräsentation der GUI als HTML-Dokument, einer Baumstruktur, von Bedeutung, und der Zustandsgraf, der sich aus den möglichen Benutzerinteraktionen (Kanten) und Zuständen der Anwendung ergibt (Knoten).
-Ergebnisse der Kognitionswissenschaft legen allerdings nahe, dass zum Verständnis solcher Grafen eine Art von räumlichem Verständnis erforderlich ist \cite{what_is_a_cognitive_map}, das bisher bei LLMs scheinbar nicht vorhanden ist:
+Zu dieser Navigation ist die Repräsentation der GUI als HTML-Dokument, einer Baumstruktur, von Bedeutung, und der Zustandsgraph, der sich aus den möglichen Benutzerinteraktionen (Kanten) und Zuständen der Anwendung ergibt (Knoten).
+Ergebnisse der Kognitionswissenschaft legen allerdings nahe, dass zum Verständnis solcher Graphen eine Art von räumlichem Verständnis erforderlich ist \cite{what_is_a_cognitive_map}, das bisher bei LLMs scheinbar nicht vorhanden ist:
 Die Sprachmodelle konnten Fragen, die ein Verständnis der Navigation in einfachen Raumplänen erforderten, nicht korrekt beantworten \cite{cogmaps_llm}.
-Erschwerend kommt hinzu, dass der Zustandsgraf der Webanwendungen in dieser Anwendung nicht explizit gegeben ist, sondern vom LLM aus den Interaktionen mit der Webanwendung abgeleitet werden müsste.
+Erschwerend kommt hinzu, dass der Zustandsgraph der Webanwendungen in dieser Anwendung nicht explizit gegeben ist, sondern vom LLM aus den Interaktionen mit der Webanwendung abgeleitet werden müsste.
 
 Einen komplett anderen Ansatz bieten Tsung et al.
 Sie stellen einen Arbeitsablauf vor, der auf der Spezifikation von Testskripten in einer strukturierten, für den Menschen lesbaren Sprache basiert, die auch Bilder enthält \cite{tsung}.
@@ -431,9 +431,9 @@ Meiner Meinung nach sollte die Anwendung mindestens folgende Eigenschaften haben
         Die Anwendung sollte Validierungslogik enthalten: Die Benutzereingaben sollten auf Korrektheit überprüft werden und die Anwendung sollte den Benutzer auffordern, fehlerhafte Eingaben zu korrigieren.
         Dadurch ist der Tester gezwungen, auf Feedback der Anwendung zu reagieren, um eine bestimmte Interaktion auszuführen.
     \item
-        Der Zustandsgraf der Anwendung sollte einen hohen Verzweigungsgrad haben.
-        Der Verzweigungsgrad eines Grafen ist ein Maß für die Komplexität des Grafen.
-        Er wird in endlichen Grafen als die Anzahl der Kanten geteilt durch die Anzahl der Knoten definiert.
+        Der Zustandsgraph der Anwendung sollte einen hohen Verzweigungsgrad haben.
+        Der Verzweigungsgrad eines Graphen ist ein Maß für die Komplexität des Graphen.
+        Er wird in endlichen Graphen als die Anzahl der Kanten geteilt durch die Anzahl der Knoten definiert.
         Im Kontext eines GUI bedeutet das, dass es viele mögliche Benutzeraktionen gibt, die zu verschiedenen Anwendungszuständen führen.
     \item 
         Die Anwendung sollte Open-Source sein, um die Reproduzierbarkeit der Ergebnisse zu gewährleisten.
@@ -466,7 +466,7 @@ Abbildung \ref{fig:sad_monkey} zeigt, dass Eigenschaften 3 bis 5 außerdem inter
         \draw[->] (7) .. controls +(left:2) ..  (1);
         \draw[->] (-0.5,0) -- (1);
     \end{tikzpicture} 
-    \caption{Zustandsgraf einer fiktiven Anwendung mit Validierung, einem transaktionalen Arbeitsablauf und einem hohen Verzweigungsgrad. $s$ ist der Startzustand, $d$ ist der Zielzustand, $e$ ist ein Fehlerzustand. Die Zahlen an den Kanten stehen für die Anzahl der möglichen Benutzerinteraktionen, die den Zustandsübergang auslösen. Die Wahrscheinlichkeit, dass ein Monkey-Tester den Zielzustand und nicht erneut den Startzustand erreicht, ist lediglich eins in hundert Millionen.}
+    \caption{Zustandsgraph einer fiktiven Anwendung mit Validierung, einem transaktionalen Arbeitsablauf und einem hohen Verzweigungsgrad. $s$ ist der Startzustand, $d$ ist der Zielzustand, $e$ ist ein Fehlerzustand. Die Zahlen an den Kanten stehen für die Anzahl der möglichen Benutzerinteraktionen, die den Zustandsübergang auslösen. Die Wahrscheinlichkeit, dass ein Monkey-Tester den Zielzustand und nicht erneut den Startzustand erreicht, ist lediglich eins in hundert Millionen.}
     \label{fig:sad_monkey}
 \end{figure}
 
@@ -642,7 +642,7 @@ Mithilfe dieser Bibliothek kann das Routing aus der \textit{App} Komponente ausg
 Die anzuzeigende Seite wird dann je nach URL automatisch aktualisiert und die \textit{App}-Komponente kann die anzuzeigenden Kindkomponenten mittels einer Komponente aus \textit{react-router} rendern.
 Die Zuordnung von URLs zu Seiten wird in einer seperaten Datei definiert.
 
-\section{Instrumentailisierung}
+\section{Instrumentalisierung}
 
 Die Testanwendung selbst ist nicht für das Sammeln von Testergebnissen ausgelegt.
 Um die Testergebnisse zu sammeln, wird ein das Werkzeug \textit{Istanbul}\footnote{\url{https://istanbul.js.org/}} verwendet.
@@ -818,7 +818,7 @@ Zur besseren Vergleichbarkeit wird die Branchenabdeckung in Prozent nach jeder s
 Der Monkey-Tester generiert in manchen Implementierungen nur zufällige Klicks und Tastatureingaben generiert, was in im Vergleich ein massiver Nachteil wäre.
 Deshalb ist er so implementiert, dass er nur \glqq{}sinnvolle\grqq{} sinnvolle Interaktionsmöglichkeiten auszuwählen kann, genau wie das LLM.
 (Er kann als zum Beispiel nicht auf Text klicken, wenn der Klick keinen Effekt hätte.)
-Das bedeutet, dass der Monkey-Tester und das LLM durch den gleichen Zustandsgrafen navigieren und die gleichen Anwendungszustände erreichen können.
+Das bedeutet, dass der Monkey-Tester und das LLM durch den gleichen Zustandsgraphen navigieren und die gleichen Anwendungszustände erreichen können.
 In der Implementierung der Texterzeugung für Formularfeldern des Monkey-Testers wurde darauf geachtet, dass neben Zahlen und Buchstaben nur die Zeichen erzeugt werden, die notwendig sind um die Validierung des Bestellformulars zu bestehen.
 Was streng genommen nicht dem Verhalten eines klassischen Monkey-Testers entspricht, aber zu höheren Testabdeckungen bei der Testanwendung führen sollte.
 

@@ -55,6 +55,12 @@
             %\addplot+[forget plot,name path=gpt4_explain_top,color=purple!70] table [x=x,y=above,col sep=comma] {experimental_data/gpt4-explain/results.csv};
             %\addplot+[forget plot,name path=gpt4_explain_bottom,color=purple!70] table [x=x,y=below,col sep=comma] {experimental_data/gpt4-explain/results.csv};
             %\addplot+[forget plot,purple!50,fill opacity=0.5] fill between[of=gpt4_explain_top and gpt4_explain_bottom];
+
+            \addplot[color=red] table [x=x,y=average,col sep=comma] {experimental_data/gpt4-goals/results.csv};
+            \addlegendentry{GPT-4 Ziele, n=4}
+
+            \addplot[color=gray] table [x=x,y=average,col sep=comma] {experimental_data/gpt4-chain-of-thought/results.csv};
+            \addlegendentry{GPT-4 Chain of Thought, n=4}
         \end{axis}
     \end{tikzpicture}
     
