@@ -1,0 +1,152 @@
+[
+    {
+        "step": 1,
+        "action": "action: click() element: <button id=\"1:r4:\" class=\"bag-btn\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button>",
+        "observation": "todo",
+        "coverage percentage": 0.3979591836734694
+    },
+    {
+        "step": 2,
+        "action": "action: click() element: <span id=\":r9:\" class=\"close-cart on-click\"><i class=\"fas fa-window-close\"></i></span>",
+        "observation": "todo",
+        "coverage percentage": 0.3979591836734694
+    },
+    {
+        "step": 3,
+        "action": "action: click() element: <span id=\":r1:\" class=\"Navbar-icon on-click\"><i class=\"fas fa-bars\"></i></span>",
+        "observation": "todo",
+        "coverage percentage": 0.41836734693877553
+    },
+    {
+        "step": 4,
+        "action": "action: click() element: <a id=\":r0:-galaxy\" class=\"\" href=\"#/c/galaxy\">Galaxy</a>",
+        "observation": "todo",
+        "coverage percentage": 0.41836734693877553
+    },
+    {
+        "step": 5,
+        "action": "action: click() element: <a id=\":r0:-s10\" class=\"\" href=\"#/c/s10\">S10</a>",
+        "observation": "todo",
+        "coverage percentage": 0.41836734693877553
+    },
+    {
+        "step": 6,
+        "action": "action: click() element: <button id=\"3:rf:\" class=\"bag-btn\"><i class=\"fas fa-shopping-cart\"></i>add to cart</button>",
+        "observation": "todo",
+        "coverage percentage": 0.41836734693877553
+    },
+    {
+        "step": 7,
+        "action": "action: click() element: <div id=\":r7:\" class=\"banner-btn clear-cart on-click\">Checkout</div>",
+        "observation": "todo",
+        "coverage percentage": 0.5204081632653061
+    },
+    {
+        "step": 8,
+        "action": "action: send_keys(John) element: <input type=\"text\" id=\":rr:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.5612244897959183
+    },
+    {
+        "step": 9,
+        "action": "action: send_keys(Doe) element: <input type=\"text\" id=\":rs:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.5612244897959183
+    },
+    {
+        "step": 10,
+        "action": "action: send_keys(example@email.com) element: <input type=\"text\" id=\":rt:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.6326530612244898
+    },
+    {
+        "step": 11,
+        "action": "action: send_keys(USA) element: <input type=\"text\" id=\":ru:\" class=\"\" value=\"\">",
+        "observation": "todo",
+        "coverage percentage": 0.6326530612244898
+    },
+    {
+        "step": 12,
+        "action": "action: click() element: <button id=\":rk:\" type=\"submit\">Submit</button>",
+        "observation": "todo",
+        "coverage percentage": 0.673469387755102
+    },
+    {
+        "step": 13,
+        "action": "action: click() element: <button id=\":rk:\" type=\"submit\">Submit</button>",
+        "observation": "todo",
+        "coverage percentage": 0.673469387755102
+    },
+    {
+        "step": 14,
+        "action": "action: click() element: <button id=\":rk:\" type=\"submit\">Submit</button>",
+        "observation": "todo",
+        "coverage percentage": 0.673469387755102
+    },
+    {
+        "step": 15,
+        "action": "action: clear() element: <input type=\"text\" id=\":rr:\" class=\"\" value=\"John\">",
+        "observation": "todo",
+        "coverage percentage": 0.673469387755102
+    },
+    {
+        "step": 16,
+        "action": "action: click() element: <button id=\":rk:\" type=\"submit\">Submit</button>",
+        "observation": "todo",
+        "coverage percentage": 0.673469387755102
+    },
+    {
+        "step": 17,
+        "action": "action: click() element: <button id=\":rk:\" type=\"submit\">Submit</button>",
+        "observation": "todo",
+        "coverage percentage": 0.673469387755102
+    },
+    {
+        "step": 18,
+        "action": "action: click() element: <button id=\":rk:\" type=\"submit\">Submit</button>",
+        "observation": "todo",
+        "coverage percentage": 0.673469387755102
+    },
+    {
+        "step": 19,
+        "action": "action: click() element: <button id=\":rk:\" type=\"submit\">Submit</button>",
+        "observation": "todo",
+        "coverage percentage": 0.673469387755102
+    },
+    {
+        "step": 20,
+        "action": "action: click() element: <button id=\":rk:\" type=\"submit\">Submit</button>",
+        "observation": "todo",
+        "coverage percentage": 0.673469387755102
+    },
+    {
+        "step": 21,
+        "action": "action: click() element: <button id=\":rk:\" type=\"submit\">Submit</button>",
+        "observation": "todo",
+        "coverage percentage": 0.673469387755102
+    },
+    {
+        "step": 22,
+        "action": "action: click() element: <button id=\":rk:\" type=\"submit\">Submit</button>",
+        "observation": "todo",
+        "coverage percentage": 0.673469387755102
+    },
+    {
+        "step": 23,
+        "action": "action: click() element: <button id=\":rk:\" type=\"submit\">Submit</button>",
+        "observation": "todo",
+        "coverage percentage": 0.673469387755102
+    },
+    {
+        "step": 24,
+        "action": "action: click() element: <button id=\":rk:\" type=\"submit\">Submit</button>",
+        "observation": "todo",
+        "coverage percentage": 0.673469387755102
+    },
+    {
+        "step": 25,
+        "action": "action: click() element: <button id=\":rk:\" type=\"submit\">Submit</button>",
+        "observation": "todo",
+        "coverage percentage": 0.673469387755102
+    }
+]

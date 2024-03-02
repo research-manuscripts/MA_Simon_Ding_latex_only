@@ -1,0 +1,233 @@
+{
+  "response": {
+    "id": "chatcmpl-8yHUxgDLAAJz6vXFVT1AGwCZJi7qj",
+    "object": "chat.completion",
+    "created": 1709377635,
+    "model": "gpt-3.5-turbo-0125",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": null,
+          "function_call": {
+            "name": "emulate_interaction",
+            "arguments": "{\"page_description\":\"The website is a Samsung Store with a focus on Galaxy S10 series phones. It allows users to browse products, add items to the cart, and proceed to checkout.\",\"new_testing_goal\":\"Test the functionality of submitting the customer information in the checkout form.\",\"explanation\":\"Click on the 'Submit' button in the checkout form to submit the customer information and proceed further with the checkout process.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":rf:\"}}"
+          }
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2188,
+      "completion_tokens": 96,
+      "total_tokens": 2284
+    },
+    "system_fingerprint": "fp_2b778c6b35"
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "Given a web application, you are tasked with assisting in testing its functionality. The emulate_interaction function takes an interaction as input and emulates it on the web application. The return value of the function is the new, filtered HTML source code of the web application. The source code of previous interactions will be omitted from the input to the assistant. "
+    },
+    {
+      "role": "user",
+      "content": "Please test my website. The goal is to test as many different features as possible to find potential bugs, so make sure to include edge cases. Here is the filtered HTML source code of the web application: 'omitted'. "
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The website is a Samsung Store showcasing Galaxy S10 series phones for purchase. Users can add products to the cart and view the cart with options to remove items.\",\"new_testing_goal\":\"Test the functionality of clearing the entire cart.\",\"explanation\":\"Click on the 'clear cart' button to remove all items from the cart.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":r6:\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The website is a Samsung Store selling Galaxy S10 series phones. Users can browse and add products to the cart.\",\"new_testing_goal\":\"Test the functionality of viewing the cart and proceeding to checkout.\",\"explanation\":\"Click on the cart icon to view the items in the cart and then click on the 'checkout' button to proceed to checkout.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":r2:\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The website is a Samsung Store where users can browse and purchase Samsung products, specifically focusing on the Galaxy S10 series phones. It features product listings with images, prices, and 'add to cart' buttons. Users can view the cart, remove items, and proceed to checkout.\",\"new_testing_goal\":\"Test the functionality of proceeding to checkout from the cart.\",\"explanation\":\"Click on the 'checkout' button in the cart to proceed to the checkout page.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":r7:\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "omitted"
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "function_call": {
+        "name": "emulate_interaction",
+        "arguments": "{\"page_description\":\"The website is a Samsung Store where users can browse and purchase Samsung products, specifically focusing on the Galaxy S10 series phones. It features product listings with prices and 'add to cart' buttons. Users can view the cart, remove items, and proceed to checkout.\",\"new_testing_goal\":\"Test the functionality of filling out the customer information in the checkout form.\",\"explanation\":\"Fill out the 'First Name', 'Last Name', and 'E-Mail' fields in the checkout form with sample data.\",\"interaction\":{\"interaction_type\":\"send_keys\",\"element_id\":\":rg:\",\"keys\":\"John\"}}"
+      }
+    },
+    {
+      "role": "function",
+      "name": "emulate_interaction",
+      "content": "<html lang=\"en\"><head><title>React App</title></head><body><div id=\"root\"><nav class=\"Navbar\"><div class=\"Top-row\"><div class=\"Navbar-center\"><span class=\"Navbar-icon on-click\" id=\":r1:\"><i class=\"fas fa-bars\"></i></span><div class=\"Navbar-cart-btn on-click\" id=\":r2:\"><span class=\"Navbar-icon\"><i class=\"fas fa-cart-plus\"></i></span><div class=\"cart-items\">0</div></div></div></div><menu class=\"\"><li><a class=\"\" href=\"#/\" id=\":r0:-home\">Home</a></li><li><a class=\"\" href=\"#/c/galaxy\" id=\":r0:-galaxy\">Galaxy</a></li><li><a class=\"\" href=\"#/c/s10\" id=\":r0:-s10\">S10</a></li><li><a class=\"\" href=\"#/c/m_series\" id=\":r0:-m_series\">M Series</a></li><li><a class=\"\" href=\"#/c/a_series\" id=\":r0:-a_series\">A Series</a></li></menu></nav><div class=\"checkout\"><div class=\"checkout__cart\"><h2>Cart</h2><h3>Total: $0.00</h3></div><form class=\"checkout__form\"><div class=\"checkout__form__customer\"><h2>Customer</h2><div><label for=\":rg:\">First Name</label><input class=\"\" id=\":rg:\" type=\"text\" value=\"John\"/></div><div><label for=\":rh:\">Last Name</label><input class=\"\" id=\":rh:\" type=\"text\" value=\"\"/></div><div><label for=\":ri:\">E-Mail</label><input class=\"\" id=\":ri:\" type=\"text\" value=\"\"/></div></div><div class=\"checkout__form__address\"><h2>Address</h2><div><label for=\":rj:\">Country</label><input class=\"\" id=\":rj:\" type=\"text\" value=\"\"/></div><div><label for=\":rk:\">Street Address</label><input class=\"\" id=\":rk:\" type=\"text\" value=\"\"/></div><div><label for=\":rl:\">City</label><input class=\"\" id=\":rl:\" type=\"text\" value=\"\"/></div><div><label for=\":rm:\">State</label><input class=\"\" id=\":rm:\" type=\"text\" value=\"\"/></div><div><label for=\":rn:\">Zip Code</label><input class=\"\" id=\":rn:\" type=\"text\" value=\"\"/></div></div><div class=\"checkout__form__payment\"><h2>Payment</h2><select><option value=\"0\">Invoice</option><option value=\"1\">Credit Card</option><option value=\"2\">PayPal</option></select></div><button id=\":rf:\" type=\"submit\">Submit</button></form></div><div class=\"on-click cart-overlay\" id=\":ra:\"><div class=\"on-click cart\" id=\":rb:\"><span class=\"close-cart on-click\" id=\":r9:\"><i class=\"fas fa-window-close\"></i></span><h2>Your cart</h2><div class=\"cart-content\"></div><div class=\"cart-footer\"><h3>your total: <span class=\"cart-total\">$0.00</span></h3><button class=\"clear-cart banner-btn\" id=\":r6:\">clear cart</button><a href=\"#/checkout\" id=\":r8:\" style=\"text-decoration: none;\"><div class=\"banner-btn clear-cart on-click\" id=\":r7:\">Checkout</div></a></div></div></div></div></body></html>"
+    },
+    {
+      "role": "system",
+      "content": "The user provided the following end instructions: Please test my website. The goal is to test as many different features as possible to find potential bugs, so make sure to include edge cases."
+    },
+    {
+      "role": "system",
+      "content": "Pursue your self-assigned sub-goal or assign a new one: Test the functionality of filling out the customer information in the checkout form.."
+    },
+    {
+      "role": "system",
+      "content": "Previously executed interactions by goal: {\"Test the functionality of adding products to the cart.\": 1, \"Test the functionality of removing an item from the cart.\": 1, \"Test the functionality of clearing the entire cart.\": 1, \"Test the functionality of viewing the cart and proceeding to checkout.\": 1, \"Test the functionality of proceeding to checkout from the cart.\": 1, \"Test the functionality of filling out the customer information in the checkout form.\": 1}."
+    },
+    {
+      "role": "system",
+      "content": "Start by describing the website supplied by the function call. Give a short general description first then summarize the main elements on the website. Do not use HTML in your description. Then you may formulate a high level sub-goal to the user's instructions, that should be persued with the next couple of interactions. You should formulate a new sub-goal if the current one has been completed or seems to be unattainable. Give an action plan that explains how the goal should be reached. And finally, describe the interaction to emulate."
+    },
+    {
+      "role": "system",
+      "content": "Only use the click action with clickable elements. The clickable elements have the following ids: :rf:, :r1:, :r2:. Only use the send_keys action with writable elements. The writable elements have the following ids: :rg:, :rh:, :ri:, :rj:, :rk:, :rl:, :rm:, :rn:. Only use the clear action with clearable elements. The clearable elements have the following ids: :rg:. "
+    }
+  ],
+  "functions": [
+    {
+      "name": "emulate_interaction",
+      "description": "Emulates a user interaction with the web application",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "page_description": {
+            "type": "string",
+            "description": "A short textual description of the state of the web application: What is the current page? What are the main elements on the page? This description should not contain any HTML."
+          },
+          "new_testing_goal": {
+            "type": "string",
+            "description": "Assigns a new high level sub-goal that shall be followed in order to complete the users instructions. This goal should take multiple user interactions to complete. The assistant shall try to complete this goal in the next couple of interactions and then assign a new one."
+          },
+          "explanation": {
+            "type": "string",
+            "description": "An action plan that explains how the goal should be reached."
+          },
+          "interaction": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "interaction_type": {
+                    "const": "click",
+                    "type": "string",
+                    "description": "The type of interaction to emulate"
+                  },
+                  "element_id": {
+                    "enum": [
+                      ":rf:",
+                      ":r1:",
+                      ":r2:"
+                    ],
+                    "type": "string",
+                    "description": "The id of the element to interact with"
+                  }
+                },
+                "required": [
+                  "interaction_type",
+                  "element_id"
+                ],
+                "description": "clicks on a html element"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "interaction_type": {
+                    "const": "send_keys",
+                    "type": "string",
+                    "description": "The type of interaction to emulate"
+                  },
+                  "element_id": {
+                    "enum": [
+                      ":rg:",
+                      ":rh:",
+                      ":ri:",
+                      ":rj:",
+                      ":rk:",
+                      ":rl:",
+                      ":rm:",
+                      ":rn:"
+                    ],
+                    "type": "string",
+                    "description": "The id of the element to interact with"
+                  },
+                  "keys": {
+                    "type": "string",
+                    "description": "the keys to be sent to the input element"
+                  }
+                },
+                "required": [
+                  "interaction_type",
+                  "element_id",
+                  "keys"
+                ],
+                "description": "sends keystrokes to an html element"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "interaction_type": {
+                    "const": "clear",
+                    "type": "string",
+                    "description": "The type of interaction to emulate"
+                  },
+                  "element_id": {
+                    "enum": [
+                      ":rg:"
+                    ],
+                    "type": "string",
+                    "description": "The id of the element to interact with"
+                  }
+                },
+                "required": [
+                  "interaction_type",
+                  "element_id"
+                ],
+                "description": "resets the contents of an html element"
+              }
+            ],
+            "description": "The interaction to emulate"
+          }
+        },
+        "required": [
+          "page_description",
+          "explanationinteraction"
+        ]
+      }
+    }
+  ]
+}
