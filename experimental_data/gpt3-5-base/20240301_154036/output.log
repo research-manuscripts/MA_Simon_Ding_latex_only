@@ -1,0 +1,41 @@
+2024-03-01 15:40:36.374575:Configuration: {
+  "url": "http://localhost:3000/",
+  "delay": 0.5,
+  "interactions": 25,
+  "load_wait_time": 10,
+  "test_type": "gpt-3.5-turbo",
+  "output_dir": "results"
+}
+2024-03-01 15:40:36.374590:Starting the test on URL: http://localhost:3000/
+2024-03-01 15:40:42.516700:Web page loaded successfully.
+2024-03-01 15:40:43.750335:Pre test coverage data: namespace(covered=33, blocks=98, percentage=0.336734693877551)
+2024-03-01 15:40:43.750352:Opened website. | Coverage: 33.6734693877551%
+2024-03-01 15:40:46.663321:Action 1: Gpt-3.5-turbo tester executiong: 'action: click() element: <span id=":r1:" class="Navbar-icon on-click"><i class="fas fa-bars"></i></span>' | Coverage: 35.714285714285715%
+2024-03-01 15:40:51.082726:Action 2: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id="1:r4:" class="bag-btn"><i class="fas fa-shopping-cart"></i>add to cart</button>' | Coverage: 41.83673469387755%
+2024-03-01 15:40:56.372666:Action 3: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id=":r6:" class="clear-cart banner-btn">clear cart</button>' | Coverage: 41.83673469387755%
+2024-03-01 15:40:59.619343:Action 4: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id="1:r4:" class="bag-btn"><i class="fas fa-shopping-cart"></i>add to cart</button>' | Coverage: 41.83673469387755%
+2024-03-01 15:41:05.381860:Action 5: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id=":r6:" class="clear-cart banner-btn">clear cart</button>' | Coverage: 41.83673469387755%
+2024-03-01 15:41:09.995172:Action 6: Gpt-3.5-turbo tester executiong: 'action: click() element: <span id=":r1:" class="Navbar-icon on-click"><i class="fas fa-bars"></i></span>' | Coverage: 41.83673469387755%
+2024-03-01 15:41:13.082539:Action 7: Gpt-3.5-turbo tester executiong: 'action: click() element: <span id=":r1:" class="Navbar-icon on-click"><i class="fas fa-bars"></i></span>' | Coverage: 41.83673469387755%
+2024-03-01 15:41:17.068886:Action 8: Gpt-3.5-turbo tester executiong: 'action: click() element: <span id=":r1:" class="Navbar-icon on-click"><i class="fas fa-bars"></i></span>' | Coverage: 41.83673469387755%
+2024-03-01 15:41:21.147152:Action 9: Gpt-3.5-turbo tester executiong: 'action: click() element: <span id=":r1:" class="Navbar-icon on-click"><i class="fas fa-bars"></i></span>' | Coverage: 41.83673469387755%
+2024-03-01 15:41:27.116961:Action 10: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id="1:r4:" class="bag-btn"><i class="fas fa-shopping-cart"></i>add to cart</button>' | Coverage: 41.83673469387755%
+2024-03-01 15:41:32.319687:Action 11: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id=":r6:" class="clear-cart banner-btn">clear cart</button>' | Coverage: 41.83673469387755%
+2024-03-01 15:41:37.638085:Action 12: Gpt-3.5-turbo tester executiong: 'action: click() element: <span id=":r1:" class="Navbar-icon on-click"><i class="fas fa-bars"></i></span>' | Coverage: 41.83673469387755%
+2024-03-01 15:41:41.573094:Action 13: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id="1:r4:" class="bag-btn"><i class="fas fa-shopping-cart"></i>add to cart</button>' | Coverage: 41.83673469387755%
+2024-03-01 15:41:46.263414:Action 14: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id=":r6:" class="clear-cart banner-btn">clear cart</button>' | Coverage: 41.83673469387755%
+2024-03-01 15:41:50.720704:Action 15: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id="1:r4:" class="bag-btn"><i class="fas fa-shopping-cart"></i>add to cart</button>' | Coverage: 41.83673469387755%
+2024-03-01 15:41:56.226262:Action 16: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id=":r6:" class="clear-cart banner-btn">clear cart</button>' | Coverage: 41.83673469387755%
+2024-03-01 15:42:00.202365:Action 17: Gpt-3.5-turbo tester executiong: 'action: click() element: <span id=":r1:" class="Navbar-icon on-click"><i class="fas fa-bars"></i></span>' | Coverage: 41.83673469387755%
+2024-03-01 15:42:04.020182:Action 18: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id="1:r4:" class="bag-btn"><i class="fas fa-shopping-cart"></i>add to cart</button>' | Coverage: 41.83673469387755%
+2024-03-01 15:42:08.062364:Action 19: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id=":r6:" class="clear-cart banner-btn">clear cart</button>' | Coverage: 41.83673469387755%
+2024-03-01 15:42:12.386212:Action 20: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id="1:r4:" class="bag-btn"><i class="fas fa-shopping-cart"></i>add to cart</button>' | Coverage: 41.83673469387755%
+2024-03-01 15:42:16.250982:Action 21: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id=":r6:" class="clear-cart banner-btn">clear cart</button>' | Coverage: 41.83673469387755%
+2024-03-01 15:42:21.246086:Action 22: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id="1:r4:" class="bag-btn"><i class="fas fa-shopping-cart"></i>add to cart</button>' | Coverage: 41.83673469387755%
+2024-03-01 15:42:28.001130:Action 23: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id=":r6:" class="clear-cart banner-btn">clear cart</button>' | Coverage: 41.83673469387755%
+2024-03-01 15:42:32.432432:Action 24: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id="1:r4:" class="bag-btn"><i class="fas fa-shopping-cart"></i>add to cart</button>' | Coverage: 41.83673469387755%
+2024-03-01 15:42:37.703932:Action 25: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id=":r6:" class="clear-cart banner-btn">clear cart</button>' | Coverage: 41.83673469387755%
+2024-03-01 15:42:39.410046:Final coverage data: namespace(covered=41, blocks=98, percentage=0.41836734693877553)
+2024-03-01 15:42:39.410066:Detailed coverage calculation explanation: Out of the total number of 98 blocks across all functions, 41 were covered (i.e., executed at least once during the test). This leads to a final coverage percentage of 41.83673469387755%. This percentage represents the ratio of the number of covered blocks to the total number of blocks, giving equal weight to each block.
+2024-03-01 15:42:39.410069:Test run completed.
+2024-03-01 15:42:39.467615:Past actions saved to: results/20240301_154036/past_actions.json

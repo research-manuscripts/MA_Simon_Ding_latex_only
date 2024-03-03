@@ -1,0 +1,65 @@
+2024-03-01 20:18:24.635897:Configuration: {
+  "url": "http://localhost:3000/",
+  "delay": 0.5,
+  "interactions": 25,
+  "load_wait_time": 10,
+  "test_type": "gpt-3.5-turbo",
+  "output_dir": "results"
+}
+2024-03-01 20:18:24.635908:Starting the test on URL: http://localhost:3000/
+2024-03-01 20:18:31.136565:Web page loaded successfully.
+2024-03-01 20:18:32.412350:Pre test coverage data: namespace(covered=33, blocks=98, percentage=0.336734693877551)
+2024-03-01 20:18:32.412367:Opened website. | Coverage: 33.6734693877551%
+2024-03-01 20:18:35.710953:Action 1: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id="1:r4:" class="bag-btn"><i class="fas fa-shopping-cart"></i>add to cart</button>' | Coverage: 39.795918367346935%
+2024-03-01 20:18:41.432874:Action 2: Gpt-3.5-turbo tester executiong: 'action: click() element: <div id=":r7:" class="banner-btn clear-cart on-click">Checkout</div>' | Coverage: 50.0%
+2024-03-01 20:18:45.749862:Action 3: Gpt-3.5-turbo tester executiong: '{
+  "role": "assistant",
+  "content": null,
+  "function_call": {
+    "name": "emulate_interaction",
+    "arguments": "{\"page_description\":\"The website is an online Samsung Store showcasing various Samsung Galaxy phones like Galaxy S10, S10+, S10e, and more.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":ra:\"}}"
+  }
+}' | The model tried to use an impossible action, even after being told not to. | Trying again.
+2024-03-01 20:18:47.390404:Action 3: Gpt-3.5-turbo tester executiong: '{
+  "role": "assistant",
+  "content": null,
+  "function_call": {
+    "name": "emulate_interaction",
+    "arguments": "{\"page_description\":\"The website is an online Samsung Store showcasing various Samsung Galaxy phones like Galaxy S10, S10+, S10e, and more.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":rj:\",\"keys\":\"John\"}}"
+  }
+}' | The model tried to use an impossible action, even after being told not to. | Trying again.
+2024-03-01 20:18:51.146720:Action 3: Gpt-3.5-turbo tester executiong: 'action: click() element: <span id=":r1:" class="Navbar-icon on-click"><i class="fas fa-bars"></i></span>' | Coverage: 52.04081632653062%
+2024-03-01 20:18:57.190233:Action 4: Gpt-3.5-turbo tester executiong: 'action: click() element: <div id=":r2:" class="Navbar-cart-btn on-click"><span class="Navbar-icon"><i class="fas fa-cart-plus"></i></span><div class="cart-items">1</div></div>' | Coverage: 54.08163265306123%
+2024-03-01 20:19:03.236740:Action 5: Gpt-3.5-turbo tester executiong: 'action: click() element: <span id=":r9:" class="close-cart on-click"><i class="fas fa-window-close"></i></span>' | Coverage: 54.08163265306123%
+2024-03-01 20:19:08.662376:Action 6: Gpt-3.5-turbo tester executiong: 'action: click() element: <a id=":r0:-m_series" class="" href="#/c/m_series">M Series</a>' | Coverage: 54.08163265306123%
+2024-03-01 20:19:13.270693:Action 7: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id="6:rr:" class="bag-btn"><i class="fas fa-shopping-cart"></i>add to cart</button>' | Coverage: 54.08163265306123%
+2024-03-01 20:19:17.189579:Action 8: Gpt-3.5-turbo tester executiong: '{
+  "role": "assistant",
+  "content": null,
+  "function_call": {
+    "name": "emulate_interaction",
+    "arguments": "{\"page_description\":\"Online Samsung Store showcasing various Galaxy phones like Galaxy M30, M20, and M10 in the M Series category.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\"6:rr:\"}}"
+  }
+}' | The model tried to use an element that is hidden by :ra:. | Trying again.
+2024-03-01 20:19:20.034354:Action 8: Gpt-3.5-turbo tester executiong: 'action: click() element: <div id=":ra:" class="on-click cart-overlay transparentBcg"><div id=":rb:" class="on-click cart showCart"><span id=":r9:" class="close-cart on-click"><i class="fas fa-window-close"></i></span><h2>Your cart</h2><div class="cart-content"><div class="cart-item"><img src="./images/product-1.jpeg" alt="Galaxy S10 5G"><div><h4>Galaxy S10 5G</h4><h5>$910.99</h5><span id=":rc:" class="remove-item on-click">remove</span></div><div><i id=":rd:" class="fas fa-chevron-up on-click"></i><p class="item-amount">1</p><i id=":re:" class="fas fa-chevron-down on-click"></i></div></div><div class="cart-item"><img src="./images/product-6.jpeg" alt="Galaxy M30"><div><h4>Galaxy M30</h4><h5>$532.99</h5><span id=":rt:" class="remove-item on-click">remove</span></div><div><i id=":ru:" class="fas fa-chevron-up on-click"></i><p class="item-amount">1</p><i id=":rv:" class="fas fa-chevron-down on-click"></i></div></div></div><div class="cart-footer"><h3>your total: <span class="cart-total">$1,443.98</span></h3><button id=":r6:" class="clear-cart banner-btn">clear cart</button><a id=":r8:" href="#/checkout" style="text-decoration: none;"><div id=":r7:" class="banner-btn clear-cart on-click">Checkout</div></a></div></div></div>' | Coverage: 54.08163265306123%
+2024-03-01 20:19:26.281651:Action 9: Gpt-3.5-turbo tester executiong: 'action: click() element: <a id=":r0:-a_series" class="" href="#/c/a_series">A Series</a>' | Coverage: 54.08163265306123%
+2024-03-01 20:19:33.107851:Action 10: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id="5:rr:" class="bag-btn"><i class="fas fa-shopping-cart"></i>add to cart</button>' | Coverage: 54.08163265306123%
+2024-03-01 20:19:38.579702:Action 11: Gpt-3.5-turbo tester executiong: 'action: click() element: <div id=":r7:" class="banner-btn clear-cart on-click">Checkout</div>' | Coverage: 54.08163265306123%
+2024-03-01 20:19:46.653934:Action 12: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id=":r13:" type="submit">Submit</button>' | Coverage: 59.183673469387756%
+2024-03-01 20:19:53.703845:Action 13: Gpt-3.5-turbo tester executiong: 'action: click() element: <span id=":r1:" class="Navbar-icon on-click"><i class="fas fa-bars"></i></span>' | Coverage: 59.183673469387756%
+2024-03-01 20:19:59.485375:Action 14: Gpt-3.5-turbo tester executiong: 'action: click() element: <span id=":r1:" class="Navbar-icon on-click"><i class="fas fa-bars"></i></span>' | Coverage: 59.183673469387756%
+2024-03-01 20:20:04.177197:Action 15: Gpt-3.5-turbo tester executiong: 'action: click() element: <a id=":r0:-galaxy" class="" href="#/c/galaxy">Galaxy</a>' | Coverage: 59.183673469387756%
+2024-03-01 20:20:09.071035:Action 16: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id="12:r1l:" class="bag-btn"><i class="fas fa-shopping-cart"></i>add to cart</button>' | Coverage: 59.183673469387756%
+2024-03-01 20:20:15.454948:Action 17: Gpt-3.5-turbo tester executiong: 'action: click() element: <span id=":r10:" class="remove-item on-click">remove</span>' | Coverage: 61.224489795918366%
+2024-03-01 20:20:24.323138:Action 18: Gpt-3.5-turbo tester executiong: 'action: click() element: <div id=":ra:" class="on-click cart-overlay transparentBcg"><div id=":rb:" class="on-click cart showCart"><span id=":r9:" class="close-cart on-click"><i class="fas fa-window-close"></i></span><h2>Your cart</h2><div class="cart-content"><div class="cart-item"><img src="./images/product-1.jpeg" alt="Galaxy S10 5G"><div><h4>Galaxy S10 5G</h4><h5>$910.99</h5><span id=":rc:" class="remove-item on-click">remove</span></div><div><i id=":rd:" class="fas fa-chevron-up on-click"></i><p class="item-amount">1</p><i id=":re:" class="fas fa-chevron-down on-click"></i></div></div><div class="cart-item"><img src="./images/product-5.jpeg" alt="Galaxy A2 Core"><div><h4>Galaxy A2 Core</h4><h5>$688.99</h5><span id=":rt:" class="remove-item on-click">remove</span></div><div><i id=":ru:" class="fas fa-chevron-up on-click"></i><p class="item-amount">1</p><i id=":rv:" class="fas fa-chevron-down on-click"></i></div></div><div class="cart-item"><img src="./images/product-12.jpeg" alt="Galaxy A30"><div><h4>Galaxy A30</h4><h5>$248.99</h5><span id=":r10:" class="remove-item on-click">remove</span></div><div><i id=":r11:" class="fas fa-chevron-up on-click"></i><p class="item-amount">1</p><i id=":r12:" class="fas fa-chevron-down on-click"></i></div></div></div><div class="cart-footer"><h3>your total: <span class="cart-total">$1,848.97</span></h3><button id=":r6:" class="clear-cart banner-btn">clear cart</button><a id=":r8:" href="#/checkout" style="text-decoration: none;"><div id=":r7:" class="banner-btn clear-cart on-click">Checkout</div></a></div></div></div>' | Coverage: 61.224489795918366%
+2024-03-01 20:20:29.409396:Action 19: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id="5:r1l:" class="bag-btn"><i class="fas fa-shopping-cart"></i>in cart</button>' | Coverage: 61.224489795918366%
+2024-03-01 20:20:36.451231:Action 20: Gpt-3.5-turbo tester executiong: 'action: click() element: <span id=":r9:" class="close-cart on-click"><i class="fas fa-window-close"></i></span>' | Coverage: 61.224489795918366%
+2024-03-01 20:20:42.981230:Action 21: Gpt-3.5-turbo tester executiong: 'action: click() element: <a id=":r0:-s10" class="" href="#/c/s10">S10</a>' | Coverage: 61.224489795918366%
+2024-03-01 20:20:48.165777:Action 22: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id="1:r1l:" class="bag-btn"><i class="fas fa-shopping-cart"></i>in cart</button>' | Coverage: 61.224489795918366%
+2024-03-01 20:20:52.424641:Action 23: Gpt-3.5-turbo tester executiong: 'action: click() element: <i id=":r12:" class="fas fa-chevron-down on-click"></i>' | Coverage: 67.3469387755102%
+2024-03-01 20:20:58.420704:Action 24: Gpt-3.5-turbo tester executiong: 'action: click() element: <div id=":r7:" class="banner-btn clear-cart on-click">Checkout</div>' | Coverage: 67.3469387755102%
+2024-03-01 20:21:04.794405:Action 25: Gpt-3.5-turbo tester executiong: 'action: click() element: <span id=":r1:" class="Navbar-icon on-click"><i class="fas fa-bars"></i></span>' | Coverage: 67.3469387755102%
+2024-03-01 20:21:06.455673:Final coverage data: namespace(covered=66, blocks=98, percentage=0.673469387755102)
+2024-03-01 20:21:06.455693:Detailed coverage calculation explanation: Out of the total number of 98 blocks across all functions, 66 were covered (i.e., executed at least once during the test). This leads to a final coverage percentage of 67.3469387755102%. This percentage represents the ratio of the number of covered blocks to the total number of blocks, giving equal weight to each block.
+2024-03-01 20:21:06.455697:Test run completed.
+2024-03-01 20:21:06.512504:Past actions saved to: results/20240301_201824/past_actions.json

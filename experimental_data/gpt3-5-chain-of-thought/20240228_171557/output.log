@@ -1,0 +1,178 @@
+2024-02-28 17:15:57.627810:Configuration: {
+  "url": "http://localhost:3000/",
+  "delay": 0.5,
+  "interactions": 25,
+  "load_wait_time": 10,
+  "test_type": "gpt-3.5-turbo",
+  "output_dir": "results"
+}
+2024-02-28 17:15:57.627825:Starting the test on URL: http://localhost:3000/
+2024-02-28 17:16:03.811778:Web page loaded successfully.
+2024-02-28 17:16:05.048737:Pre test coverage data: namespace(covered=33, blocks=98, percentage=0.336734693877551)
+2024-02-28 17:16:05.048758:Opened website. | Coverage: 33.6734693877551%
+2024-02-28 17:16:09.006755:Action 1: Gpt-3.5-turbo | Setting new goal: Add the Galaxy S10+ to the cart and proceed to checkout..
+2024-02-28 17:16:10.314221:Action 1: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id="2:r4:" class="bag-btn"><i class="fas fa-shopping-cart"></i>add to cart</button>' | Coverage: 39.795918367346935%
+2024-02-28 17:16:15.961120:Action 2: Gpt-3.5-turbo | Setting new goal: Clear the cart and remove the Galaxy S10+ from the cart..
+2024-02-28 17:16:17.278208:Action 2: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id=":r6:" class="clear-cart banner-btn">clear cart</button>' | Coverage: 39.795918367346935%
+2024-02-28 17:16:21.291872:Action 3: Gpt-3.5-turbo | Setting new goal: Proceed to checkout with the Galaxy S10+ in the cart..
+2024-02-28 17:16:22.604653:Action 3: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id="2:r4:" class="bag-btn"><i class="fas fa-shopping-cart"></i>add to cart</button>' | Coverage: 39.795918367346935%
+2024-02-28 17:16:28.147997:Action 4: Gpt-3.5-turbo | Setting new goal: Update the quantity of the Galaxy S10+ in the cart and verify the total price..
+2024-02-28 17:16:29.492183:Action 4: Gpt-3.5-turbo tester executiong: 'action: click() element: <i id=":rg:" class="fas fa-chevron-up on-click"></i>' | Coverage: 42.857142857142854%
+2024-02-28 17:16:33.983082:Action 5: Gpt-3.5-turbo | Setting new goal: Increase the quantity of Galaxy S10+ in the cart and verify the total price again..
+2024-02-28 17:16:35.281375:Action 5: Gpt-3.5-turbo tester executiong: 'action: click() element: <i id=":rg:" class="fas fa-chevron-up on-click"></i>' | Coverage: 42.857142857142854%
+2024-02-28 17:16:40.475371:Action 6: Gpt-3.5-turbo | Setting new goal: Verify the ability to remove the Galaxy S10+ from the cart and ensure the total price updates accordingly..
+2024-02-28 17:16:41.804601:Action 6: Gpt-3.5-turbo tester executiong: 'action: click() element: <span id=":rf:" class="remove-item on-click">remove</span>' | Coverage: 44.89795918367347%
+2024-02-28 17:16:47.294576:Action 7: Gpt-3.5-turbo | Setting new goal: Check the 'Checkout' functionality and proceed with a sample checkout process with the Galaxy S10+ in the cart..
+2024-02-28 17:16:48.644212:Action 7: Gpt-3.5-turbo tester executiong: 'action: click() element: <div id=":r7:" class="banner-btn clear-cart on-click">Checkout</div>' | Coverage: 55.10204081632652%
+2024-02-28 17:16:53.851674:Action 8: Gpt-3.5-turbo | Setting new goal: Submit a sample order for a Samsung Galaxy product using the checkout form..
+2024-02-28 17:16:55.291131:Action 8: Gpt-3.5-turbo tester executiong: 'action: send_keys(John) element: <input type="text" id=":rj:" class="" value="">' | Coverage: 59.183673469387756%
+2024-02-28 17:17:00.811736:Action 9: Gpt-3.5-turbo tester executiong: '{
+  "role": "assistant",
+  "content": null,
+  "function_call": {
+    "name": "emulate_interaction",
+    "arguments": "{\"page_description\":\"A Samsung Store website showcasing various Galaxy products like S10, S10+, and S10e. The site features a navigation bar, a hero banner promoting the Samsung Store, and a product section displaying different Galaxy devices.\",\"new_testing_goal\":\"Add multiple Galaxy S10e to the cart and verify if the subtotal is calculated correctly.\",\"explanation\":\"Add two Galaxy S10e units to the cart and ensure the subtotal reflects the correct calculation. Verify the total price is updated accordingly.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":r0:-s10\"}}"
+  }
+}' | The model tried to use an impossible action, even after being told not to. | Trying again.
+2024-02-28 17:17:03.580670:Action 9: Gpt-3.5-turbo | Setting new goal: Subscribe to the newsletter for updates on new Samsung Galaxy products..
+2024-02-28 17:17:05.190899:Action 9: Gpt-3.5-turbo tester executiong: 'action: send_keys(user@example.com) element: <input type="text" id=":rl:" class="" value="">' | Coverage: 66.3265306122449%
+2024-02-28 17:17:10.336441:Action 10: Gpt-3.5-turbo | Setting new goal: Subscribe to the newsletter for updates on new Samsung Galaxy products and verify the subscription status..
+2024-02-28 17:17:11.670754:Action 10: Gpt-3.5-turbo tester executiong: 'action: send_keys(user@example.com) element: <input type="text" id=":rl:" class="" value="user@example.com">' | Coverage: 66.3265306122449%
+2024-02-28 17:17:16.581484:Action 11: Gpt-3.5-turbo tester executiong: '{
+  "role": "assistant",
+  "content": null,
+  "function_call": {
+    "name": "emulate_interaction",
+    "arguments": "{\"page_description\":\"The website is an online store for Samsung Galaxy products, featuring the Galaxy S10 series and M series. It offers a checkout process for purchasing products, a cart functionality, and a newsletter subscription option for updates on new Samsung Galaxy products.\",\"new_testing_goal\":\"Navigate to the newsletter subscription form, input an email address, and submit the subscription. Verify the subscription status by checking for a confirmation message or email notification.\",\"explanation\":\"Locate the newsletter subscription form, input an email address, and submit the subscription. Check for a confirmation message or email notification to verify the successful subscription to the newsletter.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":rl:\"}}"
+  }
+}' | The model tried to use an impossible action, even after being told not to. | Trying again.
+2024-02-28 17:17:20.168191:Action 11: Gpt-3.5-turbo | Setting new goal: Verify the ability to change the payment method during the checkout process..
+2024-02-28 17:17:21.535074:Action 11: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id=":ri:" type="submit">Submit</button>' | Coverage: 70.40816326530613%
+2024-02-28 17:17:27.333724:Action 12: Gpt-3.5-turbo | Setting new goal: Verify the ability to clear the customer details in the checkout form..
+2024-02-28 17:17:28.651232:Action 12: Gpt-3.5-turbo tester executiong: 'action: clear() element: <input type="text" id=":rj:" class="" value="John">' | Coverage: 70.40816326530613%
+2024-02-28 17:17:34.350642:Action 13: Gpt-3.5-turbo tester executiong: '{
+  "role": "assistant",
+  "content": null,
+  "function_call": {
+    "name": "emulate_interaction",
+    "arguments": "{\"page_description\":\"An online Samsung Store featuring a checkout process for Galaxy products. The website includes a cart for selected items, a checkout form for customer details and payment, and a newsletter subscription option for updates on Samsung Galaxy products.\",\"new_testing_goal\":\"Verify the ability to input the customer's address details in the checkout form.\",\"explanation\":\"Locate the address details section in the checkout form, input the required information including country, street address, city, state, and zip code.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":rm:\"}}"
+  }
+}' | The model tried to use an impossible action, even after being told not to. | Trying again.
+2024-02-28 17:17:37.369201:Action 13: Gpt-3.5-turbo | Setting new goal: Verify the ability to change the payment method during the checkout process..
+2024-02-28 17:17:38.703952:Action 13: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id=":ri:" type="submit">Submit</button>' | Coverage: 70.40816326530613%
+2024-02-28 17:17:44.066285:Action 14: Gpt-3.5-turbo tester executiong: '{
+  "role": "assistant",
+  "content": null,
+  "function_call": {
+    "name": "emulate_interaction",
+    "arguments": "{\"page_description\":\"The website is a Samsung Store featuring various Galaxy devices for purchase. It provides a checkout process with customer details and payment selection. Users can add items to a cart and proceed with checkout options.\",\"new_testing_goal\":\"Verify the ability to clear all customer address details during the checkout process.\",\"explanation\":\"Locate the customer address section in the checkout form and clear all the input fields related to address information.\",\"interaction\":{\"interaction_type\":\"clear\",\"element_id\":\":rm:\"}}"
+  }
+}' | The model tried to use an impossible action, even after being told not to. | Trying again.
+2024-02-28 17:17:46.891073:Action 14: Gpt-3.5-turbo tester executiong: '{
+  "role": "assistant",
+  "content": null,
+  "function_call": {
+    "name": "emulate_interaction",
+    "arguments": "{\"page_description\":\"A Samsung Store website featuring a checkout process for purchasing Galaxy products. The site displays a cart with a total price and a checkout form for customer's details and payment. Various Galaxy devices are available for purchase on this site.\",\"new_testing_goal\":\"Verify the ability to clear the customer details in the checkout form.\",\"explanation\":\"Locate the customer details section in the checkout form and clear all the input fields related to customer information.\",\"interaction\":{\"interaction_type\":\"clear\",\"element_id\":\":rn:\"}}"
+  }
+}' | The model tried to use an impossible action, even after being told not to. | Trying again.
+2024-02-28 17:17:49.864093:Action 14: Gpt-3.5-turbo tester executiong: '{
+  "role": "assistant",
+  "content": null,
+  "function_call": {
+    "name": "emulate_interaction",
+    "arguments": "{\"page_description\":\"The website is a Samsung Store featuring a variety of Galaxy products available for purchase. It includes a cart for selected items, a checkout process, and a newsletter subscription option for updates on new Samsung Galaxy products.\",\"new_testing_goal\":\"Verify the ability to clear customer address details in the checkout form.\",\"explanation\":\"Locate the address details section in the checkout form and clear all the input fields related to the customer's address.\",\"interaction\":{\"interaction_type\":\"clear\",\"element_id\":\":rn:\"}}"
+  }
+}' | The model tried to use an impossible action, even after being told not to. | Trying again.
+2024-02-28 17:17:53.445979:Action 14: Gpt-3.5-turbo | Setting new goal: Verify the ability to remove an item from the cart and update the total price accordingly..
+2024-02-28 17:17:54.830562:Action 14: Gpt-3.5-turbo tester executiong: 'action: click() element: <div id=":r2:" class="Navbar-cart-btn on-click"><span class="Navbar-icon"><i class="fas fa-cart-plus"></i></span><div class="cart-items">0</div></div>' | Coverage: 72.44897959183673%
+2024-02-28 17:18:01.944806:Action 15: Gpt-3.5-turbo tester executiong: '{
+  "role": "assistant",
+  "content": null,
+  "function_call": {
+    "name": "emulate_interaction",
+    "arguments": "{\"page_description\":\"The website is an e-commerce platform selling Samsung Galaxy products. It features a variety of Galaxy devices such as the S10 series and M series. The site has a checkout process for purchasing products, a cart for selected items, and a newsletter subscription option for updates on new products.\",\"new_testing_goal\":\"Verify the ability to update the quantity of an item in the cart and check if the total price adjusts accordingly.\",\"explanation\":\"Add an item to the cart, increase the quantity of that item, and verify that the total price updates based on the new quantity in the cart.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":r2:\"}}"
+  }
+}' | The model tried to use an element that is hidden by :rb:. | Trying again.
+2024-02-28 17:18:05.941708:Action 15: Gpt-3.5-turbo | Setting new goal: Simulate a scenario where the user attempts to proceed with an empty cart to checkout and ensure an appropriate error message is displayed..
+2024-02-28 17:18:07.301334:Action 15: Gpt-3.5-turbo tester executiong: 'action: click() element: <a id=":r8:" href="#/checkout" style="text-decoration: none;"><div id=":r7:" class="banner-btn clear-cart on-click">Checkout</div></a>' | Coverage: 72.44897959183673%
+2024-02-28 17:18:13.413705:Action 16: Gpt-3.5-turbo | Setting new goal: Attempt to clear the customer details in the checkout form and ensure the appropriate fields are empty after the action..
+2024-02-28 17:18:14.762587:Action 16: Gpt-3.5-turbo tester executiong: 'action: send_keys(John) element: <input type="text" id=":rj:" class="" value="John">' | Coverage: 72.44897959183673%
+2024-02-28 17:18:19.454317:Action 17: Gpt-3.5-turbo tester executiong: '{
+  "role": "assistant",
+  "content": null,
+  "function_call": {
+    "name": "emulate_interaction",
+    "arguments": "{\"page_description\":\"An e-commerce website focusing on Samsung Galaxy products. The site includes a cart for selected items, a checkout process, and a newsletter subscription for product updates.\",\"new_testing_goal\":\"Attempt to clear the address and payment details in the checkout form and verify that the fields are empty after the action.\",\"explanation\":\"Enter some address and payment details in the checkout form and then clear the details. Confirm that all address and payment detail fields are empty after clearing them.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":rj:\"}}"
+  }
+}' | The model tried to use an impossible action, even after being told not to. | Trying again.
+2024-02-28 17:18:22.530820:Action 17: Gpt-3.5-turbo | Setting new goal: Ensure that the payment method can be successfully changed during the checkout process..
+2024-02-28 17:18:23.877064:Action 17: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id=":ri:" type="submit">Submit</button>' | Coverage: 72.44897959183673%
+2024-02-28 17:18:28.979480:Action 18: Gpt-3.5-turbo | Setting new goal: Validate the functionality to clear all customer details in the checkout form and ensure the fields are completely empty after clearing..
+2024-02-28 17:18:30.327866:Action 18: Gpt-3.5-turbo tester executiong: 'action: clear() element: <input type="text" id=":rj:" class="" value="JohnJohn">' | Coverage: 72.44897959183673%
+2024-02-28 17:18:36.044688:Action 19: Gpt-3.5-turbo | Setting new goal: Ensure the functionality to remove an item from the cart and update the total price accordingly is working correctly..
+2024-02-28 17:18:37.342921:Action 19: Gpt-3.5-turbo tester executiong: 'action: click() element: <span id=":r1:" class="Navbar-icon on-click"><i class="fas fa-bars"></i></span>' | Coverage: 74.48979591836735%
+2024-02-28 17:18:43.417553:Action 20: Gpt-3.5-turbo tester executiong: '{
+  "role": "assistant",
+  "content": null,
+  "function_call": {
+    "name": "emulate_interaction",
+    "arguments": "{\"page_description\":\"An e-commerce website focusing on Samsung Galaxy products, including the S10 series and M series, with a cart, checkout process, and newsletter subscription feature for product updates.\",\"new_testing_goal\":\"Try to remove all items from the cart and ensure the total price is updated to zero.\",\"explanation\":\"Add items to the cart, then proceed to remove all items from the cart and verify that the total price reflects zero after all items have been removed.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":rj:\"}}"
+  }
+}' | The model tried to use an impossible action, even after being told not to. | Trying again.
+2024-02-28 17:18:46.591832:Action 20: Gpt-3.5-turbo | Setting new goal: Verify the functionality to add a Samsung Galaxy A Series device to the cart and proceed through the checkout process..
+2024-02-28 17:18:47.901571:Action 20: Gpt-3.5-turbo tester executiong: 'action: click() element: <a id=":r0:-a_series" class="" href="#/c/a_series">A Series</a>' | Coverage: 74.48979591836735%
+2024-02-28 17:18:53.454969:Action 21: Gpt-3.5-turbo | Setting new goal: Test the functionality to add a Galaxy A70 to the cart and proceed through the checkout process..
+2024-02-28 17:18:54.830095:Action 21: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id="10:rr:" class="bag-btn"><i class="fas fa-shopping-cart"></i>add to cart</button>' | Coverage: 74.48979591836735%
+2024-02-28 17:19:01.440154:Action 22: Gpt-3.5-turbo tester executiong: '{
+  "role": "assistant",
+  "content": null,
+  "function_call": {
+    "name": "emulate_interaction",
+    "arguments": "{\"page_description\":\"An e-commerce website focused on Samsung Galaxy products, particularly the A Series. It offers a variety of Galaxy A Series devices with detailed information, prices, and images. The site provides a cart for selected items, a checkout process, and options for product updates through newsletters.\",\"new_testing_goal\":\"Proceed through the checkout process with a Samsung Galaxy A70 in the cart to complete the purchase successfully.\",\"explanation\":\"Add the Galaxy A70 to the cart if not already added. Then, proceed through the checkout process, including entering necessary details and confirming the order to complete a successful purchase.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\"10:rr:\"}}"
+  }
+}' | The model tried to use an element that is hidden by :ra:. | Trying again.
+2024-02-28 17:19:05.023511:Action 22: Gpt-3.5-turbo tester executiong: '{
+  "role": "assistant",
+  "content": null,
+  "function_call": {
+    "name": "emulate_interaction",
+    "arguments": "{\"page_description\":\"An e-commerce website selling Samsung Galaxy products, particularly focusing on the A Series. The website provides a variety of Galaxy A Series devices with detailed information, prices, and images. It includes a cart feature for selected items, a checkout process, and options for product updates through newsletters.\",\"new_testing_goal\":\"Add the Galaxy A80 to the cart and proceed through the checkout process to complete a sample order for the Galaxy A80.\",\"explanation\":\"Start by adding the Galaxy A80 to the cart. Then proceed through the checkout process, including entering necessary details and confirming the order to complete a sample purchase for the Galaxy A80.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\"9:rr:\"}}"
+  }
+}' | The model tried to use an element that is hidden by :ra:. | Trying again.
+2024-02-28 17:19:09.531099:Action 22: Gpt-3.5-turbo tester executiong: '{
+  "role": "assistant",
+  "content": null,
+  "function_call": {
+    "name": "emulate_interaction",
+    "arguments": "{\"page_description\":\"An e-commerce website focusing on Samsung Galaxy products, including the A Series devices. It provides detailed information, prices, and images of the Galaxy A Series phones. The site offers a cart for selected items, a checkout process, and subscription options for newsletters.\",\"new_testing_goal\":\"Proceed through the checkout process with a Samsung Galaxy A80 in the cart to complete the purchase successfully.\",\"explanation\":\"Add the Galaxy A80 to the cart if not already added. Proceed through the checkout process, entering necessary details and confirming the order to complete a successful purchase.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\"9:rr:\"}}"
+  }
+}' | The model tried to use an element that is hidden by :ra:. | Trying again.
+2024-02-28 17:19:13.234714:Action 22: Gpt-3.5-turbo | Setting new goal: Proceed through the checkout process with a Samsung Galaxy A70 in the cart to complete the purchase successfully..
+2024-02-28 17:19:14.583675:Action 22: Gpt-3.5-turbo tester executiong: 'action: click() element: <div id=":r7:" class="banner-btn clear-cart on-click">Checkout</div>' | Coverage: 74.48979591836735%
+2024-02-28 17:19:21.407861:Action 23: Gpt-3.5-turbo tester executiong: '{
+  "role": "assistant",
+  "content": null,
+  "function_call": {
+    "name": "emulate_interaction",
+    "arguments": "{\"page_description\":\"The e-commerce website showcases Samsung Galaxy products, especially focusing on the A Series devices. It offers detailed information, prices, and images of the Galaxy A Series phones. The site features a cart for selected items, a checkout process, and subscription options for newsletters.\",\"new_testing_goal\":\"Proceed through the checkout process with a Samsung Galaxy A70 in the cart to complete the purchase successfully.\",\"explanation\":\"Add the Samsung Galaxy A70 to the cart if it's not already added. Proceed through the checkout process, including entering necessary details and confirming the order to complete a successful purchase.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":r7:\"}}"
+  }
+}' | The model tried to use an impossible action, even after being told not to. | Trying again.
+2024-02-28 17:19:25.302288:Action 23: Gpt-3.5-turbo | Setting new goal: Proceed through the checkout process with a Samsung Galaxy A80 in the cart to complete the purchase successfully..
+2024-02-28 17:19:26.622834:Action 23: Gpt-3.5-turbo tester executiong: 'action: click() element: <div id=":r2:" class="Navbar-cart-btn on-click"><span class="Navbar-icon"><i class="fas fa-cart-plus"></i></span><div class="cart-items">1</div></div>' | Coverage: 74.48979591836735%
+2024-02-28 17:19:33.900621:Action 24: Gpt-3.5-turbo | Setting new goal: Proceed through the checkout process with a Samsung Galaxy A80 in the cart to complete the purchase successfully..
+2024-02-28 17:19:35.347617:Action 24: Gpt-3.5-turbo tester executiong: 'action: click() element: <div id=":r7:" class="banner-btn clear-cart on-click">Checkout</div>' | Coverage: 74.48979591836735%
+2024-02-28 17:19:42.405476:Action 25: Gpt-3.5-turbo tester executiong: '{
+  "role": "assistant",
+  "content": null,
+  "function_call": {
+    "name": "emulate_interaction",
+    "arguments": "{\"page_description\":\"An e-commerce website with a focus on Samsung Galaxy products, including the A Series devices. The website provides detailed information, prices, and images of the Galaxy A Series phones. It offers features like cart functionality, a checkout process, and subscription options for newsletters.\",\"new_testing_goal\":\"Proceed through the checkout process with a Samsung Galaxy A70 in the cart to complete the purchase successfully.\",\"explanation\":\"Add the Samsung Galaxy A70 to the cart if not already added. Then proceed through the checkout process, entering necessary details and confirming the order to complete a successful purchase.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":r7:\"}}"
+  }
+}' | The model tried to use an impossible action, even after being told not to. | Trying again.
+2024-02-28 17:19:46.188663:Action 25: Gpt-3.5-turbo | Setting new goal: Proceed through the checkout process with a Samsung Galaxy A90 in the cart to complete the purchase successfully..
+2024-02-28 17:19:47.526496:Action 25: Gpt-3.5-turbo tester executiong: 'action: click() element: <a id=":r0:-a_series" class="" href="#/c/a_series">A Series</a>' | Coverage: 74.48979591836735%
+2024-02-28 17:19:49.218674:Final coverage data: namespace(covered=73, blocks=98, percentage=0.7448979591836735)
+2024-02-28 17:19:49.218694:Detailed coverage calculation explanation: Out of the total number of 98 blocks across all functions, 73 were covered (i.e., executed at least once during the test). This leads to a final coverage percentage of 74.48979591836735%. This percentage represents the ratio of the number of covered blocks to the total number of blocks, giving equal weight to each block.
+2024-02-28 17:19:49.218697:Test run completed.
+2024-02-28 17:19:49.282284:Past actions saved to: results/20240228_171557/past_actions.json

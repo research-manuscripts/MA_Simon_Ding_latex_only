@@ -1,0 +1,113 @@
+2024-03-01 20:34:44.139184:Configuration: {
+  "url": "http://localhost:3000/",
+  "delay": 0.5,
+  "interactions": 25,
+  "load_wait_time": 10,
+  "test_type": "gpt-3.5-turbo",
+  "output_dir": "results"
+}
+2024-03-01 20:34:44.139201:Starting the test on URL: http://localhost:3000/
+2024-03-01 20:34:50.271362:Web page loaded successfully.
+2024-03-01 20:34:52.224896:Pre test coverage data: namespace(covered=33, blocks=98, percentage=0.336734693877551)
+2024-03-01 20:34:52.224912:Opened website. | Coverage: 33.6734693877551%
+2024-03-01 20:34:56.968413:Action 1: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id="1:r4:" class="bag-btn"><i class="fas fa-shopping-cart"></i>add to cart</button>' | Coverage: 39.795918367346935%
+2024-03-01 20:35:02.331177:Action 2: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id="2:r4:" class="bag-btn"><i class="fas fa-shopping-cart"></i>add to cart</button>' | Coverage: 39.795918367346935%
+2024-03-01 20:35:05.816411:Action 3: Gpt-3.5-turbo tester executiong: '{
+  "role": "assistant",
+  "content": null,
+  "function_call": {
+    "name": "emulate_interaction",
+    "arguments": "{\"page_description\":\"The website is an online Samsung store showcasing Galaxy phones and accessories. It features a navigation bar, a hero banner, and a products section displaying different Galaxy models.\",\"explanation\":\"The next action is to remove an item from the cart. Let's remove an item from the cart to test this functionality.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":rc:\"}}"
+  }
+}' | The model tried to use an impossible action, even after being told not to. | Trying again.
+2024-03-01 20:35:09.522714:Action 3: Gpt-3.5-turbo tester executiong: 'action: click() element: <div id=":r2:" class="Navbar-cart-btn on-click"><span class="Navbar-icon"><i class="fas fa-cart-plus"></i></span><div class="cart-items">2</div></div>' | Coverage: 41.83673469387755%
+2024-03-01 20:35:14.486878:Action 4: Gpt-3.5-turbo tester executiong: 'action: click() element: <div id=":r2:" class="Navbar-cart-btn on-click"><span class="Navbar-icon"><i class="fas fa-cart-plus"></i></span><div class="cart-items">2</div></div>' | Coverage: 41.83673469387755%
+2024-03-01 20:35:19.417245:Action 5: Gpt-3.5-turbo tester executiong: 'action: click() element: <div id=":r2:" class="Navbar-cart-btn on-click"><span class="Navbar-icon"><i class="fas fa-cart-plus"></i></span><div class="cart-items">2</div></div>' | Coverage: 41.83673469387755%
+2024-03-01 20:35:24.361496:Action 6: Gpt-3.5-turbo tester executiong: 'action: click() element: <div id=":r2:" class="Navbar-cart-btn on-click"><span class="Navbar-icon"><i class="fas fa-cart-plus"></i></span><div class="cart-items">2</div></div>' | Coverage: 41.83673469387755%
+2024-03-01 20:35:29.492683:Action 7: Gpt-3.5-turbo tester executiong: 'action: click() element: <div id=":r2:" class="Navbar-cart-btn on-click"><span class="Navbar-icon"><i class="fas fa-cart-plus"></i></span><div class="cart-items">2</div></div>' | Coverage: 41.83673469387755%
+2024-03-01 20:35:34.240677:Action 8: Gpt-3.5-turbo tester executiong: 'action: click() element: <div id=":r2:" class="Navbar-cart-btn on-click"><span class="Navbar-icon"><i class="fas fa-cart-plus"></i></span><div class="cart-items">2</div></div>' | Coverage: 41.83673469387755%
+2024-03-01 20:35:38.933225:Action 9: Gpt-3.5-turbo tester executiong: 'action: click() element: <div id=":r2:" class="Navbar-cart-btn on-click"><span class="Navbar-icon"><i class="fas fa-cart-plus"></i></span><div class="cart-items">2</div></div>' | Coverage: 41.83673469387755%
+2024-03-01 20:35:45.171232:Action 10: Gpt-3.5-turbo tester executiong: 'action: click() element: <div id=":r2:" class="Navbar-cart-btn on-click"><span class="Navbar-icon"><i class="fas fa-cart-plus"></i></span><div class="cart-items">2</div></div>' | Coverage: 41.83673469387755%
+2024-03-01 20:35:49.901656:Action 11: Gpt-3.5-turbo tester executiong: 'action: click() element: <div id=":r2:" class="Navbar-cart-btn on-click"><span class="Navbar-icon"><i class="fas fa-cart-plus"></i></span><div class="cart-items">2</div></div>' | Coverage: 41.83673469387755%
+2024-03-01 20:35:54.742063:Action 12: Gpt-3.5-turbo tester executiong: 'action: click() element: <div id=":r2:" class="Navbar-cart-btn on-click"><span class="Navbar-icon"><i class="fas fa-cart-plus"></i></span><div class="cart-items">2</div></div>' | Coverage: 41.83673469387755%
+2024-03-01 20:35:59.757095:Action 13: Gpt-3.5-turbo tester executiong: 'action: click() element: <div id=":r2:" class="Navbar-cart-btn on-click"><span class="Navbar-icon"><i class="fas fa-cart-plus"></i></span><div class="cart-items">2</div></div>' | Coverage: 41.83673469387755%
+2024-03-01 20:36:05.484024:Action 14: Gpt-3.5-turbo tester executiong: 'action: click() element: <div id=":r2:" class="Navbar-cart-btn on-click"><span class="Navbar-icon"><i class="fas fa-cart-plus"></i></span><div class="cart-items">2</div></div>' | Coverage: 41.83673469387755%
+2024-03-01 20:36:11.349871:Action 15: Gpt-3.5-turbo tester executiong: '{
+  "role": "assistant",
+  "content": null,
+  "function_call": {
+    "name": "emulate_interaction",
+    "arguments": "{\"page_description\":\"The website is an online Samsung store featuring Galaxy phones like S10 and accessories. It showcases a navigation bar, hero banner, and products section with various Galaxy models.\",\"explanation\":\"The goal is to view the items in the cart. To proceed, click on the cart icon in the navigation bar.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":r2:\"}}"
+  }
+}' | The model tried to use an element that is hidden by :rb:. | Trying again.
+2024-03-01 20:36:13.599582:Action 15: Gpt-3.5-turbo tester executiong: '{
+  "role": "assistant",
+  "content": null,
+  "function_call": {
+    "name": "emulate_interaction",
+    "arguments": "{\"page_description\":\"The website is an online Samsung store featuring Galaxy phones like S10 and accessories. It showcases a navigation bar, hero banner, and products section with various Galaxy models.\",\"explanation\":\"The goal is to view the items in the cart. To proceed, click on the cart icon in the navigation bar.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":r2:\"}}"
+  }
+}' | The model tried to use an element that is hidden by :rb:. | Trying again.
+2024-03-01 20:36:15.751401:Action 15: Gpt-3.5-turbo tester executiong: '{
+  "role": "assistant",
+  "content": null,
+  "function_call": {
+    "name": "emulate_interaction",
+    "arguments": "{\"page_description\":\"The website is an online Samsung store featuring Galaxy phones like S10 and accessories. It showcases a navigation bar, hero banner, and products section with various Galaxy models.\",\"explanation\":\"The goal is to view the items in the cart by clicking on the cart icon in the navigation bar.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":r2:\"}}"
+  }
+}' | The model tried to use an element that is hidden by :rb:. | Trying again.
+2024-03-01 20:36:17.798951:Action 15: Gpt-3.5-turbo tester executiong: '{
+  "role": "assistant",
+  "content": null,
+  "function_call": {
+    "name": "emulate_interaction",
+    "arguments": "{\"page_description\":\"The website is an online Samsung store displaying Galaxy phones like S10 and accessories. It contains a navigation bar, hero banner, and products section showcasing various Galaxy models.\",\"explanation\":\"To view the items in the cart, let's proceed by clicking on the cart icon in the navigation bar.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":r2:\"}}"
+  }
+}' | The model tried to use an element that is hidden by :rb:. | Trying again.
+2024-03-01 20:36:50.360553:Action 15: Gpt-3.5-turbo tester executiong: '{
+  "role": "assistant",
+  "content": null,
+  "function_call": {
+    "name": "emulate_interaction",
+    "arguments": "{\"page_description\":\"The website is an online Samsung store showcasing Galaxy phones like S10 and accessories. It includes a navigation bar, hero banner, and products section with various Galaxy models.\",\"explanation\":\"To explore the cart items, we will click on the cart icon in the navigation bar.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":r2:\"}}"
+  }
+}' | The model tried to use an element that is hidden by :rb:. | Trying again.
+2024-03-01 20:36:53.981550:Action 15: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id=":r6:" class="clear-cart banner-btn">clear cart</button>' | Coverage: 41.83673469387755%
+2024-03-01 20:37:00.012198:Action 16: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id="1:r4:" class="bag-btn"><i class="fas fa-shopping-cart"></i>add to cart</button>' | Coverage: 41.83673469387755%
+2024-03-01 20:37:05.450158:Action 17: Gpt-3.5-turbo tester executiong: 'action: click() element: <a id=":r8:" href="#/checkout" style="text-decoration: none;"><div id=":r7:" class="banner-btn clear-cart on-click">Checkout</div></a>' | Coverage: 52.04081632653062%
+2024-03-01 20:37:09.440290:Action 18: Gpt-3.5-turbo tester executiong: '{
+  "role": "assistant",
+  "content": null,
+  "function_call": {
+    "name": "emulate_interaction",
+    "arguments": "{\"page_description\":\"The website is an online Samsung store showcasing Galaxy phones like S10 and accessories with a cart feature available for managing items. \",\"explanation\":\"To proceed further, let's interact with a specific element on the web page.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":rb:\"}}"
+  }
+}' | The model tried to use an impossible action, even after being told not to. | Trying again.
+2024-03-01 20:37:11.250005:Action 18: Gpt-3.5-turbo tester executiong: '{
+  "role": "assistant",
+  "content": null,
+  "function_call": {
+    "name": "emulate_interaction",
+    "arguments": "{\"page_description\":\"The website is an online Samsung store featuring Galaxy phones like S10 and accessories. It showcases a navigation bar, hero banner, and products section with various Galaxy models.\",\"explanation\":\"To further explore the website's features, the next action will involve interacting with a specific clickable element.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":r6:\"}}"
+  }
+}' | The model tried to use an impossible action, even after being told not to. | Trying again.
+2024-03-01 20:37:12.646116:Action 18: Gpt-3.5-turbo tester executiong: '{
+  "role": "assistant",
+  "content": null,
+  "function_call": {
+    "name": "emulate_interaction",
+    "arguments": "{\"page_description\":\"The website is an online Samsung store with Galaxy phones and accessories. It features a navigation bar, a hero banner, and product sections.\",\"explanation\":\"To proceed, the next action involves clicking on a specific element to clear the cart.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":r6:\"}}"
+  }
+}' | The model tried to use an impossible action, even after being told not to. | Trying again.
+2024-03-01 20:37:16.123569:Action 18: Gpt-3.5-turbo tester executiong: 'action: click() element: <div id=":r2:" class="Navbar-cart-btn on-click"><span class="Navbar-icon"><i class="fas fa-cart-plus"></i></span><div class="cart-items">1</div></div>' | Coverage: 52.04081632653062%
+2024-03-01 20:37:20.787845:Action 19: Gpt-3.5-turbo tester executiong: 'action: click() element: <div id=":ra:" class="on-click cart-overlay transparentBcg"><div id=":rb:" class="on-click cart showCart"><span id=":r9:" class="close-cart on-click"><i class="fas fa-window-close"></i></span><h2>Your cart</h2><div class="cart-content"><div class="cart-item"><img src="./images/product-1.jpeg" alt="Galaxy S10 5G"><div><h4>Galaxy S10 5G</h4><h5>$910.99</h5><span id=":ri:" class="remove-item on-click">remove</span></div><div><i id=":rj:" class="fas fa-chevron-up on-click"></i><p class="item-amount">1</p><i id=":rk:" class="fas fa-chevron-down on-click"></i></div></div></div><div class="cart-footer"><h3>your total: <span class="cart-total">$910.99</span></h3><button id=":r6:" class="clear-cart banner-btn">clear cart</button><a id=":r8:" href="#/checkout" style="text-decoration: none;"><div id=":r7:" class="banner-btn clear-cart on-click">Checkout</div></a></div></div></div>' | Coverage: 52.04081632653062%
+2024-03-01 20:37:26.296994:Action 20: Gpt-3.5-turbo tester executiong: 'action: click() element: <span id=":r1:" class="Navbar-icon on-click"><i class="fas fa-bars"></i></span>' | Coverage: 54.08163265306123%
+2024-03-01 20:37:31.846988:Action 21: Gpt-3.5-turbo tester executiong: 'action: click() element: <div id=":r2:" class="Navbar-cart-btn on-click"><span class="Navbar-icon"><i class="fas fa-cart-plus"></i></span><div class="cart-items">1</div></div>' | Coverage: 54.08163265306123%
+2024-03-01 20:37:38.132501:Action 22: Gpt-3.5-turbo tester executiong: 'action: click() element: <span id=":r9:" class="close-cart on-click"><i class="fas fa-window-close"></i></span>' | Coverage: 54.08163265306123%
+2024-03-01 20:37:42.818354:Action 23: Gpt-3.5-turbo tester executiong: 'action: click() element: <div id=":r2:" class="Navbar-cart-btn on-click"><span class="Navbar-icon"><i class="fas fa-cart-plus"></i></span><div class="cart-items">1</div></div>' | Coverage: 54.08163265306123%
+2024-03-01 20:37:49.786811:Action 24: Gpt-3.5-turbo tester executiong: 'action: click() element: <div id=":r7:" class="banner-btn clear-cart on-click">Checkout</div>' | Coverage: 54.08163265306123%
+2024-03-01 20:37:55.605544:Action 25: Gpt-3.5-turbo tester executiong: 'action: click() element: <span id=":r1:" class="Navbar-icon on-click"><i class="fas fa-bars"></i></span>' | Coverage: 54.08163265306123%
+2024-03-01 20:37:57.417009:Final coverage data: namespace(covered=53, blocks=98, percentage=0.5408163265306123)
+2024-03-01 20:37:57.417031:Detailed coverage calculation explanation: Out of the total number of 98 blocks across all functions, 53 were covered (i.e., executed at least once during the test). This leads to a final coverage percentage of 54.08163265306123%. This percentage represents the ratio of the number of covered blocks to the total number of blocks, giving equal weight to each block.
+2024-03-01 20:37:57.417038:Test run completed.
+2024-03-01 20:37:57.489259:Past actions saved to: results/20240301_203444/past_actions.json
