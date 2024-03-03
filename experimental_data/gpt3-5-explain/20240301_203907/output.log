@@ -1,0 +1,81 @@
+2024-03-01 20:39:07.656976:Configuration: {
+  "url": "http://localhost:3000/",
+  "delay": 0.5,
+  "interactions": 25,
+  "load_wait_time": 10,
+  "test_type": "gpt-3.5-turbo",
+  "output_dir": "results"
+}
+2024-03-01 20:39:07.656989:Starting the test on URL: http://localhost:3000/
+2024-03-01 20:39:13.763279:Web page loaded successfully.
+2024-03-01 20:39:15.593517:Pre test coverage data: namespace(covered=33, blocks=98, percentage=0.336734693877551)
+2024-03-01 20:39:15.593533:Opened website. | Coverage: 33.6734693877551%
+2024-03-01 20:39:20.987048:Action 1: Gpt-3.5-turbo tester executiong: 'action: click() element: <span id=":r1:" class="Navbar-icon on-click"><i class="fas fa-bars"></i></span>' | Coverage: 35.714285714285715%
+2024-03-01 20:39:27.090385:Action 2: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id="1:r4:" class="bag-btn"><i class="fas fa-shopping-cart"></i>add to cart</button>' | Coverage: 41.83673469387755%
+2024-03-01 20:39:33.542834:Action 3: Gpt-3.5-turbo tester executiong: 'action: click() element: <span id=":rc:" class="remove-item on-click">remove</span>' | Coverage: 43.87755102040816%
+2024-03-01 20:39:39.249362:Action 4: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id=":r6:" class="clear-cart banner-btn">clear cart</button>' | Coverage: 43.87755102040816%
+2024-03-01 20:39:42.600058:Action 5: Gpt-3.5-turbo tester executiong: '{
+  "role": "assistant",
+  "content": null,
+  "function_call": {
+    "name": "emulate_interaction",
+    "arguments": "{\"page_description\":\"The website is a Samsung Store showcasing Samsung phones for sale, with navigation, hero banner, product section, and cart overlay.\",\"explanation\":\"Test the functionality of clearing the cart by clicking on the 'clear cart' button in the cart overlay.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":r6:\"}}"
+  }
+}' | The model tried to use an impossible action, even after being told not to. | Trying again.
+2024-03-01 20:39:46.100880:Action 5: Gpt-3.5-turbo tester executiong: 'action: click() element: <a id=":r0:-galaxy" class="" href="#/c/galaxy">Galaxy</a>' | Coverage: 43.87755102040816%
+2024-03-01 20:39:52.235200:Action 6: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id="6:rf:" class="bag-btn"><i class="fas fa-shopping-cart"></i>add to cart</button>' | Coverage: 43.87755102040816%
+2024-03-01 20:39:57.644671:Action 7: Gpt-3.5-turbo tester executiong: '{
+  "role": "assistant",
+  "content": null,
+  "function_call": {
+    "name": "emulate_interaction",
+    "arguments": "{\"page_description\":\"The website is a Samsung Store showcasing various Galaxy phones for sale. It includes a navigation bar, product section, and cart overlay for managing items in the cart.\",\"explanation\":\"Test the functionality of adding a Galaxy phone to the cart by clicking on the 'add to cart' button of a Galaxy product that is not already in the cart.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\"7:rf:\"}}"
+  }
+}' | The model tried to use an element that is hidden by :ra:. | Trying again.
+2024-03-01 20:40:02.058747:Action 7: Gpt-3.5-turbo tester executiong: 'action: click() element: <span id=":rh:" class="remove-item on-click">remove</span>' | Coverage: 43.87755102040816%
+2024-03-01 20:40:09.199357:Action 8: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id=":r6:" class="clear-cart banner-btn">clear cart</button>' | Coverage: 43.87755102040816%
+2024-03-01 20:40:13.826266:Action 9: Gpt-3.5-turbo tester executiong: '{
+  "role": "assistant",
+  "content": null,
+  "function_call": {
+    "name": "emulate_interaction",
+    "arguments": "{\"page_description\":\"The website is a Samsung Store showcasing various Galaxy phones for sale. It features a product section with different Galaxy phones, a cart overlay, and a navigation bar with options like Home, Galaxy, S10, M Series, and A Series.\",\"explanation\":\"To test the checkout process, simulate clicking on the 'Checkout' button in the cart overlay.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":r7:\"}}"
+  }
+}' | The model tried to use an impossible action, even after being told not to. | Trying again.
+2024-03-01 20:40:18.391861:Action 9: Gpt-3.5-turbo tester executiong: 'action: click() element: <a id=":r0:-home" class="" href="#/">Home</a>' | Coverage: 43.87755102040816%
+2024-03-01 20:40:24.063098:Action 10: Gpt-3.5-turbo tester executiong: 'action: click() element: <a id=":r0:-galaxy" class="" href="#/c/galaxy">Galaxy</a>' | Coverage: 43.87755102040816%
+2024-03-01 20:40:31.277996:Action 11: Gpt-3.5-turbo tester executiong: 'action: click() element: <a id=":r0:-m_series" class="" href="#/c/m_series">M Series</a>' | Coverage: 43.87755102040816%
+2024-03-01 20:40:38.099152:Action 12: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id="7:rn:" class="bag-btn"><i class="fas fa-shopping-cart"></i>add to cart</button>' | Coverage: 43.87755102040816%
+2024-03-01 20:40:43.042070:Action 13: Gpt-3.5-turbo tester executiong: '{
+  "role": "assistant",
+  "content": null,
+  "function_call": {
+    "name": "emulate_interaction",
+    "arguments": "{\"page_description\":\"The website is a Samsung Store showcasing Galaxy phones for sale in the 'M Series' category with various models like M30, M20, and M10. There is an option to add these phones to the cart and view the cart items.\",\"explanation\":\"Test the functionality of adding the 'Galaxy M10' to the cart by clicking on the 'add to cart' button for that product.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\"8:rn:\"}}"
+  }
+}' | The model tried to use an element that is hidden by :rb:. | Trying again.
+2024-03-01 20:40:46.506033:Action 13: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id=":r6:" class="clear-cart banner-btn">clear cart</button>' | Coverage: 43.87755102040816%
+2024-03-01 20:40:51.628559:Action 14: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id="8:rn:" class="bag-btn"><i class="fas fa-shopping-cart"></i>add to cart</button>' | Coverage: 43.87755102040816%
+2024-03-01 20:40:59.461761:Action 15: Gpt-3.5-turbo tester executiong: 'action: click() element: <div id=":r7:" class="banner-btn clear-cart on-click">Checkout</div>' | Coverage: 54.08163265306123%
+2024-03-01 20:41:03.388395:Action 16: Gpt-3.5-turbo tester executiong: '{
+  "role": "assistant",
+  "content": null,
+  "function_call": {
+    "name": "emulate_interaction",
+    "arguments": "{\"page_description\":\"The website is a Samsung Store showcasing Galaxy phones for sale in the 'M Series' category. Users can view product details, add products to the cart, and manage the cart items.\",\"explanation\":\"Test the functionality of proceeding to checkout by clicking on the 'Checkout' button in the cart overlay.\",\"interaction\":{\"interaction_type\":\"click\",\"element_id\":\":r7:\"}}"
+  }
+}' | The model tried to use an impossible action, even after being told not to. | Trying again.
+2024-03-01 20:41:07.317249:Action 16: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id=":rv:" type="submit">Submit</button>' | Coverage: 59.183673469387756%
+2024-03-01 20:41:14.277206:Action 17: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id=":rv:" type="submit">Submit</button>' | Coverage: 59.183673469387756%
+2024-03-01 20:41:20.165403:Action 18: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id=":rv:" type="submit">Submit</button>' | Coverage: 59.183673469387756%
+2024-03-01 20:41:25.744406:Action 19: Gpt-3.5-turbo tester executiong: 'action: click() element: <i id=":r11:" class="fas fa-chevron-up on-click"></i>' | Coverage: 62.244897959183675%
+2024-03-01 20:41:33.233566:Action 20: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id=":rv:" type="submit">Submit</button>' | Coverage: 62.244897959183675%
+2024-03-01 20:41:39.070036:Action 21: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id=":rv:" type="submit">Submit</button>' | Coverage: 62.244897959183675%
+2024-03-01 20:41:44.389337:Action 22: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id=":rv:" type="submit">Submit</button>' | Coverage: 62.244897959183675%
+2024-03-01 20:41:50.610468:Action 23: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id=":rv:" type="submit">Submit</button>' | Coverage: 62.244897959183675%
+2024-03-01 20:41:56.356761:Action 24: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id=":rv:" type="submit">Submit</button>' | Coverage: 62.244897959183675%
+2024-03-01 20:42:03.688433:Action 25: Gpt-3.5-turbo tester executiong: 'action: click() element: <button id=":rv:" type="submit">Submit</button>' | Coverage: 62.244897959183675%
+2024-03-01 20:42:06.184408:Final coverage data: namespace(covered=61, blocks=98, percentage=0.6224489795918368)
+2024-03-01 20:42:06.184429:Detailed coverage calculation explanation: Out of the total number of 98 blocks across all functions, 61 were covered (i.e., executed at least once during the test). This leads to a final coverage percentage of 62.244897959183675%. This percentage represents the ratio of the number of covered blocks to the total number of blocks, giving equal weight to each block.
+2024-03-01 20:42:06.184433:Test run completed.
+2024-03-01 20:42:06.242267:Past actions saved to: results/20240301_203907/past_actions.json
