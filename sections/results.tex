@@ -10,12 +10,178 @@
 %%
 %% Version 1.3.6, 2022-09-28
 
+
+
+\newcommand{\minipicture}[3]{
+    \begin{tikzpicture}
+        \begin{axis}[
+            ymajorgrids=true,
+            xmin=0, xmax=#3,
+            grid style=dashed,
+            ylabel={Abdeckung [\%]},
+            xlabel={Interaktionen [1]},
+            width=#2,
+            no markers,
+            ]
+            
+            \addplot[color=green] table [x=x,y=average,col sep=comma] {experimental_data/monkey/results.csv};
+            \addplot+[forget plot,name path=monkey_top,color=green!70] table [x=x,y=above,col sep=comma] {experimental_data/monkey/results.csv};
+            \addplot+[forget plot,name path=monkey_bottom,color=green!70] table [x=x,y=below,col sep=comma] {experimental_data/monkey/results.csv};
+            \addplot+[forget plot,green!50,fill opacity=0.5] fill between[of=monkey_top and monkey_bottom];
+
+            \addplot[color=black] table [x=x,y=average,col sep=comma] {experimental_data/#1/results.csv};
+            \addplot+[forget plot,name path=#1_top,color=black!70] table [x=x,y=above,col sep=comma] {experimental_data/#1/results.csv};
+            \addplot+[forget plot,name path=#1_bottom,color=black!70] table [x=x,y=below,col sep=comma] {experimental_data/#1/results.csv};
+            \addplot+[forget plot,black!50,fill opacity=0.5] fill between[of=#1_top and #1_bottom];
+        \end{axis}
+    \end{tikzpicture}
+}
+
+\newcommand{\miniplot}[4]{
+    \begin{subfigure}[b]{0.47\textwidth}
+        \minipicture{#1}{\textwidth}{#4}
+        \caption{#2}
+        \label{fig:#3}
+    \end{subfigure}
+}
+
 \chapter{Ergebnisse}
 \label{ch:Results}
 
+\section{Erste Tests mit GPT-3.5 und der ursprünglichen Eingabe}
+
+Nach der Implementierung des Systems wurden zuerst Tests mit GPT-3.5 durchgeführt, um die Funktionalität des Systems zu überprüfen.
+Dabei wurde eine Eingabe verwendet, die der von \Citeauthor{GPT3Testing} nachempfunden ist:
+Darin wird das LLM aufgefordert, zuerst eine Benutzerinteraktion zu generieren, und dann eine Begründung zu liefern, warum diese Benutzerinteraktion generiert wurde.
+Die gleiche Eingabe lässt sich nicht verwenden, da in meiner Implementierung mehr Arten von Benutzerinteraktionen unterstützt werden und die Ausgabe anders aufgebaut sein muss.
+Ergebnisse von Tests mit dieser Eingabe sind in Abbildung \ref{fig:gpt3_5_explain_after} zu sehen.
+Mit dieser Eingabe war die Branchenabdeckung nach 25 Interaktionen mit durchschnittlich $55.7\%$ deutlich niedriger als die von Monkey-Testing mit durchschnittlich $71.2\%$.
+
+Ein Problem, das bei diesen Tests auftrat, war, dass das LLM oft identische Benutzerinteraktionen mehrfach in Folge generierte.
+Beispielsweise wurde mehrmals hintereinander mit jeweils identischer Begründung auf die Schaltfläche \enquote{Submit} geklickt.
+Angesichts dessen, dass GPT-3.5 in anderen Anwendungsgebieten gute Ergebnisse erzielt, war das Ergebnis enttäuschend und ich entschied, Eingaben zu suchen, die zu besseren Ergebnissen führen könnten.
+Die Resultate dieser Suche sind die in Abschnitt \ref{sec:prompt-engineering} beschriebenen Eingaben.
+
+\begin{figure}[h]
+    \centering
+    \minipicture{gpt3-5-explain-after}{0.47\textwidth}{25}
+    \caption{Ergebnisse der Tests mit GPT-3.5 und einer Eingabe, verlangt erst eine Benutzerinteraktion und dann eine Begründung zu generieren. Die schwarze Linie zeigt die durchschnittliche Branchenabdeckung, die grüne Linie zeigt die durchschnittliche Branchenabdeckung von Monkey-Testing. Der schattierte Bereich um die Linien zeigt die Standardabweichung.}
+    \label{fig:gpt3_5_explain_after}
+\end{figure}
+
+\section{Suche nach besseren Eingaben für GPT-3.5}
+\label{sec:prompt-engineering:2}
+
+Die erste Eingabe, die ich ausprobierte, war die Basiseingabe, bei der dem LLM nicht die Ein- und Ausgaben vorheriger Interaktionen gegeben werden.
+Das führt zu noch schlechteren Ergebnissen, wie in Abbildungen \ref{fig:gpt3_5_all} und \ref{fig:gpt3_5_base} zu sehen ist.
+Der LLM-Tester führt bei gleichem Zustand fast immer die gleiche Aktion aus, was dazu führt, dass er in Schleifen von ein bis zwei Interaktionen stecken bleibt und keine neuen Aktionen ausführt.
+
+Die nächste Eingabe, die ich ausprobierte, war die Verkettung, bei der dem LLM die Ein- und Ausgaben vorheriger Interaktionen mit in die Eingabe gegeben werden.
+Die Ergebnisse dieser Eingabe sind in Abbildung \ref{fig:gpt3_5_chained} zu sehen.
+Mit dieser Eingabe war die Branchenabdeckung nach 25 Interaktionen schon $65,8\%$, auch wenn der Unterschied zur ursprünglichen Eingabe nur das Fehlen der Forderung nach einer Begründung ist.
+
+Fordert man vor der Benutzerinteraktion eine Beschreibung der Webseite, steigt die Branchenabdeckung auf $67,9\%$ und es scheint, als ob nicht mehr viel fehlen würde, um die Branchenabdeckung von Monkey-Testing zu erreichen.
+Die nächste Ergänzung der Eingabe, das Fordern einer Erklärung, was mit der Benutzerinteraktion erreicht werden soll, führten aber wieder zu einer deutlichen Verschlechterung der Ergebnisse, wie in Abbildungen \ref{fig:gpt3_5_explain} zu sehen ist.
+
+Ein Hauptproblem mit dieser Eingabe scheint zu sein, dass das Sprachmodell die Webseite nicht versteht und deshalb nicht in der Lage ist, sinnvolle Handlungsabläufe zu generieren:
+Beispielsweise wurde immer wieder die Erklärung \enquote{\foreignlanguage{english}{Proceed with the checkout process by submitting the payment information.}} (Deutsch: \enquote{Fahre mit dem Bezahlvorgang fort, indem die Zahlungsinformationen abgeschickt werden.}) generiert, obwohl die Zahlungsinformationen nicht gesondert vom Rest des Bestellvorgangs abgeschickt werden können.
+Ferner beachtete das Sprachmodell auch die daraufhin auf der Webseite erscheinende Fehlermeldung nicht und versuchte immer wieder das halb ausgefüllte Formular abzuschicken.
+
+In einem anderen Test versucht das Sprachmodell immer wieder den \enquote{Pfeil nach oben}-Knopf im Warenkorb (Abbildung \ref{fig:online-shopping-website-cart}) zu drücken, mit dem die Menge eines Artikels erhöht werden kann, um eine nähere Beschreibung dieses Artikels zu erhalten.
+Das kommt vermutlich daher, dass die textuelle Repräsentation dieses Knopfes den Schriftzug \enquote{fa-cart-plus} enthält, was das Sprachmodell scheinbar als Indiz dafür interpretiert, dass es sich um einen Knopf für eine Detailansicht handelt.
+(Danach folgt \enquote{fa-cart-minus}, somit ist diese Interpretation unwahrscheinlich.)
+
+Ein anderes Problem ist, dass in einigen Fällen die erzeugte Handlungsabsicht nicht in einer Benutzerinteraktion ausführbar ist, beispielsweise wurde die Handlungsabsicht \enquote{\foreignlanguage{english}{To test the checkout process, simulate clicking on the 'Checkout' button in the cart overlay.}} (Deutsch: \enquote{Um den Bezahlvorgang zu testen, simuliere das Klicken auf den 'Checkout'-Knopf im Warenkorb-Overlay.}) generiert, obwohl das Warenkorb-Overlay nicht geöffnet war und somit der Knopf nicht existierte.
+Die Eingabe verlangt aber, dass die Handlungsabsicht mit der Benutzerinteraktion ausgeführt werden soll, daher werden solche Handlungsabsichten ignoriert oder führen zu fehlerhaften Benutzerinteraktionen.
+
+Um diese Probleme zu lösen, hatte ich die Idee, dass das Sprachmodell sich selbst Ziele setzen sollte, die es mit den nächsten Benutzerinteraktionen erreichen will.
+Falls ein Ziel nicht mehr erreichbar scheint, sollte das Sprachmodell neue Ziele formulieren.
+Gleichzeitig bekommt das Sprachmodell eine Auflistung der Ziele, die es sich zuvor gesetzt hat, und wie viele Benutzerinteraktionen es für jedes Ziel schon generiert hat.
+Die Ergebnisse dieser Eingabe sind in Abbildung \ref{fig:gpt3_5_goals} zu sehen, diese Eingabe führte zu keiner relevanten Verbesserung der Ergebnisse.
+Ein Hauptproblem war, dass das LLM fast bei jeder Benutzerinteraktion ein neues Ziel setzte, was dazu führte, dass es nie genug Benutzerinteraktionen für ein Ziel generierte, um es zu erreichen.
+
+Die letzte Eingabe, die ich ausprobierte, war die \enquote{Chain of Thought}-Eingabe, bei der das Sprachmodell neben den, bei den anderen Eingaben erzeugten Gedankengängen, auch Beispiele für gute Gedankengänge und Benutzerinteraktion bekommt.
+Diese Beispiele sind für andere Webseiten als die Testwebseite, um dem Sprachmodell keinen unfairen Vorteil gegenüber Monkey-Testing zu verschaffen.
+Tatsächlich führte diese Eingabe zu einer deutlichen Verbesserung der Ergebnisse, wie in Abbildung \ref{fig:gpt3_5_chain_of_thought} zu sehen ist.
+Der Unterschied der Branchenabdeckung zu Monkey-Testing ist relativ gering, und in einigen Fällen ist die Branchenabdeckung von GPT-3.5 höher als die von Monkey-Testing.
+
+Insgesamt war das Ergebnis dieser Tests, dass die von mir definierten Eingaben zu einer Verbesserung der Ergebnisse führten, aber zumindest bei GPT-3.5 nicht ausreichten, um die Branchenabdeckung von Monkey-Testing zu übertreffen.
+In einigen Tests hat das Sprachmodell den Bestellprozess, der ein Beispiel für Monkey-Tester schwierige transaktionale Interaktion wie in Abbildung \ref{fig:sad_monkey} ist, teilweise durchgespielt.
+Aber es wurde nie eine Bestellung abgeschlossen, während der Monkey-Tester ähnliche oder höhere Branchenabdeckung erreichte.
+
+Ich konnte nicht zeigen, dass sich komplexere Webseiten mit GPT-3.5 besser testen lassen als durch Zufall.
+GPT-3.5 scheint nicht in der Lage zu sein, die Webseite zu verstehen und sinnvolle Handlungsabläufe zu generieren.
+Es ist aber offensichtlich, dass die Wahl der Eingabe einen großen Einfluss auf die Ergebnisse hat.
+Daher lässt sich nicht ausschließen, dass es Eingaben gibt, die zu besseren Ergebnissen führen als Monkey-Testing.
+
+Gerade die Verständnisprobleme des Sprachmodells und die Schwierigkeit, sinnvolle Handlungsabläufe zu generieren, legen nahe, dass bessere Sprachmodelle bessere Ergebnisse liefern könnten.
+Deshalb habe ich die gleichen Tests mit GPT-4 durchgeführt.
+
 
 \begin{figure}
-    \todo{WIP, text, vllt mehrere Diagramme}
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            ymajorgrids=true,
+            xmin=0, xmax=25,
+            grid style=dashed,
+            width=0.9\textwidth,
+            ylabel={durchschnittliche Branchenabdeckung [\%]},
+            xlabel={Anzahl der generierten Benutzerinteraktionen [1]},
+            no markers,
+            legend pos=south east,
+            %xtick=data,
+            ]
+            \addplot[color=green] table [x=x,y=average,col sep=comma] {experimental_data/monkey/results.csv};
+            \addlegendentry{Monkey-Testing, n=10}
+
+            \addplot[color=black] table [x=x,y=average,col sep=comma] {experimental_data/gpt3-5-base/results.csv};
+            \addlegendentry{GPT-3.5 Basiseingabe, n=1}
+
+            \addplot[color=red] table [x=x,y=average,col sep=comma] {experimental_data/gpt3-5-chained/results.csv};
+            \addlegendentry{GPT-3.5 Verkettung, n=4}
+
+            \addplot[color=blue] table [x=x,y=average,col sep=comma] {experimental_data/gpt3-5-description/results.csv};
+            \addlegendentry{GPT-3.5 Beschreibung, n=4}
+
+            \addplot[color=cyan] table [x=x,y=average,col sep=comma] {experimental_data/gpt3-5-explain/results.csv};
+            \addlegendentry{GPT-3.5 Erklärung, n=4}
+
+            \addplot[color=orange] table [x=x,y=average,col sep=comma] {experimental_data/gpt3-5-goals/results.csv};
+            \addlegendentry{GPT-3.5 Ziele, n=5}
+
+            \addplot[color=magenta] table [x=x,y=average,col sep=comma] {experimental_data/gpt3-5-chain-of-thought/results.csv};
+            \addlegendentry{GPT-3.5 Chain of Thought, n=4}
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Vergleich der durchschnittliche gemessenen Branchenabdeckung von GPT-3.5 mit allen Eingaben und Monkey-Testing.}
+    \label{fig:gpt3_5_all}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \miniplot{gpt3-5-base}{GPT-3.5 Basiseingabe, n=1}{gpt3_5_base}{25}\hfill
+    \miniplot{gpt3-5-chained}{GPT-3.5 Verkettung, n=4}{gpt3_5_chained}{25}
+    \miniplot{gpt3-5-description}{GPT-3.5 Beschreibung, n=4}{gpt3_5_describe}{25}\hfill
+    \miniplot{gpt3-5-explain}{GPT-3.5 Erklärung, n=4}{gpt3_5_explain}{25}
+    \miniplot{gpt3-5-goals}{GPT-3.5 Ziele, n=5}{gpt3_5_goals}{25}\hfill
+    \miniplot{gpt3-5-chain-of-thought}{GPT-3.5 Chain of Thought, n=4}{gpt3_5_chain_of_thought}{25}
+    \caption{Vergleich der durchschnittliche gemessenen Branchenabdeckung von GPT-3.5 (schwarz) und Monkey-Testing (grün). Der schattierte Bereich um die Linien zeigt die Standardabweichung.}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \miniplot{gpt4-base}{GPT-4 Basiseingabe, n=1}{gpt4_base}{20}\hfill
+    \miniplot{gpt4-chained}{GPT-4 Verkettung, n=2}{gpt4_chained}{100}
+    \miniplot{gpt4-describe}{GPT-4 Beschreibung, n=3}{gpt4_describe}{100}\hfill
+    \miniplot{gpt4-explain}{GPT-4 Erklärung, n=5}{gpt4_explain}{100}
+    \miniplot{gpt4-goals}{GPT-4 Ziele, n=4}{gpt4_goals}{100}\hfill
+    \miniplot{gpt4-chain-of-thought}{GPT-4 Chain of Thought, n=4}{gpt4_chain_of_thought}{100}
+    \caption{Vergleich der durchschnittliche gemessenen Branchenabdeckung von GPT-4 (schwarz) und Monkey-Testing (grün). Der schattierte Bereich um die Linien zeigt die Standardabweichung.}
+\end{figure}
+
+\begin{figure}
+    \todo{caption}
     \centering
     \begin{tikzpicture}
         \begin{axis}[
@@ -23,59 +189,33 @@
             xmin=0, xmax=100,
             grid style=dashed,
             width=0.9\textwidth,
-            ylabel={Branchenabdeckung [\%]},
+            ylabel={durchschnittliche Branchenabdeckung [\%]},
             xlabel={Anzahl der generierten Benutzerinteraktionen [1]},
             no markers,
             legend pos=south east,
             %xtick=data,
             ]
             \addplot[color=green] table [x=x,y=average,col sep=comma] {experimental_data/monkey/results.csv};
-            %\addplot+[forget plot,name path=monkey_top,color=green!70] table [x=x,y=above,col sep=comma] {experimental_data/monkey/results.csv};
-            %\addplot+[forget plot,name path=monkey_bottom,color=green!70] table [x=x,y=below,col sep=comma] {experimental_data/monkey/results.csv};
-            %\addplot+[forget plot,green!50,fill opacity=0.5] fill between[of=monkey_top and monkey_bottom];
             \addlegendentry{Monkey-Testing, n=10}
 
             \addplot[color=black] table [x=x,y=average,col sep=comma] {experimental_data/gpt4-base/results.csv};
             \addlegendentry{GPT-4 Basiseingabe, n=1}
 
-            \addplot[color=blue] table [x=x,y=average,col sep=comma] {experimental_data/gpt4-chained/results.csv};
+            \addplot[color=red] table [x=x,y=average,col sep=comma] {experimental_data/gpt4-chained/results.csv};
             \addlegendentry{GPT-4 Verkettung, n=2}
-            %\addplot+[forget plot,name path=gpt4_chain_top,color=blue!70] table [x=x,y=above,col sep=comma] {experimental_data/gpt4-chained/results.csv};
-            %\addplot+[forget plot,name path=gpt4_chain_bottom,color=blue!70] table [x=x,y=below,col sep=comma] {experimental_data/gpt4-chained/results.csv};
-            %\addplot+[forget plot,blue!50,fill opacity=0.5] fill between[of=gpt4_chain_top and gpt4_chain_bottom];
 
-            \addplot[color=orange] table [x=x,y=average,col sep=comma] {experimental_data/gpt4-describe/results.csv};
+            \addplot[color=blue] table [x=x,y=average,col sep=comma] {experimental_data/gpt4-describe/results.csv};
             \addlegendentry{GPT-4 Beschreibung, n=3}
-            %\addplot+[forget plot,name path=gpt4_describe_top,color=orange!70] table [x=x,y=above,col sep=comma] {experimental_data/gpt4-describe/results.csv};
-            %\addplot+[forget plot,name path=gpt4_describe_bottom,color=orange!70] table [x=x,y=below,col sep=comma] {experimental_data/gpt4-describe/results.csv};
-            %\addplot+[forget plot,orange!50,fill opacity=0.5] fill between[of=gpt4_describe_top and gpt4_describe_bottom];
 
-            \addplot[color=purple] table [x=x,y=average,col sep=comma] {experimental_data/gpt4-explain/results.csv};
+            \addplot[color=cyan] table [x=x,y=average,col sep=comma] {experimental_data/gpt4-explain/results.csv};
             \addlegendentry{GPT-4 Erklärung, n=5}
-            %\addplot+[forget plot,name path=gpt4_explain_top,color=purple!70] table [x=x,y=above,col sep=comma] {experimental_data/gpt4-explain/results.csv};
-            %\addplot+[forget plot,name path=gpt4_explain_bottom,color=purple!70] table [x=x,y=below,col sep=comma] {experimental_data/gpt4-explain/results.csv};
-            %\addplot+[forget plot,purple!50,fill opacity=0.5] fill between[of=gpt4_explain_top and gpt4_explain_bottom];
 
-            \addplot[color=red] table [x=x,y=average,col sep=comma] {experimental_data/gpt4-goals/results.csv};
+            \addplot[color=magenta] table [x=x,y=average,col sep=comma] {experimental_data/gpt4-goals/results.csv};
             \addlegendentry{GPT-4 Ziele, n=4}
 
-            \addplot[color=gray] table [x=x,y=average,col sep=comma] {experimental_data/gpt4-chain-of-thought/results.csv};
+            \addplot[color=orange] table [x=x,y=average,col sep=comma] {experimental_data/gpt4-chain-of-thought/results.csv};
             \addlegendentry{GPT-4 Chain of Thought, n=4}
         \end{axis}
     \end{tikzpicture}
     
 \end{figure}
-
-\todo{deutsch, keine Orakel}
-
-As we know of no other approaches to doing scripted testing using only natural language test descriptions, comparing it to other works is hard.
-As such validation of this part of the work will center around its feasibility.
-The new system's ability to navigate the AUT will be compared to monkey testing.
-The test oracle part of the system will be validated using mutation testing and its results will be captured in a confusion matrix.
-
-\section{Vergleich zu Monkey Testing}
-
-Monkey testing is the approach of taking random user actions to find failing application states.
-We will measure if the system can successfully navigate the software into the state that shall be tested for each test case and count the number of user interactions it simulates.
-That amount of user interaction will be compared to the number of user interactions performed by a monkey tester to navigate to the same state.
-The system must at least use fewer user interactions as a monkey tester.

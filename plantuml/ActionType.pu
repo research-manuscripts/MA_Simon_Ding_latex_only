@@ -1,9 +1,5 @@
 @startuml
 
-class Action {
-String elementId
-void execute()
-}
 
 object Click {
 name="click"
@@ -22,15 +18,14 @@ description=\n"sends keystrokes to an html element"
 adjective="writable"
 }
 
-ActionType <|-- Click
-ActionType <|-- Clear
-ActionType <|-- SendKeys
+ActionType .. Click : <<instance>>
+ActionType .. Clear : <<instance>>
+ActionType .. SendKeys : <<instance>>
 
 ActionExecutor <--* ActionType
 ActionFactory <--* ActionType
 ArgumentDescriptor "*" <--* ActionType
 
-ActionType <--o Action
 
 
 class ActionType<T extends Action>{
@@ -46,20 +41,21 @@ um die Eingabe für das LLM zu erzeugen.
 end note
 
 interface ActionExecutor<T extends Action> {
-void execute(Action action)
+void execute(T action)
 }
 interface ActionFactory<T extends Action> {
-Action[] extractActions(SeleniumDriver driver)
+T[] extractActions(SeleniumDriver driver)
 }
 
-class ArgumentDescriptor<T>{
+class ArgumentDescriptor{
 String name
 String description
-T randomValue()
+String randomValue()
 }
 
 note left of ArgumentDescriptor::"randomValue()"
-Erzeugt Argumente für den Monkey-Tester.
+Für den
+Monkey-Tester
 end note
 
 object Keys{
@@ -68,7 +64,12 @@ description="the keys to be sent to the html element"
 }
 
 Keys <--* SendKeys
-ArgumentDescriptor <|-- Keys
+ArgumentDescriptor .. Keys : <<instance>>
 
+class Action {
+String elementId
+void execute()
+}
 
+ActionType <--o Action
 @enduml
