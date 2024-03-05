@@ -1,16 +1,9 @@
-%% LaTeX2e class for student theses
-%% sections/conclusion.tex
-%% 
-%% Karlsruhe Institute of Technology
-%% Institute for Program Structures and Data Organization
-%% Chair for Software Design and Quality (SDQ)
-%%
-%% Dr.-Ing. Erik Burger
-%% burger@kit.edu
-%%
-%% Version 1.3.6, 2022-09-28
+\chapter{Fazit}
+\label{ch:conclusion}
 
-\chapter{Ausblick}
-\label{ch:Conclusion}
-
-\dots
+In dieser Arbeit wurde untersucht, ob Large Language Models (LLMs) für das explorative Testen von Webseiten eingesetzt werden können.
+Dazu wurde eine Webshop-Webseite entwickelt und ein Testskript geschrieben, das die Webseite mit verschiedenen Methoden testet und die Branchenabdeckung misst.
+Es wurden GPT-3.5 und GPT-4 mit verschiedenen Eingaben und Monkey-Testing verglichen.
+GPT-3 erreichte dabei keine besseren Ergebnisse als Monkey-Testing und erzeugte teilweise unmögliche Benutzerinteraktionen.
+GPT-4 erreichte mit der gleichen Anzahl an Interaktionen mehr Zustände und somit eine höhere Branchenabdeckung als Monkey-Testing.
+Jedoch hatten sowohl GPT-4 als auch Monkey-Testing Probleme mit der Validierungslogik des Webshops, Monkey-Testing konnte keine validen Eingaben generieren und GPT-4 hat die invaliden Eingaben nicht ausreichend getestet.

@@ -1,0 +1,54 @@
+%% LaTeX2e class for student theses
+%% sections/conclusion.tex
+%% 
+%% Karlsruhe Institute of Technology
+%% Institute for Program Structures and Data Organization
+%% Chair for Software Design and Quality (SDQ)
+%%
+%% Dr.-Ing. Erik Burger
+%% burger@kit.edu
+%%
+%% Version 1.3.6, 2022-09-28
+
+\chapter{Diskussion}
+\label{ch:discussion}
+
+Im Rahmen dieser Arbeit habe ich die Anwendbarkeit von Large Language Models (LLMs) auf das Testen von Webseiten untersucht, was zuvor von \citeauthor{GPT3Testing} vorgeschlagen wurde \cite{GPT3Testing}.
+Untersucht werden sollte dabei auch, ob die Sprachmodelle den Zustand der Webseite verstehen und basierend darauf sinnvolle Handlungsabläufe generieren können und ob die Wahl des Sprachmodells und der Eingabe relevant sind.
+Dazu habe ich die Fähigkeit von GPT-3.5 und GPT-4, Webseiten zu testen, mit verschiedenen Experimenten untersucht und mit Monkey-Testing verglichen.
+Die Sprachmodelle wurden durch die OpenAI API angesteuert und die generierten Aktionen auf einem dafür entwickelten Webshop ausgeführt.
+
+In den ersten Experimenten mit GPT-3.5 zeigte sich, dass es schwierig ist, das Sprachmodell dazu zu bringen, sinnvolle Aktionen zu generieren.
+Ich konnte nicht zeigen, dass sich komplexere Webseiten mit GPT-3.5 besser testen lassen als durch Zufall. % F1.1
+GPT-3.5 ignorierte Fehlermeldungen und versuchte Interaktion, die im Zustand der Webseite nicht ausführbar waren.
+Ee scheint also nicht in der Lage zu sein, die Webseite zu verstehen und basierend sinnvolle Handlungsabläufe zu generieren. % F2.1
+Es ist aber offensichtlich, dass die Wahl der Eingabe einen großen Einfluss auf die Ergebnisse hat: Die durchschnittlichen Branchenabdeckungen lagen je nach Eingabe zwischen $55{.}7\%$ und $68{,}6$. % F3
+Daher lässt sich nicht ausschließen, dass es Eingaben gibt, die zu besseren Ergebnissen führen als Monkey-Testing.
+
+Gerade die Verständnisprobleme des Sprachmodells, legten nahe, dass bessere Sprachmodelle bessere Ergebnisse liefern könnten.
+Deshalb habe ich die gleichen Tests im Anschluss mit GPT-4 durchgeführt.
+Im Vergleich zu Monkey-Testing konnte GPT-4 mit der gleichen Anzahl an Interaktionen mehr Zustände und somit eine höhere Branchenabdeckung erreichen. % F1.2
+Es reagierte außerdem auf Fehlermeldungen und korrigierte invalide Eingaben.
+GPT-4 ist also in der Lage ist, sinnvolle Aktionen zu generieren und die Webseite zu verstehen. % F2.2
+Die Wahl des Sprachmodells hat also einen großen Einfluss auf die Ergebnisse. % F4
+Auch bei GPT-4 war die Wahl der Eingabe entscheidend: Die durchschnittlichen Branchenabdeckungen lagen je nach Eingabe zwischen $74{,}1\%$ und $87{,}1\%$. % F3
+Die Tests mit GPT-4 zeigen, dass sich auch schwer erreichbare Zustände in komplexen Webseiten mit LLMs erreichen lassen.
+Dabei werden zwar nicht alle Zustände erreicht, aber es wurden Zustände erreicht, die mit Monkey-Testing nur sehr schwer zu erreichen wären.
+
+Im Vergleich zu Monkey-Testing, das mit beliebig vielen Interaktionen alle Zustände erreichen kann, erreichte GPT-4 mit 33 Interaktionen genau die Zustände, für die ein Testlauf mit Monkey-Testing impraktikabel lange brauchen würde.
+Diese Effizienz ist in der Praxis sehr wertvoll, da das Testen mit LLMs für jede Interaktion deutlich mehr Geld kostet und durch die Kommunikation mit der API auch mehr Zeit in Anspruch nimmt als Monkey-Testing.
+Monkey-Testing ist schneller und günstiger, aber es ist bei komplexeren Anwendungen nicht praktikabel, damit alle Zustände zu erreichen.
+
+Beide Ansätze hatten Probleme mit der Validierungslogik des Webshops.
+Monkey-Testing konnte keine validen Eingaben generieren, da es keine Kenntnis über die Validierungslogik hat.
+GPT-4 konnte zwar valide Eingaben generieren, hat aber die invaliden Eingaben nicht ausreichend getestet.
+
+Sowohl die Sprachmodelle als auch Monkey-Testing wurden nur auf dem entwickelten Webshop getestet.
+Dieser Webshop ist nicht repräsentativ für alle Webseiten, ist  aber relativ komplex und hat eine Vielzahl von Elementen, die auch auf anderen Webseiten vorkommen.
+Sowohl das Testskript und der Monkey-Tester wurden in keiner Weise auf den Webshop angepasst, sondern lediglich auf die Startseite des Webshops angewendet.
+Die Ergebnisse dieser Arbeit sind also nicht ohne weiteres auf andere Webseiten übertragbar, aber sie sind ein gutes Beispiel dafür, wie LLMs auf Webseiten angewendet werden können und in welchen Bereichen sie besser oder schlechter abschneiden als Monkey-Testing.
+
+In dieser Arbeit wurde nicht versucht, die von GPT-4 generierten Benutzerinteraktion durch andere Eingaben oder durch Anpassen der Parameter variabler zu gestalten.
+Je höher die Parameter \textit{Temperatur} und \textit{top-p} gewählt werden, desto zufälliger werden die generierten Ausgaben.
+Es wurde nur mit den Standardwerten gearbeitet, die Ergebnisse legen aber nahe, dass es sinnvoll sein könnte, diese Parameter zu variieren.
+Auch das Experimentieren mit anderen Sprachmodellen und anderen Eingaben könnte interessant sein; gerade die Möglichkeit, Bilder als Eingabe zu verwenden, könnte interessante Ergebnisse liefern.

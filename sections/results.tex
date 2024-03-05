@@ -52,10 +52,10 @@
 
 Nach der Implementierung des Systems wurden zuerst Tests mit GPT-3.5 durchgeführt, um die Funktionalität des Systems zu überprüfen.
 Dabei wurde eine Eingabe verwendet, die der von \Citeauthor{GPT3Testing} nachempfunden ist:
-Darin wird das LLM aufgefordert, zuerst eine Benutzerinteraktion zu generieren, und dann eine Begründung zu liefern, warum diese Benutzerinteraktion generiert wurde.
+Darin wird das LLM aufgefordert, zuerst eine Benutzerinteraktion zu generieren und dann eine Begründung zu liefern, warum diese Benutzerinteraktion generiert wurde.
 Die gleiche Eingabe lässt sich nicht verwenden, da in meiner Implementierung mehr Arten von Benutzerinteraktionen unterstützt werden und die Ausgabe anders aufgebaut sein muss.
 Ergebnisse von Tests mit dieser Eingabe sind in Abbildung \ref{fig:gpt3_5_explain_after} zu sehen.
-Mit dieser Eingabe war die Branchenabdeckung nach 25 Interaktionen mit durchschnittlich $55.7\%$ deutlich niedriger als die von Monkey-Testing mit durchschnittlich $71.2\%$.
+Mit dieser Eingabe war die Branchenabdeckung nach 25 Interaktionen mit durchschnittlich $55{,}7\%$ deutlich niedriger als die von Monkey-Testing mit durchschnittlich $71{,}2\%$.
 
 Ein Problem, das bei diesen Tests auftrat, war, dass das LLM oft identische Benutzerinteraktionen mehrfach in Folge generierte.
 Beispielsweise wurde mehrmals hintereinander mit jeweils identischer Begründung auf die Schaltfläche \enquote{Submit} geklickt.
@@ -71,51 +71,6 @@ Die Resultate dieser Suche sind die in Abschnitt \ref{sec:prompt-engineering} be
 
 \section{Suche nach besseren Eingaben für GPT-3.5}
 \label{sec:prompt-engineering:2}
-
-Die erste Eingabe, die ich ausprobierte, war die Basiseingabe, bei der dem LLM nicht die Ein- und Ausgaben vorheriger Interaktionen gegeben werden.
-Das führt zu noch schlechteren Ergebnissen, wie in Abbildungen \ref{fig:gpt3_5_all} und \ref{fig:gpt3_5_base} zu sehen ist.
-Der LLM-Tester führt bei gleichem Zustand fast immer die gleiche Aktion aus, was dazu führt, dass er in Schleifen von ein bis zwei Interaktionen stecken bleibt und keine neuen Aktionen ausführt.
-
-Die nächste Eingabe, die ich ausprobierte, war die Verkettung, bei der dem LLM die Ein- und Ausgaben vorheriger Interaktionen mit in die Eingabe gegeben werden.
-Die Ergebnisse dieser Eingabe sind in Abbildung \ref{fig:gpt3_5_chained} zu sehen.
-Mit dieser Eingabe war die Branchenabdeckung nach 25 Interaktionen schon $65,8\%$, auch wenn der Unterschied zur ursprünglichen Eingabe nur das Fehlen der Forderung nach einer Begründung ist.
-
-Fordert man vor der Benutzerinteraktion eine Beschreibung der Webseite, steigt die Branchenabdeckung auf $67,9\%$ und es scheint, als ob nicht mehr viel fehlen würde, um die Branchenabdeckung von Monkey-Testing zu erreichen.
-Die nächste Ergänzung der Eingabe, das Fordern einer Erklärung, was mit der Benutzerinteraktion erreicht werden soll, führten aber wieder zu einer deutlichen Verschlechterung der Ergebnisse, wie in Abbildungen \ref{fig:gpt3_5_explain} zu sehen ist.
-
-Ein Hauptproblem mit dieser Eingabe scheint zu sein, dass das Sprachmodell die Webseite nicht versteht und deshalb nicht in der Lage ist, sinnvolle Handlungsabläufe zu generieren:
-Beispielsweise wurde immer wieder die Erklärung \enquote{\foreignlanguage{english}{Proceed with the checkout process by submitting the payment information.}} (Deutsch: \enquote{Fahre mit dem Bezahlvorgang fort, indem die Zahlungsinformationen abgeschickt werden.}) generiert, obwohl die Zahlungsinformationen nicht gesondert vom Rest des Bestellvorgangs abgeschickt werden können.
-Ferner beachtete das Sprachmodell auch die daraufhin auf der Webseite erscheinende Fehlermeldung nicht und versuchte immer wieder das halb ausgefüllte Formular abzuschicken.
-
-In einem anderen Test versucht das Sprachmodell immer wieder den \enquote{Pfeil nach oben}-Knopf im Warenkorb (Abbildung \ref{fig:online-shopping-website-cart}) zu drücken, mit dem die Menge eines Artikels erhöht werden kann, um eine nähere Beschreibung dieses Artikels zu erhalten.
-Das kommt vermutlich daher, dass die textuelle Repräsentation dieses Knopfes den Schriftzug \enquote{fa-cart-plus} enthält, was das Sprachmodell scheinbar als Indiz dafür interpretiert, dass es sich um einen Knopf für eine Detailansicht handelt.
-(Danach folgt \enquote{fa-cart-minus}, somit ist diese Interpretation unwahrscheinlich.)
-
-Ein anderes Problem ist, dass in einigen Fällen die erzeugte Handlungsabsicht nicht in einer Benutzerinteraktion ausführbar ist, beispielsweise wurde die Handlungsabsicht \enquote{\foreignlanguage{english}{To test the checkout process, simulate clicking on the 'Checkout' button in the cart overlay.}} (Deutsch: \enquote{Um den Bezahlvorgang zu testen, simuliere das Klicken auf den 'Checkout'-Knopf im Warenkorb-Overlay.}) generiert, obwohl das Warenkorb-Overlay nicht geöffnet war und somit der Knopf nicht existierte.
-Die Eingabe verlangt aber, dass die Handlungsabsicht mit der Benutzerinteraktion ausgeführt werden soll, daher werden solche Handlungsabsichten ignoriert oder führen zu fehlerhaften Benutzerinteraktionen.
-
-Um diese Probleme zu lösen, hatte ich die Idee, dass das Sprachmodell sich selbst Ziele setzen sollte, die es mit den nächsten Benutzerinteraktionen erreichen will.
-Falls ein Ziel nicht mehr erreichbar scheint, sollte das Sprachmodell neue Ziele formulieren.
-Gleichzeitig bekommt das Sprachmodell eine Auflistung der Ziele, die es sich zuvor gesetzt hat, und wie viele Benutzerinteraktionen es für jedes Ziel schon generiert hat.
-Die Ergebnisse dieser Eingabe sind in Abbildung \ref{fig:gpt3_5_goals} zu sehen, diese Eingabe führte zu keiner relevanten Verbesserung der Ergebnisse.
-Ein Hauptproblem war, dass das LLM fast bei jeder Benutzerinteraktion ein neues Ziel setzte, was dazu führte, dass es nie genug Benutzerinteraktionen für ein Ziel generierte, um es zu erreichen.
-
-Die letzte Eingabe, die ich ausprobierte, war die \enquote{Chain of Thought}-Eingabe, bei der das Sprachmodell neben den, bei den anderen Eingaben erzeugten Gedankengängen, auch Beispiele für gute Gedankengänge und Benutzerinteraktion bekommt.
-Diese Beispiele sind für andere Webseiten als die Testwebseite, um dem Sprachmodell keinen unfairen Vorteil gegenüber Monkey-Testing zu verschaffen.
-Tatsächlich führte diese Eingabe zu einer deutlichen Verbesserung der Ergebnisse, wie in Abbildung \ref{fig:gpt3_5_chain_of_thought} zu sehen ist.
-Der Unterschied der Branchenabdeckung zu Monkey-Testing ist relativ gering, und in einigen Fällen ist die Branchenabdeckung von GPT-3.5 höher als die von Monkey-Testing.
-
-Insgesamt war das Ergebnis dieser Tests, dass die von mir definierten Eingaben zu einer Verbesserung der Ergebnisse führten, aber zumindest bei GPT-3.5 nicht ausreichten, um die Branchenabdeckung von Monkey-Testing zu übertreffen.
-In einigen Tests hat das Sprachmodell den Bestellprozess, der ein Beispiel für Monkey-Tester schwierige transaktionale Interaktion wie in Abbildung \ref{fig:sad_monkey} ist, teilweise durchgespielt.
-Aber es wurde nie eine Bestellung abgeschlossen, während der Monkey-Tester ähnliche oder höhere Branchenabdeckung erreichte.
-
-Ich konnte nicht zeigen, dass sich komplexere Webseiten mit GPT-3.5 besser testen lassen als durch Zufall.
-GPT-3.5 scheint nicht in der Lage zu sein, die Webseite zu verstehen und sinnvolle Handlungsabläufe zu generieren.
-Es ist aber offensichtlich, dass die Wahl der Eingabe einen großen Einfluss auf die Ergebnisse hat.
-Daher lässt sich nicht ausschließen, dass es Eingaben gibt, die zu besseren Ergebnissen führen als Monkey-Testing.
-
-Gerade die Verständnisprobleme des Sprachmodells und die Schwierigkeit, sinnvolle Handlungsabläufe zu generieren, legen nahe, dass bessere Sprachmodelle bessere Ergebnisse liefern könnten.
-Deshalb habe ich die gleichen Tests mit GPT-4 durchgeführt.
 
 
 \begin{figure}
@@ -154,7 +109,7 @@ Deshalb habe ich die gleichen Tests mit GPT-4 durchgeführt.
             \addlegendentry{GPT-3.5 Chain of Thought, n=4}
         \end{axis}
     \end{tikzpicture}
-    \caption{Vergleich der durchschnittliche gemessenen Branchenabdeckung von GPT-3.5 mit allen Eingaben und Monkey-Testing.}
+    \caption{Vergleich der durchschnittlich gemessenen Branchenabdeckung von GPT-3.5 mit allen Eingaben und Monkey-Testing.}
     \label{fig:gpt3_5_all}
 \end{figure}
 
@@ -166,22 +121,52 @@ Deshalb habe ich die gleichen Tests mit GPT-4 durchgeführt.
     \miniplot{gpt3-5-explain}{GPT-3.5 Erklärung, n=4}{gpt3_5_explain}{25}
     \miniplot{gpt3-5-goals}{GPT-3.5 Ziele, n=5}{gpt3_5_goals}{25}\hfill
     \miniplot{gpt3-5-chain-of-thought}{GPT-3.5 Chain of Thought, n=4}{gpt3_5_chain_of_thought}{25}
-    \caption{Vergleich der durchschnittliche gemessenen Branchenabdeckung von GPT-3.5 (schwarz) und Monkey-Testing (grün). Der schattierte Bereich um die Linien zeigt die Standardabweichung.}
+    \caption{Vergleich der durchschnittlich gemessenen Branchenabdeckung von GPT-3.5 (schwarz) und Monkey-Testing (grün). Der schattierte Bereich um die Linien zeigt die Standardabweichung.}
 \end{figure}
 
-\begin{figure}
-    \centering
-    \miniplot{gpt4-base}{GPT-4 Basiseingabe, n=1}{gpt4_base}{20}\hfill
-    \miniplot{gpt4-chained}{GPT-4 Verkettung, n=2}{gpt4_chained}{100}
-    \miniplot{gpt4-describe}{GPT-4 Beschreibung, n=3}{gpt4_describe}{100}\hfill
-    \miniplot{gpt4-explain}{GPT-4 Erklärung, n=5}{gpt4_explain}{100}
-    \miniplot{gpt4-goals}{GPT-4 Ziele, n=4}{gpt4_goals}{100}\hfill
-    \miniplot{gpt4-chain-of-thought}{GPT-4 Chain of Thought, n=4}{gpt4_chain_of_thought}{100}
-    \caption{Vergleich der durchschnittliche gemessenen Branchenabdeckung von GPT-4 (schwarz) und Monkey-Testing (grün). Der schattierte Bereich um die Linien zeigt die Standardabweichung.}
-\end{figure}
+Die erste Eingabe, die ich ausprobierte, war die Basiseingabe, bei der dem LLM nicht die Ein- und Ausgaben vorheriger Interaktionen gegeben werden.
+Das führt zu noch schlechteren Ergebnissen, wie in Abbildungen \ref{fig:gpt3_5_all} und \ref{fig:gpt3_5_base} zu sehen ist.
+Der LLM-Tester führt bei gleichem Zustand fast immer die gleiche Aktion aus, was dazu führt, dass er in Schleifen von ein bis zwei Interaktionen stecken bleibt und keine neuen Aktionen ausführt.
+
+Die nächste Eingabe, die ich ausprobierte, war die Verkettung, bei der dem LLM die Ein- und Ausgaben vorheriger Interaktionen mit in die Eingabe gegeben werden.
+Die Ergebnisse dieser Eingabe sind in Abbildung \ref{fig:gpt3_5_chained} zu sehen.
+Mit dieser Eingabe war die Branchenabdeckung nach 25 Interaktionen schon $65{,}8\%$, auch wenn der Unterschied zur ursprünglichen Eingabe nur das Fehlen der Forderung nach einer Begründung ist.
+
+Fordert man vor der Benutzerinteraktion eine Beschreibung der Webseite, steigt die Branchenabdeckung auf $67{,}9\%$ und es scheint, als ob nicht mehr viel fehlen würde, um die Branchenabdeckung von Monkey-Testing zu erreichen.
+Die nächste Ergänzung der Eingabe, das Fordern einer Erklärung, was mit der Benutzerinteraktion erreicht werden soll, führte aber wieder zu einer deutlichen Verschlechterung der Ergebnisse, wie in Abbildung \ref{fig:gpt3_5_explain} zu sehen ist.
+
+Ein Hauptproblem mit dieser Eingabe scheint zu sein, dass das Sprachmodell die Webseite nicht versteht und deshalb nicht in der Lage ist, sinnvolle Handlungsabläufe zu generieren:
+Beispielsweise wurde immer wieder die Erklärung \enquote{\foreignlanguage{english}{Proceed with the checkout process by submitting the payment information.}} (Deutsch: \enquote{Fahre mit dem Bezahlvorgang fort, indem die Zahlungsinformationen abgeschickt werden.}) generiert, obwohl die Zahlungsinformationen nicht gesondert vom Rest des Bestellvorgangs abgeschickt werden können.
+Ferner beachtete das Sprachmodell auch die daraufhin auf der Webseite erscheinende Fehlermeldung nicht und versuchte immer wieder das halb ausgefüllte Formular abzuschicken.
+
+In einem anderen Test versucht das Sprachmodell immer wieder den \enquote{Pfeil nach oben}-Knopf im Warenkorb (Abbildung \ref{fig:online-shopping-website-cart}) zu drücken, mit dem die Menge eines Artikels erhöht werden kann, um eine nähere Beschreibung dieses Artikels zu erhalten.
+Das kommt vermutlich daher, dass die textuelle Repräsentation dieses Knopfes den Schriftzug \enquote{fa-cart-plus} enthält, was das Sprachmodell scheinbar als Indiz dafür interpretiert, dass es sich um einen Knopf für eine Detailansicht handelt.
+(Danach folgt \enquote{fa-cart-minus}, somit ist diese Interpretation unwahrscheinlich.)
+
+Ein anderes Problem ist, dass in einigen Fällen die erzeugte Handlungsabsicht nicht in einer Benutzerinteraktion ausführbar ist, beispielsweise wurde die Handlungsabsicht \enquote{\foreignlanguage{english}{To test the checkout process, simulate clicking on the 'Checkout' button in the cart overlay.}} (Deutsch: \enquote{Um den Bezahlvorgang zu testen, simuliere das Klicken auf den 'Checkout'-Knopf im Warenkorb-Overlay.}) generiert, obwohl das Warenkorb-Overlay nicht geöffnet war und somit der Knopf nicht existierte.
+Die Eingabe verlangt aber, dass die Handlungsabsicht mit der Benutzerinteraktion ausgeführt werden soll, daher werden solche Handlungsabsichten ignoriert oder führen zu fehlerhaften Benutzerinteraktionen.
+
+Um diese Probleme zu lösen, hatte ich die Idee, dass das Sprachmodell sich selbst Ziele setzen sollte, die es mit den nächsten Benutzerinteraktionen erreichen will.
+Falls ein Ziel nicht mehr erreichbar scheint, sollte das Sprachmodell neue Ziele formulieren.
+Gleichzeitig bekommt das Sprachmodell eine Auflistung der Ziele, die es sich zuvor gesetzt hat, und wie viele Benutzerinteraktionen es für jedes Ziel schon generiert hat.
+Die Ergebnisse dieser Eingabe sind in Abbildung \ref{fig:gpt3_5_goals} zu sehen; diese Eingabe führte zu keiner relevanten Verbesserung der Ergebnisse.
+Ein Hauptproblem war, dass das LLM fast bei jeder Benutzerinteraktion ein neues Ziel setzte, was dazu führte, dass es nie genug Benutzerinteraktionen für ein Ziel generierte, um es zu erreichen.
+
+Die letzte Eingabe, die ich ausprobierte, war die \enquote{Chain of Thought}-Eingabe, bei der das Sprachmodell neben den, bei den anderen Eingaben erzeugten Gedankengängen, auch Beispiele für gute Gedankengänge und Benutzerinteraktion bekommt.
+Diese Beispiele sind für andere Webseiten als die Testwebseite, um dem Sprachmodell keinen unfairen Vorteil gegenüber Monkey-Testing zu verschaffen.
+Tatsächlich führte diese Eingabe zu einer Verbesserung der Ergebnisse, durchschnittlich erreite das LLM damit eine Branchenabdeckung von $68{,}6$, wie in Abbildung \ref{fig:gpt3_5_chain_of_thought} zu sehen ist.
+Der Unterschied der Branchenabdeckung zu Monkey-Testing ist relativ gering, und in einigen Fällen ist die Branchenabdeckung von GPT-3.5 höher als die von Monkey-Testing.
+
+Insgesamt war das Ergebnis dieser Tests, dass die von mir definierten Eingaben zu einer Verbesserung der Ergebnisse führten, aber zumindest bei GPT-3.5 nicht ausreichten, um die Branchenabdeckung von Monkey-Testing zu übertreffen.
+In einigen Tests hat das Sprachmodell den Bestellprozess, der ein Beispiel für eine für Monkey-Tester schwierige transaktionale Interaktion wie in Abbildung \ref{fig:sad_monkey} ist, teilweise durchgespielt.
+Aber es wurde nie eine Bestellung abgeschlossen, während der Monkey-Tester ähnliche oder höhere Branchenabdeckung erreichte.
+Es wurden auch keine Texteingaben generiert, die zu Validierungsfehlern führten, obwohl das Sprachmodell in der Eingabe dazu aufgefordert wurde, nach Randfällen zu suchen.
+
+
+\section{Tests mit GPT-4}
+
 
 \begin{figure}
-    \todo{caption}
     \centering
     \begin{tikzpicture}
         \begin{axis}[
@@ -217,5 +202,55 @@ Deshalb habe ich die gleichen Tests mit GPT-4 durchgeführt.
             \addlegendentry{GPT-4 Chain of Thought, n=4}
         \end{axis}
     \end{tikzpicture}
-    
+    \caption{Vergleich der durchschnittliche gemessenen Branchenabdeckung von GPT-4 mit allen Eingaben und Monkey-Testing.}
+    \label{fig:gpt4_all}
 \end{figure}
+
+\begin{figure}
+    \centering
+    \miniplot{gpt4-base}{GPT-4 Basiseingabe, n=1}{gpt4_base}{20}\hfill
+    \miniplot{gpt4-chained}{GPT-4 Verkettung, n=2}{gpt4_chained}{100}
+    \miniplot{gpt4-describe}{GPT-4 Beschreibung, n=3}{gpt4_describe}{100}\hfill
+    \miniplot{gpt4-explain}{GPT-4 Erklärung, n=5}{gpt4_explain}{100}
+    \miniplot{gpt4-goals}{GPT-4 Ziele, n=4}{gpt4_goals}{100}\hfill
+    \miniplot{gpt4-chain-of-thought}{GPT-4 Chain of Thought, n=4}{gpt4_chain_of_thought}{100}
+    \caption{Vergleich der durchschnittliche gemessenen Branchenabdeckung von GPT-4 (schwarz) und Monkey-Testing (grün). Der schattierte Bereich um die Linien zeigt die Standardabweichung.}
+\end{figure}
+
+Die Tests mit GPT-4 erreichten deutlich bessere Ergebnisse als die mit GPT-3.5.
+Die Testläufe wurden außerdem mit 100 statt 25 Interaktionen durchgeführt, weil die Branchenabdeckung erst später zu stagnieren schien.
+Wie auch mit GPT-3.5, führte die Basiseingabe zu unbenutzbaren Ergebnissen, wie in Abbildung \ref{fig:gpt4_base} zu sehen ist.
+Deshalb habe ich die Tests mit dieser Eingabe nach 20 Interaktionen abgebrochen und die Eingabe nicht weiter getestet.
+Bis auf die \enquote{Beschreibungs}-Eingabe führten alle anderen Eingaben im Durchschnitt zu einer höheren Branchenabdeckung als Monkey-Testing.
+Weil das Sprachmodell GPT-4 relativ teuer ist, habe ich gerade bei den Eingaben, die wenig Verbesserung brachten, nur wenige Tests durchgeführt.
+
+Schon die Verkettung der Eingaben führte zu einer deutlichen Verbesserung der Ergebnisse, wie in Abbildung \ref{fig:gpt4_chained} zu sehen ist.
+Mit dieser Eingabe war die Branchenabdeckung nach 100 Interaktionen mit $83{,}2\%$, leicht höher als die von Monkey-Testing mit $81{,}5\%$.
+Es ist allerdings zu beachten, dass bei den hohen Varianzen und der geringen Anzahl an Tests dieser Unterschied wenig aussagekräftig ist.
+Mit dieser Eingabe wurde auch zum ersten Mal ein Bestellvorgang erfolgreich durchgespielt, jeweils mehrfach in beiden Testläufen.
+Dabei wurden immer die Identitäten mit dem englischen Platzhalternamen \enquote{John Doe}, passenden E-Mail-Adressen und Addressen in New York verwendet.
+Es wurden wieder keine Eingaben generiert, die zu Validierungsfehlern führten.
+
+Die drei Tests mit der Beschreibungseingabe, zu sehen in Abbildung \ref{fig:gpt4_describe}, führten zu den, abgesehen von der Basis-Eingabe, zwei schlechtesten Branchenabdeckungen aller Testläufe mit GPT-4.
+Das ist überraschend, weil die Beschreibungseingabe bei GPT-3.5 zu einer der besten Branchenabdeckungen führte.
+Im schlechtesten dieser Tests war die Branchenabdeckung nach 100 Interaktionen nur $65{,}3\%$, das entspricht etwa der Abdeckung, die mit Monkey-Testing nach 15 Interaktionen erreicht wurde.
+Die generierten Beschreibungen enthalten keine offensichtlichen Fehler, deshalb ist unklar, warum die Ergebnisse so schlecht sind.
+
+Die Erklärungseingabe führte zu einer deutlichen Verbesserung der Ergebnisse, wie in Abbildung \ref{fig:gpt4_explain} zu sehen ist.
+Mit dieser Eingabe war die durchschnittliche Branchenabdeckung nach 100 Interaktionen mit $87{,}1\%$, deutlich höher als die von Monkey-Testing mit $81{,}5\%$.
+Dabei wurden mehrfach Eingaben generiert, die zu Validierungsfehlern führten, und auch der Bestellvorgang wurde mehrfach erfolgreich durchgespielt.
+Die generierten Erklärungen und Beschreibungen lassen allerdings vermuten, dass das Sprachmodell versuchte, Eingaben zu generieren, die die Zahlungsmethode ändern, was auf der Testwebseite nicht möglich ist.
+Dabei wurden scheinbar \enquote{versehentlich} Eingaben generiert, die zu den Validierungsfehlern und somit zu einer höheren Branchenabdeckung führten.
+
+Die Zieleingabe führte zu Branchenabdeckungen, die nur geringfügig höher waren als die von Monkey-Testing, wie in Abbildung \ref{fig:gpt4_goals} zu sehen ist.
+Wie mit GPT-3.5 setzte das Sprachmodell fast bei jeder Benutzerinteraktion ein neues Ziel, was zu einer langen Eingabesequenz führte, und wenig zielgerichteten Benutzerinteraktionen.
+
+Die \enquote{Chain of Thought}-Eingabe führte zwar nicht zu einer höheren durchschnittlichen Branchenabdeckung als die Erklärungseingabe, aber zu einer geringeren Varianz, wie in Abbildung \ref{fig:gpt4_chain_of_thought} zu sehen ist.
+Sie erreichte auch am schnellsten eine hohe Branchenabdeckung, wie in Abbildung \ref{fig:gpt4_all} zu sehen ist.
+Während die Testabdeckung mit der Erklärungseingabe nach etwa 60-80 Interaktionen stagnierte, erreichte die Chain-of-Thought-Eingabe ihr Maximum $85{,}7\%$ schon nach 33 Interaktionen.
+In diesen Tests wurden keine Eingaben generiert, die zu Validierungsfehlern führten.
+
+Insgesamt war das Ergebnis dieser Tests, dass die von mir definierten Eingaben zu einer Verbesserung der durchschnittlichen Branchenabdeckung führten.
+Mit GPT-4 wurde die Branchenabdeckung von Monkey-Testing in den meisten Fällen erreicht oder übertroffen.
+Wenn Validierungsfehler auftraten, dann weil das Sprachmodell versuchte, Eingaben zu generieren, die auf der Testwebseite nicht möglich sind.
+Die daraus resultierenden Fehlermeldungen konnte das Sprachmodell dazu verwenden, um die Eingaben zu korrigieren und so die Bestellungen erfolgreich durchzuspielen.

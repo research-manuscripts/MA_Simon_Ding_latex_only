@@ -40,13 +40,8 @@ Dabei handelt es sich um eine Anwendung aus dem Bereich des maschinellen Lernens
 Das LLM bekommt eine strukturierte Repräsentation der grafischen Benutzeroberfläche, vorherige Benutzerinteraktionen und eine natürlichsprachliche Testbeschreibung als Eingabe.
 Es wird aufgefordert, eine Benutzerinteraktion zu generieren, die anschließend automatisch in der Anwendung ausgeführt wird \cite{GPT3Testing}.
 
-In den Kapiteln \ref{ch:ExperimentalSetup} und \ref{ch:Results} liefert diese Arbeit zwei Beiträge:
-Erstens wird der Ansatz an einer komplexeren Webanwendung mit verschiedenen Möglichkeiten zur Interaktion getestet.
-Zweitens wird untersucht, ob das LLM gleichzeitig als Testorakel verwendet werden kann, das heißt, ob das LLM auch in der Lage ist, Fehlerzustände zu erkennen.
-
-\todo{Absatz über \ref{ch:Conclusion}}
-
-Zuletzt befindet sich in Anlage \ref{ch:PracticalNotes} eine Sammlung von Erkenntnissen, die sich im Verlauf dieser Arbeit gezeigt haben und die für den praktischen Einsatz hilfreich sein könnten.
+In den Kapiteln \ref{ch:ExperimentalSetup} bis \ref{ch:discussion} wird dieser Ansatz an einer komplexeren Webanwendung mit verschiedenen Möglichkeiten zur Interaktion getestet.
+Er wird dabei mit einem etablierten Ansatz, dem Monkey-Testing, verglichen.
 
 
 % LLMs sind vielversprechend \cite{GPT3Testing}, 
@@ -99,9 +94,9 @@ Es folgt eine kurze Übersicht über die gängigsten Metriken für die Testabdec
     Eine verhältnismäßig hohe Anweisungsabdeckung kann jedoch auch erreicht werden, wenn nur die Fälle mit den meisten Anweisungen getestet werden.
     % branch
     \item 
-    Verzweigungsabdeckung: Die Verzweigungsabdeckung misst den Anteil der Verzweigungen des Quellcodes, die durch Tests abgedeckt werden.
+    Brachenabdeckung: Die Brachenabdeckung misst den Anteil der Verzweigungen des Quellcodes, die durch Tests abgedeckt werden.
     Sie misst, ob jeweils alle Zweige einer Kontrollflussstruktur (z.B. \textit{if} oder \textit{switch-case} Strukturen) durchlaufen werden.
-    Die Verzweigungsabdeckung ist genauso fein wie die Anweisungsabdeckung, gibt aber einen besseren Einblick in die Ausführlichkeit der Tests in Bezug auf Fallunterscheidungen.
+    Die Brachenabdeckung ist genauso fein wie die Anweisungsabdeckung, gibt aber einen besseren Einblick in die Ausführlichkeit der Tests in Bezug auf Fallunterscheidungen.
     Sie hilft dabei Verzweigungen zu identifizieren, die nicht getestet werden.
     % path
     \item
@@ -115,7 +110,7 @@ Es folgt eine kurze Übersicht über die gängigsten Metriken für die Testabdec
 \end{itemize}
 
 Zusammengefasst gibt jede Metrik für die Testabdeckung unterschiedliche Einblicke in die Qualität der Tests.
-Während Funktions-, Zeilen- und Anweisungsabdeckung grundlegende Aussagen über die Testabdeckung liefern, geben Verzweigungs- und Pfadabdeckung detailliertere Einblicke in die Testabdeckung.
+Während Funktions-, Zeilen- und Anweisungsabdeckung grundlegende Aussagen über die Testabdeckung liefern, geben Brachen- und Pfadabdeckung detailliertere Einblicke in die Testabdeckung.
 Pfadabdeckung ist jedoch oft zu aufwändig und nicht notwendig, um die Qualität der Tests zu bewerten.
 
 \section{Neuronale Netzwerke}
@@ -357,6 +352,7 @@ Zu den jüngeren Fortschritten gehören Techniken für das Training immer größ
 Zu den bekanntesten Transformer-Modellen gehören BERT \cite{bert}, GPT-3 \cite{FewShotLearners} und GPT-4 \cite{gpt4}, die sich vor allem in ihrer Größe, aber mutmaßlich nicht grundlegend in ihren Architekturen unterscheiden \footnote{Im Fall von GPT-4, werden auch Bilder als Teil der Eingabe akzeptiert. Die genaue Architektur von GPT-4 ist nicht öffentlich bekannt.}.
 Als Bezeichnung für diese Modelle hat sich der Begriff \foreignlanguage{english}{Large Language Model} (LLM) etabliert.
 
+\iffalse
 \section{Große Sprachmodelle und ihre Anwendungen in der Softwareentwicklung}
 \label{subsec:Foundations:LLM}
 
@@ -372,6 +368,7 @@ The sheer number of parameters used in these models allows them to capture a wid
 Furthermore, GPT-3 has shown impressive capabilities in generating source code for computer programs, including JavaScript, Python, and SQL. As a language model trained on a massive amount of code and natural language data, ChatGPT can also generate source code with a high degree of accuracy and efficiency, making it a valuable tool for software development and automation tasks.
 As such LLMs appear to be adequate to process both the structured representation of an application’s GUI, as well as natural language test cases, and provide a description of what action to follow next.
 \end{otherlanguage}
+\fi
 
 \chapter{Stand der Technik}
 \label{ch:RelatedWork}
@@ -530,7 +527,7 @@ Deshalb wurde entschieden, eine eigene Anwendung auf Basis von \textit{online-sh
     %\item Flakiness > Repeats necessary / how many?
     %\item Optional: Possibility and Accuracy of validation
     \item Hat die Auswahl verschiedener LLM-Modelle Einfluss auf die Testabdeckung und die Qualität der generierten Interaktionen?
-    \item Wie wichtig ist die Wahl der Eingabe für das LLM?
+    \item Ist die Wahl der Eingabe für das LLM wichtig?
 \end{enumerate}
 
 % Anwendung entwickeln
@@ -541,7 +538,8 @@ Sie wird außerdem so programmiert, dass es möglich ist, Daten zur Testabdeckun
 
 % Testskript entwickeln
 
-Zum Testen wird auf Grundlage von \Citeauthor{GPT3Testing} ein Testskript entwickelt, das die Testanwendung automatisch per LLM und Monkey-Testing testet.
+Zum Testen wird ein Testscript entwickelt, das auf dem Testscript von \Citeauthor{GPT3Testing} basiert.
+Das Testscript testet die Testanwendung automatisch per LLM und Monkey-Testing und sammelt die Testabdeckungen.
 % Prompts mit GPT-3.5 entwerfen und testen
 Das Testskript und die Testanwendung werden zunächst mit einem Monkey-Tester und dann dem günstigeren Modell GPT-3.5 getestet.
 Nachdem das funktioniert hat, wird der Ansatz mit dem teureren Modell GPT-4 und verschiedenen Eingaben evaluiert.
@@ -656,9 +654,9 @@ In dieser Anwendung werden die Produktdaten von \textit{Products} und \textit{Na
 Beide Konzepte in der \textit{App} Komponente zu verwalten würde zu einer unübersichtlichen Komponente führen, die Wiederverwendbarkeit einschränken und gleich mehrere Prinzipien der Softwareentwicklung verletzen.
 Stattdessen habe ich die Produktdaten und den Warenkorbzustand in ihre eigenen Komponenten ausgelagert, die als \textit{Context} bezeichnet werden.
 Ein \textit{Context} ist eine \textit{react}-Komponente, die einen Zustand verwaltet und Funktionen zum Ändern dieses Zustands bereitstellt.
-Kindkomponenten von \textit{Context}en können mittels \textit{Hooks} auf den Zustand zugreifen und die Änderungsfunktionen verwenden.
+Kindkomponenten von \textit{Context}en können mittels \textit{Hooks} auf den Zustand des Contextes zugreifen und die Änderungsfunktionen verwenden.
 Das erlaubt es, Zustand zentral zu verwalten und ihn in beliebig vielen Kindkomponenten zu verwenden, ohne ihn als Parameter durch die ganze Komponentenhierarchie zu reichen.
-Die \textit{App} Komponente muss somit nur noch den Rest der Seite als Kindkomponenten der \textit{Context}e deklarieren.
+Die \textit{App}-Komponente muss somit nur noch den Rest der Seite als Kindkomponenten der \textit{Context}e deklarieren.
 
 Ein weiterer globaler Zustand, der in der Testanwendung verwaltet werden muss, ist, welche Seite angezeigt wird.
 In einer klassischen Webanwendung wird das durch das Ändern der URL erreicht.
@@ -674,7 +672,7 @@ Die Zuordnung von URLs zu Seiten wird in einer separaten Datei definiert.
 \section{Instrumentierung der Testanwendung}
 
 Die Testanwendung selbst ist nicht für das Sammeln von Testergebnissen ausgelegt.
-Um die Testergebnisse zu sammeln, wird ein das Werkzeug \textit{Istanbul}\footnote{\url{https://istanbul.js.org/}} verwendet.
+Um die Testergebnisse zu sammeln, wird das Werkzeug \textit{Istanbul}\footnote{\url{https://istanbul.js.org/}} verwendet.
 \textit{Istanbul} ist ein Werkzeug, das den Quellcode einer Anwendung instrumentiert, das heißt, es erweitert Quellcode um Funktionalität, der Daten über die Ausführung des ursprünglichen Quellcodes aufzeichnet.
 Istanbul kann dann die aufgezeichneten Daten auswerten und daraus Testabdeckungsberichte generieren.
 
@@ -735,7 +733,7 @@ Rein auf Basis des HTML-Dokuments ist es nicht möglich, zu erkennen, dass diese
 
 Ich habe keine Möglichkeit gefunden, automatisch festzustellen, welche Elemente einer Webseite interagierbar sind.
 Deshalb habe ich die Verantwortlichkeit für die Identifikation dieser Elemente auf den Entwickler der zu testenden Anwendung gelegt.
-Für das Testframework, das ich entwickelt habe, ist es notwendig, dass benutzbare HTML-Elemente durch ein spezielles Attribut gekennzeichnet sind.
+Für das Test\-frame\-work, das ich entwickelt habe, ist es notwendig, dass benutzbare HTML-Elemente durch ein spezielles Attribut gekennzeichnet sind.
 
 Um herauszufinden, welche dieser gekennzeichneten Elemente nicht verdeckt sind, habe ich ein Skript entwickelt, das mithilfe der Bibliothek \textit{Selenium}\footnote{\url{https://www.selenium.dev/}} direkt im Browser ausgeführt wird.
 Es benutzt die DOM-API des Browsers, um abzufragen, welches Element an der Stelle eines gekennzeichneten Elements zuoberst liegt.
@@ -837,8 +835,6 @@ Die Qualität der generierten Benutzerinteraktionen wird anhand der Branchenabde
 
 \section{Validierung}
 \label{sec:vaildation}
-
-\todo{Benutze ich jetzt das Wort Branchenabdeckung oder Verzweigungsabdeckung?}
 
 Um die Qualität der generierten Benutzerinteraktionen zu messen, wird die Testabdeckung der Testanwendung herangezogen.
 Wie in Abschnitt \ref{sec:Foundations:TestCoverageMetrics} beschrieben, gibt es verschiedene Arten von Testabdeckung, die sich für verschiedene Anwendungsfälle eignen.
