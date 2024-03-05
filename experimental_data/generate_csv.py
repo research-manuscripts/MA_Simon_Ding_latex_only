@@ -42,15 +42,18 @@ def main(folder):
     # create "above" and "below" arrays
     above = averages + std_devs
     below = averages - std_devs
+    # min and max values
+    min_values = np.min(experiments, axis=0)
+    max_values = np.max(experiments, axis=0)
     # create x-axis array (0, 1, 2, 3, 4, 5, ...)
     x_axis = np.arange(len(averages))
 
     # write the data to a csv file
     outfile = f"{folder}/results.csv"
     with open(outfile, "w") as file:
-        file.write("x,average,above,below\n")
+        file.write("x,average,above,below,min,max\n")
         for i in range(len(averages)):
-            file.write(f"{x_axis[i]},{averages[i]},{above[i]},{below[i]}\n")
+            file.write(f"{x_axis[i]},{averages[i]},{above[i]},{below[i]},{min_values[i]},{max_values[i]}\n")
     print(f"Results written to {outfile}")
 
 if __name__ == "__main__":
