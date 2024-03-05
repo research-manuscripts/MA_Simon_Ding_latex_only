@@ -78,7 +78,7 @@
 %% | Custom Commands              |
 %% --------------------------------
 \newboolean{showtodos}
-\setboolean{showtodos}{true}
+\setboolean{showtodos}{false}
 \newcommand{\todo}[1]{\ifthenelse{\boolean{showtodos}}{\textcolor{red}{TODO: #1}}{}}
 
 %% ====================================
@@ -99,7 +99,7 @@
 %% The Preamble begins here
 \frontmatter
 
-\input{sections/declaration.tex}
+%\input{sections/declaration.tex}
 
 \setcounter{page}{1}
 \pagenumbering{roman}
@@ -144,11 +144,6 @@
 
 %% Add entry to the table of contents for the bibliography
 \printbibliography[heading=bibintoc]
-
-\appendix
-
-\chapter{Praktische Anmerkungen}
-\label{ch:PracticalNotes}
 
 
 \end{document}

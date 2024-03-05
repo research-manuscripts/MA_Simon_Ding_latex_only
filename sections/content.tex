@@ -40,9 +40,9 @@ Dabei handelt es sich um eine Anwendung aus dem Bereich des maschinellen Lernens
 Das LLM bekommt eine strukturierte Repräsentation der grafischen Benutzeroberfläche, vorherige Benutzerinteraktionen und eine natürlichsprachliche Testbeschreibung als Eingabe.
 Es wird aufgefordert, eine Benutzerinteraktion zu generieren, die anschließend automatisch in der Anwendung ausgeführt wird \cite{GPT3Testing}.
 
-In den Kapiteln \ref{ch:ExperimentalSetup} bis \ref{ch:discussion} wird dieser Ansatz an einer komplexeren Webanwendung mit verschiedenen Möglichkeiten zur Interaktion getestet.
+In Kapiteln \ref{ch:ExperimentalSetup} und \ref{ch:Results} wird dieser Ansatz an einer komplexeren Webanwendung mit verschiedenen Möglichkeiten zur Interaktion getestet.
 Er wird dabei mit einem etablierten Ansatz, dem Monkey-Testing, verglichen.
-
+Kapitel \ref{ch:discussion} diskutiert schließlich die Ergebnisse.
 
 % LLMs sind vielversprechend \cite{GPT3Testing}, 
 
@@ -638,7 +638,7 @@ Damit das funktioniert, müssen die Komponenten rein funktional sein, das heißt
 Seiteneffekte, wie das Ändern der Zustandsvariablen, die eine Komponente benutzt, sind in \textit{react} nur in speziellen Funktionen erlaubt, die als \textit{Hooks} bezeichnet werden.
 \textit{react} ist eine sehr beliebte Bibliothek und wird von vielen Entwicklern verwendet, um Webseiten zu bauen.
 
-Die Anwendung besteht aus folgenden Hauptkomponenten, die in der Anwendung angezeigt werden:
+Die Anwendung, zu sehen in Abbildung \ref{fig:online-shopping-website}, besteht aus folgenden Hauptkomponenten, die in der Anwendung angezeigt werden:
 \begin{itemize}
     \item \textit{App}: Die Hauptkomponente. Sie gibt die Grundstruktur der Webseite vor und stellt den globalen Zustand für andere Komponenten zur Verfügung.
     \item \textit{Navbar}: Die Titelleiste der Anwendung mit einem aufklappbaren Menü mit Links zu Produktkategorien und einem Knopf zum Öffnen des Warenkorb-Overlays.
