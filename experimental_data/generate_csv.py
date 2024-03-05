@@ -51,9 +51,9 @@ def main(folder):
     # write the data to a csv file
     outfile = f"{folder}/results.csv"
     with open(outfile, "w") as file:
-        file.write("x,average,above,below,min,max\n")
+        file.write("x,average,above,below,min,max,stv\n")
         for i in range(len(averages)):
-            file.write(f"{x_axis[i]},{averages[i]},{above[i]},{below[i]},{min_values[i]},{max_values[i]}\n")
+            file.write(f"{x_axis[i]},{averages[i]},{above[i]},{below[i]},{min_values[i]},{max_values[i]},{std_devs[i]}\n")
     print(f"Results written to {outfile}")
 
 if __name__ == "__main__":
