@@ -11,7 +11,7 @@ def delete_files_except(directory, excluded_files):
 
 
 # Usage
-directory_to_clean = "/experimantal_data"  # Replace with the path to your directory
+directory_to_clean = "/experimental_data"  # Replace with the path to your directory
 excluded_files = ["results.csv"]  # List of files to keep
 
 delete_files_except(directory_to_clean, excluded_files)
